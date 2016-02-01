@@ -1,0 +1,7 @@
+export PS1="\t \W \$ "
+
+alias obp="nvim ~/.bash_profile"
+alias rbp="source ~/.bash_profile"
+alias cl="clear"
+alias copy="tr -d '\n' | pbcopy"
+alias neovim="nvim"

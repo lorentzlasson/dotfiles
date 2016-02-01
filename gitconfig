@@ -1,0 +1,15 @@
+[user]
+	name = Lorentz Lasson
+	email = lorentz.lasson@se.ibm.com
+[push]
+	default = simple
+[core]
+	autocrlf = input
+
+[alias]
+	st = status
+	c = commit
+	fe = fetch
+	rb = rebase
+	ac = !git add . && git commit -m
+	lg = "log --color=always --graph --pretty=format:'%C(yellow)%h%Creset%C(cyan)%d%Creset %C(white bold)%s%Creset %C(white dim)(by %an %ar)%Creset' --all"
