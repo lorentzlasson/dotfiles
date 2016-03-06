@@ -4,6 +4,14 @@ set clipboard=unnamed
 syntax enable
 colorscheme monokai
 
+" ================ Turn Off Swap Files ==============
+
+set noswapfile
+set nobackup
+set nowb
+
+" ================ Indentation ======================
+
 set autoindent
 set noexpandtab
 set tabstop=4
