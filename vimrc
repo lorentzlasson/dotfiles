@@ -62,15 +62,23 @@ set hlsearch        " Highlight searches by default
 set ignorecase      " Ignore case when searching...
 set smartcase       " ...unless we type a capital
 
+" ================ Terminal ========================
+tnoremap <Esc> <C-\><C-n>
+
 " eslint
 autocmd! BufWritePost * Neomake
 let g:neomake_javascript_enabled_makers = ['eslint']
 
 call plug#begin('~/.vim/plugged')
-Plug 'https://github.com/benekastah/neomake.git'
-Plug 'https://github.com/lukaszb/vim-web-indent.git'
-Plug 'https://github.com/jiangmiao/auto-pairs.git'
-Plug 'https://github.com/scrooloose/nerdtree.git'
+Plug 'benekastah/neomake'
+Plug 'lukaszb/vim-web-indent'
+Plug 'jiangmiao/auto-pairs'
+Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'junegunn/fzf.vim'
+Plug 'lorentzlasson/md2html-vim'
+Plug 'tpope/vim-surround'
+Plug 'gregsexton/MatchTag'
+Plug 'fatih/vim-go'
+"Plug 'Shougo/deoplete.nvim'
 call plug#end()
