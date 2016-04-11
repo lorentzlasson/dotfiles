@@ -65,6 +65,11 @@ set smartcase       " ...unless we type a capital
 " ================ Terminal ========================
 tnoremap <Esc> <C-\><C-n>
 
+" ================ Tabs ========================
+let g:lasttab = 1
+nmap <silent> <c-l> :exe "tabn ".g:lasttab<cr>
+au TabLeave * let g:lasttab = tabpagenr()
+
 " eslint
 autocmd! BufWritePost * Neomake
 let g:neomake_javascript_enabled_makers = ['eslint']
