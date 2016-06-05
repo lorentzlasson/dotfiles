@@ -85,5 +85,8 @@ Plug 'lorentzlasson/md2html-vim'
 Plug 'tpope/vim-surround'
 Plug 'gregsexton/MatchTag'
 Plug 'fatih/vim-go'
+Plug 'mxw/vim-jsx'
+Plug 'elixir-lang/vim-elixir'
+Plug 'tomtom/tcomment_vim'
 "Plug 'Shougo/deoplete.nvim'
 call plug#end()
