@@ -3,6 +3,7 @@ export VISUAL=nvim
 export EDITOR="$VISUAL"
 
 alias obp="nvim ~/.bash_profile"
+alias ovrc="nvim ~/.vimrc"
 alias rbp="source ~/.bash_profile"
 alias cl="clear"
 alias copy="tr -d '\n' | pbcopy"
