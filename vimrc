@@ -4,6 +4,9 @@ set clipboard=unnamed
 syntax enable
 colorscheme monokai
 
+set list
+set listchars=tab:>-
+
 " ================ Turn Off Swap Files ==============
 
 set noswapfile
