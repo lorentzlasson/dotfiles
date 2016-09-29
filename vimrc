@@ -7,6 +7,8 @@ colorscheme monokai
 set list
 set listchars=tab:>-
 
+set cursorcolumn
+
 " ================ Turn Off Swap Files ==============
 
 set noswapfile
