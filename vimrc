@@ -17,10 +17,11 @@ set nowb
 
 " ================ Indentation ======================
 
-set autoindent
-set noexpandtab
-set tabstop=2
-set shiftwidth=2
+" tabs
+" set tabstop=2 autoindent noexpandtab shiftwidth=2
+
+" spaces
+set tabstop=2 softtabstop=0 expandtab shiftwidth=2 smarttab
 
 " Auto indent pasted text
 nnoremap p p=`]<C-o>
