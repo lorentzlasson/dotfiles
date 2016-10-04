@@ -92,7 +92,6 @@ Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'junegunn/fzf.vim'
-Plug 'lorentzlasson/md2html-vim'
 Plug 'tpope/vim-surround'
 Plug 'gregsexton/MatchTag'
 Plug 'fatih/vim-go'
