@@ -1,6 +1,7 @@
 set number
 set nowrap
-set clipboard=unnamed
+" set clipboard=unnamed "osx
+set clipboard+=unnamedplus "linux
 syntax enable
 colorscheme monokai
 
