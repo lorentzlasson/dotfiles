@@ -9,6 +9,7 @@ set list
 set listchars=tab:>-
 
 set cursorcolumn
+set ruler " display column no
 
 " ================ Turn Off Swap Files ==============
 
