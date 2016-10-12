@@ -101,5 +101,7 @@ Plug 'fatih/vim-go'
 Plug 'mxw/vim-jsx'
 Plug 'elixir-lang/vim-elixir'
 Plug 'tomtom/tcomment_vim'
+Plug 'tpope/vim-rails'
+Plug 'ngmy/vim-rubocop'
 "Plug 'Shougo/deoplete.nvim'
 call plug#end()
