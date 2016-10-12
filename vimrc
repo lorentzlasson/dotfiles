@@ -81,6 +81,7 @@ au TabLeave * let g:lasttab = tabpagenr()
 " ================ NERDTree ========================
 :ca ntopen NERDTreeTabsOpen
 autocmd VimEnter * NERDTreeTabsOpen
+let g:NERDTreeChDirMode=2 " follow current dir
 
 " eslint
 autocmd! BufWritePost * Neomake
