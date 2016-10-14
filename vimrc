@@ -83,7 +83,7 @@ au TabLeave * let g:lasttab = tabpagenr()
 autocmd VimEnter * NERDTreeTabsOpen
 let g:NERDTreeChDirMode=2 " follow current dir
 
-" eslint
+" lint
 autocmd! BufWritePost * Neomake
 let g:neomake_javascript_enabled_makers = ['eslint']
 
