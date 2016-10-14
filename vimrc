@@ -87,6 +87,9 @@ let g:NERDTreeChDirMode=2 " follow current dir
 autocmd! BufWritePost * Neomake
 let g:neomake_javascript_enabled_makers = ['eslint']
 
+" silver searcher
+let g:ackprg = 'ag --vimgrep'
+
 call plug#begin('~/.vim/plugged')
 Plug 'benekastah/neomake'
 Plug 'lukaszb/vim-web-indent'
@@ -103,5 +106,6 @@ Plug 'elixir-lang/vim-elixir'
 Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-rails'
 Plug 'ngmy/vim-rubocop'
+Plug 'mileszs/ack.vim'
 "Plug 'Shougo/deoplete.nvim'
 call plug#end()
