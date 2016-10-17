@@ -107,5 +107,6 @@ Plug 'tomtom/tcomment_vim'
 Plug 'tpope/vim-rails'
 Plug 'ngmy/vim-rubocop'
 Plug 'mileszs/ack.vim'
+Plug 'tpope/vim-fugitive'
 "Plug 'Shougo/deoplete.nvim'
 call plug#end()
