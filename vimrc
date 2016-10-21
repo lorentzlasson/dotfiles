@@ -92,6 +92,9 @@ let g:ackprg = 'ag --vimgrep'
 
 " ctrl-f to fzf search
 nnoremap <C-F> :FZF<cr>
+" $ goes to last non-blank in visual mode
+vnoremap $ $h
+
 call plug#begin('~/.vim/plugged')
 Plug 'benekastah/neomake'
 Plug 'lukaszb/vim-web-indent'
