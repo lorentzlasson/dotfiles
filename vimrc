@@ -90,6 +90,8 @@ let g:neomake_javascript_enabled_makers = ['eslint']
 " silver searcher
 let g:ackprg = 'ag --vimgrep'
 
+" ctrl-f to fzf search
+nnoremap <C-F> :FZF<cr>
 call plug#begin('~/.vim/plugged')
 Plug 'benekastah/neomake'
 Plug 'lukaszb/vim-web-indent'
