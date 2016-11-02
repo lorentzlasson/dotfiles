@@ -89,9 +89,11 @@ let g:neomake_javascript_enabled_makers = ['eslint']
 " silver searcher
 let g:ackprg = 'ag --vimgrep'
 
-" ctrl-f to fzf search
-nnoremap <C-F> :FZF<cr>
-" $ goes to last non-blank in visual mode
+nnoremap <M-f> :Ack
+nnoremap <C-f> :FZF<cr>
+nnoremap <M-a> gg<S-V>G
+
+" making $ useful in visual mode
 vnoremap $ $h
 
 call plug#begin('~/.vim/plugged')
