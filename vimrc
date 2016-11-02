@@ -79,8 +79,7 @@ nmap <silent> <c-l> :exe "tabn ".g:lasttab<cr>
 au TabLeave * let g:lasttab = tabpagenr()
 
 " ================ NERDTree ========================
-:ca ntopen NERDTreeTabsOpen
-autocmd VimEnter * NERDTreeTabsOpen
+nnoremap <C-n> :NERDTreeTabsOpen<cr>
 let g:NERDTreeChDirMode=2 " follow current dir
 
 " lint
