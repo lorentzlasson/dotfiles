@@ -92,6 +92,7 @@ let g:ackprg = 'ag --vimgrep'
 nnoremap <M-f> :Ack
 nnoremap <C-f> :FZF<cr>
 nnoremap <M-a> gg<S-V>G
+:ca rel so ~/.vimrc
 
 " making $ useful in visual mode
 vnoremap $ $h
