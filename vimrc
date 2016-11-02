@@ -115,5 +115,6 @@ Plug 'tpope/vim-rails'
 Plug 'ngmy/vim-rubocop'
 Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-fugitive'
+Plug 'AndrewRadev/splitjoin.vim'
 "Plug 'Shougo/deoplete.nvim'
 call plug#end()
