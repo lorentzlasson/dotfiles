@@ -89,7 +89,7 @@ let g:neomake_javascript_enabled_makers = ['eslint']
 " silver searcher
 let g:ackprg = 'ag --vimgrep'
 
-nnoremap <M-f> :Ack
+nnoremap <M-f> :<c-f>iAck 
 nnoremap <C-f> :FZF<cr>
 nnoremap <M-a> gg<S-V>G
 :ca rel so ~/.vimrc
