@@ -97,6 +97,16 @@ nnoremap <M-a> gg<S-V>G
 " making $ useful in visual mode
 vnoremap $ $h
 
+"smart indent when entering insert mode with A on empty lines
+function! IndentWithA()
+  if len(getline('.')) == 0
+    return "cc"
+  else
+    return "A"
+  endif
+endfunction
+nnoremap <expr> A IndentWithA()
+
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
