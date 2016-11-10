@@ -79,7 +79,7 @@ nmap <silent> <c-l> :exe "tabn ".g:lasttab<cr>
 au TabLeave * let g:lasttab = tabpagenr()
 
 " ================ NERDTree ========================
-nnoremap <C-n> :NERDTreeTabsOpen<cr>
+nnoremap <C-n> :NERDTreeTabsToggle<cr>
 let g:NERDTreeChDirMode=2 " follow current dir
 
 " lint
