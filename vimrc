@@ -128,5 +128,7 @@ Plug 'ngmy/vim-rubocop'
 Plug 'mileszs/ack.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'AndrewRadev/splitjoin.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 "Plug 'Shougo/deoplete.nvim'
 call plug#end()
