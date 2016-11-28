@@ -7,6 +7,7 @@ colorscheme monokai
 
 set list
 set listchars=tab:>-
+autocmd BufWritePre * %s/\s\+$//e
 
 set cursorcolumn
 set ruler " display column no
