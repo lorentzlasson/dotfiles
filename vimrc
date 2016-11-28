@@ -133,5 +133,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'kana/vim-textobj-user'
 Plug 'nelstrom/vim-textobj-rubyblock'
+Plug 'skwp/greplace.vim'
 "Plug 'Shougo/deoplete.nvim'
 call plug#end()
