@@ -11,6 +11,7 @@ autocmd BufWritePre * %s/\s\+$//e
 
 set cursorcolumn
 set ruler " display column no
+set showcmd
 
 " auto read from file when gaining focus
 au FocusGained,BufEnter * :silent! !
