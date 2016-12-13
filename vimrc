@@ -94,6 +94,8 @@ let g:neomake_javascript_enabled_makers = ['eslint']
 " silver searcher
 let g:ackprg = 'ag --vimgrep'
 
+let mapleader = "\<Space>"
+
 nnoremap <M-f> :Ag<cr>
 nnoremap <C-f> :FZF<cr>
 nnoremap <M-a> gg<S-V>G
