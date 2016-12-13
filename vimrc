@@ -12,6 +12,9 @@ autocmd BufWritePre * %s/\s\+$//e
 set cursorcolumn
 set ruler " display column no
 
+" auto read from file when gaining focus
+au FocusGained,BufEnter * :silent! !
+
 " ================ Turn Off Swap Files ==============
 
 set noswapfile
