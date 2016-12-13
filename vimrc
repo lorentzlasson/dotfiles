@@ -102,6 +102,7 @@ nnoremap <M-f> :Ag<cr>
 nnoremap <C-f> :FZF<cr>
 nnoremap <M-a> gg<S-V>G
 inoremap <C-s> <ESC>:w<cr>
+vnoremap // y/<C-R>"<Esc>
 :ca rel so ~/.vimrc
 
 " making $ useful in visual mode
