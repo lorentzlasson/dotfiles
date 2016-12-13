@@ -96,6 +96,8 @@ let g:ackprg = 'ag --vimgrep'
 
 let mapleader = "\<Space>"
 
+nnoremap <M-Enter> O<Esc>
+nnoremap <Enter> o<Esc>
 nnoremap <M-f> :Ag<cr>
 nnoremap <C-f> :FZF<cr>
 nnoremap <M-a> gg<S-V>G
