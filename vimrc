@@ -16,6 +16,9 @@ set showcmd
 " auto read from file when gaining focus
 au FocusGained,BufEnter * :silent! !
 
+set splitbelow
+set splitright
+
 " ================ Turn Off Swap Files ==============
 
 set noswapfile
