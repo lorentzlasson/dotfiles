@@ -104,6 +104,7 @@ nnoremap <Enter> o<Esc>
 nnoremap <M-f> :Ag<cr>
 nnoremap <C-f> :FZF<cr>
 nnoremap <M-a> gg<S-V>G
+nmap <S-y> v$y<ESC>
 inoremap <C-s> <ESC>:w<cr>
 vnoremap // y/<C-R>"<Esc>
 :ca rel so ~/.vimrc
