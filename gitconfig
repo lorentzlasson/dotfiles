@@ -1,20 +1,20 @@
 [user]
-	name = Lorentz Lasson
-	email = lasson.lorentz@gmail.com
+  name = Lorentz Lasson
+  email = lasson.lorentz@gmail.com
 [push]
-	default = simple
+  default = simple
 [core]
-	autocrlf = input
+  autocrlf = input
 
 [alias]
-	st = status
-	c = commit
-	fe = fetch
-	rb = rebase
-	b = branch
-	ac = !git add . && git commit -m
-	co = checkout
-	diffst = "diff --staged"
+  st = status
+  c = commit
+  fe = fetch
+  rb = rebase
+  b = branch
+  ac = !git add . && git commit -m
+  co = checkout
+  diffst = "diff --staged"
   logs = "log --pretty=oneline --abbrev-commit"
   logp = "log --color=always --graph --pretty=format:'%C(yellow)%h%Creset%C(cyan)%d%Creset %C(white bold)%s%Creset %C(white dim)(by %an %ar)%Creset' --all"
   spluff = !git stash && git fetch && git rebase && git push && git stash pop
