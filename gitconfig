@@ -18,5 +18,6 @@
   logs = "log --pretty=oneline --abbrev-commit"
   logp = "log --color=always --graph --pretty=format:'%C(yellow)%h%Creset%C(cyan)%d%Creset %C(white bold)%s%Creset %C(white dim)(by %an %ar)%Creset' --all"
   spluff = !git stash && git fetch && git rebase && git push && git stash pop
+  wip = !git add . && git commit -m 'WIP'
   alias = config --get-regexp alias\n
   last = log --pretty=oneline --abbrev-commit -5
