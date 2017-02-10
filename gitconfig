@@ -14,6 +14,7 @@
   rbc = !git add . && git rebase --continue
   b = branch
   ac = !git add . && git commit -m
+  rl = reset HEAD~
   co = checkout
   diffst = "diff --staged"
   logs = "log --pretty=oneline --abbrev-commit"
