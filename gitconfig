@@ -11,6 +11,7 @@
   c = commit
   fe = fetch
   rb = rebase
+  rbc = !git add . && git rebase --continue
   b = branch
   ac = !git add . && git commit -m
   co = checkout
