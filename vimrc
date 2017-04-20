@@ -148,5 +148,6 @@ Plug 'kana/vim-textobj-user'
 Plug 'nelstrom/vim-textobj-rubyblock'
 Plug 'skwp/greplace.vim'
 Plug 'tpope/vim-endwise'
+Plug 'godlygeek/tabular'
 "Plug 'Shougo/deoplete.nvim'
 call plug#end()
