@@ -23,3 +23,5 @@
   wip = !git add . && git commit -m 'WIP'
   alias = config --get-regexp alias\n
   last = log --pretty=oneline --abbrev-commit -5
+  branchauthors = "! for branch in `git branch -r | grep -v HEAD`;do echo `git show --format=\"%an\" $branch | head -n 1`: $branch; done | sort -r"
+  prune-remote = remote update origin --prune
