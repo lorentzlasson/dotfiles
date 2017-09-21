@@ -108,6 +108,7 @@ nmap <S-y> v$y<ESC>
 inoremap <C-s> <ESC>:w<cr>
 vnoremap // y/<C-R>"<Esc>
 :ca rel so ~/.vimrc
+:ca cpp let @+ = expand("%")
 
 " making $ useful in visual mode
 vnoremap $ $h
