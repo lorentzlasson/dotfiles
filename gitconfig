@@ -28,3 +28,6 @@
   branchauthors = "! for branch in `git branch -r | grep -v HEAD`;do echo `git show --format=\"%an\" $branch | head -n 1`: $branch; done | sort -r"
   rbdev = !git fe && git rebase origin/develop
   prune-remote = remote update origin --prune
+[filter "gtw"]
+  clean = sed '/gtw/d'
+  smudge = cat
