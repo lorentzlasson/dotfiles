@@ -11,6 +11,8 @@
   c = commit
   fe = fetch
   rb = rebase
+  p = push
+  please = push --force-with-lease
   rbc = !git add . && git rebase --continue
   b = branch
   ac = !git add . && git commit -m
