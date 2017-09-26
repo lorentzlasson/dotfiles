@@ -7,27 +7,27 @@
   autocrlf = input
 
 [alias]
-  st = status
-  c = commit
-  fe = fetch
-  rb = rebase
-  p = push
-  please = push --force-with-lease
-  rbc = !git add . && git rebase --continue
-  b = branch
   ac = !git add . && git commit -m
-  rl = reset HEAD~
+  alias = config --get-regexp alias\n
+  b = branch
+  branchauthors = "! for branch in `git branch -r | grep -v HEAD`;do echo `git show --format=\"%an\" $branch | head -n 1`: $branch; done | sort -r"
+  c = commit
   co = checkout
   diffst = "diff --staged"
-  logs = "log --pretty=oneline --abbrev-commit"
-  logp = "log --color=always --graph --pretty=format:'%C(yellow)%h%Creset%C(cyan)%d%Creset %C(white bold)%s%Creset %C(white dim)(by %an %ar)%Creset' --all"
-  spluff = !git stash && git fetch && git rebase && git push && git stash pop
-  wip = !git add . && git commit -m 'WIP'
-  alias = config --get-regexp alias\n
+  fe = fetch
   last = log --pretty=oneline --abbrev-commit -5
-  branchauthors = "! for branch in `git branch -r | grep -v HEAD`;do echo `git show --format=\"%an\" $branch | head -n 1`: $branch; done | sort -r"
-  rbdev = !git fe && git rebase origin/develop
+  logp = "log --color=always --graph --pretty=format:'%C(yellow)%h%Creset%C(cyan)%d%Creset %C(white bold)%s%Creset %C(white dim)(by %an %ar)%Creset' --all"
+  logs = "log --pretty=oneline --abbrev-commit"
+  p = push
+  please = push --force-with-lease
   prune-remote = remote update origin --prune
+  rb = rebase
+  rbc = !git add . && git rebase --continue
+  rbdev = !git fe && git rebase origin/develop
+  rl = reset HEAD~
+  spluff = !git stash && git fetch && git rebase && git push && git stash pop
+  st = status
+  wip = !git add . && git commit -m 'WIP'
 [filter "gtw"]
   clean = sed '/gtw/d'
   smudge = cat
