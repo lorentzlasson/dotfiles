@@ -32,3 +32,6 @@
 [filter "gtw"]
   clean = sed '/gtw/d'
   smudge = cat
+[filter "credential"]
+  clean = sed '/\\[credential\\]/,+1d'
+  smudge = cat
