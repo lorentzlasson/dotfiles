@@ -7,7 +7,10 @@ colorscheme monokai
 
 set list
 set listchars=tab:>-
-autocmd BufWritePre * %s/\s\+$//e
+
+" auto delete trailing white spaces for all filetypes except markdown
+let allow_trailing_whitespace = ['markdown']
+autocmd BufWritePre * if index(allow_trailing_whitespace, &ft) < 0 | %s/\s\+$//e
 
 set cursorcolumn
 set ruler " display column no
