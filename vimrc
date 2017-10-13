@@ -97,6 +97,9 @@ let g:neomake_javascript_enabled_makers = ['eslint']
 " silver searcher
 let g:ackprg = 'ag --vimgrep'
 
+" JamshedVesuna/vim-markdown-preview
+let vim_markdown_preview_github=1
+
 let mapleader = "\<Space>"
 
 nnoremap <M-Enter> O<Esc>
@@ -151,5 +154,6 @@ Plug 'skwp/greplace.vim'
 Plug 'tpope/vim-endwise'
 Plug 'godlygeek/tabular'
 Plug 'tpope/vim-abolish'
+Plug 'JamshedVesuna/vim-markdown-preview'
 "Plug 'Shougo/deoplete.nvim'
 call plug#end()
