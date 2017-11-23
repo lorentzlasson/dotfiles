@@ -12,6 +12,7 @@
   b = branch
   branchauthors = "! for branch in `git branch -r | grep -v HEAD`;do echo `git show --format=\"%an\" $branch | head -n 1`: $branch; done | sort -r"
   c = commit
+  ca = commit --amend
   co = checkout
   diffst = "diff --staged"
   fe = fetch
