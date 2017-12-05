@@ -23,6 +23,7 @@
   please = push --force-with-lease
   prune-remote = remote update origin --prune
   rb = rebase
+  rbi20 = rebase -i HEAD~20
   rbc = !git add . && git rebase --continue
   rbdev = !git fe && git rebase origin/develop
   rl = reset HEAD~
