@@ -155,5 +155,6 @@ Plug 'tpope/vim-endwise'
 Plug 'godlygeek/tabular'
 Plug 'tpope/vim-abolish'
 Plug 'JamshedVesuna/vim-markdown-preview'
+Plug 'tpope/vim-rhubarb'
 "Plug 'Shougo/deoplete.nvim'
 call plug#end()
