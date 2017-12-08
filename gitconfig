@@ -28,6 +28,7 @@
   rbdev = !git fe && git rebase origin/develop
   rl = reset HEAD~
   spluff = !git stash && git fetch && git rebase && git push && git stash pop
+  backup = !git add . && git commit --amend --no-edit && git push --force-with-lease
   st = status
   syncignore = !git rm -r --cached && git add .
   wip = !git add . && git commit -m ':construction:'
