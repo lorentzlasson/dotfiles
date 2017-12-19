@@ -10,6 +10,7 @@
   ac = !git add . && git commit -m
   alias = config --get-regexp alias\n
   b = branch
+  backup = !git add . && git commit --amend --no-edit && git push --force-with-lease
   branchauthors = "! for branch in `git branch -r | grep -v HEAD`;do echo `git show --format=\"%an\" $branch | head -n 1`: $branch; done | sort -r"
   c = commit
   ca = commit --amend
@@ -25,12 +26,11 @@
   please = push --force-with-lease
   prune-remote = remote update origin --prune
   rb = rebase
-  rbi20 = rebase -i HEAD~20
   rbc = !git add . && git rebase --continue
   rbdev = !git fe && git rebase origin/develop
+  rbi20 = rebase -i HEAD~20
   rl = reset HEAD~
   spluff = !git stash && git fetch && git rebase && git push && git stash pop
-  backup = !git add . && git commit --amend --no-edit && git push --force-with-lease
   st = status
   syncignore = !git rm -r --cached && git add .
   wip = !git add . && git commit -m ':construction:'
