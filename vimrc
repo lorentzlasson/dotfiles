@@ -112,6 +112,8 @@ inoremap <C-s> <ESC>:w<cr>
 vnoremap // y/<C-R>"<Esc>
 :ca rel so ~/.vimrc
 :ca cpp let @+ = expand("%")
+" open current buffer in NERDTree
+map <leader>r :NERDTreeFind<cr>
 
 " making $ useful in visual mode
 vnoremap $ $h
