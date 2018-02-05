@@ -11,7 +11,7 @@
   alias = config --get-regexp alias\n
   b = branch
   backup = !git add . && git commit --amend --no-edit && git push --force-with-lease
-  branchauthors = "! for branch in `git branch -r | grep -v HEAD`;do echo `git show --format=\"%an\" $branch | head -n 1`: $branch; done | sort -r"
+  branchauthors = "!git remote update origin --prune && for branch in `git branch -r | grep -v HEAD`;do echo `git show --format=\"%an\" $branch | head -n 1`: $branch; done | sort -r"
   c = commit
   ca = commit --amend
   cane = commit --amend --no-edit
