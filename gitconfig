@@ -17,6 +17,7 @@
   cane = commit --amend --no-edit
   cm = commit -m
   co = checkout
+  cp = cherry-pick
   diffst = "diff --staged"
   fe = fetch
   last = log --pretty=oneline --abbrev-commit -5
