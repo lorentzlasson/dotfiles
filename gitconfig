@@ -15,6 +15,7 @@
   c = commit
   ca = commit --amend
   cane = commit --amend --no-edit
+  cl = clean -fd
   cm = commit -m
   co = checkout
   cp = cherry-pick
