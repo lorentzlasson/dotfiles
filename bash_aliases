@@ -2,6 +2,7 @@ alias ovrc="nvim ~/.vimrc"
 alias cl="clear"
 alias vim="nvim"
 alias clg="clear && git status"
+alias :q="exit"
 
 # Ruby
 alias bux="bundle exec"
