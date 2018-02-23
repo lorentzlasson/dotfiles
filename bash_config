@@ -2,3 +2,7 @@ export PS1="\[\033[38;5;33m\]\T\[$(tput sgr0)\]\[\033[38;5;15m\] \W \\$ \[$(tput
 export VISUAL=nvim
 export EDITOR="$VISUAL"
 export PROMPT_COMMAND='echo -ne "\033]0;${PWD##*/}\007"'
+
+function vimconflicts() {
+  vim `git diff --name-only --diff-filter=U | xargs`
+}
