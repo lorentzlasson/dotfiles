@@ -6,3 +6,10 @@ export PROMPT_COMMAND='echo -ne "\033]0;${PWD##*/}\007"'
 function vimconflicts() {
   vim `git diff --name-only --diff-filter=U | xargs`
 }
+
+function gitbranchauthors() {
+  git remote update origin --prune > /dev/null;
+  for branch in `git branch -r | grep -v HEAD`;do echo `git show --format=%an $branch | head -n 1`: $branch; done |
+    sort -r |
+    column -s ":" -t
+}
