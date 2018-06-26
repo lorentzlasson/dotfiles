@@ -43,3 +43,5 @@
 [filter "credential"]
   clean = sed '/\\[credential\\]/,+1d'
   smudge = cat
+[rerere]
+  enabled = false
