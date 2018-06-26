@@ -111,6 +111,18 @@ nnoremap <C-f> :FZF<cr>
 nnoremap <M-a> gg<S-V>G
 nmap <S-y> v$y<ESC>
 inoremap <C-s> <ESC>:w<cr>
+nnoremap <leader> <C-w>
+nnoremap <leader>ntf :NERDTreeFind<cr>
+" DRYable?
+nnoremap <leader><leader> 1<C-w>w
+nnoremap <leader>1 1<C-w>w
+nnoremap <leader>2 2<C-w>w
+nnoremap <leader>3 3<C-w>w
+nnoremap <leader>> 20<C-w>>
+nnoremap <leader>< 20<C-w><
+
+nnoremap <C-w> :echo "Use leader instead!"<cr>
+
 vnoremap // y/<C-R>"<Esc>
 :ca rel so ~/.vimrc
 :ca cpp let @+ = expand("%")
