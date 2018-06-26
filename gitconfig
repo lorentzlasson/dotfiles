@@ -36,7 +36,7 @@
   spluff = !git stash && git fetch && git rebase && git push && git stash pop
   st = status
   syncignore = !git rm -r --cached . && git add .
-  wip = !git add . && git commit -m ':construction:'
+  wip = !git add . && git commit -m ':construction:\n\n[skip ci]'
 [filter "gtw"]
   clean = sed '/gtw/d'
   smudge = cat
