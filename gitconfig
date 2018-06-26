@@ -30,6 +30,7 @@
   rb = rebase
   rbc = !git add . && git rebase --continue
   rbdev = !git fe && git rebase origin/develop
+  rbi = rebase -i --autosquash
   rbi20 = rebase -i HEAD~20
   rl = reset HEAD~
   spluff = !git stash && git fetch && git rebase && git push && git stash pop
