@@ -3,7 +3,7 @@ set nowrap
 " set clipboard=unnamed "osx
 set clipboard+=unnamedplus "linux
 syntax enable
-colorscheme monokai
+colorscheme railscasts
 
 set list
 set listchars=tab:>-
@@ -158,5 +158,6 @@ Plug 'godlygeek/tabular'
 Plug 'tpope/vim-abolish'
 Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'tpope/vim-rhubarb'
+Plug 'jpo/vim-railscasts-theme'
 "Plug 'Shougo/deoplete.nvim'
 call plug#end()
