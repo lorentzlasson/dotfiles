@@ -132,6 +132,9 @@ let @g = 'veyveS]$pbvES)a#lcr-0Wlcr vU^'
 
 " map <leader><C-w>
 
+" enable mouse selection https://github.com/neovim/neovim/issues/6082
+set mouse=a
+
 "smart indent when entering insert mode with A on empty lines
 function! IndentWithA()
   if len(getline('.')) == 0
