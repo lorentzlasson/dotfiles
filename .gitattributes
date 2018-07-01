@@ -1,2 +1,2 @@
-bash_aliases filter=gtw
+bash_aliases filter=gitignore
 gitconfig filter=credential

@@ -39,8 +39,8 @@
   st = status
   syncignore = !git rm -r --cached . && git add .
   wip = !git add . && git commit -m ':construction:\n\n[skip ci]'
-[filter "gtw"]
-  clean = sed '/gtw/d'
+[filter "gitignore"]
+  clean = sed '/gitignore/d'
   smudge = cat
 [filter "credential"]
   clean = sed '/\\[credential\\]/,+1d'
