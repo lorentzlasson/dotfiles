@@ -89,7 +89,6 @@ nmap <silent> <c-l> :exe "tabn ".g:lasttab<cr>
 au TabLeave * let g:lasttab = tabpagenr()
 
 " ================ NERDTree ========================
-nnoremap <C-n> :NERDTreeTabsToggle<cr>
 let g:NERDTreeChDirMode=2 " follow current dir
 
 " lint
@@ -102,15 +101,18 @@ let g:ackprg = 'ag --vimgrep'
 " JamshedVesuna/vim-markdown-preview
 let vim_markdown_preview_github=1
 
-let mapleader = "\<Space>"
-
+nnoremap <C-n> :NERDTreeTabsToggle<cr>
+nnoremap <C-f> :FZF<cr>
+nnoremap <M-f> :Ag<cr>
+nnoremap <M-a> gg<S-V>G
 nnoremap <M-Enter> O<Esc>
 nnoremap <Enter> o<Esc>
-nnoremap <M-f> :Ag<cr>
-nnoremap <C-f> :FZF<cr>
-nnoremap <M-a> gg<S-V>G
-nmap <S-y> v$y<ESC>
-inoremap <C-s> <ESC>:w<cr>
+vnoremap $ $h
+nmap <S-y> v$hy<ESC>
+vnoremap // y/<C-R>"<Esc>
+
+" ===== Leader ====
+let mapleader = "\<Space>"
 nnoremap <leader> <C-w>
 nnoremap <leader>ntf :NERDTreeFind<cr>
 " DRYable?
@@ -120,17 +122,15 @@ nnoremap <leader>2 2<C-w>w
 nnoremap <leader>3 3<C-w>w
 nnoremap <leader>> 20<C-w>>
 nnoremap <leader>< 20<C-w><
-
 nnoremap <C-w> :echo "Use leader instead!"<cr>
 
-vnoremap // y/<C-R>"<Esc>
+" snake to github wiki title
+let @g = 'veyveS]$pbvES)a#lcr-0Wlcr vU^'
+
 :ca rel so ~/.vimrc
 :ca cpp let @+ = expand("%")
-" open current buffer in NERDTree
-map <leader>r :NERDTreeFind<cr>
 
-" making $ useful in visual mode
-vnoremap $ $h
+" map <leader><C-w>
 
 "smart indent when entering insert mode with A on empty lines
 function! IndentWithA()
