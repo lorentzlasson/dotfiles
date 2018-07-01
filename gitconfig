@@ -18,6 +18,7 @@
   cm = commit -m
   co = checkout
   cp = cherry-pick
+  cf = commit --fixup
   delete-remote-branch = push origin -d
   diffst = "diff --staged"
   fe = fetch
