@@ -18,6 +18,7 @@
   cm = commit -m
   co = checkout
   cp = cherry-pick
+  delete-remote-branch = push origin -d
   diffst = "diff --staged"
   fe = fetch
   last = log --pretty=oneline --abbrev-commit -5
