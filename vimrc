@@ -108,7 +108,7 @@ nnoremap <M-a> gg<S-V>G
 nnoremap <M-Enter> O<Esc>
 nnoremap <Enter> o<Esc>
 vnoremap $ $h
-nmap <S-y> v$hy<ESC>
+nmap <S-y> v$y<ESC>
 vnoremap // y/<C-R>"<Esc>
 
 " ===== Leader ====
