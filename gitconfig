@@ -27,6 +27,7 @@
   logrelease = log --pretty=format:'%n_______ %h _______%n%b' --grep='---' origin/master..origin/develop
   logs = "log --pretty=oneline --abbrev-commit"
   p = push
+  po = push -u origin HEAD
   please = push --force-with-lease
   prune-remote = remote update origin --prune
   rb = rebase
