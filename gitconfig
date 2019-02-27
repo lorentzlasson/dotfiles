@@ -36,6 +36,7 @@
   rbdev = !git fe && git rebase origin/develop
   rbi = rebase -i
   rbi20 = rebase -i HEAD~20
+  rbi5 = rebase -i HEAD~5
   rl = reset HEAD~
   spluff = !git stash && git fetch && git rebase && git push && git stash pop
   st = status
