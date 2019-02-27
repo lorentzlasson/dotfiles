@@ -125,9 +125,6 @@ nnoremap <leader>> 20<C-w>>
 nnoremap <leader>< 20<C-w><
 nnoremap <C-w> :echo "Use leader instead!"<cr>
 
-" snake to github wiki title
-let @g = 'veyveS]$pbvES)a#lcr-0Wlcr vU^'
-
 :ca rel so ~/.vimrc
 :ca cpp let @+ = expand("%")
 
