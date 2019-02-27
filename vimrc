@@ -90,6 +90,7 @@ au TabLeave * let g:lasttab = tabpagenr()
 
 " ================ NERDTree ========================
 let g:NERDTreeChDirMode=2 " follow current dir
+let NERDTreeShowHidden=1
 
 " lint
 autocmd! BufWritePost * Neomake
