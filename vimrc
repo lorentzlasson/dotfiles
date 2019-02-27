@@ -98,6 +98,7 @@ let g:neomake_javascript_enabled_makers = ['eslint']
 
 " silver searcher
 let g:ackprg = 'ag --vimgrep'
+let g:fzf_history_dir = '~/.local/share/fzf-history'
 
 " https://github.com/skwp/greplace.vim#customization
 set grepprg=ag
