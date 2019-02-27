@@ -99,6 +99,10 @@ let g:neomake_javascript_enabled_makers = ['eslint']
 " silver searcher
 let g:ackprg = 'ag --vimgrep'
 
+" https://github.com/skwp/greplace.vim#customization
+set grepprg=ag
+let g:grep_cmd_opts = '--line-numbers --noheading'
+
 " JamshedVesuna/vim-markdown-preview
 let vim_markdown_preview_github=1
 
