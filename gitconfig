@@ -44,6 +44,7 @@
   st = status
   syncignore = !git rm -r --cached . && git add .
   wip = !git add . && git commit -m ':construction:\n\n[skip ci]'
+  testci = !git add . && git commit -m ':construction: CI'
 [filter "gitignore"]
   clean = sed '/gitignore/d'
   smudge = cat
