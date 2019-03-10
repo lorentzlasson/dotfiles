@@ -13,3 +13,5 @@ function gitbranchauthors() {
     sort -r |
     column -s ":" -t
 }
+
+export PATH=$PATH:node_modules/.bin
