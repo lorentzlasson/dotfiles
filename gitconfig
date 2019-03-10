@@ -10,6 +10,7 @@
   ac = !git add . && git commit -m
   acane = !git add . && git commit --amend --no-edit
   alias = config --get-regexp alias\n
+  ap = add -p
   b = branch
   backup = !git add . && git commit --amend --no-edit && git push --force-with-lease
   c = commit
