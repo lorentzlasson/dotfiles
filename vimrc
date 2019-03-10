@@ -179,5 +179,6 @@ Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'jaawerth/neomake-local-eslint-first'
 "Plug 'Shougo/deoplete.nvim'
 call plug#end()
