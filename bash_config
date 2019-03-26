@@ -14,4 +14,8 @@ gitbranchauthors() {
     column -s ":" -t
 }
 
+gitcheckout() {
+  git remote show origin | grep "HEAD branch" | sed 's/.*: //' | xargs -I '{}' git checkout -b $1 '{}'
+}
+
 export PATH=$PATH:node_modules/.bin
