@@ -18,4 +18,39 @@ gitcheckout() {
   git remote show origin | grep "HEAD branch" | sed 's/.*: //' | xargs -I '{}' git checkout -b $1 '{}'
 }
 
+
+rename_all() {
+  find $1 -execdir rename 's/$2/$3/' '{}' \+
+}
+
+
+gitpr() {
+    MAIN_BRANCH=`git remote show origin | grep "HEAD branch" | sed 's/.*: //'`
+    BRANCH_NAME=`git symbolic-ref -q HEAD | sed 's/.*\///'`
+    ISSUE_NR=`git symbolic-ref -q HEAD | sed 's/.*-//'`
+
+    HEADER=''
+    if [ "$1" != "" ]; then
+        # Use message from command line
+        HEADER="$1"
+    else
+        # Default to branch name
+        HEADER="$BRANCH_NAME"
+    fi
+
+    MESSAGE=`echo -e "$HEADER\n\ncloses #$ISSUE_NR"`
+
+    #Check if issue nr exists
+    re='^[0-9]+$'
+    if ! [[ $ISSUE_NR =~ $re ]] ; then
+        MESSAGE="$HEADER"
+    fi
+
+    git push -u origin "$BRANCH_NAME"
+    hub pull-request -b "$MAIN_BRANCH" -m "$MESSAGE"
+    echo "PR for $BRANCH_NAME created"
+}
+
+# delete local and remote tag
+
 export PATH=$PATH:node_modules/.bin
