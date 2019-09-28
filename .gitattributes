@@ -1,2 +1,2 @@
-bash_aliases filter=gitignore
+sh_aliases filter=gitignore
 gitconfig filter=credential
