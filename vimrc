@@ -140,6 +140,8 @@ nnoremap <C-w> :echo "Use leader instead!"<cr>
 :ca rel so ~/.vimrc
 :ca cpp let @+ = expand("%")
 
+:ca sqlformat !sqlformat --reindent --keywords upper --identifiers lower -
+
 " map <leader><C-w>
 
 " enable mouse selection https://github.com/neovim/neovim/issues/6082
