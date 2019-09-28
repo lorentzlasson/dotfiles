@@ -43,8 +43,8 @@
   spluff = !git stash && git fetch && git rebase && git push && git stash pop
   st = status
   syncignore = !git rm -r --cached . && git add .
-  wip = !git add . && git commit -m ':construction:\n\n[skip ci]'
-  testci = !git add . && git commit -m ':construction: CI'
+  wip = !git add . && git commit -m '🚧\n\n[skip ci]'
+  testci = !git add . && git commit -m '🚧 CI'
 [filter "gitignore"]
   clean = sed '/gitignore/d'
   smudge = cat
