@@ -48,11 +48,8 @@
 [filter "gitignore"]
   clean = sed '/gitignore/d'
   smudge = cat
-[filter "credential"]
-  clean = sed '/\\[credential\\]/,+1d'
-  smudge = cat
-[filter "github"]
-  clean = sed '/\\[github\\]/,+2d'
+[filter "gitignorebelow"]
+  clean = sed '/\\*gitignorebelow\\*/,$d'
   smudge = cat
 [rerere]
   enabled = false
