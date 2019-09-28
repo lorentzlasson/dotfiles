@@ -55,3 +55,5 @@
   enabled = false
 [rebase]
   autosquash = true
+[submodule]
+  recurse = true
