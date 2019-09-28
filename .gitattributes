@@ -1,2 +1,3 @@
 sh_aliases filter=gitignore
 gitconfig filter=credential
+gitconfig filter=github

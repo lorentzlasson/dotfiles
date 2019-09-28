@@ -51,6 +51,9 @@
 [filter "credential"]
   clean = sed '/\\[credential\\]/,+1d'
   smudge = cat
+[filter "github"]
+  clean = sed '/\\[github\\]/,+2d'
+  smudge = cat
 [rerere]
   enabled = false
 [rebase]
