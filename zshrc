@@ -6,6 +6,9 @@ PS1="%B%F{32}%*%f %b%~ $ "
 HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.cache/zsh/history
+setopt INC_APPEND_HISTORY
+setopt HIST_IGNORE_DUPS
+setopt EXTENDED_HISTORY
 
 # basic auto/tab complete
 autoload -U compinit
@@ -13,6 +16,12 @@ zstyle ':completion:*' menu select
   zmodload zsh/complist
   compinit
   _comp_options+=(globdots) # include hidden files.
+
+# globbing
+setopt extended_glob
+
+# allow # to comment
+set -k
 
 # vi mode
 bindkey -v
@@ -32,6 +41,8 @@ bindkey '^e' edit-command-line
 # search history with ctrl-r
 bindkey -v
 bindkey '^R' history-incremental-search-backward
+bindkey "^P" up-line-or-search
+bindkey "^N" down-line-or-search
 
 # custom aliases
 source ~/.sh_aliases
