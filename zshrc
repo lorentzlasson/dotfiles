@@ -53,12 +53,23 @@ source ~/.sh_functions
 # fuzzy history search
 source ~/.fzf.zsh
 
-# add current node bin to path
-export PATH=$PATH:node_modules/.bin
 
 # set vim as default editor
 export VISUAL=nvim
 export EDITOR="$VISUAL"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# --- PATH
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
+
+export PATH=~/.local/bin:$PATH
+# add current node bin to path
+# export PATH=$PATH:node_modules/.bin
 
 # load zsh-syntax-highlighting; should be last
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
