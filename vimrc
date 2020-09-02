@@ -80,6 +80,12 @@ set hlsearch        " Highlight searches by default
 set ignorecase      " Ignore case when searching...
 set smartcase       " ...unless we type a capital
 
+" ================ ALE ===========================
+let g:ale_fixers = {'python': ['black', 'isort'], 'sql': ['pgformatter'], 'ruby': ['rubocop'] }
+let g:ale_linters = {'python': ['flake8', 'mypy'], 'sql': ['sqlint']}
+let g:ale_python_auto_pipenv = 1
+let g:ale_python_mypy_options = '--follow-imports skip'
+
 " ================ Elm ===========================
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
@@ -97,11 +103,6 @@ au TabLeave * let g:lasttab = tabpagenr()
 " ================ NERDTree ========================
 let g:NERDTreeChDirMode=2 " follow current dir
 let NERDTreeShowHidden=1
-
-" lint
-autocmd! BufWritePost * Neomake
-let g:neomake_javascript_enabled_makers = ['eslint']
-let g:neomake_python_python_exe = 'python3'
 
 " silver searcher
 let g:ackprg = 'ag --vimgrep'
@@ -161,14 +162,13 @@ call plug#begin('~/.vim/plugged')
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'benekastah/neomake'
+Plug 'dense-analysis/ale'
 Plug 'elixir-lang/vim-elixir'
 Plug 'elmcast/elm-vim'
 Plug 'fatih/vim-go'
 Plug 'godlygeek/tabular'
 Plug 'gregsexton/MatchTag'
 Plug 'itspriddle/vim-shellcheck'
-Plug 'jaawerth/neomake-local-eslint-first'
 Plug 'jiangmiao/auto-pairs'
 Plug 'jistr/vim-nerdtree-tabs'
 Plug 'jpo/vim-railscasts-theme'
@@ -191,5 +191,4 @@ Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-"Plug 'Shougo/deoplete.nvim'
 call plug#end()
