@@ -135,12 +135,12 @@ nnoremap <leader>2 2<C-w>w
 nnoremap <leader>3 3<C-w>w
 nnoremap <leader>> 20<C-w>>
 nnoremap <leader>< 20<C-w><
+nnoremap <leader>< 20<C-w><
+nnoremap <leader>sql :%! pg_format --nogrouping --spaces 2 --type-case 1 --keyword-case 1<CR>
 nnoremap <C-w> :echo "Use leader instead!"<cr>
 
 :ca rel so ~/.vimrc
 :ca cpp let @+ = expand("%")
-
-:ca sqlformat !sqlformat --reindent --keywords upper --identifiers lower -
 
 " map <leader><C-w>
 
