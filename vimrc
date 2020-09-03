@@ -86,6 +86,8 @@ let g:ale_linters = {'python': ['flake8', 'mypy'], 'sql': ['sqlint']}
 let g:ale_python_auto_pipenv = 1
 let g:ale_python_mypy_options = '--follow-imports skip'
 
+let g:ale_fix_on_save = 1
+
 " ================ Elm ===========================
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
