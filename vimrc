@@ -65,7 +65,7 @@ set wildignore+=tmp/**
 set wildignore+=*.png,*.jpg,*.gif
 
 " ================ Spell check =======================
-:set spell spelllang=en_us
+" :set spell spelllang=en_us
 
 " ================ Scrolling ========================
 
