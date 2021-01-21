@@ -3,6 +3,7 @@ alias cl="clear"
 alias vim="nvim"
 alias clg="clear && git status"
 alias :q="exit"
+alias grep="grep --color=auto"
 
 # Ruby
 alias bux="bundle exec"
