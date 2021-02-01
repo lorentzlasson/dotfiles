@@ -5,9 +5,6 @@ alias clg="clear && git status"
 alias :q="exit"
 alias grep="grep --color=auto"
 
-# Ruby
-alias bux="bundle exec"
-
 # osx
 #alias obp="nvim ~/.bash_profile"
 #alias rbp="source ~/.bash_profile"
