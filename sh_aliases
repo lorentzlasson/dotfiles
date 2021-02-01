@@ -4,6 +4,8 @@ alias vim="nvim"
 alias clg="clear && git status"
 alias :q="exit"
 alias grep="grep --color=auto"
+alias python=python3
+alias pip=pip3
 
 # osx
 #alias obp="nvim ~/.bash_profile"
