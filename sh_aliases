@@ -6,6 +6,7 @@ alias :q="exit"
 alias grep="grep --color=auto"
 alias python=python3
 alias pip=pip3
+alias rzp="source ~/.zshrc"
 
 # osx
 #alias obp="nvim ~/.bash_profile"
@@ -19,5 +20,4 @@ alias copy1l="tr -d '\n' | copy"
 alias obp="nvim ~/.bashrc"
 alias rbp="source ~/.bashrc"
 alias ozp="nvim ~/.zshrc"
-alias rzp="source ~/.zshrc"
 alias localip="hostname -I | cut -d ' ' -f 1"
