@@ -1,0 +1,12 @@
+
+[main]
+enable_pager = True
+generate_aliases = True
+keyring = True
+keyword_casing = lower
+less_chatty = True
+multi_line = True
+multiline_continuation_char = ' '
+pager = pspg -XF -s s
+prompt = "\u@\h:\d>\n "
+vi = True
