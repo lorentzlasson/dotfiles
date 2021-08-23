@@ -5,6 +5,7 @@
   default = simple
 [core]
   autocrlf = input
+  editor = vim
 
 [alias]
   ac = !git add . && git commit -m
