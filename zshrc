@@ -53,9 +53,8 @@ source ~/.sh_functions
 # fuzzy history search
 source ~/.fzf.zsh
 
-
 # set vim as default editor
-export VISUAL=nvim
+export VISUAL=nvim.appimage
 export EDITOR="$VISUAL"
 
 export NVM_DIR="$HOME/.nvm"
