@@ -1,6 +1,6 @@
-alias ovrc="nvim ~/.vimrc"
+alias ovrc="vim ~/.vimrc"
 alias cl="clear"
-alias vim="nvim"
+alias vim="nvim.appimage"
 alias clg="clear && git status"
 alias :q="exit"
 alias grep="grep --color=auto"
@@ -9,7 +9,7 @@ alias pip=pip3
 alias rzp="source ~/.zshrc"
 
 # osx
-#alias obp="nvim ~/.bash_profile"
+#alias obp="vim ~/.bash_profile"
 #alias rbp="source ~/.bash_profile"
 #alias copy="tr -d '\n' | pbcopy" #osx
 
