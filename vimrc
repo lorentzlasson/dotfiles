@@ -3,7 +3,6 @@ set nowrap
 " set clipboard=unnamed "osx
 set clipboard+=unnamedplus "linux
 syntax enable
-colorscheme railscasts
 
 set list
 set listchars=tab:>-
@@ -80,14 +79,6 @@ set hlsearch        " Highlight searches by default
 set ignorecase      " Ignore case when searching...
 set smartcase       " ...unless we type a capital
 
-" ================ ALE ===========================
-let g:ale_fixers = {'python': ['black', 'isort'], 'sql': ['pgformatter'], 'ruby': ['rubocop'] }
-let g:ale_linters = {'python': ['flake8', 'mypy'], 'sql': ['sqlint']}
-let g:ale_python_auto_pipenv = 1
-let g:ale_python_mypy_options = '--follow-imports skip'
-
-let g:ale_fix_on_save = 1
-
 " ================ Elm ===========================
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
@@ -101,6 +92,12 @@ tnoremap <Esc> <C-\><C-n>
 let g:lasttab = 1
 nmap <silent> <c-l> :exe "tabn ".g:lasttab<cr>
 au TabLeave * let g:lasttab = tabpagenr()
+
+" ================ CoC ========================
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gr <Plug>(coc-references)
+nmap <leader>rn <Plug>(coc-rename)
 
 " ================ NERDTree ========================
 let g:NERDTreeChDirMode=2 " follow current dir
@@ -164,7 +161,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'dense-analysis/ale'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'elixir-lang/vim-elixir'
 Plug 'elmcast/elm-vim'
 Plug 'fatih/vim-go'
@@ -173,7 +170,6 @@ Plug 'gregsexton/MatchTag'
 Plug 'itspriddle/vim-shellcheck'
 Plug 'jiangmiao/auto-pairs'
 Plug 'jistr/vim-nerdtree-tabs'
-Plug 'jpo/vim-railscasts-theme'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'junegunn/fzf.vim'
 Plug 'kana/vim-textobj-user'
@@ -192,4 +188,7 @@ Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'tomasiser/vim-code-dark'
 call plug#end()
+
+colorscheme codedark
