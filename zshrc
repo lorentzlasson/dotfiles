@@ -70,5 +70,8 @@ export PATH=~/.local/bin:$PATH
 # add current node bin to path
 # export PATH=$PATH:node_modules/.bin
 
+export DENO_INSTALL="/home/lorentz/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+
 # load zsh-syntax-highlighting; should be last
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
