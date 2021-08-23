@@ -147,6 +147,9 @@ nnoremap <C-w> :echo "Use leader instead!"<cr>
 " enable mouse selection https://github.com/neovim/neovim/issues/6082
 set mouse=a
 
+" insert messages into current buffer
+" put =execute('messages')
+
 "smart indent when entering insert mode with A on empty lines
 function! IndentWithA()
   if len(getline('.')) == 0
