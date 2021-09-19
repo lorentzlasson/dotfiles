@@ -74,9 +74,7 @@ export DENO_INSTALL="/home/lorentz/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 
 
-# cd on steroids
-# https://github.com/ajeetdsouza/zoxide
-
+# cd on steroids https://github.com/ajeetdsouza/zoxide
 eval "$(zoxide init zsh)"
 
 # Direnv hook https://direnv.net/docs/hook.html#zsh
