@@ -1,6 +1,3 @@
-set number
-set nowrap
-" set clipboard=unnamed "osx
 
 call plug#begin('~/.vim/plugged')
 Plug 'AndrewRadev/splitjoin.vim' " gS ang gJ to swap between single and multi line blocks
@@ -19,58 +16,38 @@ Plug 'tpope/vim-fugitive' " Git
 Plug 'tpope/vim-rhubarb' " Github stuff, e.g. GBrowse
 Plug 'tpope/vim-surround' " insert openers/closers around selection
 call plug#end()
-set clipboard+=unnamedplus "linux
-syntax enable
 
-set list
-set listchars=tab:>-
+set number " display line numbers
+set wrap " continue long lines on next lines
+set linebreak "Wrap lines at convenient points
+set cursorcolumn cursorline " highlight column and row
+set ruler " display column number
 
-" auto delete trailing white spaces for all filetypes except markdown
-let allow_trailing_whitespace = ['markdown']
-autocmd BufWritePre * if index(allow_trailing_whitespace, &ft) < 0 | %s/\s\+$//e
+set clipboard+=unnamedplus " connect to system clipboard (linux)
+syntax enable " enable syntax highlighting
 
-set cursorcolumn
-set ruler " display column no
-set showcmd
+set mouse=a " enable mouse selection https://github.com/neovim/neovim/issues/6082
 
-" auto read from file when gaining focus
-au FocusGained,BufEnter * :silent! !
-
-" ================ Turn Off Swap Files ==============
-
+" turn off swap files
 set noswapfile
 set nobackup
 set nowb
 
-" ================ Indentation ======================
+" indentation
+set list
+set listchars=tab:>- " visualize tabs
+set tabstop=2 softtabstop=0 expandtab shiftwidth=2 smarttab " spaces
 
-" tabs
-" set tabstop=2 autoindent noexpandtab shiftwidth=2
+" folds
+set foldmethod=indent "fold based on indent
+set foldnestmax=3 "deepest fold is 3 levels
+set nofoldenable "dont fold by default
 
-" spaces
-set tabstop=2 softtabstop=0 expandtab shiftwidth=2 smarttab
-
-" Auto indent pasted text
-nnoremap p p=`]<C-o>
-nnoremap P P=`]<C-o>
-
-filetype plugin on
-filetype indent on
-
-set nowrap       "Don't wrap lines
-set linebreak    "Wrap lines at convenient points
-
-" ================ Folds ============================
-
-set foldmethod=indent   "fold based on indent
-set foldnestmax=3       "deepest fold is 3 levels
-set nofoldenable        "dont fold by default
-
-" ================ Completion =======================
-
+" completion
 set wildmode=list:longest
-set wildmenu                "enable ctrl-n and ctrl-p to scroll thru matches
-set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
+set wildmenu
+" ignore folliwing when scrolling using ctrl-n and ctrl-p
+set wildignore=*.o,*.obj,*~
 set wildignore+=*vim/backups*
 set wildignore+=*sass-cache*
 set wildignore+=*DS_Store*
@@ -81,94 +58,77 @@ set wildignore+=log/**
 set wildignore+=tmp/**
 set wildignore+=*.png,*.jpg,*.gif
 
-" ================ Spell check =======================
-" :set spell spelllang=en_us
+" set spell spelllang=en_us spell check
 
-" ================ Scrolling ========================
-
-set scrolloff=8         "Start scrolling when we're 8 lines away from margins
+" scrolling
+set scrolloff=8 "start scrolling when we're 8 lines away from margins
 set sidescrolloff=15
 set sidescroll=1
 
-" ================ Search ===========================
+" search
+set incsearch " find the next match as we type the search
+set hlsearch " highlight searches by default
+set ignorecase " ignore case when searching...
+set smartcase " ...unless we type a capital
 
-set incsearch       " Find the next match as we type the search
-set hlsearch        " Highlight searches by default
-set ignorecase      " Ignore case when searching...
-set smartcase       " ...unless we type a capital
+" auto delete trailing white spaces for all filetypes except markdown
+let allow_trailing_whitespace = ['markdown']
+autocmd BufWritePre * if index(allow_trailing_whitespace, &ft) < 0 | %s/\s\+$//e
 
-" ================ Elm ===========================
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
+autocmd FocusGained,BufEnter * :silent! !  " auto read from file when gaining focus
 
-let g:elm_syntastic_show_warnings = 1
-
-" ================ Terminal ========================
-tnoremap <Esc> <C-\><C-n>
-
-" ================ Tabs ========================
-let g:lasttab = 1
-nmap <silent> <c-l> :exe "tabn ".g:lasttab<cr>
-au TabLeave * let g:lasttab = tabpagenr()
-
-" ================ CoC ========================
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gr <Plug>(coc-references)
-nmap <leader>rn <Plug>(coc-rename)
-
-" ================ NERDTree ========================
-let g:NERDTreeChDirMode=2 " follow current dir
+" nerd tree
+let g:NERDTreeChDirMode=3 " follow current dir
 let NERDTreeShowHidden=1
+
+autocmd BufWinEnter * NERDTreeMirror " Keep toggling in sync
+
+" nnoremap <C-n> :NERDTreeToggle<cr> " Toggle on ctrl+n
+
+let mapleader = "\<Space>" " set leader to space
+nnoremap <leader>t :NERDTreeToggle<cr>
+nnoremap <leader>f :NERDTreeFind<cr>
 
 " silver searcher
 let g:ackprg = 'ag --vimgrep'
 let g:fzf_history_dir = '~/.local/share/fzf-history'
-
-" https://github.com/skwp/greplace.vim#customization
-set grepprg=ag
-let g:grep_cmd_opts = '--line-numbers --noheading'
-
-" JamshedVesuna/vim-markdown-preview
-let vim_markdown_preview_github=1
-
-nnoremap <C-n> :NERDTreeTabsToggle<cr>
+" file name search
 nnoremap <C-f> :FZF<cr>
+" content search
 nnoremap <M-f> :Ag<cr>
+
+" select all
 nnoremap <M-a> gg<S-V>G
+
+" Use enter in normal mode to insert new lines but stay in normal mode
 nnoremap <M-Enter> O<Esc>
 nnoremap <Enter> o<Esc>
+
+" skip newline when jumping to end of line in visual mode
 vnoremap $ $h
+
+" shift + Y copies remainder of line (similar to C and D)
 nmap <S-y> v$y<ESC>
+" copy and search for selection
 vnoremap // y/<C-R>"<Esc>
 
-" ===== Leader ====
-let mapleader = "\<Space>"
+" use leader for navigation instead of ctrl+w
+nnoremap <C-w> :echo "Use leader (Space) instead!"<cr>
 nnoremap <leader> <C-w>
-nnoremap <leader>ntf :NERDTreeFind<cr>
-" DRYable?
+" 2x space to jump to leftmost pane (usually nerd tree)
 nnoremap <leader><leader> 1<C-w>w
-nnoremap <leader>1 1<C-w>w
-nnoremap <leader>2 2<C-w>w
-nnoremap <leader>3 3<C-w>w
+
+"resize pane by 20 to left or right
 nnoremap <leader>> 20<C-w>>
 nnoremap <leader>< 20<C-w><
-nnoremap <leader>< 20<C-w><
-nnoremap <leader>sql :%! pg_format --nogrouping --spaces 2 --type-case 1 --keyword-case 1<CR>
-nnoremap <C-w> :echo "Use leader instead!"<cr>
 
-:ca rel so ~/.vimrc
-:ca cpp let @+ = expand("%")
-
-" map <leader><C-w>
-
-" enable mouse selection https://github.com/neovim/neovim/issues/6082
-set mouse=a
+:ca rel so ~/.vimrc " reload vim config
+:ca cpp let @+ = expand("%") " path for open file to clipboard
 
 " insert messages into current buffer
 " put =execute('messages')
 
-"smart indent when entering insert mode with A on empty lines
+" smart indent when entering insert mode with A on empty lines
 function! IndentWithA()
   if len(getline('.')) == 0
     return "cc"
