@@ -10,7 +10,7 @@ dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
 
 # TODO: link pgcli to ~/.config/pgcli/config
-files="vimrc gitconfig inputrc sh_aliases sh_functions zshrc pgcli_conf"    # list of files/folders to symlink in homedir
+files="vimrc gitconfig inputrc sh_aliases sh_functions zshrc pgcli_conf tmux.conf"    # list of files/folders to symlink in homedir
 
 ##########
 
