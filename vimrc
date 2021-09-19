@@ -18,6 +18,8 @@ Plug 'tpope/vim-rhubarb' " Github stuff, e.g. GBrowse
 Plug 'tpope/vim-surround' " insert openers/closers around selection
 call plug#end()
 
+colorscheme codedark " VSC dark colorscheme
+
 set number " display line numbers
 set wrap " continue long lines on next lines
 set linebreak "Wrap lines at convenient points
@@ -139,7 +141,6 @@ function! IndentWithA()
 endfunction
 nnoremap <expr> A IndentWithA()
 
-colorscheme codedark
 " lsp stuff
 nnoremap <leader>gd :lua vim.lsp.buf.definition()<cr>
 nnoremap <leader>gr :lua vim.lsp.buf.references()<cr>
