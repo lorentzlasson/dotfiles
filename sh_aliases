@@ -7,6 +7,7 @@ alias grep="grep --color=auto"
 alias python=python3
 alias pip=pip3
 alias rzp="source ~/.zshrc"
+alias cd="z"
 
 # osx
 #alias obp="vim ~/.bash_profile"
