@@ -5,7 +5,7 @@
   default = simple
 [core]
   autocrlf = input
-  editor = vim
+  editor = nvim.appimage
 
 [alias]
   ac = !git add . && git commit -m
