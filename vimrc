@@ -1,6 +1,24 @@
 set number
 set nowrap
 " set clipboard=unnamed "osx
+
+call plug#begin('~/.vim/plugged')
+Plug 'AndrewRadev/splitjoin.vim' " gS ang gJ to swap between single and multi line blocks
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'godlygeek/tabular' " :Tabulerize/{pattern}
+Plug 'gregsexton/MatchTag' " highlight matching html tag
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']} " :MarkdownPreview
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' } " fuzzy file finder
+Plug 'junegunn/fzf.vim'
+Plug 'preservim/nerdtree'
+Plug 'tomasiser/vim-code-dark' " VSC dark colorscheme
+Plug 'tomtom/tcomment_vim' " Commenting conveniences, e.g. gcc to comment line
+Plug 'tpope/vim-abolish' " Misc string formating, e.g. SnakeCase to keba-case
+Plug 'tpope/vim-endwise' " Auto close blocks
+Plug 'tpope/vim-fugitive' " Git
+Plug 'tpope/vim-rhubarb' " Github stuff, e.g. GBrowse
+Plug 'tpope/vim-surround' " insert openers/closers around selection
+call plug#end()
 set clipboard+=unnamedplus "linux
 syntax enable
 
@@ -159,22 +177,5 @@ function! IndentWithA()
   endif
 endfunction
 nnoremap <expr> A IndentWithA()
-
-call plug#begin('~/.vim/plugged')
-Plug 'AndrewRadev/splitjoin.vim' " gS ang gJ to swap between single and multi line blocks
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'godlygeek/tabular' " :Tabulerize/{pattern}
-Plug 'gregsexton/MatchTag' " highlight matching html tag
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' } " fuzzy file finder
-Plug 'junegunn/fzf.vim'
-Plug 'preservim/nerdtree'
-Plug 'tomasiser/vim-code-dark' " VSC dark colorscheme
-Plug 'tomtom/tcomment_vim' " Commenting conveniences, e.g. gcc to comment line
-Plug 'tpope/vim-abolish' " Misc string formating, e.g. SnakeCase to keba-case
-Plug 'tpope/vim-endwise' " Auto close blocks
-Plug 'tpope/vim-fugitive' " Git
-Plug 'tpope/vim-rhubarb' " Github stuff, e.g. GBrowse
-Plug 'tpope/vim-surround' " insert openers/closers around selection
-call plug#end()
 
 colorscheme codedark
