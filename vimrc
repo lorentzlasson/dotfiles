@@ -7,6 +7,7 @@ Plug 'gregsexton/MatchTag' " highlight matching html tag
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']} " :MarkdownPreview
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' } " fuzzy file finder
 Plug 'junegunn/fzf.vim'
+Plug 'neovim/nvim-lspconfig'
 Plug 'preservim/nerdtree'
 Plug 'tomasiser/vim-code-dark' " VSC dark colorscheme
 Plug 'tomtom/tcomment_vim' " Commenting conveniences, e.g. gcc to comment line
@@ -139,3 +140,23 @@ endfunction
 nnoremap <expr> A IndentWithA()
 
 colorscheme codedark
+" lsp stuff
+nnoremap <leader>gd :lua vim.lsp.buf.definition()<cr>
+nnoremap <leader>gr :lua vim.lsp.buf.references()<cr>
+nnoremap <leader>rn :lua vim.lsp.buf.rename()<cr>
+
+lua << EOF
+
+local nvim_lsp = require('lspconfig')
+
+local servers = { 'denols', 'tsserver', 'solargraph', 'elmls'}
+for _, lsp in ipairs(servers) do
+  nvim_lsp[lsp].setup {
+    on_attach = on_attach,
+    flags = {
+      debounce_text_changes = 150,
+    }
+  }
+end
+
+EOF
