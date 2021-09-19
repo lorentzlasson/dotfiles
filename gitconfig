@@ -59,3 +59,5 @@
   autosquash = true
 [submodule]
   recurse = true
+[diff]
+	submodule = log
