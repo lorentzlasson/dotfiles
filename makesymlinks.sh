@@ -8,7 +8,9 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files="vimrc gitconfig inputrc sh_aliases sh_functions zshrc"    # list of files/folders to symlink in homedir
+
+# TODO: link pgcli to ~/.config/pgcli/config
+files="vimrc gitconfig inputrc sh_aliases sh_functions zshrc pgcli_conf"    # list of files/folders to symlink in homedir
 
 ##########
 
