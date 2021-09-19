@@ -161,37 +161,20 @@ endfunction
 nnoremap <expr> A IndentWithA()
 
 call plug#begin('~/.vim/plugged')
-Plug 'AndrewRadev/splitjoin.vim'
-Plug 'JamshedVesuna/vim-markdown-preview'
+Plug 'AndrewRadev/splitjoin.vim' " gS ang gJ to swap between single and multi line blocks
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'elixir-lang/vim-elixir'
-Plug 'elmcast/elm-vim'
-Plug 'fatih/vim-go'
-Plug 'godlygeek/tabular'
-Plug 'gregsexton/MatchTag'
-Plug 'itspriddle/vim-shellcheck'
-Plug 'jiangmiao/auto-pairs'
-Plug 'jistr/vim-nerdtree-tabs'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
+Plug 'godlygeek/tabular' " :Tabulerize/{pattern}
+Plug 'gregsexton/MatchTag' " highlight matching html tag
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' } " fuzzy file finder
 Plug 'junegunn/fzf.vim'
-Plug 'kana/vim-textobj-user'
-Plug 'lukaszb/vim-web-indent'
-Plug 'mileszs/ack.vim'
-Plug 'mxw/vim-jsx'
-Plug 'nelstrom/vim-textobj-rubyblock'
-Plug 'ngmy/vim-rubocop'
-Plug 'scrooloose/nerdtree'
-Plug 'skwp/greplace.vim'
-Plug 'tomtom/tcomment_vim'
-Plug 'tpope/vim-abolish'
-Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-rhubarb'
-Plug 'tpope/vim-surround'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'tomasiser/vim-code-dark'
+Plug 'preservim/nerdtree'
+Plug 'tomasiser/vim-code-dark' " VSC dark colorscheme
+Plug 'tomtom/tcomment_vim' " Commenting conveniences, e.g. gcc to comment line
+Plug 'tpope/vim-abolish' " Misc string formating, e.g. SnakeCase to keba-case
+Plug 'tpope/vim-endwise' " Auto close blocks
+Plug 'tpope/vim-fugitive' " Git
+Plug 'tpope/vim-rhubarb' " Github stuff, e.g. GBrowse
+Plug 'tpope/vim-surround' " insert openers/closers around selection
 call plug#end()
 
 colorscheme codedark
