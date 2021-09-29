@@ -1,25 +1,26 @@
+
+# open config
+alias otc="vim ~/.tmux.conf"
+alias ozsh="vim ~/.zshrc"
 alias ovrc="vim ~/.vimrc"
-alias cl="clear"
-alias vim="nvim.appimage"
-alias clg="clear && git status"
-alias :q="exit"
+
+# reload config
+alias relsh="exec $SHELL"
+
+# drop-in upgrades
+alias cd="z" https://github.com/ajeetdsouza/zoxide
+alias cat="batcat" # https://github.com/sharkdp/bat
+alias vim="nvim.appimage" https://github.com/neovim/neovim
+
 alias grep="grep --color=auto"
 alias python=python3
 alias pip=pip3
-alias rzp="source ~/.zshrc"
-alias otc="vim ~/.tmux.conf"
-alias cd="z"
 
-# osx
-#alias obp="vim ~/.bash_profile"
-#alias rbp="source ~/.bash_profile"
-#alias copy="tr -d '\n' | pbcopy" #osx
-
-# linux
+# convenience
+alias cl="clear"
+alias clg="clear && git status"
 alias open=xdg-open
 alias copy="xclip -sel clip"
 alias copy1l="tr -d '\n' | copy"
-alias obp="vim ~/.bashrc"
-alias rbp="source ~/.bashrc"
-alias ozp="vim ~/.zshrc"
 alias localip="hostname -I | cut -d ' ' -f 1"
+alias :q="exit"
