@@ -44,6 +44,15 @@ bindkey '^R' history-incremental-search-backward
 bindkey "^P" up-line-or-search
 bindkey "^N" down-line-or-search
 
+# Yank to the system clipboard
+function vi-yank-xclip {
+  zle vi-yank
+  echo "$CUTBUFFER" | xclip -sel clip
+}
+
+zle -N vi-yank-xclip
+bindkey -M vicmd 'y' vi-yank-xclip
+
 # custom aliases
 source ~/.sh_aliases
 
