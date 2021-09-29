@@ -61,3 +61,5 @@
   recurse = true
 [diff]
 	submodule = log
+[commit]
+	gpgsign = true
