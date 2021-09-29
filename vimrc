@@ -80,17 +80,17 @@ autocmd BufWritePre * if index(allow_trailing_whitespace, &ft) < 0 | %s/\s\+$//e
 
 autocmd FocusGained,BufEnter * :silent! !  " auto read from file when gaining focus
 
+" set leader to space
+let mapleader = "\<Space>"
+
 " nerd tree
 let g:NERDTreeChDirMode=3 " follow current dir
 let NERDTreeShowHidden=1
 
 autocmd BufWinEnter * NERDTreeMirror " Keep toggling in sync
 
-" nnoremap <C-n> :NERDTreeToggle<cr> " Toggle on ctrl+n
-
-let mapleader = "\<Space>" " set leader to space
-nnoremap <leader>t :NERDTreeToggle<cr>
-nnoremap <leader>f :NERDTreeFind<cr>
+nnoremap <C-n> :NERDTreeToggle<cr>
+nnoremap <leader>nf :NERDTreeFind<cr>
 
 let g:fzf_history_dir = '~/.local/share/fzf-history'
 " file name search
