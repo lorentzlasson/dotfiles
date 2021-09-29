@@ -1,0 +1,6 @@
+shell:
+  program: /bin/bash # default shell (zsh) will still be launched in tmux
+  args:
+    - -l
+    - -c
+    - "tmux"
