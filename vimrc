@@ -92,14 +92,11 @@ let mapleader = "\<Space>" " set leader to space
 nnoremap <leader>t :NERDTreeToggle<cr>
 nnoremap <leader>f :NERDTreeFind<cr>
 
-" silver searcher
-let g:ackprg = 'ag --vimgrep'
 let g:fzf_history_dir = '~/.local/share/fzf-history'
 " file name search
 nnoremap <C-f> :FZF<cr>
 " content search
-nnoremap <M-f> :Ag<cr>
-
+nnoremap <M-f> :Rg<cr>
 " select all
 nnoremap <M-a> gg<S-V>G
 
