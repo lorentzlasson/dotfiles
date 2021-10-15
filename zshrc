@@ -89,6 +89,9 @@ eval "$(zoxide init zsh)"
 # Direnv hook https://direnv.net/docs/hook.html#zsh
 eval "$(direnv hook zsh)"
 
+# kubectl
+source <(kubectl completion zsh)
+
 # load zsh-syntax-highlighting; should be last
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
 
