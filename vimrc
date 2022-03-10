@@ -9,7 +9,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' } " fuzzy file 
 Plug 'junegunn/fzf.vim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'preservim/nerdtree'
-Plug 'tomasiser/vim-code-dark' " VSC dark colorscheme
+Plug 'ayu-theme/ayu-vim' " colorscheme
 Plug 'tomtom/tcomment_vim' " Commenting conveniences, e.g. gcc to comment line
 Plug 'tpope/vim-abolish' " Misc string formating, e.g. SnakeCase to keba-case
 Plug 'tpope/vim-endwise' " Auto close blocks
@@ -18,7 +18,8 @@ Plug 'tpope/vim-rhubarb' " Github stuff, e.g. GBrowse
 Plug 'tpope/vim-surround' " insert openers/closers around selection
 call plug#end()
 
-colorscheme codedark " VSC dark colorscheme
+set termguicolors
+colorscheme ayu
 
 set number " display line numbers
 set wrap " continue long lines on next lines
