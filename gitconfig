@@ -10,7 +10,7 @@
 [alias]
   ac = !git add . && git commit --message
   acane = !git add . && git commit --amend --no-edit
-  alias = config --get-regexp alias\n
+  alias = config --get-regexp alias
   ap = add --patch
   b = branch
   backup = !git add . && git commit --amend --no-edit && git push --force-with-lease
