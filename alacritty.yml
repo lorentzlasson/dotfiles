@@ -4,3 +4,5 @@ shell:
     - -l
     - -c
     - "tmux"
+window:
+  startup_mode: Maximized
