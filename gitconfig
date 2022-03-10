@@ -35,7 +35,7 @@
   prune-remote = remote update origin --prune
   rb = rebase
   rbc = !git add . && git rebase --continue
-  rbdev = !git fe && git rebase origin/develop
+  rbremote = !git fe && git rebase origin/$1
   rbi = rebase -i
   rbi20 = rebase -i HEAD~20
   rbi5 = rebase -i HEAD~5
