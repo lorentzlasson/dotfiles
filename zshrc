@@ -119,10 +119,6 @@ source <(kubectl completion zsh)
 # load zsh-syntax-highlighting; should be last
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
 
-# if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-#   exec tmux
-# fi
-
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/lorentz/google-cloud-sdk-368.0.0-linux-x86_64/google-cloud-sdk/path.zsh.inc' ]; then . '/home/lorentz/google-cloud-sdk-368.0.0-linux-x86_64/google-cloud-sdk/path.zsh.inc'; fi
 
