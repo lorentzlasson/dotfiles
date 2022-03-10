@@ -17,11 +17,11 @@
   c = commit
   ca = commit --amend
   cane = commit --amend --no-edit
+  cf = commit --fixup
   cl = clean -fd
   cm = commit -m
   co = checkout
   cp = cherry-pick
-  cf = commit --fixup
   delete-remote-branch = push origin -d
   diffst = "diff --staged"
   fe = fetch
@@ -30,23 +30,23 @@
   logrelease = log --pretty=format:'%n_______ %h _______%n%b' --grep='---' origin/master..origin/develop
   logs = "log --pretty=oneline --abbrev-commit"
   p = push
-  po = push -u origin HEAD
   please = push --force-with-lease
+  po = push -u origin HEAD
   prune-remote = remote update origin --prune
   rb = rebase
   rbc = !git add . && git rebase --continue
-  rbremote = !git fe && git rebase origin/$1
   rbi = rebase -i
   rbi20 = rebase -i HEAD~20
   rbi5 = rebase -i HEAD~5
   rbo = rebase --onto
+  rbremote = !git fe && git rebase origin/$1
   reset-to-remote = !git fe && git reset --hard @{upstream}
   rl = reset HEAD~
   spluff = !git stash && git fetch && git rebase && git push && git stash pop
   st = status
   syncignore = !git rm -r --cached . && git add .
-  wip = !git add . && git commit -m '🚧\n\n[skip ci]'
   testci = !git add . && git commit -m '🚧 CI'
+  wip = !git add . && git commit -m '🚧\n\n[skip ci]'
 [filter "gitignore"]
   clean = sed '/gitignore/d'
   smudge = cat
