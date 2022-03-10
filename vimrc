@@ -7,7 +7,7 @@ Plug 'gregsexton/MatchTag' " highlight matching html tag
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']} " :MarkdownPreview
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' } " fuzzy file finder
 Plug 'junegunn/fzf.vim'
-Plug 'neovim/nvim-lspconfig'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdtree'
 Plug 'ayu-theme/ayu-vim' " colorscheme
 Plug 'tomtom/tcomment_vim' " Commenting conveniences, e.g. gcc to comment line
@@ -139,23 +139,15 @@ function! IndentWithA()
 endfunction
 nnoremap <expr> A IndentWithA()
 
-" lsp stuff
-nnoremap <leader>gd :lua vim.lsp.buf.definition()<cr>
-nnoremap <leader>gr :lua vim.lsp.buf.references()<cr>
-nnoremap <leader>rn :lua vim.lsp.buf.rename()<cr>
+" COC
+let g:coc_global_extensions = ['coc-tsserver']
 
-lua << EOF
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gh :call CocActionAsync('doHover')<CR>
 
-local nvim_lsp = require('lspconfig')
+nmap <leader>rn <Plug>(coc-rename)
 
-local servers = { 'denols', 'tsserver', 'solargraph', 'elmls'}
-for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup {
-    on_attach = on_attach,
-    flags = {
-      debounce_text_changes = 150,
-    }
-  }
-end
-
-EOF
