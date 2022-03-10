@@ -104,6 +104,8 @@ export PATH=~/.local/bin:$PATH
 export DENO_INSTALL="/home/lorentz/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 
+# go
+export PATH="/usr/local/go/bin:$PATH"
 
 # cd on steroids https://github.com/ajeetdsouza/zoxide
 eval "$(zoxide init zsh)"
