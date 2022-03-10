@@ -8,7 +8,7 @@ alias ovrc="vim ~/.vimrc"
 alias relsh="exec $SHELL"
 
 # drop-in upgrades
-alias cat="batcat" # https://github.com/sharkdp/bat
+alias bat="batcat" # https://github.com/sharkdp/bat
 alias cd="z" # https://github.com/ajeetdsouza/zoxide
 alias grep="rg" # https://github.com/BurntSushi/ripgrep
 alias vim="nvim.appimage" # https://github.com/neovim/neovim
