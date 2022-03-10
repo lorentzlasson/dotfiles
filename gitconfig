@@ -34,6 +34,7 @@
   please = push --force-with-lease
   po = push --set-upstream origin HEAD
   prune-remote = remote update origin --prune
+  r = reset
   rb = rebase
   rbc = !git add . && git rebase --continue
   rbi = rebase -i
