@@ -8,18 +8,18 @@
   editor = nvim.appimage
 
 [alias]
-  ac = !git add . && git commit -m
+  ac = !git add . && git commit --message
   acane = !git add . && git commit --amend --no-edit
   alias = config --get-regexp alias\n
-  ap = add -p
+  ap = add --patch
   b = branch
   backup = !git add . && git commit --amend --no-edit && git push --force-with-lease
   c = commit
   ca = commit --amend
   cane = commit --amend --no-edit
   cf = commit --fixup
-  cl = clean -fd
-  cm = commit -m
+  cl = clean -d --force
+  cm = commit --message
   co = checkout
   cp = cherry-pick
   delete-remote-branch = push origin -d
@@ -31,7 +31,7 @@
   logs = "log --pretty=oneline --abbrev-commit"
   p = push
   please = push --force-with-lease
-  po = push -u origin HEAD
+  po = push --set-upstream origin HEAD
   prune-remote = remote update origin --prune
   rb = rebase
   rbc = !git add . && git rebase --continue
@@ -39,7 +39,7 @@
   rbi20 = rebase -i HEAD~20
   rbi5 = rebase -i HEAD~5
   rbo = rebase --onto
-  rbremote = !git fe && git rebase origin/$1
+  rbremote = !git fetch && git rebase origin/$1
   reset-to-remote = !git fe && git reset --hard @{upstream}
   rl = reset HEAD~
   spluff = !git stash && git fetch && git rebase && git push && git stash pop
