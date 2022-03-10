@@ -88,11 +88,11 @@ let mapleader = "\<Space>"
 " nerd tree
 let g:NERDTreeChDirMode=3 " follow current dir
 let NERDTreeShowHidden=1
-
 autocmd BufWinEnter * NERDTreeMirror " Keep toggling in sync
-
 nnoremap <C-n> :NERDTreeToggle<cr>
 nnoremap <leader>nf :NERDTreeFind<cr>
+
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 let g:fzf_history_dir = '~/.local/share/fzf-history'
 " file name search
