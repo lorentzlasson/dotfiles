@@ -8,10 +8,10 @@ alias ovrc="vim ~/.vimrc"
 alias relsh="exec $SHELL"
 
 # drop-in upgrades
-alias cd="z" https://github.com/ajeetdsouza/zoxide
 alias cat="batcat" # https://github.com/sharkdp/bat
-alias grep="rg" https://github.com/BurntSushi/ripgrep
-alias vim="nvim.appimage" https://github.com/neovim/neovim
+alias cd="z" # https://github.com/ajeetdsouza/zoxide
+alias grep="rg" # https://github.com/BurntSushi/ripgrep
+alias vim="nvim.appimage" # https://github.com/neovim/neovim
 
 alias python=python3
 alias pip=pip3
