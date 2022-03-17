@@ -42,7 +42,7 @@
   rbi20 = rebase -i HEAD~20
   rbi5 = rebase -i HEAD~5
   rbo = rebase --onto
-  rbremote = !git fetch && git rebase origin/$1
+  rbremote = "!f() { git fetch && git rebase origin/$1; }; f"
   reset-to-remote = !git fetch && git reset --hard @{upstream}
   rl = reset HEAD~
   spluff = !git stash && git fetch && git rebase && git push && git stash pop
