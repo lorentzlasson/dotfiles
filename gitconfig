@@ -44,6 +44,7 @@
   rbo = rebase --onto
   rbremote = !git fetch && git rebase origin/HEAD
   reset-to-remote = !git fetch && git reset --hard @{upstream}
+  restp = restore -p .
   rl = reset HEAD~
   spluff = !git stash && git fetch && git rebase && git push && git stash pop
   st = status
