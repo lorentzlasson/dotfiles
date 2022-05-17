@@ -1,6 +1,7 @@
 # enable colors and change prompt
 autoload -U colors && colors
 PS1="%B%F{32}%*%f %b%~ $ "
+# PS1="%B%F{32}%*%f%b ${PWD/*\//} $ " # do something about deep paths
 
 # history in cache directory
 HISTSIZE=10000
