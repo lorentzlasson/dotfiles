@@ -40,8 +40,7 @@
   rb = rebase
   rbc = !git add . && git rebase --continue
   rbi = rebase -i
-  rbi20 = rebase -i HEAD~20
-  rbi5 = rebase -i HEAD~5
+  rbilast = "!f() { git rebase --interactive HEAD~$1; }; f"
   rbo = rebase --onto
   rbremote = "!f() { git fetch && git rebase origin/$1; }; f"
   reset-to-remote = !git fetch && git reset --hard @{upstream}
