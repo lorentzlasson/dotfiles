@@ -20,7 +20,7 @@
   cf = commit --fixup
   cl = clean -d --force
   cm = commit --message
-  co = checkout
+  co = switch
   cp = cherry-pick
   d = diff
   delete-remote-branch = push origin -d
