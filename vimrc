@@ -95,8 +95,10 @@ nnoremap <leader>nf :NERDTreeFind<cr>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 let g:fzf_history_dir = '~/.local/share/fzf-history'
-" file name search
-nnoremap <C-f> :FZF<cr>
+" file name search for files in git
+nnoremap <C-f> :GFiles<cr>
+" file name search for all files (fallback when file outside git)
+nnoremap <C-A-f> :Files<cr>
 " content search
 nnoremap <M-f> :Rg<cr>
 " select all
