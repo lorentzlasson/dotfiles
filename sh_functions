@@ -13,12 +13,9 @@ gitcheckout() {
   git remote show origin | grep "HEAD branch" | sed 's/.*: //' | xargs -I '{}' git checkout -b $1 '{}'
 }
 
-# function doesn't run - use contents
-# need to remove node_modules/.bin from PATH
-rename_all() {
-  find $1 -execdir rename 's/$2/$3/' '{}' \+
-}
-
+# RENAME ALL
+# https://stackoverflow.com/a/16541670/1859989
+# find . -iname "*BUILD*" -exec rename 's/_dbg.txt/.txt/' '{}' \;
 
 gitpr() {
     MAIN_BRANCH=`git remote show origin | grep "HEAD branch" | sed 's/.*: //'`
