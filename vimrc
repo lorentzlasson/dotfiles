@@ -27,6 +27,7 @@ set linebreak "Wrap lines at convenient points
 set cursorcolumn cursorline " highlight column and row
 set ruler " display column number
 set hidden " allow unsaved buffers
+set nofoldenable " disable folding
 
 set clipboard+=unnamedplus " connect to system clipboard (linux)
 syntax enable " enable syntax highlighting
