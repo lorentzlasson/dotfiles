@@ -17,6 +17,7 @@
   c = commit
   ca = commit --amend
   cane = commit --amend --no-edit
+  cb = checkout -b
   cf = commit --fixup
   cl = clean -d --force
   cm = commit --message
