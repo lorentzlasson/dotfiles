@@ -40,7 +40,7 @@
   r = reset
   rb = rebase
   rbc = !git add . && git rebase --continue
-  rbi = rebase -i
+  rbi = rebase --interactive
   rbilast = "!f() { git rebase --interactive HEAD~$1; }; f"
   rbo = rebase --onto
   rbremote = !git fetch && git rebase origin/HEAD
@@ -50,8 +50,8 @@
   spluff = !git stash && git fetch && git rebase && git push && git stash pop
   st = status
   syncignore = !git rm -r --cached . && git add .
-  testci = !git add . && git commit -m '🚧 CI'
-  wip = !git add . && git commit -m '🚧\n\n[skip ci]'
+  testci = !git add . && git commit --message '🚧 CI'
+  wip = !git add . && git commit --message '🚧\n\n[skip ci]'
 [filter "gitignore"]
   clean = sed '/gitignore/d'
   smudge = cat
