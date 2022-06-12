@@ -155,3 +155,4 @@ nmap <silent> gh :call CocActionAsync('doHover')<CR>
 
 nmap <leader>rn <Plug>(coc-rename)
 
+:cabbrev tsfix :call CocActionAsync('runCommand', 'tsserver.executeAutofix')<CR>
