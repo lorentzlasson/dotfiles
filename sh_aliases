@@ -9,7 +9,6 @@ alias relsh="exec $SHELL"
 
 # drop-in upgrades
 alias bat="batcat" # https://github.com/sharkdp/bat
-alias cd="z" # https://github.com/ajeetdsouza/zoxide
 alias grep="rg" # https://github.com/BurntSushi/ripgrep
 alias vim="nvim"
 
