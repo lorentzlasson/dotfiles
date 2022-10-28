@@ -64,7 +64,7 @@ source ~/.sh_functions
 source ~/.fzf.zsh
 
 # set vim as default editor
-export VISUAL=nvim.appimage
+export VISUAL=nvim
 export EDITOR="$VISUAL"
 
 export NVM_DIR="$HOME/.nvm"
