@@ -11,6 +11,7 @@ alias relsh="exec $SHELL"
 alias bat="batcat" # https://github.com/sharkdp/bat
 alias grep="rg" # https://github.com/BurntSushi/ripgrep
 alias vim="nvim" # https://github.com/neovim/neovim
+alias ls="exa" # https://github.com/neovim/neovim
 
 alias python=python3
 alias pip=pip3
