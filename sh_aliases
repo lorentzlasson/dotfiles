@@ -10,7 +10,7 @@ alias relsh="exec $SHELL"
 # drop-in upgrades
 alias bat="batcat" # https://github.com/sharkdp/bat
 alias grep="rg" # https://github.com/BurntSushi/ripgrep
-alias vim="nvim"
+alias vim="nvim" # https://github.com/neovim/neovim
 
 alias python=python3
 alias pip=pip3
