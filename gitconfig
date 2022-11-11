@@ -17,7 +17,7 @@
   c = commit
   ca = commit --amend
   cane = commit --amend --no-edit
-  cb = checkout -b
+  cb = switch --create
   cf = commit --fixup
   cl = clean -d --force
   cm = commit --message
@@ -32,7 +32,7 @@
   logp = "log --color=always --graph --pretty=format:'%C(yellow)%h%Creset%C(cyan)%d%Creset %C(white bold)%s%Creset %C(white dim)(by %an %ar)%Creset' --all"
   logrelease = log --pretty=format:'%n_______ %h _______%n%b' --grep='---' origin/master..origin/develop
   logs = "log --pretty=oneline --abbrev-commit"
-  nuke = !git restore :/ && git clean -d --force
+  nuke = !git reset && git restore :/ && git clean -d --force
   p = push
   please = push --force-with-lease
   po = push --set-upstream origin HEAD
@@ -47,6 +47,7 @@
   reset-to-remote = !git fetch && git reset --hard @{upstream}
   restp = restore -p .
   rl = reset HEAD~
+  s = switch
   spluff = !git stash && git fetch && git rebase && git push && git stash pop
   st = status
   syncignore = !git rm -r --cached . && git add .
