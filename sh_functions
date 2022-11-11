@@ -21,6 +21,10 @@ gitcheckout() {
 # RENAME ALL CONTENT
 # find src -type f | xargs sed -i 's/<OLD_NAME>/<NEW_NAME>/g'
 
+publicip() {
+  curl https://ipinfo.io/ip
+}
+
 gitpr() {
     MAIN_BRANCH=`git remote show origin | grep "HEAD branch" | sed 's/.*: //'`
     BRANCH_NAME=`git symbolic-ref -q HEAD | sed 's/.*\///'`
