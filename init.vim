@@ -28,6 +28,7 @@ set cursorcolumn cursorline " highlight column and row
 set ruler " display column number
 set hidden " allow unsaved buffers
 set nofoldenable " disable folding
+set nofixendofline " don't auto insert newline at end of file on save
 
 set clipboard+=unnamedplus " connect to system clipboard (linux)
 syntax enable " enable syntax highlighting

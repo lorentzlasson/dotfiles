@@ -9,8 +9,8 @@
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
 
-# TODO: link pgcli to ~/.config/pgcli/config
-files="vimrc gitconfig inputrc sh_aliases sh_functions zshrc pgcli_conf tmux.conf alacritty.yml"    # list of files/folders to symlink in homedir
+# list of files/folders to symlink in homedir
+files="gitconfig inputrc sh_aliases sh_functions zshrc pgcli_conf tmux.conf alacritty.yml"
 
 ##########
 
@@ -31,3 +31,8 @@ for file in $files; do
     echo "Creating symlink to $file in home directory."
     ln -s "$dir"/"$file" ~/."$file"
 done
+
+# TODO: add to list
+ln -s ~/dotfiles/init.vim ~/.config/nvim/init.vim
+ln -s ~/dotfiles/pgcli_conf ~/.config/pgcli/config
+ln -s ~/dotfiles/coc-settings.json ~/.config/nvim/coc-settings.json
