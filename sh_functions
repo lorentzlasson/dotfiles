@@ -13,12 +13,13 @@ gitcheckout() {
   git remote show origin | grep "HEAD branch" | sed 's/.*: //' | xargs -I '{}' git checkout -b $1 '{}'
 }
 
-# RENAME ALL PATHS (might need to run multiple times)
-# https://stackoverflow.com/a/16541670/1859989
-# find . -iname "*<OLD_NAME>*" -exec rename 's/<OLD_NAME>/<NEW_NAME>/' '{}' \;
+# RENAME
+# PATHS
+# sudo apt install rename
+# rename -n 's@foo@bar@gi' **/*foo*/
+# rename 's@foo@bar@gi' **/*foo*/
 
-
-# RENAME ALL CONTENT
+# CONTENT
 # find src -type f | xargs sed -i 's/<OLD_NAME>/<NEW_NAME>/g'
 
 publicip() {
