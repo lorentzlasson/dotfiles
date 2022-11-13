@@ -145,7 +145,8 @@ endfunction
 nnoremap <expr> A IndentWithA()
 
 " COC
-let g:coc_global_extensions = ['coc-tsserver', 'coc-prettier', 'coc-eslint', 'coc-highlight']
+" Auto-installs extensions if they don't exist
+let g:coc_global_extensions = ['coc-tsserver', 'coc-prettier', 'coc-eslint', 'coc-highlight', 'coc-deno']
 
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
