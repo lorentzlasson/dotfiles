@@ -1,7 +1,6 @@
 
 call plug#begin('~/.vim/plugged')
 Plug 'AndrewRadev/splitjoin.vim' " gS ang gJ to swap between single and multi line blocks
-Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'ayu-theme/ayu-vim' " colorscheme
 Plug 'godlygeek/tabular' " :Tabulerize/{pattern}
 Plug 'gregsexton/MatchTag' " highlight matching html tag
@@ -9,7 +8,8 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' } " fuzzy file finder
 Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'preservim/nerdtree'
+Plug 'nvim-tree/nvim-tree.lua'
+Plug 'nvim-tree/nvim-web-devicons' " optional, for file icons
 Plug 'tomtom/tcomment_vim' " Commenting conveniences, e.g. gcc to comment line
 Plug 'tpope/vim-abolish' " Misc string formating, e.g. SnakeCase to keba-case
 Plug 'tpope/vim-endwise' " Auto close blocks
@@ -87,14 +87,10 @@ autocmd FocusGained,BufEnter * :silent! !  " auto read from file when gaining fo
 " set leader to space
 let mapleader = "\<Space>"
 
-" nerd tree
-let g:NERDTreeChDirMode=3 " follow current dir
-let NERDTreeShowHidden=1
-autocmd BufWinEnter * NERDTreeMirror " Keep toggling in sync
-nnoremap <C-n> :NERDTreeToggle<cr>
-nnoremap <leader>nf :NERDTreeFind<cr>
-
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" Nvim Tree
+lua require('mod-nvim-tree')
+nnoremap <C-n> :NvimTreeToggle<cr>
+nnoremap <leader>nf :NvimTreeFindFile<cr>
 
 let g:fzf_history_dir = '~/.local/share/fzf-history'
 " file name search for files in git
