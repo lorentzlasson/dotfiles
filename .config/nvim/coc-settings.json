@@ -1,10 +1,11 @@
 {
-  "MUTED.coc.preferences.formatOnSaveFiletypes": ["javascript", "typescript"],
   "coc.preferences.formatOnSaveFiletypes": [
     "css",
     "markdown",
     "json",
-    "typscriptreact"
+    "typscriptreact",
+    "javascript",
+    "typescript"
   ],
   "typescript.suggest.autoImports": true,
   "javascript.suggestionActions.enabled": false,
