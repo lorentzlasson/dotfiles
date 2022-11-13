@@ -1,9 +1,17 @@
 {
+  "languageserver": {
+    "elmLS": {
+      "command": "elm-language-server",
+      "filetypes": ["elm"],
+      "rootPatterns": ["elm.json"]
+    }
+  },
   "coc.preferences.formatOnSaveFiletypes": [
     "css",
     "markdown",
     "json",
     "typscriptreact",
+    "elm",
     "javascript",
     "typescript"
   ],
