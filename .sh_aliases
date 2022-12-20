@@ -2,7 +2,7 @@
 # open config
 alias otc="vim ~/.tmux.conf"
 alias ozsh="vim ~/.zshrc"
-alias ovrc="vim ~/.vimrc"
+alias ovrc="vim ~/.config/nvim/init.vim"
 
 # reload config
 alias relsh="exec $SHELL"
