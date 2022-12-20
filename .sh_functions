@@ -22,6 +22,10 @@ gitcheckout() {
 # CONTENT
 # find src -type f | xargs sed -i 's/<OLD_NAME>/<NEW_NAME>/g'
 
+process_using_port() {
+  lsof -i :$1
+}
+
 publicip() {
   curl https://ipinfo.io/ip
 }
