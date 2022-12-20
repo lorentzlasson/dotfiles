@@ -142,7 +142,8 @@ nnoremap <expr> A IndentWithA()
 
 " COC
 " Auto-installs extensions if they don't exist
-let g:coc_global_extensions = ['coc-tsserver', 'coc-prettier', 'coc-eslint', 'coc-highlight', 'coc-deno']
+let g:coc_global_extensions = ['coc-tsserver', 'coc-prettier', 'coc-eslint', 'coc-highlight', 'coc-deno', 'coc-yaml', 'coc-json', 'coc-sh', 'coc-clangd']
+" And install clangd lsp: :CocCommand clangd.install
 
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
