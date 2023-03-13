@@ -51,8 +51,10 @@
   s = switch
   spluff = !git stash && git fetch && git rebase && git push && git stash pop
   st = status
+  stashm = stash push -m
   syncignore = !git rm -r --cached . && git add .
   testci = !git add . && git commit --message '🚧 CI'
+  unstash = "!f() { git stash apply stash^{/$1}; }; f"
   wip = !git add . && git commit --message '🚧\n\n[skip ci]'
 [filter "gitignore"]
   clean = sed '/gitignore/d'
