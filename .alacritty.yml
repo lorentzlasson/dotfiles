@@ -5,4 +5,8 @@ shell:
     - -c
     - "tmux"
 window:
-  startup_mode: Maximized
+  # startup_mode: Maximized
+  # https://github.com/alacritty/alacritty/issues/6397#issuecomment-1375552591
+  dimensions:
+    columns: 240
+    lines: 160
