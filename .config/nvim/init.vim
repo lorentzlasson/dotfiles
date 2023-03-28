@@ -2,6 +2,7 @@
 call plug#begin('~/.vim/plugged')
 Plug 'AndrewRadev/splitjoin.vim' " gS ang gJ to swap between single and multi line blocks
 Plug 'ayu-theme/ayu-vim' " colorscheme
+Plug 'github/copilot.vim'
 Plug 'godlygeek/tabular' " :Tabulerize/{pattern}
 Plug 'gregsexton/MatchTag' " highlight matching html tag
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']} " :MarkdownPreview
