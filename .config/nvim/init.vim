@@ -125,7 +125,7 @@ nnoremap <leader><leader> 1<C-w>w
 nnoremap <leader>> 20<C-w>>
 nnoremap <leader>< 20<C-w><
 
-:ca rel source $MYVIMCONFIG " reload vim config
+:ca rel source $MYVIMRC " reload vim config
 :ca cpp let @+ = expand("%") " path for open file to clipboard
 
 " insert messages into current buffer
