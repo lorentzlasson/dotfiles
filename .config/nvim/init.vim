@@ -148,6 +148,9 @@ let g:coc_global_extensions = ['coc-tsserver', 'coc-prettier', 'coc-eslint', 'co
 "
 " To enable deno instead of ts: :CocCommand deno.initializeWorkspace
 
+" TODO: terraform LSP
+" https://github.com/hashicorp/terraform-ls/blob/main/docs/USAGE.md#cocnvim
+
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
