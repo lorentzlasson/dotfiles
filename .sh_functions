@@ -30,6 +30,13 @@ publicip() {
   curl https://ipinfo.io/ip
 }
 
+gitpullfilefromlastcommit() {
+  msg=$(git log -1 --pretty=%B)
+  git reset --soft HEAD~
+  git reset $1
+  git commit --message "$msg"
+}
+
 gitpr() {
     MAIN_BRANCH=`git remote show origin | grep "HEAD branch" | sed 's/.*: //'`
     BRANCH_NAME=`git symbolic-ref -q HEAD | sed 's/.*\///'`
