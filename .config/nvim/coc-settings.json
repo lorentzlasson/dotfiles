@@ -13,7 +13,8 @@
     "typscriptreact",
     "elm",
     "javascript",
-    "typescript"
+    "typescript",
+    "typescriptreact"
   ],
   "typescript.suggest.autoImports": true,
   "javascript.suggestionActions.enabled": false,
