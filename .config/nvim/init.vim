@@ -143,7 +143,18 @@ nnoremap <expr> A IndentWithA()
 
 " COC
 " Auto-installs extensions if they don't exist
-let g:coc_global_extensions = ['coc-tsserver', 'coc-prettier', 'coc-eslint', 'coc-deno', 'coc-yaml', 'coc-json', 'coc-sh', 'coc-clangd', 'coc-jedi']
+let g:coc_global_extensions = [
+\'coc-clangd',
+\'coc-deno',
+\'coc-eslint',
+\'coc-go',
+\'coc-jedi',
+\'coc-json',
+\'coc-prettier',
+\'coc-sh',
+\'coc-tsserver',
+\'coc-yaml',
+\]
 " And install clangd lsp: :CocCommand clangd.install
 "
 " To enable deno instead of ts: :CocCommand deno.initializeWorkspace

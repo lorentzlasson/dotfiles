@@ -14,7 +14,8 @@
     "elm",
     "javascript",
     "typescript",
-    "typescriptreact"
+    "typescriptreact",
+    "go"
   ],
   "typescript.suggest.autoImports": true,
   "javascript.suggestionActions.enabled": false,
