@@ -93,7 +93,7 @@ enable_pager = True
 
 # Choose a specific pager
 # pager = 'vim -'
-pager = 'less'
+pager = 'less -S'
 
 # Custom colors for the completion menu, toolbar, etc.
 [colors]
