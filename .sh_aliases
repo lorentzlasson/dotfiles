@@ -12,7 +12,7 @@ alias bat="batcat" # https://github.com/sharkdp/bat
 # alias cd="z" # https://github.com/ajeetdsouza/zoxide
 alias grep="rg" # https://github.com/BurntSushi/ripgrep
 alias vim="nvim" # https://github.com/neovim/neovim
-alias ls="exa" # https://github.com/neovim/neovim
+alias ls="exa -1" # https://github.com/neovim/neovim
 
 alias python=python3
 alias pip=pip3
