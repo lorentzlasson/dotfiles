@@ -171,4 +171,7 @@ nmap <silent> gh :call CocActionAsync('doHover')<CR>
 
 nmap <leader>rn <Plug>(coc-rename)
 
+nmap <silent> [g <Plug>(coc-diagnostic-prev-error)
+nmap <silent> ]g <Plug>(coc-diagnostic-next-error)
+
 :cabbrev tsfix :call CocActionAsync('runCommand', 'tsserver.executeAutofix')<CR>
