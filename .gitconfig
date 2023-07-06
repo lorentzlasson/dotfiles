@@ -22,7 +22,7 @@
   cf = commit --fixup
   cl = clean -d --force
   cm = commit --message
-  co = switch
+  co = "!echo use git s"
   cp = cherry-pick
   d = diff
   delete-remote-branch = push origin -d
@@ -49,6 +49,7 @@
   restp = restore -p .
   rl = reset HEAD~
   s = switch
+  sd = switch --detach
   spluff = !git stash && git fetch && git rebase && git push && git stash pop
   st = status
   stashm = stash push -m
