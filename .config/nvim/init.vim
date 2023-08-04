@@ -94,6 +94,9 @@ lua require('mod-nvim-tree')
 nnoremap <C-n> :NvimTreeToggle<cr>
 nnoremap <leader>nf :NvimTreeFindFile<cr>
 
+" force reload from file
+nnoremap <leader>e :edit!<cr>
+
 let g:fzf_history_dir = '~/.local/share/fzf-history'
 " file name search for files in git
 nnoremap <C-f> :GFiles<cr>
