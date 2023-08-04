@@ -46,6 +46,7 @@ set nowb
 set list
 set listchars=tab:>- " visualize tabs
 set tabstop=2 softtabstop=0 expandtab shiftwidth=2 smarttab " spaces
+autocmd FileType go setlocal noexpandtab " use tabs for golang
 
 " folds
 set foldmethod=indent "fold based on indent
