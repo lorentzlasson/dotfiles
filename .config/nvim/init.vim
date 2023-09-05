@@ -115,6 +115,9 @@ nnoremap <Enter> o<Esc>
 " skip newline when jumping to end of line in visual mode
 vnoremap $ $h
 
+" prevent paste from yanking what is replaced
+xnoremap p P
+
 " shift + Y copies remainder of line (similar to C and D)
 nmap <S-y> v$y<ESC>
 " copy and search for selection
