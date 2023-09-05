@@ -55,6 +55,7 @@
   stashm = stash push -m
   syncignore = !git rm -r --cached . && git add .
   testci = !git add . && git commit --message '🚧 CI'
+  todo-update = !git add :/TODO.md && git commit --message 'Update TODO'
   unstash = "!f() { git stash apply stash^{/$1}; }; f"
   wip = !git add . && git commit --message '🚧\n\n[skip ci]'
 [filter "gitignore"]
