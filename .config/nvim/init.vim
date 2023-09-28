@@ -138,6 +138,23 @@ nnoremap <leader>< 20<C-w><
 :ca rel source $MYVIMRC " reload vim config
 :ca cpp let @+ = expand("%") " path for open file to clipboard
 
+:ca pp let @+ = expand("%") " path for open file to clipboard
+
+" Define a function that creates the file
+function! CreateTxtFile(name)
+  if a:name == ''
+    let l:timestamp = strftime('%Y%m%d%H%M%S')
+    let l:filename = l:timestamp . '.txt'
+  else
+    let l:filename = a:name . '.txt'
+  endif
+  execute 'e ' . l:filename
+  write
+endfunction
+
+" Define the command that calls the function
+command! -nargs=? Txt call CreateTxtFile(<q-args>)
+
 " insert messages into current buffer
 " put =execute('messages')
 
