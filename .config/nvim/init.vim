@@ -1,9 +1,9 @@
 
 call plug#begin('~/.vim/plugged')
+" Plug 'github/copilot.vim'
 Plug 'AndrewRadev/splitjoin.vim' " gS ang gJ to swap between single and multi line blocks
 Plug 'LnL7/vim-nix'
 Plug 'ayu-theme/ayu-vim' " colorscheme
-" Plug 'github/copilot.vim'
 Plug 'godlygeek/tabular' " :Tabulerize/{pattern}
 Plug 'gregsexton/MatchTag' " highlight matching html tag
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']} " :MarkdownPreview
@@ -12,6 +12,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'nvim-tree/nvim-tree.lua'
 Plug 'nvim-tree/nvim-web-devicons' " optional, for file icons
+Plug 'simrat39/symbols-outline.nvim' " in-file tree overview
 Plug 'tomtom/tcomment_vim' " Commenting conveniences, e.g. gcc to comment line
 Plug 'tpope/vim-abolish' " Misc string formating, e.g. SnakeCase to keba-case
 Plug 'tpope/vim-endwise' " Auto close blocks
@@ -182,5 +183,7 @@ nmap <leader>rn <Plug>(coc-rename)
 
 nmap <silent> [g <Plug>(coc-diagnostic-prev-error)
 nmap <silent> ]g <Plug>(coc-diagnostic-next-error)
+
+lua require('misc')
 
 :cabbrev tsfix :call CocActionAsync('runCommand', 'tsserver.executeAutofix')<CR>
