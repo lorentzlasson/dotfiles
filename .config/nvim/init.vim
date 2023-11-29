@@ -26,7 +26,8 @@ colorscheme ayu
 
 set number " display line numbers
 set wrap " continue long lines on next lines
-set linebreak "Wrap lines at convenient points
+set linebreak "wrap lines at convenient points
+set relativenumber "show relative line numbers
 set cursorcolumn cursorline " highlight column and row
 set ruler " display column number
 set hidden " allow unsaved buffers
