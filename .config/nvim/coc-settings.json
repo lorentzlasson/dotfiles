@@ -6,18 +6,12 @@
     },
     "elmLS": {
       "command": "elm-language-server",
-      "filetypes": [
-        "elm"
-      ],
-      "rootPatterns": [
-        "elm.json"
-      ]
+      "filetypes": ["elm"],
+      "rootPatterns": ["elm.json"]
     },
     "nix": {
       "command": "rnix-lsp",
-      "filetypes": [
-        "nix"
-      ]
+      "filetypes": ["nix"]
     }
   },
   "coc.preferences.formatOnSaveFiletypes": [
