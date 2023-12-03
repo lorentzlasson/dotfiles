@@ -1,5 +1,9 @@
 {
   "languageserver": {
+    "roc": {
+      "command": "roc_ls",
+      "filetypes": ["roc"]
+    },
     "elmLS": {
       "command": "elm-language-server",
       "filetypes": [
@@ -25,7 +29,8 @@
     "javascript",
     "typescript",
     "typescriptreact",
-    "go"
+    "go",
+    "roc"
   ],
   "typescript.suggest.autoImports": true,
   "javascript.suggestionActions.enabled": false,
