@@ -92,7 +92,7 @@ autocmd FocusGained,BufEnter * :silent! !  " auto read from file when gaining fo
 " Make sure .roc files have filetype roc
 " https://github.com/ayazhafiz/roc/blob/lang-srv/crates/lang_srv/README.md#cocnvim
 autocmd BufRead,BufNewFile *.roc set filetype=roc
-autocmd FileType roc setlocal syntax=elm
+autocmd FileType roc setlocal syntax=elm commentstring=#\ %s
 
 " set leader to space
 let mapleader = "\<Space>"
