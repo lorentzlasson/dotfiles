@@ -1,7 +1,7 @@
 {
   "languageserver": {
     "roc": {
-      "command": "roc_ls",
+      "command": "roc_lang_server",
       "filetypes": ["roc"]
     },
     "elmLS": {
