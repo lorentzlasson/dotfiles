@@ -103,3 +103,6 @@ require 'nvim-treesitter.configs'.setup {
     enable = true,
   },
 }
+
+-- SYMBOL OUTLINE
+require("symbols-outline").setup()
