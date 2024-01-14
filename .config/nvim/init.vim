@@ -1,6 +1,5 @@
 
 call plug#begin('~/.vim/plugged')
-" Plug 'github/copilot.vim'
 Plug 'AndrewRadev/splitjoin.vim' " gS ang gJ to swap between single and multi line blocks
 Plug 'LnL7/vim-nix'
 Plug 'ayu-theme/ayu-vim' " colorscheme
