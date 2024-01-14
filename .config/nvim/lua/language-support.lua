@@ -96,3 +96,10 @@ cmp.setup({
     ['<CR>'] = cmp.mapping.confirm({ select = true }),
   },
 })
+
+-- TREE SITTER
+require 'nvim-treesitter.configs'.setup {
+  highlight = {
+    enable = true,
+  },
+}

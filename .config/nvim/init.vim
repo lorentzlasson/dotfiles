@@ -13,6 +13,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-tree/nvim-tree.lua'
 Plug 'nvim-tree/nvim-web-devicons' " optional, for file icons
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'simrat39/symbols-outline.nvim' " in-file tree overview
 Plug 'tomtom/tcomment_vim' " Commenting conveniences, e.g. gcc to comment line
 Plug 'tpope/vim-abolish' " Misc string formating, e.g. SnakeCase to keba-case
