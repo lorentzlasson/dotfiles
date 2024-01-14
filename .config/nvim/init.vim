@@ -5,10 +5,12 @@ Plug 'LnL7/vim-nix'
 Plug 'ayu-theme/ayu-vim' " colorscheme
 Plug 'godlygeek/tabular' " :Tabulerize/{pattern}
 Plug 'gregsexton/MatchTag' " highlight matching html tag
+Plug 'hrsh7th/cmp-nvim-lsp' " LSP source for nvim-cmp
+Plug 'hrsh7th/nvim-cmp' " The main completion plugin
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']} " :MarkdownPreview
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' } " fuzzy file finder
 Plug 'junegunn/fzf.vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-tree/nvim-tree.lua'
 Plug 'nvim-tree/nvim-web-devicons' " optional, for file icons
 Plug 'simrat39/symbols-outline.nvim' " in-file tree overview
@@ -88,11 +90,6 @@ autocmd BufWritePre * if index(allow_trailing_whitespace, &ft) < 0 | %s/\s\+$//e
 
 autocmd FocusGained,BufEnter * :silent! !  " auto read from file when gaining focus
 
-" Make sure .roc files have filetype roc
-" https://github.com/ayazhafiz/roc/blob/lang-srv/crates/lang_srv/README.md#cocnvim
-autocmd BufRead,BufNewFile *.roc set filetype=roc
-autocmd FileType roc setlocal syntax=elm commentstring=#\ %s
-
 " set leader to space
 let mapleader = "\<Space>"
 
@@ -170,40 +167,5 @@ function! IndentWithA()
 endfunction
 nnoremap <expr> A IndentWithA()
 
-" COC
-" Auto-installs extensions if they don't exist
-let g:coc_global_extensions = [
-\'coc-clangd',
-\'coc-deno',
-\'coc-eslint',
-\'coc-go',
-\'coc-jedi',
-\'coc-json',
-\'coc-prettier',
-\'coc-sh',
-\'coc-solargraph',
-\'coc-tsserver',
-\'coc-yaml',
-\]
-" And install clangd lsp: :CocCommand clangd.install
-"
-" To enable deno instead of ts: :CocCommand deno.initializeWorkspace
-
-" TODO: terraform LSP
-" https://github.com/hashicorp/terraform-ls/blob/main/docs/USAGE.md#cocnvim
-
-" GoTo code navigation.
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-nmap <silent> gh :call CocActionAsync('doHover')<CR>
-
-nmap <leader>rn <Plug>(coc-rename)
-
-nmap <silent> [g <Plug>(coc-diagnostic-prev-error)
-nmap <silent> ]g <Plug>(coc-diagnostic-next-error)
-
+lua require('language-support')
 lua require('misc')
-
-:cabbrev tsfix :call CocActionAsync('runCommand', 'tsserver.executeAutofix')<CR>
