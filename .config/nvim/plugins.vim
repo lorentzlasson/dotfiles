@@ -21,5 +21,3 @@ Plug 'tpope/vim-fugitive' " Git
 Plug 'tpope/vim-rhubarb' " Github stuff, e.g. GBrowse
 Plug 'tpope/vim-surround' " insert openers/closers around selection
 call plug#end()
-
-lua require('init')

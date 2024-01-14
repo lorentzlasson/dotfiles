@@ -1,6 +1,3 @@
-require('language-support')
-require('mod-nvim-tree')
-
 -- Lua utils
 local api = vim.api
 local map = vim.api.nvim_set_keymap
@@ -8,6 +5,15 @@ local o = vim.o
 local cmd = vim.cmd
 local g = vim.g
 local fn = vim.fn
+
+-- Plugins
+-- TODO: convert to lua as well
+-- lazy.vim?
+cmd('source ~/.config/nvim/plugins.vim')
+
+-- Imports
+require('language-support')
+require('mod-nvim-tree')
 
 -- General settings
 o.termguicolors = true
