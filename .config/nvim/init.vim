@@ -140,10 +140,8 @@ nnoremap <leader><leader> 1<C-w>w
 nnoremap <leader>> 20<C-w>>
 nnoremap <leader>< 20<C-w><
 
-:ca rel source $MYVIMRC " reload vim config
-:ca cpp let @+ = expand("%") " path for open file to clipboard
-
-:ca pp let @+ = expand("%") " path for open file to clipboard
+:cabbrev rel source $MYVIMRC " reload vim config
+:cabbrev pp let @+ = expand("%") " path for open file to clipboard
 
 " Define a function that creates the file
 function! CreateTxtFile(name)
