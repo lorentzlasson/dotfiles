@@ -11,10 +11,6 @@ local fn = vim.fn
 -- lazy.vim?
 cmd('source ~/.config/nvim/plugins.vim')
 
--- Imports
-require('language-support')
-require('mod-nvim-tree')
-
 -- General settings
 o.termguicolors = true
 cmd 'colorscheme ayu'
@@ -132,3 +128,7 @@ function IndentWithA()
 end
 
 map('n', 'A', [[<cmd>lua IndentWithA()<CR>]], { noremap = true, silent = true })
+
+-- Imports
+require('language-support')
+require('mod-nvim-tree')
