@@ -129,6 +129,9 @@ end
 
 map('n', 'A', [[<cmd>lua IndentWithA()<CR>]], { noremap = true, silent = true })
 
+-- Oil
+require("oil").setup()
+
 -- Imports
 require('language-support')
 require('mod-nvim-tree')

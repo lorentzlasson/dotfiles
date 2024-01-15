@@ -14,6 +14,7 @@ Plug 'nvim-tree/nvim-tree.lua'
 Plug 'nvim-tree/nvim-web-devicons' " optional, for file icons
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'simrat39/symbols-outline.nvim' " in-file tree overview
+Plug 'stevearc/oil.nvim'
 Plug 'tomtom/tcomment_vim' " Commenting conveniences, e.g. gcc to comment line
 Plug 'tpope/vim-abolish' " Misc string formating, e.g. SnakeCase to keba-case
 Plug 'tpope/vim-endwise' " Auto close blocks
