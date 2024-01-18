@@ -106,8 +106,17 @@ map('n', '<leader><', '20<C-w><', { noremap = true })
 
 cmd [[
   cabbrev rel source $MYVIMRC
-  cabbrev pp let @+ = expand("%")
+  cabbrev pp echo "use yn instead"
 ]]
+
+function CopyFilenameToClipboard()
+  vim.fn.setreg('+', vim.fn.expand('%'))
+end
+
+map('n', 'yp', ':lua CopyFilenameToClipboard()<CR>', {
+  noremap = true,
+  silent = false,
+})
 
 -- Define a function and command for creating txt files
 api.nvim_create_user_command('Txt', function(opts)
