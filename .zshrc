@@ -1,5 +1,5 @@
 # enable colors and change prompt
-autoload -U colors && colors
+autoload -Uz colors && colors
 PS1="%B%F{32}%*%f %b%~ $ "
 # PS1="%B%F{32}%*%f%b ${PWD/*\//} $ " # do something about deep paths
 
@@ -12,7 +12,7 @@ setopt HIST_IGNORE_DUPS
 setopt EXTENDED_HISTORY
 
 # basic auto/tab complete
-autoload -U compinit
+autoload -Uz compinit
 zstyle ':completion:*' menu select
   zmodload zsh/complist
   compinit
@@ -36,7 +36,8 @@ bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
 
 # edit line in vim with ctrl-e:
-autoload edit-command-line; zle -N edit-command-line
+autoload -Uz edit-command-line
+zle -N edit-command-line
 bindkey '^e' edit-command-line
 
 # search history with ctrl-r
