@@ -45,15 +45,15 @@ end
 
 -- SERVERS WITH SPECIAL CONFIG
 
-lspconfig.lua_ls.setup {
-  settings = {
-    Lua = {
-      diagnostics = {
-        globals = { 'vim' }
-      }
-    }
-  }
-}
+-- lspconfig.lua_ls.setup {
+--   settings = {
+--     Lua = {
+--       diagnostics = {
+--         globals = { 'vim' }
+--       }
+--     }
+--   }
+-- }
 
 -- GENERAL KEY MAPPINGS
 vim.api.nvim_create_autocmd('LspAttach', {
@@ -97,12 +97,12 @@ cmp.setup({
   },
 })
 
--- TREE SITTER
-require 'nvim-treesitter.configs'.setup {
-  highlight = {
-    enable = true,
-  },
-}
+-- -- TREE SITTER
+-- require 'nvim-treesitter.configs'.setup {
+--   highlight = {
+--     enable = true,
+--   },
+-- }
 
 -- SYMBOL OUTLINE
 require("symbols-outline").setup()
