@@ -64,6 +64,13 @@ gitpr() {
     echo "PR for $BRANCH_NAME created"
 }
 
-# delete local and remote tag
+# https://unix.stackexchange.com/a/112284
+# Edit the /etc/default/grub and replace GRUB_DEFAULT=0 with GRUB_DEFAULT=saved
+# sudo update-grub
+rbwin ()
+{
+    windows_title=$(grep -i windows /boot/grub/grub.cfg | cut -d "'" -f 2)
+    sudo grub-reboot "$windows_title" && sudo reboot
+}
 
 export PATH=$PATH:node_modules/.bin
