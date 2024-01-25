@@ -21,4 +21,5 @@ Plug 'tpope/vim-endwise' " Auto close blocks
 Plug 'tpope/vim-fugitive' " Git
 Plug 'tpope/vim-rhubarb' " Github stuff, e.g. GBrowse
 Plug 'tpope/vim-surround' " insert openers/closers around selection
+Plug 'zbirenbaum/copilot.lua' " unofficial copilot plugin
 call plug#end()

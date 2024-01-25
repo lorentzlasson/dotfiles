@@ -138,8 +138,9 @@ end
 
 map('n', 'A', [[<cmd>lua IndentWithA()<CR>]], { noremap = true, silent = true })
 
--- Oil
+-- Plugin inits
 require("oil").setup()
+require('copilot').setup()
 
 -- Imports
 require('language-support')
