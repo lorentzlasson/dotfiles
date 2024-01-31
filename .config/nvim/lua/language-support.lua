@@ -33,6 +33,7 @@ local servers = {
   "gopls",
   "jsonls",
   "nil_ls",
+  "pyright",
   "rocls",
   "solargraph",
   "tsserver",
