@@ -8,7 +8,7 @@ HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.cache/zsh/history
 setopt INC_APPEND_HISTORY
-setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_ALL_DUPS
 setopt EXTENDED_HISTORY
 
 # basic auto/tab complete
