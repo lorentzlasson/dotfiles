@@ -138,6 +138,15 @@ end
 
 map('n', 'A', [[<cmd>lua IndentWithA()<CR>]], { noremap = true, silent = true })
 
+-- Allow :GBrowse to work
+vim.api.nvim_create_user_command(
+  'Browse',
+  function (opts)
+    vim.fn.system { 'open', opts.fargs[1] }
+  end,
+  { nargs = 1 }
+)
+
 -- Plugin inits
 require("oil").setup()
 require('copilot').setup()
