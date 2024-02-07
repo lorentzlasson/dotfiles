@@ -72,7 +72,7 @@ export PATH=~/.local/bin:$PATH
 
 export PATH=~/.npm-global/bin:$PATH
 # add current node bin to path
-# export PATH=$PATH:node_modules/.bin
+export PATH=$PATH:node_modules/.bin
 
 export DENO_INSTALL="/home/lorentz/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
