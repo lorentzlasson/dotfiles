@@ -30,6 +30,17 @@ setopt INC_APPEND_HISTORY
 setopt HIST_IGNORE_ALL_DUPS
 setopt EXTENDED_HISTORY
 
+clear_and_git_status() {
+  clear
+  if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+    git status
+  fi
+  precmd
+  zle reset-prompt
+}
+zle -N clear_and_git_status
+bindkey '^L' clear_and_git_status
+
 # basic auto/tab complete
 autoload -Uz compinit
 zstyle ':completion:*' menu select
