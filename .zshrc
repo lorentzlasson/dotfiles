@@ -1,7 +1,26 @@
 # enable colors and change prompt
 autoload -Uz colors && colors
-PS1="%B%F{32}%*%f %b%~ $ "
-# PS1="%B%F{32}%*%f%b ${PWD/*\//} $ " # do something about deep paths
+
+PS1="$ "
+
+precmd() {
+  local blue="\033[0;34m"
+  local no_color="\033[0m"
+  local current_dir="${PWD##*/}"
+  local git_branch=$(git branch --show-current 2>/dev/null)
+  local timestamp=$(date +"%H:%M:%S")
+  local base="${blue}${timestamp}${no_color} ${current_dir}"
+
+  if [ -n "$git_branch" ]; then
+    echo -e "${base} 🌿 ${git_branch}"
+  else
+    echo -e "${base}"
+  fi
+}
+
+silence() {
+  unset -f precmd
+}
 
 # history in cache directory
 HISTSIZE=10000
