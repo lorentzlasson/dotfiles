@@ -147,9 +147,14 @@ vim.api.nvim_create_user_command(
   { nargs = 1 }
 )
 
+-- Icon picker
+local opts = { noremap = true, silent = true }
+vim.keymap.set("n", "<Leader><Leader>i", "<cmd>IconPickerNormal emoji<cr>", opts)
+
 -- Plugin inits
 require("oil").setup()
 require('copilot').setup()
+require("icon-picker").setup({ disable_legacy_commands = true })
 
 -- Imports
 require('language-support')
