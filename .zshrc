@@ -33,9 +33,9 @@ setopt EXTENDED_HISTORY
 # basic auto/tab complete
 autoload -Uz compinit
 zstyle ':completion:*' menu select
-  zmodload zsh/complist
-  compinit
-  _comp_options+=(globdots) # include hidden files.
+zmodload zsh/complist
+compinit
+_comp_options+=(globdots) # include hidden files.
 
 # globbing
 setopt extended_glob
