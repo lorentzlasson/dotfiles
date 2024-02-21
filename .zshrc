@@ -35,7 +35,7 @@ autoload -Uz compinit
 zstyle ':completion:*' menu select
 zmodload zsh/complist
 compinit
-_comp_options+=(globdots) # include hidden files.
+setopt GLOBDOTS # include hidden files.
 
 # globbing
 setopt extended_glob
