@@ -35,7 +35,6 @@ local servers = {
   "pyright",
   "rocls",
   "solargraph",
-  "tsserver",
   "yamlls",
 }
 
@@ -43,12 +42,23 @@ for _, server in ipairs(servers) do
   lspconfig[server].setup {}
 end
 
+-- SERVERS WITH SPECIAL CONFIG
+
 lspconfig.denols.setup {
-  on_attach = on_attach,
   root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc"),
 }
 
--- SERVERS WITH SPECIAL CONFIG
+lspconfig.tsserver.setup {
+  root_dir = function (filename, bufnr)
+    local denoRootDir = lspconfig.util.root_pattern("deno.json", "deno.json")(filename);
+    if denoRootDir then
+      return nil;
+    end
+
+    return lspconfig.util.root_pattern("package.json")(filename);
+  end,
+  single_file_support = false,
+}
 
 -- lspconfig.lua_ls.setup {
 --   settings = {
