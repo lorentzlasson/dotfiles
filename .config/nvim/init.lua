@@ -83,9 +83,9 @@ map('n', '<leader>e', ':edit!<CR>', { noremap = true })
 
 -- FZF configuration
 g.fzf_history_dir = '~/.local/share/fzf-history'
-map('n', '<C-f>', ':GFiles<CR>', { noremap = true })
+map('n', '<C-f>', ':FzfLua files<CR>', { noremap = true })
 map('n', '<C-A-f>', ':Files<CR>', { noremap = true })
-map('n', '<M-f>', ':Rg<CR>', { noremap = true })
+map('n', '<M-f>', ':FzfLua live_grep<CR>', { noremap = true })
 map('n', '<M-a>', 'gg<S-V>G', { noremap = true })
 
 -- Enter mappings
@@ -155,6 +155,7 @@ vim.keymap.set("n", "<Leader><Leader>i", "<cmd>IconPickerNormal emoji<cr>", opts
 require("oil").setup()
 require('copilot').setup()
 require("icon-picker").setup({ disable_legacy_commands = true })
+require('fzf-lua').setup({'default'})
 
 -- Imports
 require('language-support')

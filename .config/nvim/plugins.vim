@@ -8,7 +8,7 @@ Plug 'hrsh7th/cmp-nvim-lsp' " LSP source for nvim-cmp
 Plug 'hrsh7th/nvim-cmp' " The main completion plugin
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']} " :MarkdownPreview
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' } " fuzzy file finder
-Plug 'junegunn/fzf.vim'
+Plug 'ibhagwan/fzf-lua'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-tree/nvim-tree.lua'
 Plug 'nvim-tree/nvim-web-devicons' " optional, for file icons
