@@ -89,8 +89,8 @@ map('n', '<M-f>', ':Rg<CR>', { noremap = true })
 map('n', '<M-a>', 'gg<S-V>G', { noremap = true })
 
 -- Enter mappings
-map('n', '<M-Enter>', 'O<Esc>', { noremap = true })
-map('n', '<Enter>', 'o<Esc>', { noremap = true })
+-- map('n', '<C-Enter>', 'O<Esc>', { noremap = true })
+-- map('n', '<Enter>', 'o<Esc>', { noremap = true })
 
 -- More mappings
 map('v', '$', '$h', { noremap = true })
