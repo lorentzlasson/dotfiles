@@ -82,12 +82,17 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
     vim.keymap.set('n', 'gh', vim.lsp.buf.hover, opts)
+    vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, opts)
     vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
     vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
 
     vim.keymap.set('n', '[g', vim.diagnostic.goto_prev, opts)
     vim.keymap.set('n', ']g', vim.diagnostic.goto_next, opts)
   end,
+})
+
+vim.diagnostic.config({
+  virtual_text = false, -- Disable inline text
 })
 
 vim.api.nvim_create_augroup('AutoFormatting', {})
