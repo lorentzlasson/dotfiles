@@ -84,6 +84,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', 'gh', vim.lsp.buf.hover, opts)
     vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float, opts)
     vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
+    vim.keymap.set('n', '<leader>f', vim.lsp.buf.format, opts)
     vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, opts)
 
     vim.keymap.set('n', '[g', vim.diagnostic.goto_prev, opts)
@@ -95,13 +96,6 @@ vim.diagnostic.config({
   virtual_text = false, -- Disable inline text
 })
 
-vim.api.nvim_create_augroup('AutoFormatting', {})
-vim.api.nvim_create_autocmd('BufWritePre', {
-  group = 'AutoFormatting',
-  callback = function()
-    vim.lsp.buf.format()
-  end,
-})
 
 -- AUTO COMPLETE
 local cmp = require('cmp')
