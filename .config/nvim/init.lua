@@ -84,7 +84,7 @@ map('n', '<leader>e', ':edit!<CR>', { noremap = true })
 -- FZF configuration
 g.fzf_history_dir = '~/.local/share/fzf-history'
 map('n', '<C-f>', ':FzfLua files<CR>', { noremap = true })
-map('n', '<C-A-f>', ':Files<CR>', { noremap = true })
+map('n', '<C-A-f>', ':FzfLua oldfiles<CR>', { noremap = true })
 map('n', '<M-f>', ':FzfLua live_grep<CR>', { noremap = true })
 map('n', '<M-a>', 'gg<S-V>G', { noremap = true })
 
