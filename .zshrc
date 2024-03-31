@@ -110,6 +110,11 @@ export PATH="$DENO_INSTALL/bin:$PATH"
 # go
 export PATH="/usr/local/go/bin:$PATH"
 
+if [ -z "$TMUX" ]
+then
+    tmux attach -t $TMUX || tmux
+fi
+
 # cd on steroids https://github.com/ajeetdsouza/zoxide
 if command -v zoxide &> /dev/null; then
   eval "$(zoxide init zsh)"

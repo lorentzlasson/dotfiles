@@ -1,6 +1,2 @@
-[shell]
-args = ["-l", "-c", "tmux"]
-program = "/bin/bash"
-
 [window]
 startup_mode = "Maximized"
