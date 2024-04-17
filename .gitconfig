@@ -25,7 +25,7 @@
   co = "!echo use git s"
   cp = cherry-pick
   d = diff
-  delete-remote-branch = push origin -d
+  deleteremotebranch = push origin -d
   dstaged = diff --staged
   fe = fetch
   fixup = "!f() { git commit --fixup=$1 && git -c sequence.editor=: rebase --interactive --autosquash $1~2; }; f"
@@ -37,7 +37,7 @@
   p = push
   please = push --force-with-lease
   po = push --set-upstream origin HEAD
-  prune-remote = remote update origin --prune
+  pruneremote = remote update origin --prune
   r = reset
   rb = rebase
   rbc = !git add . && git rebase --continue
@@ -45,7 +45,7 @@
   rbilast = "!f() { git rebase --interactive HEAD~$1; }; f"
   rbo = rebase --onto
   rbremote = !git fetch && git rebase origin/HEAD
-  reset-to-remote = !git fetch && git reset --hard @{upstream}
+  resettoremote = !git fetch && git reset --hard @{upstream}
   restp = restore -p .
   rl = reset HEAD~
   s = switch
@@ -55,7 +55,7 @@
   stashm = stash push -m
   syncignore = !git rm -r --cached . && git add .
   testci = !git add . && git commit --message '🚧 CI'
-  todo-update = !git add :/TODO.md && git commit --message 'Update TODO'
+  todoupdate = !git add :/TODO.md && git commit --message 'Update TODO'
   unstash = "!f() { git stash apply stash^{/$1}; }; f"
   uncommit = "!f() { git reset HEAD~ -- $1 && git commit --amend --no-edit; }; f"
   wip = !git add . && git commit --message '🚧\n\n[skip ci]'
