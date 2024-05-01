@@ -153,7 +153,6 @@ vim.keymap.set("n", "<Leader><Leader>i", "<cmd>IconPickerNormal emoji<cr>", opts
 
 -- Plugin inits
 require("oil").setup()
-require('copilot').setup()
 require("icon-picker").setup({ disable_legacy_commands = true })
 require('fzf-lua').setup({'default'})
 
