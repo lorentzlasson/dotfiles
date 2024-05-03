@@ -13,6 +13,15 @@
       ];
     };
 
+    nixosConfigurations.xps13 = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = [
+        ./xps13/hardware-configuration.nix
+        ./xps13/configuration.nix
+        ./configuration.nix
+      ];
+    };
+
     nixosConfigurations.asus = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
