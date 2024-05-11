@@ -17,7 +17,7 @@ vim.api.nvim_create_autocmd("FileType", {
 
 require('lspconfig.configs').rocls = {
   default_config = {
-    cmd = { "roc_lang_server" },
+    cmd = { "roc_language_server" },
     filetypes = { 'roc' },
     root_dir = lspconfig.util.root_pattern(".git"),
     settings = {},
