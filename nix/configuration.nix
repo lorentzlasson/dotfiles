@@ -162,6 +162,7 @@
     file
     gptfdisk
     jq
+    nerdfonts
     nil
     nodePackages_latest.bash-language-server
     nodePackages_latest.typescript-language-server
