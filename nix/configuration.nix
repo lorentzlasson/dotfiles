@@ -161,6 +161,7 @@
     eza
     file
     gptfdisk
+    graphite-cli
     jq
     nerdfonts
     nil
