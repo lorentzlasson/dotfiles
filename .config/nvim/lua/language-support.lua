@@ -49,7 +49,7 @@ lspconfig.denols.setup {
 }
 
 lspconfig.tsserver.setup {
-  root_dir = function (filename, bufnr)
+  root_dir = function(filename)
     local denoRootDir = lspconfig.util.root_pattern("deno.json", "deno.json")(filename);
     if denoRootDir then
       return nil;
@@ -60,15 +60,15 @@ lspconfig.tsserver.setup {
   single_file_support = false,
 }
 
--- lspconfig.lua_ls.setup {
---   settings = {
---     Lua = {
---       diagnostics = {
---         globals = { 'vim' }
---       }
---     }
---   }
--- }
+lspconfig.lua_ls.setup {
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = { 'vim' }
+      }
+    }
+  }
+}
 
 -- GENERAL KEY MAPPINGS
 vim.api.nvim_create_autocmd('LspAttach', {

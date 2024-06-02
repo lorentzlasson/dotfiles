@@ -164,6 +164,7 @@
     gptfdisk
     graphite-cli
     jq
+    lua-language-server
     nerdfonts
     nil
     nodePackages_latest.bash-language-server
