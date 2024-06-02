@@ -121,20 +121,9 @@ cmp.setup({
 })
 
 require 'nvim-treesitter.configs'.setup {
-  ensure_installed = {
-    "c",
-    "gleam",
-    "lua",
-    "query",
-    "roc",
-    "typescript",
-    "vim",
-    "vimdoc",
-  },
-
+  ensure_installed = "all",
   sync_install = false,
   auto_install = true,
-  ignore_install = { "javascript" },
 
   highlight = {
     enable = true,
