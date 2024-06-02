@@ -126,9 +126,9 @@ require 'nvim-treesitter.configs'.setup {
     "gleam",
     "lua",
     "query",
+    "roc",
     "vim",
     "vimdoc",
-    "roc",
   },
 
   sync_install = false,
