@@ -10,7 +10,6 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "roc",
   callback = function()
-    vim.bo.syntax = "elm"
     vim.bo.commentstring = "# %s"
   end
 })
@@ -127,6 +126,7 @@ require 'nvim-treesitter.configs'.setup {
     "query",
     "vim",
     "vimdoc",
+    "roc",
   },
 
   sync_install = false,
