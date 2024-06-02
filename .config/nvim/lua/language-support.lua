@@ -127,6 +127,7 @@ require 'nvim-treesitter.configs'.setup {
     "lua",
     "query",
     "roc",
+    "typescript",
     "vim",
     "vimdoc",
   },

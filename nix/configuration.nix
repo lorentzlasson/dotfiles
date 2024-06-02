@@ -161,6 +161,7 @@
     dropbox-cli
     eza
     file
+    gcc
     gptfdisk
     graphite-cli
     jq
