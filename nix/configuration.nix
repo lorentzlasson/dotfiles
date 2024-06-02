@@ -167,6 +167,7 @@
     lua-language-server
     nerdfonts
     nil
+    nixpkgs-fmt
     nodePackages_latest.bash-language-server
     nodePackages_latest.typescript-language-server
     pspg

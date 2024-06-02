@@ -31,7 +31,6 @@ local servers = {
   "eslint",
   "gopls",
   "jsonls",
-  "nil_ls",
   "pyright",
   "rocls",
   "solargraph",
@@ -65,6 +64,16 @@ lspconfig.lua_ls.setup {
     Lua = {
       diagnostics = {
         globals = { 'vim' }
+      }
+    }
+  }
+}
+
+lspconfig.nil_ls.setup {
+  settings = {
+    ['nil'] = {
+      formatting = {
+        command = { "nixpkgs-fmt" },
       }
     }
   }
