@@ -79,6 +79,23 @@ lspconfig.nil_ls.setup {
   }
 }
 
+lspconfig.sqls.setup{
+  on_attach = function(client, bufnr)
+    require('sqls').on_attach(client, bufnr) -- require sqls.nvim
+  end,
+  settings = {
+    sqls = {
+      connections = {
+        {
+          driver = 'postgresql',
+          dataSourceName = 'postgres://postgres:@localhost/postgres',
+        },
+      },
+    },
+  },
+}
+
+
 -- GENERAL KEY MAPPINGS
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('UserLspConfig', {}),

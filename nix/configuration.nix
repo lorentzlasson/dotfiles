@@ -174,6 +174,7 @@
     pspg
     ripgrep
     shellcheck
+    sqls
     stow
     tree
     unison-ucm
