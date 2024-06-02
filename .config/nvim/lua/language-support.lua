@@ -29,6 +29,7 @@ local servers = {
   "elmls",
   "eslint",
   "gopls",
+  "gleam",
   "jsonls",
   "pyright",
   "rocls",
@@ -122,6 +123,7 @@ cmp.setup({
 require 'nvim-treesitter.configs'.setup {
   ensure_installed = {
     "c",
+    "gleam",
     "lua",
     "query",
     "vim",
