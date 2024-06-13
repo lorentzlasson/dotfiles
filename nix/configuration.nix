@@ -157,7 +157,7 @@
     alacritty
     bat
     curl
-    dbeaver
+    dbeaver-bin
     dropbox-cli
     eza
     file
