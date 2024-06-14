@@ -165,6 +165,7 @@
     gptfdisk
     graphite-cli
     jq
+    lsof
     lua-language-server
     nerdfonts
     nil
