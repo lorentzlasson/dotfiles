@@ -172,6 +172,7 @@
     nixpkgs-fmt
     nodePackages_latest.bash-language-server
     nodePackages_latest.typescript-language-server
+    protonvpn-gui
     pspg
     ripgrep
     shellcheck
