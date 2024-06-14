@@ -142,7 +142,7 @@ map('n', 'A', [[<cmd>lua IndentWithA()<CR>]], { noremap = true, silent = true })
 vim.api.nvim_create_user_command(
   'Browse',
   function (opts)
-    vim.fn.system { 'open', opts.fargs[1] }
+    vim.fn.system { 'xdg-open', opts.fargs[1] }
   end,
   { nargs = 1 }
 )
