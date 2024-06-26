@@ -16,6 +16,10 @@ o.termguicolors = true
 
 cmd 'colorscheme ayu'
 
+-- make horizontal splits clearer
+cmd [[ highlight StatusLineNC guibg=black guifg=white ]]
+cmd [[ highlight StatusLine guibg=black guifg=#7a59ff ]]
+
 o.number = true             -- display line numbers
 o.wrap = true               -- continue long lines on next lines
 o.linebreak = true          -- wrap lines at convenient points
