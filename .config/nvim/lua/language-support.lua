@@ -1,38 +1,15 @@
 local lspconfig = require('lspconfig')
 
--- CUSTOM SERVERS
--- Roc
-vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
-  pattern = "*.roc",
-  command = "set filetype=roc"
-})
-
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "roc",
-  callback = function()
-    vim.bo.commentstring = "# %s"
-  end
-})
-
-require('lspconfig.configs').rocls = {
-  default_config = {
-    cmd = { "roc_language_server" },
-    filetypes = { 'roc' },
-    root_dir = lspconfig.util.root_pattern(".git"),
-    settings = {},
-  },
-}
-
 -- SERVERS WITH DEFAULT CONFIG
 local servers = {
   "bashls",
   "elmls",
+  "roc_ls",
   "eslint",
   "gleam",
   "gopls",
   "jsonls",
   "pyright",
-  "rocls",
   "solargraph",
   "yamlls",
 }
