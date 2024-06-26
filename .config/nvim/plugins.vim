@@ -1,7 +1,6 @@
 call plug#begin('~/.vim/plugged')
 Plug 'AndrewRadev/splitjoin.vim' " gS ang gJ to swap between single and multi line blocks
 Plug 'LnL7/vim-nix'
-Plug 'ayu-theme/ayu-vim' " colorscheme
 Plug 'godlygeek/tabular' " :Tabulerize/{pattern}
 Plug 'gregsexton/MatchTag' " highlight matching html tag
 Plug 'hrsh7th/cmp-nvim-lsp' " LSP source for nvim-cmp
@@ -23,4 +22,12 @@ Plug 'tpope/vim-fugitive' " Git
 Plug 'tpope/vim-rhubarb' " Github stuff, e.g. GBrowse
 Plug 'tpope/vim-surround' " insert openers/closers around selection
 Plug 'ziontee113/icon-picker.nvim'
+
+" colorschemes
+Plug 'Luxed/ayu-vim'
+Plug 'glepnir/zephyr-nvim'
+Plug 'marko-cerovac/material.nvim'
+Plug 'mhartington/oceanic-next'
+Plug 'navarasu/onedark.nvim'
+Plug 'ofirgall/ofirkai.nvim'"
 call plug#end()

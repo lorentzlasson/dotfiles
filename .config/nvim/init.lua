@@ -13,6 +13,7 @@ cmd('source ~/.config/nvim/plugins.vim')
 
 -- General settings
 o.termguicolors = true
+
 cmd 'colorscheme ayu'
 
 o.number = true             -- display line numbers
@@ -27,8 +28,6 @@ o.foldenable = false        -- disable folding
 o.fixendofline = false      -- don't auto insert newline at end of file on save
 
 o.clipboard = 'unnamedplus' -- connect to system clipboard (linux)
-cmd 'syntax enable'         -- enable syntax highlighting
-
 o.mouse = 'a'               -- enable mouse selection
 
 -- Turn off swap files
