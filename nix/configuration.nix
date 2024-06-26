@@ -175,6 +175,7 @@
     ollama
     protonvpn-gui
     pspg
+    pavucontrol
     ripgrep
     shellcheck
     sqls
