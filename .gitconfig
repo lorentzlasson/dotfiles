@@ -45,9 +45,9 @@
   rbilast = "!f() { git rebase --interactive HEAD~$1; }; f"
   rbo = rebase --onto
   rbremote = !git fetch && git rebase origin/HEAD
-  resettoremote = !git fetch && git reset --hard @{upstream}
   restp = restore -p .
   rl = reset HEAD~
+  rtr = !git fetch && git reset --hard @{upstream}
   s = switch
   sd = switch --detach
   spluff = !git stash && git fetch && git rebase && git push && git stash pop
