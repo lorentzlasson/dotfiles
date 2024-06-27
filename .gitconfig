@@ -56,8 +56,8 @@
   syncignore = !git rm -r --cached . && git add .
   testci = !git add . && git commit --message '🚧 CI'
   todoupdate = !git add :/TODO.md && git commit --message 'Update TODO'
-  unstash = "!f() { git stash apply stash^{/$1}; }; f"
   uncommit = "!f() { git reset HEAD~ -- $1 && git commit --amend --no-edit; }; f"
+  unstash = "!f() { git stash apply stash^{/$1}; }; f"
   wip = !git add . && git commit --message '🚧\n\n[skip ci]'
 [filter "gitignore"]
   clean = sed '/gitignore/d'
