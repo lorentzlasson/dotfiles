@@ -174,6 +174,7 @@
     nodePackages_latest.typescript-language-server
     ollama
     pavucontrol
+    pinta
     protonvpn-gui
     pspg
     ripgrep
