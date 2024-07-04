@@ -173,9 +173,9 @@
     nodePackages_latest.bash-language-server
     nodePackages_latest.typescript-language-server
     ollama
+    pavucontrol
     protonvpn-gui
     pspg
-    pavucontrol
     ripgrep
     shellcheck
     sqls
