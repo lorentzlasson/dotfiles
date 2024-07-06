@@ -69,6 +69,7 @@
   enabled = false
 [rebase]
   autosquash = true
+  updateRefs = true
 [submodule]
   recurse = true
 [diff]
