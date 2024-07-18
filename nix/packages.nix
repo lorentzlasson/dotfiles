@@ -10,6 +10,7 @@
     eza
     file
     gcc
+    gleam
     gptfdisk
     graphite-cli
     jq
