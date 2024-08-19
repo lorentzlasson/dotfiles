@@ -31,6 +31,7 @@
     stow
     tree
     unison-ucm
+    usbutils # lsbusb
     vscode-langservers-extracted
     wget
     xclip
