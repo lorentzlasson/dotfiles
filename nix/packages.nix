@@ -33,6 +33,7 @@
     unison-ucm
     usbutils # lsbusb
     vscode-langservers-extracted
+    wev
     wget
     xclip
     yaml-language-server
