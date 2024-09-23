@@ -34,6 +34,9 @@ lspconfig.ts_ls.setup {
     return lspconfig.util.root_pattern("package.json")(filename);
   end,
   single_file_support = false,
+  on_init = function(client)
+    client.offset_encoding = "utf-8"
+  end,
 }
 
 lspconfig.lua_ls.setup {
