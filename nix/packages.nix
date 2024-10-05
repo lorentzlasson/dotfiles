@@ -22,6 +22,7 @@
     nodePackages_latest.typescript-language-server
     ollama
     pavucontrol
+    pgcli
     pinta
     protonvpn-gui
     pspg
