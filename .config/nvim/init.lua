@@ -130,6 +130,10 @@ api.nvim_create_user_command('Txt', function(opts)
   cmd('write')
 end, { nargs = '?' })
 
+api.nvim_create_user_command('Sqlfmt', function()
+  vim.cmd('%!sql-formatter --language postgresql')
+end, {})
+
 -- Smart indent with A
 function IndentWithA()
   if #fn.getline('.') == 0 then
