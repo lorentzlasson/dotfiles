@@ -25,6 +25,7 @@
     pavucontrol
     pgcli
     pinta
+    postgres-lsp
     protonvpn-gui
     pspg
     ripgrep

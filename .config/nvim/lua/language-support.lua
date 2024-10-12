@@ -4,12 +4,13 @@ local lspconfig = require('lspconfig')
 local servers = {
   "bashls",
   "elmls",
-  "roc_ls",
   "eslint",
   "gleam",
   "gopls",
   "jsonls",
+  -- "postgres_lsp", not really doing much yet
   "pyright",
+  "roc_ls",
   "solargraph",
   "yamlls",
 }
