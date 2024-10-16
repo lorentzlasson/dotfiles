@@ -123,9 +123,6 @@ if command -v kubectl &> /dev/null; then
   source <(kubectl completion zsh)
 fi
 
-# load zsh-syntax-highlighting; should be last
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
-
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/lorentz/google-cloud-sdk-368.0.0-linux-x86_64/google-cloud-sdk/path.zsh.inc' ]; then . '/home/lorentz/google-cloud-sdk-368.0.0-linux-x86_64/google-cloud-sdk/path.zsh.inc'; fi
 
