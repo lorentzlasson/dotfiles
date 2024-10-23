@@ -47,7 +47,8 @@
     # unfree
     discord
     google-chrome
-    slack
     signal-desktop
+    slack
+    spotify
   ];
 }
