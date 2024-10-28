@@ -1,4 +1,4 @@
 ### delete old generations
-
-TBD 
-https://www.reddit.com/r/NixOS/comments/10107km/how_to_delete_old_generations_on_nixos/
+- `sudo nix-env --list-generations --profile /nix/var/nix/profiles/system` - list generations 
+- `sudo nix-env --delete-generations +3 --profile /nix/var/nix/profiles/system` - delete all but 3 latest
+- `sudo nix-collect-garbage` - free up boot partition
