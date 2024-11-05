@@ -6,6 +6,7 @@
     bat
     curl
     dbeaver-bin
+    deno
     dropbox-cli
     eza
     file
