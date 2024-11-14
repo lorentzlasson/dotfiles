@@ -148,7 +148,7 @@ map('n', 'A', [[<cmd>lua IndentWithA()<CR>]], { noremap = true, silent = true })
 -- Allow :GBrowse to work
 vim.api.nvim_create_user_command(
   'Browse',
-  function (opts)
+  function(opts)
     vim.fn.system { 'xdg-open', opts.fargs[1] }
   end,
   { nargs = 1 }
@@ -175,7 +175,7 @@ vim.keymap.set("n", "<Leader><Leader>i", "<cmd>IconPickerNormal emoji<cr>", opts
 -- Plugin inits
 require("oil").setup()
 require("icon-picker").setup({ disable_legacy_commands = true })
-require('fzf-lua').setup({'default'})
+require('fzf-lua').setup({ 'default' })
 
 -- Imports
 require('language-support')
