@@ -84,7 +84,10 @@
   programs = {
     _1password.enable = true;
     git.enable = true;
-    neovim.enable = true;
+    neovim = {
+      enable = true;
+      defaultEditor = true;
+    };
     steam.enable = true;
     tmux.enable = true;
     direnv.enable = true;
