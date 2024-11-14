@@ -13,7 +13,7 @@ require('plugins')
 -- General settings
 o.termguicolors = true
 
-cmd 'colorscheme ayu'
+cmd 'colorscheme dunkel'
 
 -- make horizontal splits clearer
 cmd [[ highlight StatusLineNC guibg=black guifg=white ]]

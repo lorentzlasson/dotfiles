@@ -37,4 +37,8 @@ require("lazy").setup({
   { "mhartington/oceanic-next" },
   { "navarasu/onedark.nvim" },
   { "ofirgall/ofirkai.nvim" },
+  {
+    'nvim-dunkel',
+    url = 'https://codeberg.org/fabrlyn/nvim-dunkel.git',
+  }
 })
