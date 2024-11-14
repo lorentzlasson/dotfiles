@@ -7,9 +7,8 @@ local g = vim.g
 local fn = vim.fn
 
 -- Plugins
--- TODO: convert to lua as well
--- lazy.vim?
-cmd('source ~/.config/nvim/plugins.vim')
+require('lazy-setup')
+require('plugins')
 
 -- General settings
 o.termguicolors = true
@@ -80,6 +79,7 @@ api.nvim_create_autocmd('BufWritePre', {
 
 -- Set leader to space
 g.mapleader = ' '
+g.maplocalleader = '\\'
 
 -- Force reload from file
 map('n', '<leader>e', ':edit!<CR>', { noremap = true })
