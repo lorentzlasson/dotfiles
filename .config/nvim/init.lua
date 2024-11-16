@@ -176,6 +176,7 @@ vim.keymap.set("n", "<Leader><Leader>i", "<cmd>IconPickerNormal emoji<cr>", opts
 require("oil").setup()
 require("icon-picker").setup({ disable_legacy_commands = true })
 require('fzf-lua').setup({ 'default' })
+require('mini.splitjoin').setup()
 
 -- Imports
 require('language-support')
