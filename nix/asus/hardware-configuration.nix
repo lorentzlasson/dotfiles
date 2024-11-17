@@ -31,8 +31,12 @@
   # still possible to use this option, but it's recommended to use it in conjunction
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
   networking.useDHCP = lib.mkDefault true;
+  # networking.interfaces.br-1dc7907fc880.useDHCP = lib.mkDefault true;
+  # networking.interfaces.br-2223634c2781.useDHCP = lib.mkDefault true;
   # networking.interfaces.br-25b7df687fb8.useDHCP = lib.mkDefault true;
-  # networking.interfaces.br-81e7da9bb316.useDHCP = lib.mkDefault true;
+  # networking.interfaces.br-5f740dd85e6c.useDHCP = lib.mkDefault true;
+  # networking.interfaces.br-94731e26e100.useDHCP = lib.mkDefault true;
+  # networking.interfaces.br-b0a043f64fc5.useDHCP = lib.mkDefault true;
   # networking.interfaces.docker0.useDHCP = lib.mkDefault true;
   # networking.interfaces.eno1.useDHCP = lib.mkDefault true;
   # networking.interfaces.enp50s0u2u4.useDHCP = lib.mkDefault true;
