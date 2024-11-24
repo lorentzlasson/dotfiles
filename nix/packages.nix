@@ -17,6 +17,7 @@
     jq
     lsof
     lua-language-server
+    mattermost-desktop
     nerdfonts
     nil
     nixpkgs-fmt
