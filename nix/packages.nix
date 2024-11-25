@@ -43,7 +43,6 @@
     wget
     xclip
     yaml-language-server
-    zed-editor
     zoxide
 
     # unfree
