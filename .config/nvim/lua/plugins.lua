@@ -40,5 +40,10 @@ require("lazy").setup({
   {
     'nvim-dunkel',
     url = 'https://codeberg.org/fabrlyn/nvim-dunkel.git',
+    opts = {
+      palette = {
+        background = '#121212'
+      }
+    }
   }
 })
