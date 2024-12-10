@@ -163,7 +163,7 @@ vim.api.nvim_create_user_command('JsDebug', function()
   local indent = lines[1]:match("^%s*") or ""
   local selected_text = table.concat(lines, "\n"):gsub("^%s+", "")
 
-  local wrapped_text = indent .. 'console.log(`🍎🍎🍎 ' .. selected_text .. ': ${' .. selected_text .. '} 🍎🍎🍎`)'
+  local wrapped_text = indent .. 'console.log(`🍎🍎🍎 ' .. selected_text .. ': ${JSON.stringify(' .. selected_text .. ', null, 2)} 🍎🍎🍎`)'
 
   vim.fn.setline(start_pos[2], wrapped_text)
 end, { range = true })
