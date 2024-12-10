@@ -15,6 +15,7 @@
     gptfdisk
     graphite-cli
     jq
+    keymapp # https://blog.zsa.io/keymapp/
     lsof
     lua-language-server
     mattermost-desktop
