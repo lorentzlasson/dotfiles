@@ -29,6 +29,21 @@ require("lazy").setup({
   { "tpope/vim-rhubarb" },
   { "tpope/vim-surround" },
   { "ziontee113/icon-picker.nvim" },
+  {
+    "zbirenbaum/copilot.lua",
+    config = function()
+      require("copilot").setup({
+        suggestion = { enabled = false },
+        panel = { enabled = false },
+      })
+    end
+  },
+  {
+    "zbirenbaum/copilot-cmp",
+    config = function()
+      require("copilot_cmp").setup()
+    end
+  },
 
   -- Colorschemes
   { "Luxed/ayu-vim" },
