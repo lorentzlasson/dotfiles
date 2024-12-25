@@ -39,11 +39,6 @@ require("lazy").setup({
   { "ofirgall/ofirkai.nvim" },
   {
     'nvim-dunkel',
-    url = 'https://codeberg.org/fabrlyn/nvim-dunkel.git',
-    opts = {
-      palette = {
-        background = '#121212'
-      }
-    }
+    url = 'https://codeberg.org/fabrlyn/dunkel.nvim',
   }
 })
