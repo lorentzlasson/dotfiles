@@ -14,6 +14,7 @@
     gleam
     gptfdisk
     graphite-cli
+    inxi # system information
     jq
     keymapp # https://blog.zsa.io/keymapp/
     lsof
@@ -28,6 +29,7 @@
     nodePackages_latest.typescript-language-server
     ollama
     pavucontrol
+    pciutils # system information
     pgcli
     pinta
     postgres-lsp
