@@ -35,6 +35,7 @@
     postgres-lsp
     protonvpn-gui
     pspg
+    python3
     ripgrep
     shellcheck
     sqls
