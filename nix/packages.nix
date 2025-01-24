@@ -40,6 +40,7 @@
     shellcheck
     sqls
     stow
+    terraform-ls
     tree
     unison-ucm
     usbutils # lsbusb

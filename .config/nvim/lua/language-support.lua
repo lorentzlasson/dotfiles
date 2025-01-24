@@ -13,6 +13,7 @@ local servers = {
   "pyright",
   "roc_ls",
   "solargraph",
+  "terraformls",
   "yamlls",
 }
 
