@@ -21,5 +21,11 @@
     };
   };
 
+  plex = {
+    enable = true;
+    openFirewall = true;
+    user = "lorentz";
+  };
+
   services.xserver.videoDrivers = [ "nvidia" ];
 }
