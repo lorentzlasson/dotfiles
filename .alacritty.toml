@@ -6,3 +6,35 @@ family = "Hack Nerd Font"
 
 [env]
 TERM = "xterm-256color"
+
+# nvim --headless -c "Dunkel colorscheme dark-kontrast alacritty" -c "qa"
+[colors]
+selection = { background = '#ababab', text = '#101010' }
+
+[colors.bright]
+black = '#101010'
+blue = '#e26f60'
+cyan = '#ababab'
+green = '#a0d17b'
+magenta = '#f29c5f'
+red = '#e26f60'
+white = '#ece9df'
+yellow = '#eeeeee'
+
+[colors.normal]
+black = '#101010'
+blue = '#e26f60'
+cyan = '#ababab'
+green = '#a0d17b'
+magenta = '#f29c5f'
+red = '#e26f60'
+white = '#ece9df'
+yellow = '#eeeeee'
+
+[colors.primary]
+background = '#181818'
+foreground = '#fdd291'
+
+[colors.search]
+matches = { background = '#ababab', foreground = '#101010' }
+focused_match = { background = '#ece9df', foreground = '#101010' }
