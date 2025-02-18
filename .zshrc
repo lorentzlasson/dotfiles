@@ -123,6 +123,11 @@ if command -v kubectl &> /dev/null; then
   source <(kubectl completion zsh)
 fi
 
+# ripgrep
+if command -v rg &> /dev/null; then
+  export RIPGREP_CONFIG_PATH=~/.config/ripgrep/ripgreprc
+fi
+
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/lorentz/google-cloud-sdk-368.0.0-linux-x86_64/google-cloud-sdk/path.zsh.inc' ]; then . '/home/lorentz/google-cloud-sdk-368.0.0-linux-x86_64/google-cloud-sdk/path.zsh.inc'; fi
 

@@ -1,0 +1,13 @@
+# nvim --headless -c "Dunkel colorscheme dark-kontrast ripgrep" -c "qa"
+--colors=column:none
+--colors=line:none
+--colors=line:none
+--colors=match:none
+--colors=line:bg:24,24,24
+--colors=line:fg:226,111,96
+--colors=match:bg:24,24,24
+--colors=match:style:bold
+--colors=match:fg:236,233,223
+--colors=match:style:underline
+--colors=path:bg:24,24,24
+--colors=path:fg:226,111,96
