@@ -15,6 +15,7 @@
     gcc
     gleam
     gnumake
+    godot_4 # game engine
     gptfdisk
     graphite-cli
     inxi # system information
