@@ -33,12 +33,12 @@ lspconfig.elixirls.setup {
 
 lspconfig.ts_ls.setup {
   root_dir = function(filename)
-    local denoRootDir = lspconfig.util.root_pattern("deno.json", "deno.json")(filename);
+    local denoRootDir = lspconfig.util.root_pattern("deno.json", "deno.jsonc")(filename);
     if denoRootDir then
       return nil;
     end
 
-    return lspconfig.util.root_pattern("package.json")(filename);
+    return lspconfig.util.root_pattern("package.json", ".git")(filename);
   end,
   single_file_support = false,
   on_init = function(client)
