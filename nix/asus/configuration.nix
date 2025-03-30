@@ -21,11 +21,16 @@
     };
   };
 
-  plex = {
-    enable = true;
-    openFirewall = true;
-    user = "lorentz";
+  services = {
+    # https://nixos.wiki/wiki/Nvidia
+    xserver = {
+      videoDrivers = [ "nvidia" ];
+    };
+    # https://nixos.wiki/wiki/Plex
+    plex = {
+      enable = true;
+      openFirewall = true;
+      user = "lorentz";
+    };
   };
-
-  services.xserver.videoDrivers = [ "nvidia" ];
 }
