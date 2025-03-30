@@ -12,6 +12,7 @@
     file
     gcc
     gleam
+    gnumake
     gptfdisk
     graphite-cli
     inxi # system information
