@@ -49,6 +49,7 @@ o.shiftwidth = 2
 o.smarttab = true
 
 cmd [[ autocmd FileType go setlocal noexpandtab ]] -- use tabs for golang
+cmd [[ autocmd FileType gdscript setlocal noexpandtab ]] -- use tabs for godot script
 
 -- Folds
 o.foldmethod = 'indent'

@@ -6,6 +6,7 @@ local servers = {
   "bashls",
   "elmls",
   "eslint",
+  "gdscript",
   "gleam",
   "gopls",
   "jsonls",
