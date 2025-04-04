@@ -142,6 +142,11 @@
   networking.firewall = {
     allowedTCPPorts = [ 17500 ];
     allowedUDPPorts = [ 17500 ];
+
+    extraCommands = ''
+      # allow docker access to host network from docker containers
+      iptables -I nixos-fw 1 -i br+ -s 172.16.0.0/12 -d 172.16.0.0/12 -j ACCEPT
+    '';
   };
   systemd.user.services.dropbox = {
     wantedBy = [ "graphical-session.target" ];
