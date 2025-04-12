@@ -3,6 +3,7 @@
 {
   environment.systemPackages = with pkgs; [
     alacritty
+    atuin
     bat
     curl
     dbeaver-bin

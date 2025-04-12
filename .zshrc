@@ -118,6 +118,12 @@ if command -v direnv &> /dev/null; then
   eval "$(direnv hook zsh)"
 fi
 
+# https://docs.atuin.sh/
+# ⚠️ has to be run after fzf
+if command -v atuin &> /dev/null; then
+  eval "$(atuin init zsh)"
+fi
+
 # kubectl
 if command -v kubectl &> /dev/null; then
   source <(kubectl completion zsh)
