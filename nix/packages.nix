@@ -54,6 +54,7 @@
     xclip
     yaml-language-server
     zoxide
+    zed-editor
 
     # unfree
     discord
