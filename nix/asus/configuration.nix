@@ -9,6 +9,11 @@
   networking = {
     hostName = "asus";
     nameservers = [ "127.0.0.1" ];
+
+    firewall = {
+      allowedTCPPorts = [ 53 4000 ];
+      allowedUDPPorts = [ 53 ];
+    };
   };
 
   # https://nixos.wiki/wiki/Nvidia
