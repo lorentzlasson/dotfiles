@@ -2,7 +2,8 @@
   name = Lorentz Lasson
   email = lasson.lorentz@gmail.com
 [push]
-  default = simple
+  autoSetupRemote = true
+  followTags = true
 [core]
   autocrlf = input
   editor = nvim
@@ -68,9 +69,30 @@
 [rerere]
   enabled = false
 [rebase]
-  autosquash = true
+  autoSquash = true
   updateRefs = true
+  autoStash = true
 [submodule]
   recurse = true
 [diff]
-	submodule = log
+  submodule = log
+  algorithm = histogram
+  colorMoved = plain
+  mnemonicPrefix = true
+  renames = true
+[branch]
+  sort = -committerdate
+[tag]
+  sort = version:refname
+[fetch]
+  prune = true
+  pruneTags = true
+  all = true
+[help]
+  autocorrect = prompt
+[commit]
+  verbose = true
+[merge]
+  conflictstyle = zdiff3
+[pull]
+  rebase = true
