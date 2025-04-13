@@ -7,7 +7,42 @@
 [core]
   autocrlf = input
   editor = nvim
-
+[filter "gitignore"]
+  clean = sed '/gitignore/d'
+  smudge = cat
+[filter "gitignorebelow"]
+  clean = sed '/\\*gitignorebelow\\*/,$d'
+  smudge = cat
+[rerere]
+  enabled = false
+[rebase]
+  autoSquash = true
+  updateRefs = true
+  autoStash = true
+[submodule]
+  recurse = true
+[diff]
+  submodule = log
+  algorithm = histogram
+  colorMoved = plain
+  mnemonicPrefix = true
+  renames = true
+[branch]
+  sort = -committerdate
+[tag]
+  sort = version:refname
+[fetch]
+  prune = true
+  pruneTags = true
+  all = true
+[help]
+  autocorrect = prompt
+[commit]
+  verbose = true
+[merge]
+  conflictstyle = zdiff3
+[pull]
+  rebase = true
 [alias]
   aa = add :/
   ac = !git add . && git commit --message
@@ -60,39 +95,3 @@
   uncommit = "!f() { git reset HEAD~ -- $1 && git commit --amend --no-edit; }; f"
   unstash = "!f() { git stash apply stash^{/$1}; }; f"
   wip = !git add . && git commit --message '🚧\n\n[skip ci]'
-[filter "gitignore"]
-  clean = sed '/gitignore/d'
-  smudge = cat
-[filter "gitignorebelow"]
-  clean = sed '/\\*gitignorebelow\\*/,$d'
-  smudge = cat
-[rerere]
-  enabled = false
-[rebase]
-  autoSquash = true
-  updateRefs = true
-  autoStash = true
-[submodule]
-  recurse = true
-[diff]
-  submodule = log
-  algorithm = histogram
-  colorMoved = plain
-  mnemonicPrefix = true
-  renames = true
-[branch]
-  sort = -committerdate
-[tag]
-  sort = version:refname
-[fetch]
-  prune = true
-  pruneTags = true
-  all = true
-[help]
-  autocorrect = prompt
-[commit]
-  verbose = true
-[merge]
-  conflictstyle = zdiff3
-[pull]
-  rebase = true
