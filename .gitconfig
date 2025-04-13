@@ -7,12 +7,6 @@
 [core]
   autocrlf = input
   editor = nvim
-[filter "gitignore"]
-  clean = sed '/gitignore/d'
-  smudge = cat
-[filter "gitignorebelow"]
-  clean = sed '/\\*gitignorebelow\\*/,$d'
-  smudge = cat
 [rerere]
   enabled = false
 [rebase]
