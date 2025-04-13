@@ -98,6 +98,8 @@
       syntaxHighlighting.enable = true;
     };
 
+    # unclear if this is the right approach or not
+    # https://github.com/NixOS/nixpkgs/blob/f1fcf6b13adc5e12bc04af033a6309f5fb61eee4/nixos/modules/programs/dconf.nix#L210
     dconf = {
       enable = true;
       profiles.user.databases = [{
