@@ -14,11 +14,6 @@
     efi.canTouchEfiVariables = true;
   };
 
-  networking = {
-    # hostName handled by machine specific config
-    networkmanager.enable = true;
-  };
-
   time.timeZone = "Europe/Stockholm";
 
   i18n = {
@@ -141,15 +136,20 @@
   };
 
   # https://nixos.wiki/wiki/Dropbox
-  networking.firewall = {
-    allowedTCPPorts = [ 17500 ];
-    allowedUDPPorts = [ 17500 ];
+  networking = {
+    # hostName handled by machine specific config
+    networkmanager.enable = true;
 
-    extraCommands = ''
-      # allow docker to access host network
-      iptables -I nixos-fw 1 -i docker0 -s 172.16.0.0/12 -j ACCEPT
-      iptables -I nixos-fw 1 -i br+     -s 172.16.0.0/12 -j ACCEPT
-    '';
+    firewall = {
+      allowedTCPPorts = [ 17500 ];
+      allowedUDPPorts = [ 17500 ];
+
+      extraCommands = ''
+        # allow docker to access host network
+        iptables -I nixos-fw 1 -i docker0 -s 172.16.0.0/12 -j ACCEPT
+        iptables -I nixos-fw 1 -i br+     -s 172.16.0.0/12 -j ACCEPT
+      '';
+    };
   };
 
   systemd.user.services.dropbox = {
