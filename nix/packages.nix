@@ -40,6 +40,7 @@
     pspg
     python3
     ripgrep
+    ripgrep-all
     shellcheck
     sqls
     stow
