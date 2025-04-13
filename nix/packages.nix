@@ -8,6 +8,7 @@
     curl
     dbeaver-bin
     deno
+    dnsutils
     dropbox-cli
     eza
     file
