@@ -66,7 +66,6 @@
   nuke = !git reset && git restore :/ && git clean -d --force
   p = push
   please = push --force-with-lease
-  po = push --set-upstream origin HEAD
   pruneremote = remote update origin --prune
   r = reset
   rb = rebase
