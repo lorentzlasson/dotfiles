@@ -52,7 +52,6 @@
   cf = commit --fixup
   cl = clean -d --force
   cm = commit --message
-  co = "!echo use git s"
   cp = cherry-pick
   d = diff
   deleteremotebranch = push origin -d
