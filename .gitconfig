@@ -41,7 +41,7 @@
   aa = add :/
   ac = !git add . && git commit --message
   acane = !git add . && git commit --amend --no-edit
-  alias = config --get-regexp alias
+  alias = "!f() { git config --get-regexp alias | grep \"$1\"; }; f"
   ap = add --patch
   b = branch
   backup = !git add . && git commit --amend --no-edit && git push --force-with-lease
