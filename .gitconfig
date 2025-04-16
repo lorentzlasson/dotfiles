@@ -72,6 +72,7 @@
   rbi = rebase --interactive
   rbilast = "!f() { git rebase --interactive HEAD~$1; }; f"
   rbo = rebase --onto
+  rbol = "!f() { git fetch && git rebase --onto origin/HEAD HEAD~$1; }; f"
   rbr = !git fetch && git rebase origin/HEAD
   restp = restore -p .
   rl = reset HEAD~
