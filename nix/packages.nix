@@ -56,7 +56,7 @@
     xclip
     yaml-language-server
     zoxide
-    zed-editor
+    # zed-editor # too slow too compile
 
     # unfree
     discord
