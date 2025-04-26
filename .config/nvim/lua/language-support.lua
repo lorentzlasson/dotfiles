@@ -127,7 +127,24 @@ cmp.setup({
 })
 
 require 'nvim-treesitter.configs'.setup {
-  ensure_installed = "all",
+  ensure_installed = {
+    "bash",
+    "css",
+    "go",
+    "html",
+    "json",
+    "lua",
+    "nix",
+    "python",
+    "roc",
+    "rust",
+    "typescript",
+    "vim",
+    "vimdoc",
+    "yaml",
+    "zig",
+    -- "zsh", -- https://github.com/nvim-treesitter/nvim-treesitter/issues/655#issuecomment-1470101288
+  },
   sync_install = false,
   auto_install = true,
 
