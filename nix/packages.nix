@@ -5,6 +5,7 @@
     alacritty
     atuin
     bat
+    claude-code
     curl
     dbeaver-bin
     deno
