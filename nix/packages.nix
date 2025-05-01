@@ -9,6 +9,7 @@
     dbeaver-bin
     deno
     dnsutils
+    dos2unix
     dropbox-cli
     eza
     file
