@@ -25,7 +25,7 @@
     lsof
     lua-language-server
     mattermost-desktop
-    nerdfonts
+    nerd-fonts.hack
     nil
     nixpkgs-fmt
     nodejs # for copilot
