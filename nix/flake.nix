@@ -8,7 +8,7 @@
       system = "x86_64-linux";
       modules = [
         ./xps15/configuration.nix
-        ./configuration.nix
+        ./pc/configuration.nix
       ];
     };
 
@@ -16,7 +16,7 @@
       system = "x86_64-linux";
       modules = [
         ./xps13/configuration.nix
-        ./configuration.nix
+        ./pc/configuration.nix
       ];
     };
 
@@ -24,7 +24,7 @@
       system = "x86_64-linux";
       modules = [
         ./asus/configuration.nix
-        ./configuration.nix
+        ./pc/configuration.nix
       ];
     };
   };
