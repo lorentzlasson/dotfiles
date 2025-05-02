@@ -27,5 +27,13 @@
         ./pc/configuration.nix
       ];
     };
+
+    nixosConfigurations.nuc = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      modules = [
+        ./nuc/configuration.nix
+        ./server/configuration.nix
+      ];
+    };
   };
 }
