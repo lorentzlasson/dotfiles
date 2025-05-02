@@ -10,7 +10,6 @@
     dos2unix
     eza
     file
-    fzf
     gcc
     gnumake
     inxi # system information

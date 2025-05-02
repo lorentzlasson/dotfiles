@@ -5,6 +5,7 @@ local o = vim.o
 local cmd = vim.cmd
 local g = vim.g
 local fn = vim.fn
+local keymap = vim.keymap.set
 
 -- Plugins
 require('lazy-setup')
@@ -86,11 +87,11 @@ g.maplocalleader = '\\'
 -- Force reload from file
 map('n', '<leader>e', ':edit!<CR>', { noremap = true })
 
--- FZF configuration
-g.fzf_history_dir = '~/.local/share/fzf-history'
-map('n', '<C-f>', ':FzfLua files<CR>', { noremap = true })
-map('n', '<C-A-f>', ':FzfLua oldfiles<CR>', { noremap = true })
-map('n', '<M-f>', ':FzfLua live_grep<CR>', { noremap = true })
+
+keymap('n', '<C-f>', require('telescope.builtin').find_files,   { noremap = true, silent = true })
+keymap('n', '<C-A-f>', require('telescope.builtin').oldfiles,   { noremap = true, silent = true })
+keymap('n', '<M-f>', require('telescope.builtin').live_grep,    { noremap = true, silent = true })
+
 map('n', '<M-a>', 'gg<S-V>G', { noremap = true })
 
 -- Enter mappings
@@ -177,7 +178,6 @@ vim.keymap.set("n", "<Leader><Leader>i", "<cmd>IconPickerNormal emoji<cr>", opts
 -- Plugin inits
 require("oil").setup()
 require("icon-picker").setup({ disable_legacy_commands = true })
-require('fzf-lua').setup({ 'default' })
 require('mini.splitjoin').setup()
 
 -- Imports

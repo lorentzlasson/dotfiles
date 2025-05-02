@@ -91,9 +91,6 @@ source ~/.sh_aliases
 # custom functions
 source ~/.sh_functions
 
-# fuzzy history search
-source ~/.fzf.zsh
-
 # set vim as default editor
 export VISUAL=nvim
 export EDITOR="$VISUAL"
@@ -121,7 +118,6 @@ if command -v direnv &> /dev/null; then
 fi
 
 # https://docs.atuin.sh/
-# ⚠️ has to be run after fzf
 if command -v atuin &> /dev/null; then
   eval "$(atuin init zsh)"
 fi
