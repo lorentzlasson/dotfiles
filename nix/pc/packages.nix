@@ -5,7 +5,6 @@
     alacritty
     atuin
     bat
-    claude-code
     curl
     dbeaver-bin
     deno
@@ -19,13 +18,11 @@
     gnumake
     godot_4 # game engine
     gptfdisk
-    graphite-cli
     inxi # system information
     jq
     keymapp # https://blog.zsa.io/keymapp/
     lsof
     lua-language-server
-    mattermost-desktop
     nerd-fonts.hack
     nil
     nixpkgs-fmt
@@ -33,7 +30,7 @@
     nodePackages_latest.bash-language-server
     nodePackages_latest.sql-formatter
     nodePackages_latest.typescript-language-server
-    obs-studio
+    obs-studio # Free and open source software for video recording and live streaming.
     ollama
     pavucontrol
     pciutils # system information
@@ -66,5 +63,6 @@
     signal-desktop
     slack
     spotify
+    claude-code
   ];
 }
