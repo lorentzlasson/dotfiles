@@ -37,7 +37,6 @@
     shell = pkgs.zsh;
   };
 
-  hardware.pulseaudio.enable = false;
   hardware.keyboard.zsa.enable = true;
   security.rtkit.enable = true;
 
