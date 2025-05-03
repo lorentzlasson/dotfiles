@@ -44,6 +44,7 @@
     ripgrep
     ripgrep-all
     shellcheck
+    speechd # spd-say "hello"
     sqls
     stow
     terraform-ls
