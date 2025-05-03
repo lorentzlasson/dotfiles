@@ -2,6 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
+    # zed-editor # too slow too compile
     alacritty
     atuin
     bat
@@ -26,10 +27,10 @@
     nerd-fonts.hack
     nil
     nixpkgs-fmt
-    nodejs # for copilot
     nodePackages_latest.bash-language-server
     nodePackages_latest.sql-formatter
     nodePackages_latest.typescript-language-server
+    nodejs # for copilot
     obs-studio # Free and open source software for video recording and live streaming.
     ollama
     pavucontrol
@@ -55,7 +56,6 @@
     xclip
     yaml-language-server
     zoxide
-    # zed-editor # too slow too compile
 
     # unfree
     discord
