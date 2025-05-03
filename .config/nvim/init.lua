@@ -5,7 +5,6 @@ local o = vim.o
 local cmd = vim.cmd
 local g = vim.g
 local fn = vim.fn
-local keymap = vim.keymap.set
 
 -- Plugins
 require('lazy-setup')
@@ -88,10 +87,6 @@ g.maplocalleader = '\\'
 map('n', '<leader>e', ':edit!<CR>', { noremap = true })
 map('n', '<M-a>', 'gg<S-V>G', { noremap = true })
 
--- search bindings
-keymap('n', '<C-f>', require('telescope.builtin').find_files, { noremap = true, silent = true })
-keymap('n', '<C-A-f>', require('telescope.builtin').oldfiles, { noremap = true, silent = true })
-keymap('n', '<M-f>', require('telescope.builtin').live_grep, { noremap = true, silent = true })
 
 -- Enter mappings
 -- map('n', '<C-Enter>', 'O<Esc>', { noremap = true })
@@ -183,3 +178,4 @@ require('mini.splitjoin').setup()
 -- Imports
 require('language-support')
 require('mod-nvim-tree')
+require('plugins.telescope')
