@@ -13,6 +13,7 @@
   services.openssh.enable = true;
 
   networking = {
+    networkmanager.enable = true;
     firewall.allowedTCPPorts = [ 22 ];
     interfaces.wlp1s0.useDHCP = true;
   };
