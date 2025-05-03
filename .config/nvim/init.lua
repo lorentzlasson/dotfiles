@@ -49,7 +49,7 @@ o.expandtab = true
 o.shiftwidth = 2
 o.smarttab = true
 
-cmd [[ autocmd FileType go setlocal noexpandtab ]] -- use tabs for golang
+cmd [[ autocmd FileType go setlocal noexpandtab ]]       -- use tabs for golang
 cmd [[ autocmd FileType gdscript setlocal noexpandtab ]] -- use tabs for godot script
 
 -- Folds
@@ -88,9 +88,9 @@ g.maplocalleader = '\\'
 map('n', '<leader>e', ':edit!<CR>', { noremap = true })
 
 
-keymap('n', '<C-f>', require('telescope.builtin').find_files,   { noremap = true, silent = true })
-keymap('n', '<C-A-f>', require('telescope.builtin').oldfiles,   { noremap = true, silent = true })
-keymap('n', '<M-f>', require('telescope.builtin').live_grep,    { noremap = true, silent = true })
+keymap('n', '<C-f>', require('telescope.builtin').find_files, { noremap = true, silent = true })
+keymap('n', '<C-A-f>', require('telescope.builtin').oldfiles, { noremap = true, silent = true })
+keymap('n', '<M-f>', require('telescope.builtin').live_grep, { noremap = true, silent = true })
 
 map('n', '<M-a>', 'gg<S-V>G', { noremap = true })
 
@@ -166,7 +166,8 @@ vim.api.nvim_create_user_command('JsDebug', function()
   local indent = lines[1]:match("^%s*") or ""
   local selected_text = table.concat(lines, "\n"):gsub("^%s+", "")
 
-  local wrapped_text = indent .. 'console.log(`🍎🍎🍎 ' .. selected_text .. ': ${JSON.stringify(' .. selected_text .. ', null, 2)} 🍎🍎🍎`)'
+  local wrapped_text = indent ..
+      'console.log(`🍎🍎🍎 ' .. selected_text .. ': ${JSON.stringify(' .. selected_text .. ', null, 2)} 🍎🍎🍎`)'
 
   vim.fn.setline(start_pos[2], wrapped_text)
 end, { range = true })
