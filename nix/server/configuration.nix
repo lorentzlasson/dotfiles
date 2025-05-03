@@ -10,14 +10,49 @@
     loader.efi.canTouchEfiVariables = true;
   };
 
-  services.openssh.enable = true;
+  services = {
+    openssh.enable = true;
+
+    blocky = {
+      enable = true;
+      settings = {
+        ports = {
+          dns = 53; # Port for incoming DNS Queries.
+          http = 4000;
+        };
+        upstreams.groups.default = [
+          "https://one.one.one.one/dns-query" # Using Cloudflare's DNS over HTTPS server for resolving queries.
+        ];
+        # For initially solving DoH/DoT Requests when no system Resolver is available.
+        bootstrapDns = {
+          upstream = "https://one.one.one.one/dns-query";
+          ips = [ "1.1.1.1" "1.0.0.1" ];
+        };
+        blocking = {
+          blackLists = {
+            ads = [ "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts" ];
+          };
+          clientGroupsBlock = {
+            default = [ "ads" ];
+          };
+        };
+      };
+    };
+  };
 
   networking = {
     networkmanager = {
       enable = true;
       wifi.powersave = false;
     };
-    firewall.allowedTCPPorts = [ 22 ];
+    firewall = {
+      allowedTCPPorts = [
+        22
+        53
+        4000
+      ];
+      allowedUDPPorts = [ 53 ];
+    };
     interfaces.wlp1s0.useDHCP = true;
   };
 
