@@ -13,7 +13,10 @@
   services.openssh.enable = true;
 
   networking = {
-    networkmanager.enable = true;
+    networkmanager = {
+      enable = true;
+      wifi.powersave = false;
+    };
     firewall.allowedTCPPorts = [ 22 ];
     interfaces.wlp1s0.useDHCP = true;
   };
