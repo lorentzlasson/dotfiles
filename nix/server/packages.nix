@@ -7,6 +7,7 @@
     bat
     curl
     deno
+    dnsutils
     dos2unix
     eza
     file
