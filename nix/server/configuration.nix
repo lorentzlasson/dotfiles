@@ -13,6 +13,7 @@
   services = {
     openssh.enable = true;
 
+    # Point router dns to the ip of this computer
     blocky = {
       enable = true;
       settings = {
