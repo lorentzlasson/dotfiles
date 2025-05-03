@@ -86,13 +86,12 @@ g.maplocalleader = '\\'
 
 -- Force reload from file
 map('n', '<leader>e', ':edit!<CR>', { noremap = true })
+map('n', '<M-a>', 'gg<S-V>G', { noremap = true })
 
-
+-- search bindings
 keymap('n', '<C-f>', require('telescope.builtin').find_files, { noremap = true, silent = true })
 keymap('n', '<C-A-f>', require('telescope.builtin').oldfiles, { noremap = true, silent = true })
 keymap('n', '<M-f>', require('telescope.builtin').live_grep, { noremap = true, silent = true })
-
-map('n', '<M-a>', 'gg<S-V>G', { noremap = true })
 
 -- Enter mappings
 -- map('n', '<C-Enter>', 'O<Esc>', { noremap = true })
