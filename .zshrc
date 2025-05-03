@@ -11,11 +11,10 @@ precmd() {
   local timestamp=$(date +"%H:%M:%S")
   local base="${blue}${timestamp}${no_color} ${current_dir}"
 
-  if [ -n "$git_branch" ]; then
-    echo -e "${base} 🌿 ${git_branch}"
-  else
-    echo -e "${base}"
-  fi
+  local ssh_marker=${SSH_CONNECTION:+ 🔏 $(hostname)}
+  local branch_marker=${git_branch:+ 🌿 ${git_branch}}
+
+  echo -e "${base}${ssh_marker}${branch_marker}"
 }
 
 silence() {
