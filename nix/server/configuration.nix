@@ -39,6 +39,48 @@
         };
       };
     };
+
+    prometheus = {
+      enable = true;
+      port = 9090;
+
+      scrapeConfigs = [
+        {
+          job_name = "blocky";
+          static_configs = [
+            {
+              targets = [ "localhost:4000" ];
+              labels = {
+                instance = "blocky";
+              };
+            }
+          ];
+          metrics_path = "/metrics";
+        }
+      ];
+    };
+
+    grafana = {
+      enable = true;
+      settings = {
+        server = {
+          http_port = 3000;
+          http_addr = "0.0.0.0";
+        };
+      };
+
+      # Provision the Prometheus data source automatically
+      provision = {
+        datasources.settings.datasources = [
+          {
+            name = "Prometheus";
+            type = "prometheus";
+            access = "proxy";
+            url = "http://localhost:9090";
+          }
+        ];
+      };
+    };
   };
 
   networking = {
@@ -49,8 +91,10 @@
     firewall = {
       allowedTCPPorts = [
         22
-        53
+        3000
         4000
+        53
+        9090
       ];
       allowedUDPPorts = [ 53 ];
     };
