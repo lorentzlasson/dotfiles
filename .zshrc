@@ -9,6 +9,8 @@ precmd() {
   local current_dir="${PWD##*/}"
   local git_branch=$(git branch --show-current 2>/dev/null)
   local timestamp=$(date +"%H:%M:%S")
+
+  # why does blue become red?
   local base="${blue}${timestamp}${no_color} ${current_dir}"
 
   local ssh_marker=${SSH_CONNECTION:+ 🔏 $(hostname)}
