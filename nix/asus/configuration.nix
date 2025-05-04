@@ -6,6 +6,8 @@
       ./hardware-configuration.nix
     ];
 
+  networking.hostName = "asus";
+
   # https://nixos.wiki/wiki/Nvidia
   hardware = {
     graphics.enable = true;
