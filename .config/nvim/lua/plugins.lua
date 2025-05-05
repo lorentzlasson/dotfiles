@@ -10,6 +10,7 @@ require("lazy").setup({
   { "nvim-tree/nvim-tree.lua" },
   { "nvim-tree/nvim-web-devicons" },
   { "nvim-telescope/telescope.nvim" },
+  { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
   {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",

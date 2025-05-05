@@ -7,6 +7,8 @@ local keymap = vim.keymap.set
 keymap('n', '<C-f>', builtin.find_files, { noremap = true, silent = true })
 keymap('n', '<M-f>', builtin.live_grep, { noremap = true, silent = true })
 
+telescope.load_extension('fzf') -- nvim-telescope/telescope-fzf-native.nvim
+
 telescope.setup {
   defaults = {
     mappings = {
