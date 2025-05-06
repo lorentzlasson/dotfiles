@@ -168,8 +168,3 @@ require 'nvim-treesitter.configs'.setup {
     enable = true
   }
 }
-
--- SYMBOL OUTLINE
-require("symbols-outline").setup()
-
-vim.api.nvim_set_keymap('n', '<C-s>', ':SymbolsOutline<CR>', { noremap = true })

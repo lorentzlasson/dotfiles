@@ -16,7 +16,6 @@ require("lazy").setup({
     build = ":TSUpdate",
   },
   { "MeanderingProgrammer/render-markdown.nvim" },
-  { "simrat39/symbols-outline.nvim" },
   { "stevearc/dressing.nvim" },
   { "stevearc/oil.nvim" },
   { "tomtom/tcomment_vim" },
