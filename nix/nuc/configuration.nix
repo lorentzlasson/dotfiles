@@ -1,3 +1,4 @@
+# Has shitty wifi signal - 2.4GHz performs better than 5GHz
 {
   imports =
     [
