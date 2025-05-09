@@ -4,13 +4,14 @@ autoload -Uz colors && colors
 PS1="$ "
 
 precmd() {
+  # https://en.wikipedia.org/wiki/ANSI_escape_code#Colors
   local blue="\033[0;34m"
   local no_color="\033[0m"
   local current_dir="${PWD##*/}"
   local git_branch=$(git branch --show-current 2>/dev/null)
   local timestamp=$(date +"%H:%M:%S")
 
-  # why does blue become red?
+  # blue = red in dunkel color scheme
   local base="${blue}${timestamp}${no_color} ${current_dir}"
 
   local ssh_marker=${SSH_CONNECTION:+ 🔏 $(hostname)}
