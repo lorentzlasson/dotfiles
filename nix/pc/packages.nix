@@ -14,6 +14,7 @@
     dropbox-cli
     eza
     file
+    firefox
     gcc
     gleam
     gnumake
