@@ -10,6 +10,7 @@ multiline_continuation_char = ' '
 pager = pspg -XF -s s
 prompt = "\u@\h:\d>\n "
 vi = True
+use_local_timezone = False
 
 # nvim --headless -c "Dunkel colorscheme dark-kontrast pgcli" -c "qa"
 syntax_style = default
