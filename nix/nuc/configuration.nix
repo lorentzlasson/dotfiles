@@ -74,7 +74,12 @@
           http_port = 3000;
           http_addr = "0.0.0.0";
         };
+
+        # admin credentials in password manager
       };
+
+      # dashboard from
+      # https://grafana.com/grafana/dashboards/13768-blocky4/
 
       # Provision the Prometheus data source automatically
       provision = {
