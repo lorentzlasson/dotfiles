@@ -9,7 +9,7 @@ alias relsh="exec $SHELL"
 
 # drop-in upgrades
 # alias cd="z" # https://github.com/ajeetdsouza/zoxide
-alias grep="rg" # https://github.com/BurntSushi/ripgrep
+# alias grep="rg" # https://github.com/BurntSushi/ripgrep
 alias vim="nvim" # https://github.com/neovim/neovim
 alias ls="exa -1" # https://github.com/neovim/neovim
 
