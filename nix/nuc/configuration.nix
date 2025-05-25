@@ -39,6 +39,11 @@
             default = [ "ads" ];
           };
         };
+
+        prometheus = {
+          enable = true;
+          path = "/metrics";
+        };
       };
     };
 
