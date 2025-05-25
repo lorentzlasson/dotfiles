@@ -48,6 +48,7 @@
     speechd # spd-say "hello"
     sqls
     stow
+    tcpdump
     terraform-ls
     tree
     unison-ucm
