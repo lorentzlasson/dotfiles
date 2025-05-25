@@ -32,7 +32,7 @@
           ips = [ "1.1.1.1" "1.0.0.1" ];
         };
         blocking = {
-          blackLists = {
+          denylists = {
             ads = [ "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts" ];
           };
           clientGroupsBlock = {
