@@ -27,6 +27,7 @@
     lua-language-server
     nerd-fonts.hack
     nil
+    nix-search-cli
     nixpkgs-fmt
     nmap
     nodePackages_latest.bash-language-server
