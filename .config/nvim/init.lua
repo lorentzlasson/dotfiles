@@ -166,6 +166,16 @@ vim.api.nvim_create_user_command('JsDebug', function()
   vim.fn.setline(start_pos[2], wrapped_text)
 end, { range = true })
 
+-- Copy selection and wrap in codeblock (e.g. for llm prompts)
+vim.keymap.set('v', '<leader>y', function()
+  local start_pos = vim.fn.getpos("'<")
+  local end_pos = vim.fn.getpos("'>")
+  local lines = vim.fn.getregion(start_pos, end_pos, { type = vim.fn.visualmode() })
+  local ft = vim.bo.filetype
+  local formatted = "```" .. ft .. "\n" .. table.concat(lines, "\n") .. "\n```"
+  vim.fn.setreg('+', formatted)
+end, { desc = 'Copy selection with code block formatting' })
+
 -- Icon picker
 local opts = { noremap = true, silent = true }
 vim.keymap.set("n", "<Leader><Leader>i", "<cmd>IconPickerNormal emoji<cr>", opts)
