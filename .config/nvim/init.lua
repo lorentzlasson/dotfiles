@@ -174,7 +174,7 @@ vim.keymap.set('v', '<leader>y', function()
   local ft = vim.bo.filetype
   local formatted = "```" .. ft .. "\n" .. table.concat(lines, "\n") .. "\n```"
   vim.fn.setreg('+', formatted)
-end, { desc = 'Copy selection with code block formatting' })
+end, {})
 
 vim.api.nvim_create_user_command('CopyDiagnostics', function()
   local diagnostics = vim.diagnostic.get(0)
