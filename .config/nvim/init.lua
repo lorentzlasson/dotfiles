@@ -176,6 +176,21 @@ vim.keymap.set('v', '<leader>y', function()
   vim.fn.setreg('+', formatted)
 end, { desc = 'Copy selection with code block formatting' })
 
+vim.api.nvim_create_user_command('CopyDiagnostics', function()
+  local diagnostics = vim.diagnostic.get(0)
+  if #diagnostics == 0 then
+    print("No diagnostics found")
+    return
+  end
+
+  local formatted = table.concat(vim.tbl_map(function(d)
+    return string.format("%s:%d: %s", vim.fn.bufname(d.bufnr or 0), d.lnum + 1, d.message)
+  end, diagnostics), '\n')
+
+  vim.fn.setreg('+', 'Neovim diagnostics:\n```text\n' .. formatted .. '\n```')
+  print(string.format("Copied %d diagnostic(s) to clipboard", #diagnostics))
+end, {})
+
 -- Icon picker
 local opts = { noremap = true, silent = true }
 vim.keymap.set("n", "<Leader><Leader>i", "<cmd>IconPickerNormal emoji<cr>", opts)
