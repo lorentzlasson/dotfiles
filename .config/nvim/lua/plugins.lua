@@ -1,5 +1,5 @@
 require("lazy").setup({
-  { 'echasnovski/mini.splitjoin',               version = '*' },
+  { 'echasnovski/mini.splitjoin', version = '*' },
   { "LnL7/vim-nix" },
   { "godlygeek/tabular" },
   { "gregsexton/MatchTag" },
