@@ -17,14 +17,23 @@
 
     nginx = {
       enable = true;
-      virtualHosts."grafana.lorentz.casa" = {
-        locations."/" = {
-          proxyPass = "http://localhost:3000/";
-          extraConfig = ''
-            proxy_set_header Host $host;
-            proxy_set_header X-Real-IP $remote_addr;
-            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-          '';
+      virtualHosts = {
+        "~^grafana\." = {
+          locations."/" = {
+            proxyPass = "http://localhost:3000";
+            extraConfig = ''
+              proxy_set_header Host $host;
+              proxy_set_header X-Real-IP $remote_addr;
+              proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+              proxy_set_header X-Forwarded-Proto $scheme;
+            '';
+          };
+        };
+        "_" = {
+          default = true;
+          locations."/" = {
+            return = "404";
+          };
         };
       };
     };
@@ -155,6 +164,7 @@
         4000
         53
         9090
+        80
       ];
       allowedUDPPorts = [ 53 ];
     };
