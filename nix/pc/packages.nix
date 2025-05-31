@@ -25,6 +25,7 @@
     keymapp # https://blog.zsa.io/keymapp/
     lsof
     lua-language-server
+    luajitPackages.luacheck
     nerd-fonts.hack
     nil
     nix-search-cli
