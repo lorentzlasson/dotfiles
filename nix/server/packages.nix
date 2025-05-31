@@ -20,6 +20,7 @@
     nerd-fonts.hack
     nil
     nixpkgs-fmt
+    nix-index
     nodejs # for copilot
     nodePackages_latest.bash-language-server
     nodePackages_latest.sql-formatter

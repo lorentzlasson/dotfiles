@@ -30,6 +30,7 @@
     nil
     nix-search-cli
     nixpkgs-fmt
+    nix-index
     nmap
     nodePackages_latest.bash-language-server
     nodePackages_latest.sql-formatter
