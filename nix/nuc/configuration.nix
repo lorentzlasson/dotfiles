@@ -65,6 +65,23 @@
       enable = true;
       port = 9090;
 
+      exporters = {
+        node = {
+          enable = true;
+          enabledCollectors = [
+            "systemd"
+            "cpu"
+            "meminfo"
+            "diskstats"
+            "filesystem"
+            "loadavg"
+            "netdev"
+            "wifi"
+          ];
+          port = 9100;
+        };
+      };
+
       scrapeConfigs = [
         {
           job_name = "blocky";
@@ -77,6 +94,17 @@
             }
           ];
           metrics_path = "/metrics";
+        }
+        {
+          job_name = "node";
+          static_configs = [
+            {
+              targets = [ "localhost:9100" ];
+              labels = {
+                instance = "nuc";
+              };
+            }
+          ];
         }
       ];
     };
