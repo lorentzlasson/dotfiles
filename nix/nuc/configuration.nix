@@ -12,13 +12,20 @@
     fsType = "ext4";
   };
 
+  security.acme = {
+    acceptTerms = true;
+    defaults.email = "<EMAIL>";
+  };
+
   services = {
     openssh.enable = true;
 
     nginx = {
       enable = true;
       virtualHosts = {
-        "~^grafana\." = {
+        "grafana.lorentz.casa" = {
+          enableACME = true;
+          forceSSL = true;
           locations."/" = {
             proxyPass = "http://localhost:3000";
             extraConfig = ''
@@ -165,6 +172,7 @@
         53
         9090
         80
+        443
       ];
       allowedUDPPorts = [ 53 ];
     };
