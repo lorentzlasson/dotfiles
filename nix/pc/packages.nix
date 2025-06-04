@@ -13,6 +13,7 @@
     dos2unix
     dropbox-cli
     eza
+    fd
     file
     firefox
     gcc
@@ -48,6 +49,7 @@
     python3
     ripgrep
     ripgrep-all
+    sd
     shellcheck
     speechd # spd-say "hello"
     sqls

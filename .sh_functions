@@ -13,14 +13,21 @@ gitcheckout() {
   git remote show origin | grep "HEAD branch" | sed 's/.*: //' | xargs -I '{}' git checkout -b $1 '{}'
 }
 
-# RENAME
-# PATHS
-# sudo apt install rename
-# rename -n 's@foo@bar@gi' **/*foo*/
-# rename 's@foo@bar@gi' **/*foo*/
+# e.g.
+# replace_all ./some/path foo bar
+replace_all() {
+ local dir="$1"
+ local old="$2"
+ local new="$3"
 
-# CONTENT
-# find src -type f | xargs sed -i 's/<OLD_NAME>/<NEW_NAME>/g'
+ # Replace in file contents
+ fd --type file . "$dir" --exec sd "$old" "$new" {}
+
+ # Replace in filenames
+ for file in $(fd --type file "$old" "$dir"); do
+   mv "$file" "${file//$old/$new}"
+ done
+}
 
 process_using_port() {
   lsof -i :$1
