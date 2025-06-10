@@ -95,7 +95,7 @@ map('n', '<M-a>', 'gg<S-V>G', { noremap = true })
 -- More mappings
 map('v', '$', '$h', { noremap = true })
 map('x', 'p', 'P', { noremap = true })
-map('n', '<S-y>', 'v$y<ESC>', { noremap = true })
+map('n', '<S-y>', 'v$hy<ESC>', { noremap = true })
 map('v', '//', 'y/<C-R>"<Esc>', { noremap = true })
 
 map('n', '<C-w>', ':echo "Use leader (Space) instead!"<CR>', { noremap = true })
