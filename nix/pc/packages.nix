@@ -17,6 +17,7 @@
     file
     firefox
     gcc
+    gh
     gleam
     gnumake
     godot_4 # game engine
