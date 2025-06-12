@@ -47,9 +47,10 @@
         layout = "us";
         variant = "altgr-intl";
       };
-      desktopManager.gnome.enable = true;
-      displayManager.gdm.enable = true;
     };
+
+    desktopManager.gnome.enable = true;
+    displayManager.gdm.enable = true;
 
     printing.enable = true;
 
