@@ -15,7 +15,6 @@ require("lazy").setup({
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
   },
-  { "MeanderingProgrammer/render-markdown.nvim" },
   { "stevearc/dressing.nvim" },
   { "stevearc/oil.nvim" },
   { "tomtom/tcomment_vim" },
