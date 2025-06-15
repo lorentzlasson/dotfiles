@@ -1,12 +1,14 @@
 {
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
 
-  outputs = { nixpkgs, ... }:
+  outputs = { nixpkgs, nixos-hardware, ... }:
     let
       mkSystem = hostConfig: baseConfig: nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
+        specialArgs = { inputs = { inherit nixos-hardware; }; };
         modules = [
           hostConfig
           baseConfig
