@@ -191,22 +191,13 @@ vim.api.nvim_create_user_command('CopyDiagnostics', function()
   print(string.format("Copied %d diagnostic(s) to clipboard", #diagnostics))
 end, {})
 
--- Icon picker
-local opts = { noremap = true, silent = true }
-vim.keymap.set("n", "<Leader><Leader>i", "<cmd>IconPickerNormal emoji<cr>", opts)
-
--- Plugin inits
-require("oil").setup()
-require("icon-picker").setup({ disable_legacy_commands = true })
-require('mini.splitjoin').setup()
-require('fidget').setup()
-require('which-key').setup()
-
--- Manual keybinding discovery
-vim.keymap.set('n', '<leader>?', '<cmd>WhichKey<CR>', { desc = 'Show keybindings' })
-
 -- Imports
 require('language-support')
-require('mod-nvim-tree')
-require('mod-trouble')
 require('plugins.telescope')
+require('plugins.fidget')
+require('plugins.which-key')
+require('plugins.oil')
+require('plugins.icon-picker')
+require('plugins.mini-splitjoin')
+require('plugins.nvim-tree')
+require('plugins.trouble')
