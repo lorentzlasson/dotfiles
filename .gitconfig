@@ -40,6 +40,7 @@
 [delta]
   navigate = true
   line-numbers = true
+  syntax-theme = ansi
 [merge]
   conflictstyle = zdiff3
 [pull]
