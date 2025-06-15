@@ -208,4 +208,5 @@ vim.keymap.set('n', '<leader>?', '<cmd>WhichKey<CR>', { desc = 'Show keybindings
 -- Imports
 require('language-support')
 require('mod-nvim-tree')
+require('mod-trouble')
 require('plugins.telescope')
