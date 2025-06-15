@@ -8,6 +8,7 @@
     bat
     curl
     dbeaver-bin
+    delta
     deno
     dnsutils
     dos2unix
