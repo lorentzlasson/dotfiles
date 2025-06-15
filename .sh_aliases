@@ -11,7 +11,7 @@ alias relsh="exec $SHELL"
 # alias cd="z" # https://github.com/ajeetdsouza/zoxide
 # alias grep="rg" # https://github.com/BurntSushi/ripgrep
 alias vim="nvim" # https://github.com/neovim/neovim
-alias ls="exa -1" # https://github.com/neovim/neovim
+alias ls="eza -1"
 
 alias python=python3
 alias pip=pip3
