@@ -88,10 +88,10 @@ zle -N clear_and_git_status
 bindkey '^L' clear_and_git_status
 
 # custom aliases
-source ~/.sh_aliases
+source ~/.config/shell/aliases.sh
 
 # custom functions
-source ~/.sh_functions
+source ~/.config/shell/functions.sh
 
 # set vim as default editor
 export VISUAL=nvim

@@ -8,9 +8,8 @@ alias ovrc="vim ~/.config/nvim/init.lua"
 alias relsh="exec $SHELL"
 
 # drop-in upgrades
-# alias cd="z" # https://github.com/ajeetdsouza/zoxide
-# alias grep="rg" # https://github.com/BurntSushi/ripgrep
-alias vim="nvim" # https://github.com/neovim/neovim
+alias vim="nvim"
+alias vi="nvim"
 alias ls="eza -1"
 
 alias python=python3
