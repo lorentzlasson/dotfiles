@@ -18,7 +18,6 @@ alias pip=pip3
 
 # convenience
 alias cl="clear"
-alias clg="echo \"use ctrl-l\""
 alias open=xdg-open
 alias copy="xclip -sel clip"
 alias copy1l="tr -d '\n' | copy"
