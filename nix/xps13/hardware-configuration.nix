@@ -32,7 +32,7 @@
   # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
   networking.useDHCP = lib.mkDefault true;
   # networking.interfaces.br-31525110e1d7.useDHCP = lib.mkDefault true;
-  # networking.interfaces.br-736454c202e7.useDHCP = lib.mkDefault true;
+  # networking.interfaces.br-7cb718cd08b0.useDHCP = lib.mkDefault true;
   # networking.interfaces.docker0.useDHCP = lib.mkDefault true;
   # networking.interfaces.wlp58s0.useDHCP = lib.mkDefault true;
 
