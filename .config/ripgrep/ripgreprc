@@ -1,3 +1,18 @@
+# Search behavior
+--smart-case
+--follow
+--hidden
+--glob=!.git/*
+--glob=!node_modules/*
+--glob=!target/*
+--glob=!.next/*
+--glob=!dist/*
+--glob=!build/*
+
+# Output formatting
+--max-columns=150
+--max-columns-preview
+
 # nvim --headless -c "Dunkel colorscheme dark-kontrast ripgrep" -c "qa"
 --colors=column:none
 --colors=line:none
