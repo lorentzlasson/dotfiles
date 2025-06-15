@@ -25,6 +25,7 @@ require("lazy").setup({
   { "tpope/vim-rhubarb" },
   { "tpope/vim-surround" },
   { "ziontee113/icon-picker.nvim" },
+  { "folke/which-key.nvim" },
   {
     "zbirenbaum/copilot.lua",
     config = function()

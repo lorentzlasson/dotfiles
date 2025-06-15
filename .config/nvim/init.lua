@@ -200,6 +200,10 @@ require("oil").setup()
 require("icon-picker").setup({ disable_legacy_commands = true })
 require('mini.splitjoin').setup()
 require('fidget').setup()
+require('which-key').setup()
+
+-- Manual keybinding discovery
+vim.keymap.set('n', '<leader>?', '<cmd>WhichKey<CR>', { desc = 'Show keybindings' })
 
 -- Imports
 require('language-support')
