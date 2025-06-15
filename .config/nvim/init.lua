@@ -192,7 +192,9 @@ vim.api.nvim_create_user_command('CopyDiagnostics', function()
 end, {})
 
 -- Imports
-require('language-support')
+require('plugins.lsp')
+require('plugins.nvim-cmp')
+require('plugins.nvim-treesitter')
 require('plugins.telescope')
 require('plugins.fidget')
 require('plugins.which-key')
