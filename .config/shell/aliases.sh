@@ -5,7 +5,7 @@ alias ozsh="vim ~/.zshrc"
 alias ovrc="vim ~/.config/nvim/init.lua"
 
 # reload config
-alias relsh="exec $SHELL"
+alias relsh='exec $SHELL'
 
 # drop-in upgrades
 alias vim="nvim"
