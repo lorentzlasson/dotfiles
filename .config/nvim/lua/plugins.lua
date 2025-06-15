@@ -7,6 +7,7 @@ require("lazy").setup({
   { "hrsh7th/nvim-cmp" },
   { "nanotee/sqls.nvim" },
   { "neovim/nvim-lspconfig" },
+  { "j-hui/fidget.nvim" },
   { "nvim-tree/nvim-tree.lua" },
   { "nvim-tree/nvim-web-devicons" },
   { "nvim-telescope/telescope.nvim" },
