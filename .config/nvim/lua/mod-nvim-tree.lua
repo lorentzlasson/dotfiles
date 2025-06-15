@@ -7,7 +7,7 @@ local function on_attach(bufnr)
 
   api.config.mappings.default_on_attach(bufnr)
 
-  -- vim.keymap.set("n", "W", api.tree.collapse, opts("Collapse"))
+  vim.keymap.set("n", "W", api.node.collapse, opts("Collapse"))
 end
 
 require("nvim-tree").setup({
