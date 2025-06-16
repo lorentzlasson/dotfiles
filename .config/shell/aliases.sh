@@ -20,5 +20,4 @@ alias cl="clear"
 alias open=xdg-open
 alias copy="xclip -sel clip"
 alias copy1l="tr -d '\n' | copy"
-alias localip="hostname -I | cut -d ' ' -f 1"
 alias :q="exit"
