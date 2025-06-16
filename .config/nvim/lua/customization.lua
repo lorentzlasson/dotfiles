@@ -6,7 +6,7 @@ local nvim_map = vim.api.nvim_set_keymap
 local map = vim.keymap.set
 
 cmd [[
-  cabbrev rel source $MYVIMRC
+  cabbrev rel source $MYVIMRC  " shortcut to reload vimrc
 ]]
 
 g.mapleader = ' ' -- set leader to space
@@ -14,20 +14,20 @@ g.maplocalleader = '\\'
 
 nvim_map('n', '<leader>e', ':edit!<CR>', { noremap = true }) -- force reload from file
 
-nvim_map('n', '<M-a>', 'gg<S-V>G', { noremap = true })
+nvim_map('n', '<M-a>', 'gg<S-V>G', { noremap = true }) -- select all text
 
 nvim_map('v', '$', '$h', { noremap = true }) -- skip line break when selecting to end of line
-nvim_map('x', 'p', 'P', { noremap = true })
-nvim_map('n', '<S-y>', 'v$hy<ESC>', { noremap = true })
-nvim_map('v', '//', 'y/<C-R>"<Esc>', { noremap = true })
+nvim_map('x', 'p', 'P', { noremap = true }) -- paste without yanking replaced text
+nvim_map('n', '<S-y>', 'v$hy<ESC>', { noremap = true }) -- yank to end of line
+nvim_map('v', '//', 'y/<C-R>"<Esc>', { noremap = true }) -- search for selected text
 
 nvim_map('n', '<C-w>', ':echo "Use leader (Space) instead!"<CR>', { noremap = true })
-nvim_map('n', '<leader>', '<C-w>', { noremap = true })
-nvim_map('n', '<leader><leader>', '1<C-w>w', { noremap = true })
-nvim_map('n', '<leader>>', '20<C-w>>', { noremap = true })
-nvim_map('n', '<leader><', '20<C-w><', { noremap = true })
+nvim_map('n', '<leader>', '<C-w>', { noremap = true }) -- remap window commands to leader
+nvim_map('n', '<leader><leader>', '1<C-w>w', { noremap = true }) -- switch to next window
+nvim_map('n', '<leader>>', '20<C-w>>', { noremap = true }) -- increase window width
+nvim_map('n', '<leader><', '20<C-w><', { noremap = true }) -- decrease window width
 
-map('v', '<leader>y', function()
+map('v', '<leader>y', function() -- copy selection wrapped in code block
   local start_pos = fn.getpos("'<")
   local end_pos = fn.getpos("'>")
   local lines = fn.getregion(start_pos, end_pos, { type = fn.visualmode() })
@@ -39,9 +39,9 @@ end, {})
 local function CopyFilenameToClipboard()
   fn.setreg('+', fn.expand('%'))
 end
-map('n', 'yp', CopyFilenameToClipboard)
+map('n', 'yp', CopyFilenameToClipboard) -- copy filename to clipboard
 
--- Define a function and command for creating txt files
+-- define a function and command for creating txt files
 api.nvim_create_user_command('Txt', function(opts)
   local name = opts.args
   local timestamp = fn.strftime('%Y%m%d%H%M%S')
@@ -54,7 +54,7 @@ api.nvim_create_user_command('Sqlfmt', function()
   cmd('%!sql-formatter --language postgresql')
 end, {})
 
--- Smart indent with A
+-- smart indent with A
 function IndentWithA()
   if #fn.getline('.') == 0 then
     api.nvim_feedkeys('cc', 'n', false)
@@ -64,7 +64,7 @@ function IndentWithA()
 end
 nvim_map('n', 'A', [[<cmd>lua IndentWithA()<CR>]], { noremap = true, silent = true })
 
--- Allow :GBrowse to work
+-- allow :GBrowse to work
 api.nvim_create_user_command(
   'Browse',
   function(opts)
@@ -73,7 +73,7 @@ api.nvim_create_user_command(
   { nargs = 1 }
 )
 
--- Wrap selection in js debug log
+-- wrap selection in js debug log
 api.nvim_create_user_command('JsDebug', function()
   local start_pos = fn.getpos("'<")
   local end_pos = fn.getpos("'>")
