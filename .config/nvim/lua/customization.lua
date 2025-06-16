@@ -2,7 +2,8 @@ local api = vim.api
 local cmd = vim.cmd
 local fn = vim.fn
 local g = vim.g
-local map = vim.api.nvim_set_keymap
+local nvim_map = vim.api.nvim_set_keymap
+local map = vim.keymap.set
 
 cmd [[
   cabbrev rel source $MYVIMRC
@@ -11,22 +12,22 @@ cmd [[
 g.mapleader = ' ' -- set leader to space
 g.maplocalleader = '\\'
 
-map('n', '<leader>e', ':edit!<CR>', { noremap = true }) -- force reload from file
+nvim_map('n', '<leader>e', ':edit!<CR>', { noremap = true }) -- force reload from file
 
-map('n', '<M-a>', 'gg<S-V>G', { noremap = true })
+nvim_map('n', '<M-a>', 'gg<S-V>G', { noremap = true })
 
-map('v', '$', '$h', { noremap = true }) -- skip line break when selecting to end of line
-map('x', 'p', 'P', { noremap = true })
-map('n', '<S-y>', 'v$hy<ESC>', { noremap = true })
-map('v', '//', 'y/<C-R>"<Esc>', { noremap = true })
+nvim_map('v', '$', '$h', { noremap = true }) -- skip line break when selecting to end of line
+nvim_map('x', 'p', 'P', { noremap = true })
+nvim_map('n', '<S-y>', 'v$hy<ESC>', { noremap = true })
+nvim_map('v', '//', 'y/<C-R>"<Esc>', { noremap = true })
 
-map('n', '<C-w>', ':echo "Use leader (Space) instead!"<CR>', { noremap = true })
-map('n', '<leader>', '<C-w>', { noremap = true })
-map('n', '<leader><leader>', '1<C-w>w', { noremap = true })
-map('n', '<leader>>', '20<C-w>>', { noremap = true })
-map('n', '<leader><', '20<C-w><', { noremap = true })
+nvim_map('n', '<C-w>', ':echo "Use leader (Space) instead!"<CR>', { noremap = true })
+nvim_map('n', '<leader>', '<C-w>', { noremap = true })
+nvim_map('n', '<leader><leader>', '1<C-w>w', { noremap = true })
+nvim_map('n', '<leader>>', '20<C-w>>', { noremap = true })
+nvim_map('n', '<leader><', '20<C-w><', { noremap = true })
 
-vim.keymap.set('v', '<leader>y', function()
+map('v', '<leader>y', function()
   local start_pos = fn.getpos("'<")
   local end_pos = fn.getpos("'>")
   local lines = fn.getregion(start_pos, end_pos, { type = fn.visualmode() })
@@ -35,13 +36,10 @@ vim.keymap.set('v', '<leader>y', function()
   fn.setreg('+', formatted)
 end, {})
 
-function CopyFilenameToClipboard()
+local function CopyFilenameToClipboard()
   fn.setreg('+', fn.expand('%'))
 end
-map('n', 'yp', ':lua CopyFilenameToClipboard()<CR>', {
-  noremap = true,
-  silent = false,
-})
+map('n', 'yp', CopyFilenameToClipboard)
 
 -- Define a function and command for creating txt files
 api.nvim_create_user_command('Txt', function(opts)
@@ -64,7 +62,7 @@ function IndentWithA()
     api.nvim_feedkeys('A', 'n', false)
   end
 end
-map('n', 'A', [[<cmd>lua IndentWithA()<CR>]], { noremap = true, silent = true })
+nvim_map('n', 'A', [[<cmd>lua IndentWithA()<CR>]], { noremap = true, silent = true })
 
 -- Allow :GBrowse to work
 api.nvim_create_user_command(
