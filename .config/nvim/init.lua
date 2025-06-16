@@ -4,8 +4,7 @@ require('plugins')
 
 -- Core config
 require('options')
-require('keymaps')
-require('commands')
+require('customization')
 require('theme')
 
 -- Plugin imports
