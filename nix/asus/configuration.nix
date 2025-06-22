@@ -4,6 +4,7 @@
   imports =
     [
       ./hardware-configuration.nix
+      ../pc/configuration.nix
     ];
 
   networking.hostName = "asus";

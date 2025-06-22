@@ -3,6 +3,7 @@
   imports =
     [
       ./hardware-configuration.nix
+      ../server/configuration.nix
     ];
 
   networking.hostName = "nuc";
