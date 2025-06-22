@@ -2,13 +2,13 @@
 Collection of my personal dotfiles
 
 ## Setup
-- `cd ~`
-- `git clone https://github.com/lorentzlasson/dotfiles`
-- `rm ~/.config` # Remove the symlink if it exists
-- `mkdir -p ~/.config` # Create a new, genuine directory
-- `cd dotfiles`
-- `stow .`
-- `ls -lah ~/.config` # TODO: remove this verification step if it behaves as expected next time
+1. `cd ~`
+1. `git clone https://github.com/lorentzlasson/dotfiles`
+1. `rm ~/.config` # Remove the symlink if it exists
+1. `mkdir -p ~/.config` # Create a new, genuine directory
+1. `cd dotfiles`
+1. `stow .`
+1. (if on pc) `./pc/symlink`
 
 ## Ref
 https://systemcrafters.net/managing-your-dotfiles/using-gnu-stow/
