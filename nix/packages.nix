@@ -25,7 +25,6 @@
     nodePackages_latest.sql-formatter
     nodePackages_latest.typescript-language-server
     nodejs # for copilot
-    ollama
     pciutils # system information
     pgcli
     postgres-lsp

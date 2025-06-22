@@ -33,5 +33,10 @@
       openFirewall = true;
       user = "lorentz";
     };
+
+    ollama = {
+      enable = true;
+      acceleration = "cuda";
+    };
   };
 }
