@@ -8,6 +8,7 @@
     ];
 
   networking.hostName = "asus";
+  system.stateVersion = "23.11";
 
   # https://nixos.wiki/wiki/Nvidia
   hardware = {

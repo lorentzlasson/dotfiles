@@ -9,4 +9,5 @@
     ];
 
   networking.hostName = "xps15";
+  system.stateVersion = "23.11";
 }
