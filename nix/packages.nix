@@ -13,6 +13,7 @@
     file
     gcc
     gnumake
+    htop
     inxi # system information
     jq
     lsof
