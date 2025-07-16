@@ -5,6 +5,7 @@
     alacritty
     atuin
     bat
+    cloudflared
     curl
     deno
     dnsutils
