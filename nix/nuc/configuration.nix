@@ -39,6 +39,14 @@
             '';
           };
         };
+        "www.lorentz.casa" = {
+          enableACME = true;
+          forceSSL = true;
+          root = "/var/www";
+          locations."/" = {
+            tryFiles = "$uri $uri/ =404";
+          };
+        };
         "_" = {
           default = true;
           locations."/" = {
