@@ -7,6 +7,7 @@
     bat
     cloudflared
     curl
+    delta
     deno
     dnsutils
     dos2unix

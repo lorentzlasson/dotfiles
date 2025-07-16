@@ -8,7 +8,6 @@
   environment.systemPackages = with pkgs; [
     # zed-editor # too slow too compile
     dbeaver-bin
-    delta
     dropbox-cli
     fd
     firefox
