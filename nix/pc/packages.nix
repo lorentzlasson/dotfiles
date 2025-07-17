@@ -32,6 +32,7 @@
     # unfree
     claude-code
     discord
+    gemini-cli
     google-chrome
     signal-desktop
     slack
