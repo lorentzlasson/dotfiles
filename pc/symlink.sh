@@ -1,3 +1,3 @@
 #!/usr/bin/env sh
 
-ln --symbolic ~/dotfiles/pc/claude.md ~/.claude/claude.md
+ln --symbolic ~/dotfiles/pc/CLAUDE.md ~/.claude/CLAUDE.md
