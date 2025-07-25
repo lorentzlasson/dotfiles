@@ -91,3 +91,6 @@ Structure for libraries/tools
 - Use `rg` instead of `grep`
 - Try using the raw npm package instead of through npx e.g. `eslint [..]` instead of `npx eslint [..]`
 - Rely on shebang if there is one in script
+
+## Git Practices
+- Never include mentions of claude in git messages
