@@ -28,6 +28,7 @@
       videoDrivers = [ "nvidia" ];
     };
     # https://nixos.wiki/wiki/Plex
+    # library in /srv
     plex = {
       enable = true;
       openFirewall = true;

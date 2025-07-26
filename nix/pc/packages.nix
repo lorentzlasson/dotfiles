@@ -24,6 +24,7 @@
     pavucontrol
     pinta
     protonvpn-gui
+    qbittorrent
     sd
     speechd # spd-say "hello"
     tcpdump
