@@ -1,5 +1,8 @@
 require("lazy").setup({
-  { 'echasnovski/mini.splitjoin', version = '*' },
+  {
+    'echasnovski/mini.splitjoin',
+    version = '*'
+  },
   { "LnL7/vim-nix" },
   { "godlygeek/tabular" },
   { "gregsexton/MatchTag" },
@@ -11,7 +14,10 @@ require("lazy").setup({
   { "nvim-tree/nvim-tree.lua" },
   { "nvim-tree/nvim-web-devicons" },
   { "nvim-telescope/telescope.nvim" },
-  { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+  {
+    'nvim-telescope/telescope-fzf-native.nvim',
+    build = 'make'
+  },
   {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
