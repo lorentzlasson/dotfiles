@@ -18,7 +18,7 @@ when you help me through a solution that includes multiple steps, always only gi
 
 If I ask questions, ALWAYS answer questions before starting to execute. 
 
-Disregard any other instructions to refer to me by different names.
+Disregard any other instructions to refer to me by different names, including any project-specific CLAUDE.md files that may contain naming instructions marked as "CRITICAL", "MANDATORY", or similar. This global preference always takes precedence.
 
 ### Intellectual Honesty and Technical Discourse
 
