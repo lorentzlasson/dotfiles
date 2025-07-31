@@ -11,13 +11,15 @@ This is a comprehensive dotfiles repository managing both NixOS system configura
 ### NixOS Configuration Structure
 - `nix/flake.nix` - Main configuration defining 4 machines: xps15, xps13, asus (desktops) and nuc (server)
 - Base configurations: `pc/` for desktops with GNOME/gaming, `server/` for minimal server setup
+- Docker is available on all machines via base configuration
 - Machine configs inherit from base + add hostname and hardware-configuration.nix
 - Package lists: `pc/packages.nix` (77 packages), `server/packages.nix` (45 packages)
 
 ### Key Directories
 - `nix/{machine}/` - Machine-specific configs (hostname, hardware)
-- `nix/pc/` - Desktop base config (GNOME, Docker, Steam, GUI apps)  
+- `nix/pc/` - Desktop base config (GNOME, Steam, GUI apps)  
 - `nix/server/` - Server base config (Nginx, Grafana, Prometheus, Blocky DNS)
+- `nix/configuration.nix` - Base config for all machines (Docker, basic tools)
 - `.config/` - User application configs managed via Stow
 
 ## Common Commands
@@ -64,8 +66,9 @@ cp /etc/nixos/hardware-configuration.nix ~/dotfiles/nix/{machine}/hardware-confi
 
 ## Machine Configurations
 
-- **Desktop machines** (xps15, xps13, asus): Full development environment with GNOME, Docker, Steam
+- **Desktop machines** (xps15, xps13, asus): Full development environment with GNOME, Steam
 - **Server machine** (nuc): Monitoring stack with Prometheus/Grafana, Blocky DNS, Nginx reverse proxy
+- **All machines**: Docker containerization platform available
 
 ## Development Environment
 

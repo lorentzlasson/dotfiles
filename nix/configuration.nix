@@ -12,6 +12,8 @@
 
   users.defaultUserShell = pkgs.zsh;
 
+  virtualisation.docker.enable = true;
+
   programs = {
     git.enable = true;
     neovim = {

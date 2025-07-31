@@ -75,7 +75,6 @@
 
   console.useXkbConfig = true;
 
-  virtualisation.docker.enable = true;
 
   programs = {
     _1password.enable = true;
