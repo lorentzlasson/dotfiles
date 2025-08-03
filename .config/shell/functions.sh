@@ -29,6 +29,11 @@ localip() {
   ip route get 1.1.1.1 | awk '{print $7}' | head --lines=1
 }
 
+# router usually
+defaultgatewayip() {
+  ip route get 1.1.1.1 | awk '{print $3}' | head --lines=1
+}
+
 publicip() {
   curl https://ipinfo.io/ip
 }
