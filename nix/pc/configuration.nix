@@ -78,6 +78,10 @@
 
   programs = {
     _1password.enable = true;
+    captive-browser = {
+      enable = true;
+      interface = "wlp58s0";
+    };
     git.enable = true;
     neovim = {
       enable = true;
@@ -137,7 +141,10 @@
   # https://nixos.wiki/wiki/Dropbox
   networking = {
     # hostName handled by machine specific config
-    networkmanager.enable = true;
+    networkmanager = {
+      enable = true;
+      settings.connectivity.enabled = true;
+    };
 
     firewall = {
       allowedTCPPorts = [ 17500 ];
