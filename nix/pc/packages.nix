@@ -15,6 +15,7 @@
     gleam
     godot_4 # game engine
     gptfdisk
+    imagemagick
     jira-cli-go
     keymapp # https://blog.zsa.io/keymapp/
     luajitPackages.luacheck
