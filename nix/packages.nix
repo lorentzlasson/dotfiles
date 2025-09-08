@@ -28,7 +28,7 @@
     nodePackages_latest.bash-language-server
     nodePackages_latest.sql-formatter
     nodePackages_latest.typescript-language-server
-    nodejs # for copilot
+    nodejs
     pciutils # system information
     pgcli
     postgres-lsp

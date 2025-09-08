@@ -33,21 +33,6 @@ require("lazy").setup({
   { "ziontee113/icon-picker.nvim" },
   { "folke/which-key.nvim" },
   { "folke/trouble.nvim" },
-  {
-    "zbirenbaum/copilot.lua",
-    config = function()
-      require("copilot").setup({
-        suggestion = { enabled = false },
-        panel = { enabled = false },
-      })
-    end
-  },
-  {
-    "zbirenbaum/copilot-cmp",
-    config = function()
-      require("copilot_cmp").setup()
-    end
-  },
 
   -- Colorschemes
   { "Luxed/ayu-vim" },
