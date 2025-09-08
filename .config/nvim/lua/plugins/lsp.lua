@@ -3,6 +3,7 @@ local lspconfig = require('lspconfig')
 -- SERVERS WITH DEFAULT CONFIG
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 local servers = {
+  "astro",
   "bashls",
   "elmls",
   "eslint",

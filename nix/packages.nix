@@ -3,6 +3,7 @@
 {
   environment.systemPackages = with pkgs; [
     alacritty
+    astro-language-server
     atuin
     bat
     cloudflared
