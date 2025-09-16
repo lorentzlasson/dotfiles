@@ -25,6 +25,10 @@ process_using_port() {
   lsof -i :"$1"
 }
 
+pretty_path() {
+  echo "$PATH" | tr ':' '\n'
+}
+
 localip() {
   ip route get 1.1.1.1 | awk '{print $7}' | head --lines=1
 }
