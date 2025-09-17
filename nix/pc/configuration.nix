@@ -71,6 +71,16 @@
         driver = pkgs.libfprint-2-tod1-goodix;
       };
     };
+
+    openvpn.servers = {
+      mp = {
+        config = ''
+          config /etc/nixos/vpn/mp.ovpn
+        '';
+        autoStart = false;
+        updateResolvConf = true;
+      };
+    };
   };
 
   console.useXkbConfig = true;
