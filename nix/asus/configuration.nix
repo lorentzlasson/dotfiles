@@ -10,6 +10,12 @@
   networking.hostName = "asus";
   system.stateVersion = "23.11";
 
+  # XBOOTLDR setup for dual boot with small Windows ESP
+  boot.loader = {
+    efi.efiSysMountPoint = "/efi";
+    systemd-boot.xbootldrMountPoint = "/boot";
+  };
+
   environment.sessionVariables = {
     __NV_PRIME_RENDER_OFFLOAD = "1";
     __NV_PRIME_RENDER_OFFLOAD_PROVIDER = "NVIDIA-G0";
