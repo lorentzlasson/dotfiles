@@ -106,45 +106,18 @@
       syntaxHighlighting.enable = true;
     };
 
-    # unclear if this is the right approach or not
-    # https://github.com/NixOS/nixpkgs/blob/f1fcf6b13adc5e12bc04af033a6309f5fb61eee4/nixos/modules/programs/dconf.nix#L210
-    dconf = {
-      enable = true;
-      profiles.user.databases = [{
-        # lockAll = true;
-        settings = {
-          "org/gnome/desktop/interface".color-scheme = "prefer-dark";
+  };
 
-          # disable window tabbing (useless)
-          "org/gnome/desktop/wm/keybindings".switch-windows = "[]";
-          "org/gnome/desktop/wm/keybindings".switch-windows-backward = "[]";
-
-          # tab between applications on alt tab (grouped by application type, not window)
-          "org/gnome/desktop/wm/keybindings".switch-applications = "['<Alt>Tab']";
-          "org/gnome/desktop/wm/keybindings".switch-applications-backward = "['<Shift><Alt>Tab']";
-
-          # tab between windows of applications on alt backspace
-          "org/gnome/desktop/wm/keybindings".switch-group = "['<Alt>BackSpace']";
-          "org/gnome/desktop/wm/keybindings".switch-group-backward = "['<Shift><Alt>BackSpace']";
-
-          # swap caps lock and escape
-          "org/gnome/desktop/input-sources".xkb-options = "['caps:swapescape']";
-
-          "org/gnome/settings-daemon/plugins/media-keys" = {
-            custom-keybindings = [
-              "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/"
-            ];
-          };
-
-          "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
-            binding = "<Ctrl><Alt>t";
-            command = "alacritty";
-          };
-
-          "org/gnome/mutter".dynamic-workspaces = false;
-          "org/gnome/desktop/wm/preferences".num-workspaces = "1";
-        };
-      }];
+  # GNOME settings via systemd user service
+  systemd.user.services.gnome-settings = {
+    description = "Apply GNOME settings";
+    wantedBy = [ "graphical-session.target" ];
+    after = [ "graphical-session.target" ];
+    path = [ pkgs.glib ];
+    script = "${pkgs.bash}/bin/bash ${./gnome-settings.sh}";
+    serviceConfig = {
+      Type = "oneshot";
+      RemainAfterExit = true;
     };
   };
 
