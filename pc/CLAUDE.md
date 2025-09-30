@@ -44,7 +44,7 @@ my opinions.
 ## Code preferences
 I like my code to be as simple as possible and prefer a functional style. 
 
-I dont want comments describing the code, unless the code is very complex (which it rarely should be).
+NEVER add code comments. Only add comments when I explicitly ask for comments to be added.
 
 For general scripting, use typescript and deno.
 
