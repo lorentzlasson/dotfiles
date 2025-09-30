@@ -48,6 +48,10 @@ NEVER add code comments. Only add comments when I explicitly ask for comments to
 
 For general scripting, use typescript and deno.
 
+## Code Modification Rules
+- Never re-add code that the user has explicitly removed
+- Respect all user code changes as intentional decisions
+
 ### Typescript
 - Avoid `any` as much as possible
 - Avoid `let` as much as possible
