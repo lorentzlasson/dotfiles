@@ -98,7 +98,13 @@
       defaultEditor = true;
     };
     steam.enable = true;
-    tmux.enable = true;
+    tmux = {
+      enable = true;
+      plugins = with pkgs.tmuxPlugins; [
+        sensible
+        resurrect
+      ];
+    };
     direnv.enable = true;
 
     zsh = {
