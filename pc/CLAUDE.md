@@ -100,3 +100,5 @@ Structure for libraries/tools
 - Never include mentions of claude in git messages
 - Never include marketing text like "Generated with Claude Code" in commits
 - Keep commit messages focused on the technical change only
+- Use lowercase for commit message subjects with no periods
+- Keep commit messages brief and to the point
