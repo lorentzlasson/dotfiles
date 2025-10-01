@@ -98,3 +98,5 @@ Structure for libraries/tools
 
 ## Git Practices
 - Never include mentions of claude in git messages
+- Never include marketing text like "Generated with Claude Code" in commits
+- Keep commit messages focused on the technical change only
