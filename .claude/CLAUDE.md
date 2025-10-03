@@ -48,10 +48,6 @@ NEVER add code comments. Only add comments when I explicitly ask for comments to
 
 For general scripting, use typescript and deno.
 
-## Code Modification Rules
-- Never re-add code that the user has explicitly removed
-- Respect all user code changes as intentional decisions
-
 ### Typescript
 - Avoid `any` as much as possible
 - Avoid `let` as much as possible
@@ -98,7 +94,3 @@ Structure for libraries/tools
 
 ## Git Practices
 - Never include mentions of claude in git messages
-- Never include marketing text like "Generated with Claude Code" in commits
-- Keep commit messages focused on the technical change only
-- Use lowercase for commit message subjects with no periods
-- Keep commit messages brief and to the point

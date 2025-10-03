@@ -8,7 +8,6 @@ Collection of my personal dotfiles
 1. `mkdir -p ~/.config` # Create a new, genuine directory
 1. `cd dotfiles`
 1. `stow .`
-1. (if on pc) `./pc/symlink`
 
 ## Ref
 https://systemcrafters.net/managing-your-dotfiles/using-gnu-stow/
