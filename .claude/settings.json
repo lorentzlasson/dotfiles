@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(just:*)",
+
+      "Bash(gcloud logging read:*)",
+
+      "WebSearch",
+      "WebFetch(domain:*)",
+
+      "mcp__chrome-devtools__take_screenshot",
+      "mcp__chrome-devtools__navigate_page",
+
+      "Read(//home/lorentz/dev/**)",
+      "Read(//home/lorentz/.claude/**)"
+    ],
+    "deny": [],
+    "ask": []
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "chrome-devtools"
+  ]
+}
