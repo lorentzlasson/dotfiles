@@ -2,15 +2,13 @@
   "permissions": {
     "allow": [
       "Bash(just:*)",
-
+      "Bash(git add:*)",
+      "Bash(gh run list:*)",
+      "Bash(gh run view:*)",
+      "Bash(mkdir:*)",
       "Bash(gcloud logging read:*)",
-
       "WebSearch",
       "WebFetch(domain:*)",
-
-      "mcp__chrome-devtools__take_screenshot",
-      "mcp__chrome-devtools__navigate_page",
-
       "Read(//home/lorentz/dev/**)",
       "Read(//home/lorentz/.claude/**)"
     ],
@@ -20,5 +18,6 @@
   "enableAllProjectMcpServers": true,
   "enabledMcpjsonServers": [
     "chrome-devtools"
-  ]
+  ],
+  "alwaysThinkingEnabled": true
 }
