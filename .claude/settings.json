@@ -6,6 +6,7 @@
       "Bash(gh run view:*)",
       "Bash(mkdir:*)",
       "Bash(gcloud logging read:*)",
+      "Bash(git log:*)",
       "WebSearch",
       "WebFetch",
       "Read(//home/lorentz/dev/**)",
