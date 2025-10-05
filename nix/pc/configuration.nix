@@ -97,7 +97,12 @@
       enable = true;
       defaultEditor = true;
     };
-    steam.enable = true;
+    steam = {
+      enable = true;
+      gamescopeSession.enable = true;
+      localNetworkGameTransfers.openFirewall = true;
+    };
+    gamemode.enable = true;
     tmux = {
       enable = true;
       plugins = with pkgs.tmuxPlugins; [

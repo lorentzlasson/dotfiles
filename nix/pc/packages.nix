@@ -19,6 +19,7 @@
     jira-cli-go
     keymapp # https://blog.zsa.io/keymapp/
     luajitPackages.luacheck
+    mangohud
     nix-search-cli
     nmap
     obs-studio # Free and open source software for video recording and live streaming.
