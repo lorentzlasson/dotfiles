@@ -2,7 +2,6 @@
   "permissions": {
     "allow": [
       "Bash(just:*)",
-      "Bash(git add:*)",
       "Bash(gh run list:*)",
       "Bash(gh run view:*)",
       "Bash(mkdir:*)",

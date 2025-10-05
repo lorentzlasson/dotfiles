@@ -91,8 +91,3 @@ Structure for libraries/tools
 - Use `rg` instead of `grep`
 - Try using the raw npm package instead of through npx e.g. `eslint [..]` instead of `npx eslint [..]`
 - Rely on shebang if there is one in script
-
-## Git Practices
-- Never include mentions of claude in git messages
-- Use lowercase for all text except proper names (e.g., "add Nix development environment" not "Add nix development environment")
-- This applies to commit titles, bullet points, and all git message text
