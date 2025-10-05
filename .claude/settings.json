@@ -7,7 +7,7 @@
       "Bash(mkdir:*)",
       "Bash(gcloud logging read:*)",
       "WebSearch",
-      "WebFetch(domain:*)",
+      "WebFetch",
       "Read(//home/lorentz/dev/**)",
       "Read(//home/lorentz/.claude/**)"
     ],
