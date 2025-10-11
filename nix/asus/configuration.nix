@@ -41,7 +41,7 @@
       videoDrivers = [ "nvidia" ];
     };
     # https://nixos.wiki/wiki/Plex
-    # library in /srv
+    # library in /srv/plex
     plex = {
       enable = true;
       openFirewall = true;
@@ -53,4 +53,8 @@
       acceleration = "cuda";
     };
   };
+
+  systemd.tmpfiles.rules = [
+    "d /srv/plex 0755 lorentz users -"
+  ];
 }
