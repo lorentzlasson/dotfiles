@@ -42,6 +42,19 @@ publicip() {
   curl https://ipinfo.io/ip
 }
 
+chromium-debug() {
+  chromium \
+    --remote-debugging-port=9222 \
+    --no-first-run \
+    --no-default-browser-check \
+    --window-size=1920,1080 \
+    --guest \
+    --disable-features=Translate \
+    --disable-background-networking \
+    --log-level=3 \
+    "$@"
+}
+
 # https://unix.stackexchange.com/a/112284
 # Edit the /etc/default/grub and replace GRUB_DEFAULT=0 with GRUB_DEFAULT=saved
 # sudo update-grub
