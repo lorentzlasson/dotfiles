@@ -33,6 +33,7 @@
     tcpdump
     unison-ucm
     wev
+    xournalpp
 
     # unfree
     claude-code
