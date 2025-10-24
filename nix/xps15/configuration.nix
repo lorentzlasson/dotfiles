@@ -11,6 +11,8 @@
   networking.hostName = "xps15";
   system.stateVersion = "23.11";
 
+  boot.blacklistedKernelModules = [ "spd5118" ];
+
   hardware = {
     graphics.enable = true;
     nvidia = {
