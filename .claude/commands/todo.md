@@ -17,8 +17,6 @@ Structure the document with these sections:
 
 Include actionable steps with code examples and specific file paths.
 
-Commit the document immediately after creation respecting the users git
-preferences.
+Commit the document immediately after creation respecting the users git preferences. follow git preferences strictly
 
-"$ARGUMENTS" contains the feature/investigation description. Use it to generate
-the filename in kebab-case and structure the document content.
+"$ARGUMENTS" contains the feature/investigation description. Use it to generate the filename in kebab-case and structure the document content.
