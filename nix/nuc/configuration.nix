@@ -10,6 +10,11 @@
   networking.hostName = "nuc";
   system.stateVersion = "24.11";
 
+  systemd.services.blocky = {
+    after = [ "network-online.target" ];
+    wants = [ "network-online.target" ];
+  };
+
   fileSystems."/mnt/data" = {
     device = "/dev/disk/by-uuid/3262d20e-55a6-4cde-b059-ae51a6665ebe";
     fsType = "ext4";
