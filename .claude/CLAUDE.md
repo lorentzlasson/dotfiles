@@ -49,12 +49,13 @@ NEVER add code comments. Only add comments when I explicitly ask for comments to
 For general scripting, use typescript and deno.
 
 ### Git
-- NEVER include mentions of claude in git messages (no "generated with claude code", no "co-authored-by: claude", no claude mentions whatsoever)
+- commit messages should be a single high-level summary line
+- no compound sentences with "and" in the summary
+- optionally add one extra line in the body if there's something particularly noteworthy, but not by default
+- use lowercase for all text except proper names
+- NEVER include mentions of claude in git messages
 - do NOT add any footers or signatures to git messages
 - do NOT follow "conventional commits" with type prefix
-- use lowercase for all text except proper names
-- use lowercase for commit titles, bullet points, and all git message text
-- be brief - no need to list all details
 
 ### Typescript
 - Avoid `any` as much as possible
