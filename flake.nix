@@ -16,6 +16,13 @@
           buildInputs = with pkgs; [
             just
             stow
+            nixfmt-rfc-style
+            treefmt
+            statix
+            deadnix
+            shellcheck
+            shfmt
+            stylua
           ];
         };
 

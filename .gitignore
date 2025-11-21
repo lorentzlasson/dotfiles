@@ -2,3 +2,4 @@
 .config/pgcli/log
 tmp
 .direnv/
+.treefmt.cache

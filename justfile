@@ -34,3 +34,18 @@ hardware-sync machine:
   cp /etc/nixos/hardware-configuration.nix ~/dotfiles/nix/{{machine}}/hardware-configuration.nix
 
 update-all: nix-update nix-rebuild stow
+
+static-qa:
+  find nix/ -name "*.nix" -exec nixfmt --check {} +
+  statix check nix/
+  deadnix --fail --exclude nix/*/hardware-configuration.nix nix/
+  shellcheck --shell=bash --exclude=SC1090,SC1091,SC2034,SC2086,SC2155 nix/**/*.sh .config/shell/*.sh .zshrc
+  shfmt --indent 2 --diff .config/shell/*.sh .zshrc
+  stylua --check .config/nvim/
+
+static-fix:
+  find nix/ -name "*.nix" -exec nixfmt {} +
+  statix fix nix/
+  deadnix --edit --exclude nix/*/hardware-configuration.nix nix/
+  shfmt --indent 2 --write .config/shell/*.sh .zshrc
+  stylua .config/nvim/
