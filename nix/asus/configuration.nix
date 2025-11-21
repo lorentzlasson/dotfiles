@@ -1,11 +1,10 @@
 { config, ... }:
 
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-      ../pc/configuration.nix
-    ];
+  imports = [
+    ./hardware-configuration.nix
+    ../pc/configuration.nix
+  ];
 
   networking.hostName = "asus";
   system.stateVersion = "23.11";

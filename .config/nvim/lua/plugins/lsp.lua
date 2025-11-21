@@ -3,72 +3,72 @@ local lspconfig = require('lspconfig')
 -- SERVERS WITH DEFAULT CONFIG
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 local servers = {
-  "astro",
-  "bashls",
-  "elmls",
-  "eslint",
-  "gdscript",
-  "gleam",
-  "gopls",
-  "jsonls",
+  'astro',
+  'bashls',
+  'elmls',
+  'eslint',
+  'gdscript',
+  'gleam',
+  'gopls',
+  'jsonls',
   -- "postgres_lsp", not really doing much yet
-  "pyright",
-  "roc_ls",
-  "solargraph",
-  "terraformls",
-  "yamlls",
+  'pyright',
+  'roc_ls',
+  'solargraph',
+  'terraformls',
+  'yamlls',
 }
 
 for _, server in ipairs(servers) do
-  lspconfig[server].setup {}
+  lspconfig[server].setup({})
 end
 
 -- SERVERS WITH SPECIAL CONFIG
 
-lspconfig.denols.setup {
-  root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc"),
-}
+lspconfig.denols.setup({
+  root_dir = lspconfig.util.root_pattern('deno.json', 'deno.jsonc'),
+})
 
-lspconfig.elixirls.setup {
-  cmd = { "elixir-ls" };
-}
+lspconfig.elixirls.setup({
+  cmd = { 'elixir-ls' },
+})
 
-lspconfig.ts_ls.setup {
+lspconfig.ts_ls.setup({
   root_dir = function(filename)
-    local denoRootDir = lspconfig.util.root_pattern("deno.json", "deno.jsonc")(filename);
+    local denoRootDir = lspconfig.util.root_pattern('deno.json', 'deno.jsonc')(filename)
     if denoRootDir then
-      return nil;
+      return nil
     end
 
-    return lspconfig.util.root_pattern("package.json", ".git")(filename);
+    return lspconfig.util.root_pattern('package.json', '.git')(filename)
   end,
   single_file_support = false,
   on_init = function(client)
-    client.offset_encoding = "utf-8"
+    client.offset_encoding = 'utf-8'
   end,
-}
+})
 
-lspconfig.lua_ls.setup {
+lspconfig.lua_ls.setup({
   settings = {
     Lua = {
       diagnostics = {
-        globals = { 'vim' }
-      }
-    }
-  }
-}
+        globals = { 'vim' },
+      },
+    },
+  },
+})
 
-lspconfig.nil_ls.setup {
+lspconfig.nil_ls.setup({
   settings = {
     ['nil'] = {
       formatting = {
-        command = { "nixpkgs-fmt" },
-      }
-    }
-  }
-}
+        command = { 'nixpkgs-fmt' },
+      },
+    },
+  },
+})
 
-lspconfig.sqls.setup{
+lspconfig.sqls.setup({
   on_attach = function(client, bufnr)
     require('sqls').on_attach(client, bufnr) -- require sqls.nvim
   end,
@@ -82,7 +82,7 @@ lspconfig.sqls.setup{
       },
     },
   },
-}
+})
 
 -- GENERAL KEY MAPPINGS
 vim.api.nvim_create_autocmd('LspAttach', {

@@ -1,13 +1,15 @@
 { pkgs, lib, ... }:
 
 {
-  imports =
-    [
-      ../configuration.nix
-      ./packages.nix
-    ];
+  imports = [
+    ../configuration.nix
+    ./packages.nix
+  ];
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   boot.loader = {
     systemd-boot.enable = true;
@@ -33,7 +35,11 @@
 
   users.users.lorentz = {
     isNormalUser = true;
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "docker"
+    ];
     shell = pkgs.zsh;
   };
 
@@ -84,7 +90,6 @@
   };
 
   console.useXkbConfig = true;
-
 
   programs = {
     _1password.enable = true;

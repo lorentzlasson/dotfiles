@@ -5,9 +5,9 @@ local g = vim.g
 local nvim_map = vim.api.nvim_set_keymap
 local map = vim.keymap.set
 
-cmd [[
+cmd([[
   cabbrev rel source $MYVIMRC  " shortcut to reload vimrc
-]]
+]])
 
 g.mapleader = ' ' -- set leader to space
 g.maplocalleader = '\\'
@@ -32,7 +32,7 @@ map('v', '<leader>y', function() -- copy selection wrapped in code block
   local end_pos = fn.getpos("'>")
   local lines = fn.getregion(start_pos, end_pos, { type = fn.visualmode() })
   local ft = vim.bo.filetype
-  local formatted = "```" .. ft .. "\n" .. table.concat(lines, "\n") .. "\n```"
+  local formatted = '```' .. ft .. '\n' .. table.concat(lines, '\n') .. '\n```'
   fn.setreg('+', formatted)
 end, {})
 
@@ -65,13 +65,9 @@ end
 nvim_map('n', 'A', [[<cmd>lua IndentWithA()<CR>]], { noremap = true, silent = true })
 
 -- allow :GBrowse to work
-api.nvim_create_user_command(
-  'Browse',
-  function(opts)
-    fn.system { 'xdg-open', opts.fargs[1] }
-  end,
-  { nargs = 1 }
-)
+api.nvim_create_user_command('Browse', function(opts)
+  fn.system({ 'xdg-open', opts.fargs[1] })
+end, { nargs = 1 })
 
 -- wrap selection in js debug log
 api.nvim_create_user_command('JsDebug', function()
@@ -79,11 +75,15 @@ api.nvim_create_user_command('JsDebug', function()
   local end_pos = fn.getpos("'>")
 
   local lines = fn.getline(start_pos[2], end_pos[2])
-  local indent = lines[1]:match("^%s*") or ""
-  local selected_text = table.concat(lines, "\n"):gsub("^%s+", "")
+  local indent = lines[1]:match('^%s*') or ''
+  local selected_text = table.concat(lines, '\n'):gsub('^%s+', '')
 
-  local wrapped_text = indent ..
-      'console.log(`🍎🍎🍎 ' .. selected_text .. ': ${JSON.stringify(' .. selected_text .. ', null, 2)} 🍎🍎🍎`)'
+  local wrapped_text = indent
+    .. 'console.log(`🍎🍎🍎 '
+    .. selected_text
+    .. ': ${JSON.stringify('
+    .. selected_text
+    .. ', null, 2)} 🍎🍎🍎`)'
 
   fn.setline(start_pos[2], wrapped_text)
 end, { range = true })
@@ -91,14 +91,17 @@ end, { range = true })
 api.nvim_create_user_command('CopyDiagnostics', function()
   local diagnostics = vim.diagnostic.get(0)
   if #diagnostics == 0 then
-    print("No diagnostics found")
+    print('No diagnostics found')
     return
   end
 
-  local formatted = table.concat(vim.tbl_map(function(d)
-    return string.format("%s:%d: %s", fn.bufname(d.bufnr or 0), d.lnum + 1, d.message)
-  end, diagnostics), '\n')
+  local formatted = table.concat(
+    vim.tbl_map(function(d)
+      return string.format('%s:%d: %s', fn.bufname(d.bufnr or 0), d.lnum + 1, d.message)
+    end, diagnostics),
+    '\n'
+  )
 
   fn.setreg('+', 'Neovim diagnostics:\n```text\n' .. formatted .. '\n```')
-  print(string.format("Copied %d diagnostic(s) to clipboard", #diagnostics))
+  print(string.format('Copied %d diagnostic(s) to clipboard', #diagnostics))
 end, {})

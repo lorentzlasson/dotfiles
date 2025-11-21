@@ -102,34 +102,33 @@ export PATH=~/.local/bin:$PATH
 # go
 export PATH="/usr/local/go/bin:$PATH"
 
-if command -v tmux &> /dev/null; then
-  if [ -z "$TMUX" ]
-  then
-      tmux attach -t $TMUX || tmux
+if command -v tmux &>/dev/null; then
+  if [ -z "$TMUX" ]; then
+    tmux attach -t $TMUX || tmux
   fi
 fi
 
 # cd on steroids https://github.com/ajeetdsouza/zoxide
-if command -v zoxide &> /dev/null; then
+if command -v zoxide &>/dev/null; then
   eval "$(zoxide init zsh)"
 fi
 
 # Direnv hook https://direnv.net/docs/hook.html#zsh
-if command -v direnv &> /dev/null; then
+if command -v direnv &>/dev/null; then
   eval "$(direnv hook zsh)"
 fi
 
 # https://docs.atuin.sh/
-if command -v atuin &> /dev/null; then
+if command -v atuin &>/dev/null; then
   eval "$(atuin init zsh)"
 fi
 
 # kubectl
-if command -v kubectl &> /dev/null; then
+if command -v kubectl &>/dev/null; then
   source <(kubectl completion zsh)
 fi
 
 # ripgrep
-if command -v rg &> /dev/null; then
+if command -v rg &>/dev/null; then
   export RIPGREP_CONFIG_PATH=~/.config/ripgrep/ripgreprc
 fi

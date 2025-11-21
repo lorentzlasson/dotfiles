@@ -4,13 +4,18 @@
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
   };
 
-  outputs = { nixpkgs, nixos-hardware, ... }:
+  outputs =
+    { nixpkgs, nixos-hardware, ... }:
     let
-      mkSystem = hostConfig: nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = { inputs = { inherit nixos-hardware; }; };
-        modules = [ hostConfig ];
-      };
+      mkSystem =
+        hostConfig:
+        nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = {
+            inputs = { inherit nixos-hardware; };
+          };
+          modules = [ hostConfig ];
+        };
     in
     {
       nixosConfigurations = {

@@ -1,4 +1,3 @@
-
 # open config
 alias otc="vim ~/.tmux.conf"
 alias ozsh="vim ~/.zshrc"

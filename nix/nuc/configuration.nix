@@ -1,11 +1,10 @@
 # Has shitty wifi signal - 2.4GHz performs better than 5GHz
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-      ../configuration.nix
-      ./packages.nix
-    ];
+  imports = [
+    ./hardware-configuration.nix
+    ../configuration.nix
+    ./packages.nix
+  ];
 
   networking.hostName = "nuc";
   system.stateVersion = "24.11";
@@ -101,7 +100,10 @@
         # For initially solving DoH/DoT Requests when no system Resolver is available.
         bootstrapDns = {
           upstream = "https://one.one.one.one/dns-query";
-          ips = [ "1.1.1.1" "1.0.0.1" ];
+          ips = [
+            "1.1.1.1"
+            "1.0.0.1"
+          ];
         };
         blocking = {
           denylists = {
