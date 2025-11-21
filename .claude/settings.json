@@ -4,6 +4,7 @@
       "Bash(just:*)",
       "Bash(gh run list:*)",
       "Bash(gh run view:*)",
+      "Bash(gh pr view:*)",
       "Bash(mkdir:*)",
       "Bash(gcloud logging read:*)",
       "Bash(git log:*)",
