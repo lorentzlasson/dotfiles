@@ -2,6 +2,7 @@
   "permissions": {
     "allow": [
       "Bash(just:*)",
+      "Bash(ls:*)",
       "Bash(gh run list:*)",
       "Bash(gh run view:*)",
       "Bash(gh pr view:*)",
