@@ -20,3 +20,5 @@ Include actionable steps with code examples and specific file paths.
 Commit the document immediately after creation respecting the users git preferences. Follow git preferences strictly. Use "plan" as leading verb.
 
 "$ARGUMENTS" contains the feature/investigation description. Use it to generate the filename in kebab-case and structure the document content.
+
+If there is a `just static-fix` command available, run it after to ensure corrent formatting.
