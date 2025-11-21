@@ -37,7 +37,6 @@
     ripgrep-all
     shellcheck
     sqls
-    stow
     terraform-ls
     tree
     usbutils # lsbusb

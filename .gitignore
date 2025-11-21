@@ -1,3 +1,4 @@
 .config/pgcli/history
 .config/pgcli/log
 tmp
+.direnv/

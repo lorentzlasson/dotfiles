@@ -6,7 +6,7 @@ Collection of my personal dotfiles
 1. `git clone https://github.com/lorentzlasson/dotfiles`
 1. `cd dotfiles`
 1. `rm ~/.config` 
-1. `rm -rf ~/.config && mkdir -p ~/.config && stow .` 
+1. `rm -rf ~/.config && mkdir -p ~/.config && just stow` 
 
 ## Ref
 https://systemcrafters.net/managing-your-dotfiles/using-gnu-stow/
