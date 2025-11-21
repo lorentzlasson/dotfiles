@@ -39,23 +39,37 @@
     ];
   };
 
-  swapDevices = [ ];
+  fileSystems."/var/lib/docker/overlay2/d76da8f956d55da5f626c07a134e735072b0a5b32f71972b050a2d7897dac3ab/merged" =
+    {
+      device = "overlay";
+      fsType = "overlay";
+    };
 
-  # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
-  # (the default) this is the recommended approach. When using systemd-networkd it's
-  # still possible to use this option, but it's recommended to use it in conjunction
-  # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
-  networking.useDHCP = lib.mkDefault true;
-  # networking.interfaces.br-1bd5c25cb6eb.useDHCP = lib.mkDefault true;
-  # networking.interfaces.br-75c54a42088a.useDHCP = lib.mkDefault true;
-  # networking.interfaces.br-8c32c4a04601.useDHCP = lib.mkDefault true;
-  # networking.interfaces.br-9212191acff0.useDHCP = lib.mkDefault true;
-  # networking.interfaces.br-93024814a4e4.useDHCP = lib.mkDefault true;
-  # networking.interfaces.br-b3ff5c2b6a94.useDHCP = lib.mkDefault true;
-  # networking.interfaces.br-c87101430816.useDHCP = lib.mkDefault true;
-  # networking.interfaces.br-dad47512b879.useDHCP = lib.mkDefault true;
-  # networking.interfaces.docker0.useDHCP = lib.mkDefault true;
-  # networking.interfaces.wlp0s20f3.useDHCP = lib.mkDefault true;
+  fileSystems."/var/lib/docker/overlay2/02d22a0d1d7ab580e8f8136527ae054fd8cac1e6020460c7fb4898281a0fa447/merged" =
+    {
+      device = "overlay";
+      fsType = "overlay";
+    };
+
+  fileSystems."/var/lib/docker/overlay2/8d4f8f08e2aaefd22fa3fa41b7e709b349121f9bb529e163e73c32f939d1f108/merged" =
+    {
+      device = "overlay";
+      fsType = "overlay";
+    };
+
+  fileSystems."/var/lib/docker/overlay2/c24d1bbec12dd52becca473b0237c2eab5a81123aa4a0f63fa2d494f22a4cb52/merged" =
+    {
+      device = "overlay";
+      fsType = "overlay";
+    };
+
+  fileSystems."/var/lib/docker/overlay2/036ad615ea6b11192caff3155364ccd14163e46fda644dd90804a2ab96b0d3eb/merged" =
+    {
+      device = "overlay";
+      fsType = "overlay";
+    };
+
+  swapDevices = [ ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
