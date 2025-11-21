@@ -29,9 +29,10 @@ nix-cleanup:
   sudo nixos-rebuild boot --flake ~/dotfiles/nix
   sudo nix-collect-garbage
 
-hardware-sync machine:
+hardware-sync machine=`hostname`:
   sudo nixos-generate-config
   cp /etc/nixos/hardware-configuration.nix ~/dotfiles/nix/{{machine}}/hardware-configuration.nix
+  just static-fix
 
 update-all: nix-update nix-rebuild stow
 
