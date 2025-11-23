@@ -1,0 +1,33 @@
+name: quality assurance
+
+on:
+  pull_request:
+    branches:
+      - master
+  push:
+    branches:
+      - qa
+
+jobs:
+  qa:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+
+      - name: install nix
+        uses: cachix/install-nix-action@v27
+        with:
+          extra_nix_config: |
+            experimental-features = nix-command flakes
+
+      - name: cache nix store
+        uses: cachix/cachix-action@v15
+        with:
+          name: nix-community
+          authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
+          skipPush: true
+
+      - name: run quality assurance
+        run: nix develop --command ./scripts/static-qa.sh

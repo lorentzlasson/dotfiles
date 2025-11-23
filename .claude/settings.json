@@ -16,6 +16,10 @@
     "deny": [],
     "ask": []
   },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "chrome-devtools"
+  ],
   "hooks": {
     "Stop": [
       {
@@ -28,9 +32,5 @@
       }
     ]
   },
-  "enableAllProjectMcpServers": true,
-  "enabledMcpjsonServers": [
-    "chrome-devtools"
-  ],
   "alwaysThinkingEnabled": true
 }
