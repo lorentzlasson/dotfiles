@@ -1,4 +1,7 @@
-\.git
+.git
+.envrc
+.direnv
+tmp
 
 ^/claude.md
 ^/readme.md
