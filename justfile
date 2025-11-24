@@ -10,6 +10,10 @@ unstow:
 restow:
   stow --restow .
 
+sync:
+  git pull
+  git push
+
 nix-update:
   sudo nix flake update --flake ~/dotfiles/nix
 
