@@ -39,6 +39,30 @@ monitor intermittently goes black with kernel errors:
    - blacklist problematic modules if identified
    - check nixos hardware quirks for specific laptop model
 
+## findings
+
+### hardware setup
+- machine: xps15 (kernel 6.12.49, bios 1.18.0)
+- connection: usb-c to displayport (DP-2)
+- monitor status: connected and enabled
+- internal display: eDP-1 (1920x1200)
+- external display: DP-2 (2560x1440)
+
+### root cause analysis
+usb-c power delivery negotiation failure causes displayport signal drop:
+
+1. ucsi_acpi driver fails to get power delivery objects (error -5 = EIO)
+2. usb-c controller resets or drops connection during failed negotiation
+3. displayport alternate mode signal drops
+4. monitor goes black
+5. i2c_hid touchpad errors occur as usb-c subsystem disrupts other buses
+
+### likely causes (prioritized)
+1. kernel driver bug in ucsi_acpi on 6.12.49 with this usb-c controller
+2. faulty usb-c cable not implementing power delivery specs correctly
+3. power management aggressively suspending usb-c ports
+4. bios firmware 1.18.0 usb-c compatibility issues
+
 ## next steps
 
-start with step 1 to identify exact hardware configuration
+need sudo access to check dmesg logs for error frequency and timing
