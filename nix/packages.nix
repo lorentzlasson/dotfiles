@@ -30,7 +30,7 @@
     nodePackages_latest.typescript-language-server
     pciutils # system information
     pgcli
-    postgres-lsp
+    postgres-language-server
     pspg
     python3
     ripgrep
