@@ -77,7 +77,7 @@ zle -N vi-yank-xclip
 bindkey -M vicmd 'y' vi-yank-xclip
 
 clear_and_git_status() {
-  clear
+  clear -x
   if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
     git status
   fi
