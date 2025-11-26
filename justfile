@@ -16,11 +16,11 @@ sync:
 
 nix-update:
   sudo nix flake update --flake ~/dotfiles/nix
+  git add nix/flake.lock
+  git commit --message 'update nixos'
 
 nix-rebuild:
   sudo nixos-rebuild switch --flake ~/dotfiles/nix
-
-nix-switch: nix-update nix-rebuild
 
 nix-boot:
   sudo nixos-rebuild boot --flake ~/dotfiles/nix
