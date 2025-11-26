@@ -97,3 +97,4 @@
   uncommit = "!f() { git reset HEAD~ -- $1 && git commit --amend --no-edit; }; f"
   unstash = "!f() { git stash apply stash^{/$1}; }; f"
   wip = !git add . && git commit --message '🚧\n\n[skip ci]'
+  zap = "!f() { git rebase --onto $1^ $1; }; f"
