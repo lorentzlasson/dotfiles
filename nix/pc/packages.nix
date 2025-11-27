@@ -48,7 +48,7 @@ in
     xournalpp
 
     # unfree
-    claude-code-latest
+    claude-code
     discord
     gemini-cli
     google-chrome
