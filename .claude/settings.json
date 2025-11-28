@@ -22,17 +22,5 @@
   "enabledMcpjsonServers": [
     "chrome-devtools"
   ],
-  "hooks": {
-    "Stop": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "cd \"$CLAUDE_PROJECT_DIR\" && just static-fix"
-          }
-        ]
-      }
-    ]
-  },
-  "alwaysThinkingEnabled": true
+  "alwaysThinkingEnabled": false
 }
