@@ -39,36 +39,6 @@
     ];
   };
 
-  fileSystems."/var/lib/docker/overlay2/d76da8f956d55da5f626c07a134e735072b0a5b32f71972b050a2d7897dac3ab/merged" =
-    {
-      device = "overlay";
-      fsType = "overlay";
-    };
-
-  fileSystems."/var/lib/docker/overlay2/02d22a0d1d7ab580e8f8136527ae054fd8cac1e6020460c7fb4898281a0fa447/merged" =
-    {
-      device = "overlay";
-      fsType = "overlay";
-    };
-
-  fileSystems."/var/lib/docker/overlay2/8d4f8f08e2aaefd22fa3fa41b7e709b349121f9bb529e163e73c32f939d1f108/merged" =
-    {
-      device = "overlay";
-      fsType = "overlay";
-    };
-
-  fileSystems."/var/lib/docker/overlay2/c24d1bbec12dd52becca473b0237c2eab5a81123aa4a0f63fa2d494f22a4cb52/merged" =
-    {
-      device = "overlay";
-      fsType = "overlay";
-    };
-
-  fileSystems."/var/lib/docker/overlay2/036ad615ea6b11192caff3155364ccd14163e46fda644dd90804a2ab96b0d3eb/merged" =
-    {
-      device = "overlay";
-      fsType = "overlay";
-    };
-
   swapDevices = [ ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
