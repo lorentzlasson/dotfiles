@@ -19,7 +19,6 @@ in
 
   environment.systemPackages = with pkgs; [
     # zed-editor # too slow too compile
-    chromium
     dbeaver-bin
     dropbox-cli
     fd
