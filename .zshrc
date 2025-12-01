@@ -116,6 +116,18 @@ fi
 # Direnv hook https://direnv.net/docs/hook.html#zsh
 if command -v direnv &>/dev/null; then
   eval "$(direnv hook zsh)"
+
+  _last_buildinputs=""
+  _update_nix_shell_completions() {
+    [[ -n "$buildInputs" && "$buildInputs" != "$_last_buildinputs" ]] || return
+    for pkg in ${(z)buildInputs}; do
+      [[ -d "$pkg/share/zsh/site-functions" ]] && fpath+=($pkg/share/zsh/site-functions)
+    done
+    compinit
+    _last_buildinputs="$buildInputs"
+  }
+
+  precmd_functions+=(_update_nix_shell_completions)
 fi
 
 # https://docs.atuin.sh/
