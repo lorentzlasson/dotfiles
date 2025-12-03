@@ -6,7 +6,9 @@ description: Create a structured todo document for complex features or investiga
 
 Create a planning document at `todo/{description-in-kebab-case}.md`.
 
-"$ARGUMENTS" contains the feature/investigation description. Use it to generate the filename in kebab-case and structure the document content.
+Instructions: "$ARGUMENTS" 
+
+Use these to generate the filename in kebab-case and structure the document content. If no instructions are given, use any ongoing discussion/context as best you can.
 
 Structure the document with a preliminary implementation plan.
 
