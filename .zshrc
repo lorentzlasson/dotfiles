@@ -121,7 +121,7 @@ if command -v direnv &>/dev/null; then
   _update_nix_shell_completions() {
     [[ -n "$buildInputs" && "$buildInputs" != "$_last_buildinputs" ]] || return
     local -a pkgs
-    IFS=' ' read -rA pkgs <<< "$buildInputs"
+    IFS=' ' read -rA pkgs <<<"$buildInputs"
     for pkg in "${pkgs[@]}"; do
       [[ -d "$pkg/share/zsh/site-functions" ]] && fpath+=("$pkg/share/zsh/site-functions")
     done
