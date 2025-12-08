@@ -33,6 +33,16 @@ require('lazy').setup({
   { 'ziontee113/icon-picker.nvim' },
   { 'folke/which-key.nvim' },
   { 'folke/trouble.nvim' },
+  {
+    'toppair/peek.nvim',
+    event = { 'VeryLazy' },
+    build = 'deno task --quiet build:fast',
+    config = function()
+      require('peek').setup({ app = 'browser' })
+      vim.api.nvim_create_user_command('PeekOpen', require('peek').open, {})
+      vim.api.nvim_create_user_command('PeekClose', require('peek').close, {})
+    end,
+  },
 
   -- Colorschemes
   { 'Luxed/ayu-vim' },
