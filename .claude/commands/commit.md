@@ -17,3 +17,4 @@ commit message MUST adhere to the following rules:
 - NEVER include mentions of claude in git messages
 - do NOT add any footers or signatures to git messages
 - do NOT follow "conventional commits" with type prefix
+- DO NOT use `git -C <DIR>`. just remain in root and use `git` normally
