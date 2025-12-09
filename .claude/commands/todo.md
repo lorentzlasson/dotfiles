@@ -14,4 +14,5 @@ Structure the document with a preliminary implementation plan.
 
 If there is a `just static-fix` command available, run it after to ensure corrent formatting.
 
-Commit the document immediately after creation respecting the users git preferences. Follow git preferences strictly. Use "plan" as leading verb.
+Commit the document immediately after creation:
+@.claude/commands/commit.md
