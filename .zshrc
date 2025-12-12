@@ -38,6 +38,7 @@ zstyle ':completion:*' menu select
 zmodload zsh/complist
 compinit
 setopt GLOBDOTS # include hidden files.
+unsetopt BEEP
 
 # globbing
 setopt extended_glob
