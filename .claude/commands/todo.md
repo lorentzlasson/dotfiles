@@ -10,7 +10,9 @@ Instructions: "$ARGUMENTS"
 
 Use these to generate the filename in kebab-case and structure the document content. If no instructions are given, use any ongoing discussion/context as best you can.
 
-Structure the document with a preliminary implementation plan.
+Structure the document with:
+1. A preliminary implementation plan
+2. Which areas of the source code (if any) are expected to be affected
 
 If there is a `just static-fix` command available, run it after to ensure corrent formatting.
 
