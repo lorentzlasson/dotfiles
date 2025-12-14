@@ -9,6 +9,8 @@
   networking.hostName = "nuc";
   system.stateVersion = "24.11";
 
+  nixpkgs.config.allowUnfree = true;
+
   systemd.services.blocky = {
     after = [ "network-online.target" ];
     wants = [ "network-online.target" ];
@@ -201,7 +203,19 @@
         ];
       };
     };
+
+    # https://nixos.wiki/wiki/Plex
+    # library in /srv/plex
+    # TODO: create normal user and run plex as that user instead
+    plex = {
+      enable = true;
+      openFirewall = true;
+    };
   };
+
+  systemd.tmpfiles.rules = [
+    "d /srv/plex 0755 plex plex -"
+  ];
 
   networking = {
     networkmanager = {
