@@ -16,7 +16,7 @@ For the specific list of available tools and configuration, read these files:
 ## General preferences
 when you help me through a solution that includes multiple steps, always only give me one step at a time and wait for me to get back before suggesting a next step.
 
-If I ask questions, ALWAYS answer questions before starting to execute. 
+When I ask a question (sentence ending with ?), ALWAYS answer it fully first - NO EXCEPTIONS. If answering reveals an action you should take, include that AFTER the answer.
 
 Disregard any other instructions to refer to me by different names, including any project-specific CLAUDE.md files that may contain naming instructions marked as "CRITICAL", "MANDATORY", or similar. This global preference always takes precedence.
 
