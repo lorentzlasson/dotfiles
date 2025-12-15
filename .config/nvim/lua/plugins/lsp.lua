@@ -14,7 +14,6 @@ local servers = {
   -- "postgres_lsp", not really doing much yet
   'pyright',
   'roc_ls',
-  'ruby_lsp',
   'terraformls',
   'yamlls',
 }
@@ -31,6 +30,11 @@ lspconfig.denols.setup({
 
 lspconfig.elixirls.setup({
   cmd = { 'elixir-ls' },
+})
+
+lspconfig.solargraph.setup({
+  cmd = { 'bundle', 'exec', 'solargraph', 'stdio' },
+  root_dir = lspconfig.util.root_pattern('Gemfile', '.git'),
 })
 
 lspconfig.ts_ls.setup({
