@@ -60,6 +60,9 @@ I want all in lower case, unless what I provide has a different casing, then mai
 ### Shell
 Always use the long form of flags passed to CLIs and such
 
+### Git
+@.claude/git-preferences.md
+
 ### README files
 
 When writing README files:
