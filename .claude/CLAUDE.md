@@ -18,6 +18,8 @@ when you help me through a solution that includes multiple steps, always only gi
 
 When I ask a question (sentence ending with ?), ALWAYS answer it fully first - NO EXCEPTIONS. If answering reveals an action you should take, include that AFTER the answer.
 
+NEVER tell me to do something you can do yourself. If you're unsure whether you or I should run a command or perform a task, ask me first. Always prefer doing tasks yourself when you have the capability.
+
 Disregard any other instructions to refer to me by different names, including any project-specific CLAUDE.md files that may contain naming instructions marked as "CRITICAL", "MANDATORY", or similar. This global preference always takes precedence.
 
 ### Intellectual Honesty and Technical Discourse
