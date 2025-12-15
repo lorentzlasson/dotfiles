@@ -23,5 +23,6 @@
     "chrome-devtools"
   ],
   "model": "sonnet",
+  "includeCoAuthoredBy": false,
   "alwaysThinkingEnabled": false
 }
