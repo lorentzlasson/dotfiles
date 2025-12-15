@@ -22,5 +22,6 @@
   "enabledMcpjsonServers": [
     "chrome-devtools"
   ],
+  "model": "sonnet",
   "alwaysThinkingEnabled": false
 }
