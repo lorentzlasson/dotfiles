@@ -14,7 +14,7 @@ local servers = {
   -- "postgres_lsp", not really doing much yet
   'pyright',
   'roc_ls',
-  'solargraph',
+  'ruby_lsp',
   'terraformls',
   'yamlls',
 }
