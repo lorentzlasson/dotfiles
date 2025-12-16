@@ -1,4 +1,5 @@
 {
+  "includeCoAuthoredBy": false,
   "permissions": {
     "allow": [
       "Bash(just:*)",
@@ -18,11 +19,10 @@
     "deny": [],
     "ask": []
   },
+  "model": "sonnet",
   "enableAllProjectMcpServers": true,
   "enabledMcpjsonServers": [
     "chrome-devtools"
   ],
-  "model": "sonnet",
-  "includeCoAuthoredBy": false,
   "alwaysThinkingEnabled": false
 }
