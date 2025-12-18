@@ -2,7 +2,6 @@
   "includeCoAuthoredBy": false,
   "permissions": {
     "allow": [
-      "Bash(just:*)",
       "Bash(ls:*)",
       "Bash(gh run list:*)",
       "Bash(gh run view:*)",
