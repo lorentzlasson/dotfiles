@@ -50,7 +50,9 @@ in
     claude-code
     discord
     gemini-cli
-    google-chrome
+    (google-chrome.override {
+      commandLineArgs = [ "--disable-features=AcceleratedVideoEncoder" ];
+    })
     signal-desktop
     slack
     spotify
