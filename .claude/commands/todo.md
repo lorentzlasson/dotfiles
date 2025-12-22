@@ -17,4 +17,4 @@ Structure the document with:
 If there is a `just static-fix` command available, run it after to ensure corrent formatting.
 
 Commit the document immediately after creation:
-@.claude/commands/commit.md
+@~/.claude/commands/commit.md
