@@ -11,6 +11,7 @@
   system.stateVersion = "23.11";
 
   boot.blacklistedKernelModules = [ "spd5118" ];
+  boot.kernelParams = [ "usbcore.autosuspend=-1" ];
 
   hardware = {
     graphics.enable = true;
