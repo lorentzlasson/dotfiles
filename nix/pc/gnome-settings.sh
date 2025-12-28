@@ -6,6 +6,9 @@
 # Dark theme
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 
+# Enable fractional scaling
+gsettings set org.gnome.mutter experimental-features "['scale-monitor-framebuffer']"
+
 # Disable window tabbing (useless)
 gsettings set org.gnome.desktop.wm.keybindings switch-windows "[]"
 gsettings set org.gnome.desktop.wm.keybindings switch-windows-backward "[]"
