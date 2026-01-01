@@ -46,11 +46,6 @@
       openFirewall = true;
       user = "lorentz";
     };
-
-    ollama = {
-      enable = true;
-      package = pkgs.ollama-cuda;
-    };
   };
 
   systemd.tmpfiles.rules = [
