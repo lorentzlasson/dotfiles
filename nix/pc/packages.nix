@@ -49,7 +49,6 @@ in
     # unfree
     claude-code
     discord
-    gemini-cli
     (google-chrome.override {
       commandLineArgs = [ "--disable-features=AcceleratedVideoEncoder" ];
     })
