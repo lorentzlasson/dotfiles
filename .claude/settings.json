@@ -23,5 +23,8 @@
   "enabledMcpjsonServers": [
     "chrome-devtools"
   ],
-  "alwaysThinkingEnabled": false
+  "alwaysThinkingEnabled": false,
+  "enabledPlugins": {
+    "typescript-lsp@claude-plugins-official": true
+  }
 }
