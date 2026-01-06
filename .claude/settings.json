@@ -15,7 +15,9 @@
       "Read(//home/lorentz/dev/**)",
       "Read(//home/lorentz/.claude/**)"
     ],
-    "deny": [],
+    "deny": [
+      "Bash(cd:*)"
+    ],
     "ask": []
   },
   "model": "sonnet",
