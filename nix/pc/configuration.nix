@@ -182,4 +182,16 @@
   };
 
   nixpkgs.config.allowUnfree = true;
+
+  environment.systemPackages = [
+    (pkgs.writeShellScriptBin "gmail-handler" ''
+      ${pkgs.xdg-utils}/bin/xdg-open "https://mail.google.com/mail/?extsrc=mailto&url=$1"
+    '')
+    (pkgs.makeDesktopItem {
+      name = "gmail";
+      desktopName = "Gmail";
+      exec = "gmail-handler %u";
+      mimeTypes = [ "x-scheme-handler/mailto" ];
+    })
+  ];
 }
