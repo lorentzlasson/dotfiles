@@ -33,6 +33,7 @@ require('lazy').setup({
   { 'ziontee113/icon-picker.nvim' },
   { 'folke/which-key.nvim' },
   { 'folke/trouble.nvim' },
+  -- Markdown preview in browser
   {
     'toppair/peek.nvim',
     event = { 'VeryLazy' },
