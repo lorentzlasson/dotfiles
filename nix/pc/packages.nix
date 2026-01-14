@@ -37,6 +37,8 @@ in
     obs-studio # Free and open source software for video recording and live streaming.
     pavucontrol
     pinta
+    playwright
+    playwright-mcp
     protonvpn-gui
     qbittorrent
     sd
