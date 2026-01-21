@@ -67,6 +67,8 @@ NEVER use the `cd` command. Always stay in the project root directory and use ab
 ### Git
 @.claude/git-preferences.md
 
+**CRITICAL: NEVER commit code unless I explicitly ask you to.**
+
 ### README files
 
 When writing README files:
