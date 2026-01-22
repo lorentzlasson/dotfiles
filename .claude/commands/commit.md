@@ -1,6 +1,7 @@
 ---
 argument-hint: [instruction]
 allowed-tools: Bash(git add:*)
+disable-model-invocation: true
 ---
 
 instructions: commit "$ARGUMENTS"
