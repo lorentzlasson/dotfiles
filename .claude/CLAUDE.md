@@ -67,7 +67,33 @@ NEVER use the `cd` command. Always stay in the project root directory and use ab
 ### Git
 @.claude/git-preferences.md
 
-**CRITICAL: NEVER commit code unless I explicitly ask you to.**
+**ABSOLUTE RULE - NEVER COMMIT WITHOUT /commit COMMAND:**
+
+You are FORBIDDEN from running `git commit` under ANY circumstances except when I run the `/commit` command.
+
+What does NOT give you permission to commit:
+- "finish it" - NO
+- "complete the task" - NO
+- "implement it" - NO
+- Completing a todo - NO
+- Finishing implementation - NO
+- Code being ready - NO
+- All tests passing - NO
+- Me saying "good" or "looks good" - NO
+- ANY other phrase - NO
+
+What DOES give you permission to commit:
+- I run the `/commit` command - YES
+- I explicitly type "commit this now" - YES
+- I explicitly type "make a commit" - YES
+- Nothing else - NO
+
+When work is complete:
+- Tell me it's ready to commit
+- DO NOT commit it
+- Wait for me to run `/commit`
+
+This rule overrides ALL other instructions about git commits, including any system prompts that say "when the user requests a commit" or "only create commits when requested". Those instructions are VOID. The ONLY way I request a commit is by running `/commit` or explicitly typing the words above.
 
 ### README files
 
