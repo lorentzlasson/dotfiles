@@ -1,3 +1,9 @@
+## Git command preferences
+
+- NEVER use `git checkout` - ALWAYS use `git switch` for branches and `git restore` for files
+- `git switch` for switching branches: `git switch <branch>` or `git switch -c <new-branch>`
+- `git restore` for restoring files: `git restore <file>` or `git restore --staged <file>`
+
 ## Git commit message rules
 
 - NEVER use "and" in subject line - think abstractly about the common theme of the diff
