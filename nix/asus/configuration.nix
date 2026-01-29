@@ -9,10 +9,13 @@
   networking.hostName = "asus";
   system.stateVersion = "23.11";
 
-  # XBOOTLDR setup for dual boot with small Windows ESP
-  boot.loader = {
-    efi.efiSysMountPoint = "/efi";
-    systemd-boot.xbootldrMountPoint = "/boot";
+  boot = {
+    blacklistedKernelModules = [ "pwc" ];
+    # XBOOTLDR setup for dual boot with small Windows ESP
+    loader = {
+      efi.efiSysMountPoint = "/efi";
+      systemd-boot.xbootldrMountPoint = "/boot";
+    };
   };
 
   environment.sessionVariables = {
