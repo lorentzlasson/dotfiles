@@ -39,9 +39,7 @@
 
   services = {
     # https://nixos.wiki/wiki/Nvidia
-    xserver = {
-      videoDrivers = [ "nvidia" ];
-    };
+    xserver.videoDrivers = [ "nvidia" ];
     # https://nixos.wiki/wiki/Plex
     # library in /srv/plex
     plex = {

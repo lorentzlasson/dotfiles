@@ -70,6 +70,25 @@ cp /etc/nixos/hardware-configuration.nix ~/dotfiles/nix/{machine}/hardware-confi
 - **Server machine** (nuc): Monitoring stack with Prometheus/Grafana, Blocky DNS, Nginx reverse proxy
 - **All machines**: Docker containerization platform available
 
+## Nix Code Style
+
+Never repeat module paths. Use nested attribute sets when there are multiple attributes under the same path. Use single-line format when there's only one attribute:
+
+```nix
+# Bad - repeated module references
+boot.loader.systemd-boot.enable = true;
+boot.loader.efi.canTouchEfiVariables = true;
+
+# Good - nested when multiple attributes
+boot.loader = {
+  systemd-boot.enable = true;
+  efi.canTouchEfiVariables = true;
+};
+
+# Good - single line when only one attribute
+networking.hostName = "myhost";
+```
+
 ## Development Environment
 
 Integrated toolchain includes:
