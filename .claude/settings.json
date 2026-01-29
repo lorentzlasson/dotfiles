@@ -20,7 +20,6 @@
     ],
     "ask": []
   },
-  "model": "sonnet",
   "enableAllProjectMcpServers": true,
   "enabledMcpjsonServers": [
     "chrome-devtools"
