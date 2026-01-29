@@ -22,7 +22,7 @@
   },
   "enableAllProjectMcpServers": true,
   "enabledMcpjsonServers": [
-    "chrome-devtools"
+    "playwright"
   ],
   "enabledPlugins": {
     "typescript-lsp@claude-plugins-official": true,

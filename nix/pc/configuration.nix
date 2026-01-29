@@ -91,6 +91,11 @@
 
   console.useXkbConfig = true;
 
+  system.activationScripts.chromeSymlink.text = ''
+    mkdir -p /opt/google
+    ln -sfn /run/current-system/sw/bin/google-chrome-stable /opt/google/chrome
+  '';
+
   programs = {
     _1password.enable = true;
     captive-browser = {

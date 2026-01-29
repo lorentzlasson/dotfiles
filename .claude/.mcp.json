@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "playwright": {
+      "command": "deno",
+      "args": [
+        "run",
+        "--allow-all",
+        "npm:@playwright/mcp@latest",
+        "--config", "./playwright-mcp-config.json"
+      ]
+    }
+  }
+}

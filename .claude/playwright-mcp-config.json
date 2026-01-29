@@ -1,0 +1,12 @@
+{
+  "browser": {
+    "browserName": "chromium",
+    "launchOptions": {
+      "executablePath": "/run/current-system/sw/bin/google-chrome-stable",
+      "args": ["--start-maximized"]
+    },
+    "contextOptions": {
+      "viewport": null
+    }
+  }
+}
