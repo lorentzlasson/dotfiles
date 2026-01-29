@@ -3,3 +3,4 @@
 tmp
 .direnv/
 .treefmt.cache
+.claude/settings.local.json
