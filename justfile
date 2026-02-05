@@ -19,6 +19,10 @@ nix-update:
   git add nix/flake.lock
   git commit --message 'update nixos'
 
+claude-code-update:
+  sudo nix flake update claude-code-overlay --flake ~/dotfiles/nix
+  sudo nixos-rebuild switch --flake ~/dotfiles/nix
+
 nix-rebuild:
   sudo nixos-rebuild switch --flake ~/dotfiles/nix
 

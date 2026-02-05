@@ -2,10 +2,11 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    claude-code-overlay.url = "github:ryoppippi/claude-code-overlay";
   };
 
   outputs =
-    { nixpkgs, nixos-hardware, ... }:
+    { nixpkgs, nixos-hardware, claude-code-overlay, ... }:
     let
       mkSystem =
         hostConfig:
@@ -14,7 +15,10 @@
           specialArgs = {
             inputs = { inherit nixos-hardware; };
           };
-          modules = [ hostConfig ];
+          modules = [
+            { nixpkgs.overlays = [ claude-code-overlay.overlays.default ]; }
+            hostConfig
+          ];
         };
     in
     {
