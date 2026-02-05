@@ -1,5 +1,5 @@
 ---
-allowed-tools: Bash(git:*), Bash(gh:*)
+allowed-tools: Bash(git switch --create:*), Bash(git push:*), Bash(gh:*)
 disable-model-invocation: true
 ---
 
