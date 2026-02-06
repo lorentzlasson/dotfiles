@@ -3,6 +3,7 @@
 - NEVER use `git checkout` - ALWAYS use `git switch` for branches and `git restore` for files
 - `git switch` for switching branches: `git switch <branch>` or `git switch -c <new-branch>`
 - `git restore` for restoring files: `git restore <file>` or `git restore --staged <file>`
+- NEVER use `-C` flag - run git commands from the project root
 
 ## Git commit message rules
 
