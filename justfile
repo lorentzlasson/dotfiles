@@ -12,6 +12,7 @@ restow:
 
 sync:
   git pull
+  stow --restow .
   git push
 
 nix-update:
