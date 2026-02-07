@@ -97,6 +97,7 @@ Structure for libraries/tools
 4. How sync/deployment works (if applicable)
 
 ## Tools
+- Use `busy_ports` to see which processes are listening on ports 1000-10000
 - Use `rg` instead of `grep`
 - Try using the raw npm package instead of through npx e.g. `eslint [..]` instead of `npx eslint [..]`
 - Rely on shebang if there is one in script
