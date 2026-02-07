@@ -13,3 +13,4 @@
 - use lowercase for ALL text - INCLUDING BODY
 - DO NOT follow "conventional commits" with type prefix
 - focus on WHY, not WHAT
+- prefer describing behavior change over implementation detail (e.g. "restow on sync" not "add restow to sync recipe")
