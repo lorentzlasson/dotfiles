@@ -25,6 +25,20 @@ process_using_port() {
   lsof -i :"$1"
 }
 
+busy_ports() {
+  (
+    echo "PROCESS PORT"
+    ss --listening --tcp --numeric --processes |
+      awk 'NR>1 {
+        match($0, /:([0-9]+) /, port)
+        match($0, /users:\(\("([^"]+)"/, proc)
+        if (port[1] >= 1000 && port[1] <= 10000 && proc[1])
+          print proc[1], port[1]
+      }' |
+      sort --unique
+  ) | column --table
+}
+
 pretty_path() {
   echo "$PATH" | tr ':' '\n'
 }
