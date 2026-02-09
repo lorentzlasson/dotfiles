@@ -60,7 +60,7 @@ For general scripting, use typescript and deno.
 I want all in lower case, unless what I provide has a different casing, then maintain it.
 
 ### Shell
-Always use the long form of flags passed to CLIs and such
+Always use the long form of flags passed to CLIs and such (e.g. `--message` not `-m`)
 
 NEVER use the `cd` command. Always stay in the project root directory and use absolute paths for all file operations.
 
