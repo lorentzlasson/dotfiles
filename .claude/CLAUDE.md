@@ -13,6 +13,9 @@ For the specific list of available tools and configuration, read these files:
 - `../nix/pc/packages.nix`
 - `../nix/pc/configuration.nix`
 
+### Dev Shell
+NEVER run `nix develop`. Always assume the dev shell is active and all tools from `flake.nix` are available.
+
 ## General preferences
 when you help me through a solution that includes multiple steps, always only give me one step at a time and wait for me to get back before suggesting a next step.
 
