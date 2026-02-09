@@ -11,9 +11,7 @@ restow:
   stow --restow .
 
 sync:
-  git pull
-  stow --restow .
-  git push
+  ./scripts/sync.sh
 
 nix-update:
   sudo nix flake update --flake ~/dotfiles/nix
