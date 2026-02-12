@@ -16,7 +16,8 @@
       "Read(//home/lorentz/.claude/**)"
     ],
     "deny": [
-      "Bash(cd:*)"
+      "Bash(cd:*)",
+      "Bash(git checkout:*)"
     ],
     "ask": []
   },
