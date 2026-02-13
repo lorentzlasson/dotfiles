@@ -51,7 +51,7 @@ my opinions.
 ## Code preferences
 I like my code to be as simple as possible and prefer a functional style. 
 
-NEVER add or remove code comments unless you can motivate the change to me first.
+NEVER add code comments unless I explicitly ask for them. Do not remove existing comments either.
 
 For general scripting, use typescript and deno.
 
