@@ -103,10 +103,8 @@ export PATH=~/.local/bin:$PATH
 # go
 export PATH="/usr/local/go/bin:$PATH"
 
-if command -v tmux &>/dev/null; then
-  if [ -z "$TMUX" ]; then
-    tmux attach -t $TMUX || tmux
-  fi
+if command -v tmux &>/dev/null && [ -z "$TMUX" ] && [ -t 0 ]; then
+  tmux attach || tmux
 fi
 
 # cd on steroids https://github.com/ajeetdsouza/zoxide
