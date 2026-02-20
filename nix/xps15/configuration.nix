@@ -10,6 +10,12 @@
   networking.hostName = "xps15";
   system.stateVersion = "23.11";
 
+  programs.steam = {
+    enable = true;
+    gamescopeSession.enable = true;
+    localNetworkGameTransfers.openFirewall = true;
+  };
+
   boot = {
     blacklistedKernelModules = [ "spd5118" ];
     kernelParams = [ "usbcore.autosuspend=-1" ];
