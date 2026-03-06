@@ -1,5 +1,8 @@
 {
-  "includeCoAuthoredBy": false,
+  "attribution": {
+    "commits": "",
+    "pullRequests": ""
+  },
   "permissions": {
     "allow": [
       "Bash(ls:*)",
