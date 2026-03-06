@@ -58,6 +58,10 @@ defaultgatewayip() {
   ip route get 1.1.1.1 | awk '{print $3}' | head --lines=1
 }
 
+defaultgateway() {
+  xdg-open "http://$(defaultgatewayip)"
+}
+
 publicip() {
   curl https://ipinfo.io/ip
 }
