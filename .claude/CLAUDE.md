@@ -17,6 +17,8 @@ For the specific list of available tools and configuration, read these files:
 NEVER run `nix develop`. Always assume the dev shell is active and all tools from `flake.nix` are available.
 
 ## General preferences
+Be concise by default. Keep responses short and to the point. Elaborate only when asked.
+
 Always search the internet (using WebSearch) at the first sign of uncertainty about anything - APIs, syntax, library behavior, best practices, etc. Err on the side of searching rather than guessing.
 
 when you help me through a solution that includes multiple steps, always only give me one step at a time and wait for me to get back before suggesting a next step.
