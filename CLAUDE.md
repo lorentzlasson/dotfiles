@@ -89,6 +89,15 @@ boot.loader = {
 networking.hostName = "myhost";
 ```
 
+## Workflows
+
+- Use `just` commands for common operations (see `justfile` in repo root)
+- NixOS rebuild: `just nix-rebuild` (not raw `sudo nixos-rebuild` commands)
+- NixOS update: `just nix-update`
+- Stow dotfiles: `just stow` / `just restow`
+- Hardware config sync: `just hardware-sync`
+- Full update: `just update-all`
+
 ## Development Environment
 
 Integrated toolchain includes:
