@@ -63,6 +63,32 @@ usb-c power delivery negotiation failure causes displayport signal drop:
 3. power management aggressively suspending usb-c ports
 4. bios firmware 1.18.0 usb-c compatibility issues
 
+### additional errors from screenshot (2026-03-17)
+- UVC control failures: `usb 3-6: Failed to query (GET_INFO) UVC control 5 on unit 2: -71` (webcam, EPROTO)
+- uvcvideo probe control failures: webcam driver can't initialize
+- iwlwifi firmware hang: `timeout waiting for FW reset ACK (inta_in=0x1)`
+- confirms USB-C failure cascades across entire USB bus (display, webcam, wifi)
+
+### trigger pattern
+- happens every time on wake from sleep
+- first blackout immediately on wake
+- second blackout after a few seconds of interaction
+- requires logging in twice
+
+### existing mitigations already in place
+- `usbcore.autosuspend=-1` kernel param (didn't help)
+
 ## next steps
 
-need sudo access to check dmesg logs for error frequency and timing
+### attempt 1: disable nvidia finegrained power management
+- changed `hardware.nvidia.powerManagement.finegrained` from `true` to `false`
+- rationale: xps 15 9520 USB-C/Thunderbolt shares bus with dGPU. finegrained power management dynamically powers down the nvidia GPU, and on resume it may not power up fast enough, causing the UCSI controller to fail PD negotiation
+- tradeoff: slightly higher idle power consumption
+- rebuild with: `sudo nixos-rebuild switch --flake ~/dotfiles/nix`
+
+### if attempt 1 fails
+- try disabling nvidia power management entirely (`powerManagement.enable = false`)
+- add udev rule to disable autosuspend specifically for UCSI controller
+- check nixos-hardware dell-xps-15-9520 module for known workarounds
+- test with a different USB-C cable
+- check if newer kernel (beyond 6.12.49) fixes ucsi_acpi driver

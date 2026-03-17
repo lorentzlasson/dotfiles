@@ -27,7 +27,7 @@
       modesetting.enable = true;
       powerManagement = {
         enable = true;
-        finegrained = true;
+        finegrained = false;
       };
       open = false;
       nvidiaSettings = true;
