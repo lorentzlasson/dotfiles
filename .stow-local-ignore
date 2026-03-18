@@ -3,6 +3,6 @@
 .direnv
 tmp
 
-^/claude.md
-^/readme.md
+^/CLAUDE.md
+^/README.md
 ^/.gitignore.*
