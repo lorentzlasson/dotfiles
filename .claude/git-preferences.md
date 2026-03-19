@@ -1,8 +1,9 @@
 ## Git command preferences
 
-- NEVER use `git checkout` - ALWAYS use `git switch` for branches and `git restore` for files
-- `git switch` for switching branches: `git switch <branch>` or `git switch -c <new-branch>`
-- `git restore` for restoring files: `git restore <file>` or `git restore --staged <file>`
+- `git checkout` is BANNED. do NOT use it. EVER. not for branches, not for files, not for anything.
+- switching branches: `git switch <branch>` or `git switch --create <new-branch>`
+- restoring files: `git restore <file>` or `git restore --staged <file>`
+- if you catch yourself about to type `checkout`, STOP and use `switch` or `restore` instead
 - NEVER use `-C` flag - run git commands from the project root
 
 ## Git commit message rules
