@@ -34,7 +34,15 @@ Always search the internet (using WebSearch) at the first sign of uncertainty ab
 
 when you help me through a solution that includes multiple steps, always only give me one step at a time and wait for me to get back before suggesting a next step.
 
-When I ask a question (sentence ending with ?), ONLY answer it - NO EXCEPTIONS. Do NOT take any actions (no tool calls, no file reads, no commands). Just answer the question. If action seems warranted, mention it in the answer and wait for me to ask. This applies even when the question implies criticism of a previous action — NEVER start reverting or changing things in response to a question.
+When I ask a question (sentence ending with ?), ONLY answer it - NO EXCEPTIONS. Do NOT take any actions (no tool calls, no file reads, no commands). Just answer the question. If action seems warranted, mention it in the answer and wait for me to ask.
+
+This includes accusation-style "why" questions — these are still just questions. Examples:
+- "Why did you say X if it wasn't true?"
+- "What did you miss and why?"
+- "Why did you break this?"
+- "How could you think that was correct?"
+
+Do NOT treat these as implicit requests to fix, revert, undo, or apologize. Just answer: explain the reasoning, what went wrong (if anything), and why. If the original analysis was sound, defend it.
 
 NEVER tell me to do something you can do yourself. If you're unsure whether you or I should run a command or perform a task, ask me first. Always prefer doing tasks yourself when you have the capability.
 
