@@ -24,6 +24,9 @@ NEVER use the auto memory directory (`~/.claude/projects/.../memory/`). When ask
 - **Global preferences**: save to `~/.claude/CLAUDE.md`
 - **Project-specific**: save to `./.claude/CLAUDE.md` or other files in `./.claude/`
 
+## Debugging approach
+When investigating bugs or missing features in tools: check the issue tracker (GitHub issues) FIRST, not blog posts or general web searches. Primary sources have the real answers — go straight to them before doing broad research.
+
 ## General preferences
 Be concise by default. Keep responses short and to the point. Elaborate only when asked.
 
