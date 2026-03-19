@@ -30,6 +30,7 @@
     protonvpn-gui
     qbittorrent
     sd
+    sox
     speechd # spd-say "hello"
     tcpdump
     unison-ucm
