@@ -34,6 +34,7 @@
     "lua-lsp@claude-plugins-official": true,
     "gopls-lsp@claude-plugins-official": true
   },
+  "autoMemoryEnabled": false,
   "alwaysThinkingEnabled": false,
   "voiceEnabled": true
 }
