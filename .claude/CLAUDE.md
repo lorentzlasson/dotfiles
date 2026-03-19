@@ -16,6 +16,11 @@ For the specific list of available tools and configuration, read these files:
 ### Dev Shell
 NEVER run `nix develop`. Always assume the dev shell is active and all tools from `flake.nix` are available.
 
+## Memory
+NEVER use the auto memory directory (`~/.claude/projects/.../memory/`). When asked to remember something:
+- **Global preferences**: save to `~/.claude/CLAUDE.md`
+- **Project-specific**: save to `./.claude/CLAUDE.md` or other files in `./.claude/`
+
 ## General preferences
 Be concise by default. Keep responses short and to the point. Elaborate only when asked.
 
