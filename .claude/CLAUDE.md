@@ -16,6 +16,9 @@ For the specific list of available tools and configuration, read these files:
 ### Dev Shell
 NEVER run `nix develop`. Always assume the dev shell is active and all tools from `flake.nix` are available.
 
+### Package Management
+NEVER run `claude update` or any self-update commands. Claude Code is installed via Nix — auto-updaters download dynamically linked binaries that break on NixOS. Updates must come through `nix flake update` and `nixos-rebuild`.
+
 ## Memory
 NEVER use the auto memory directory (`~/.claude/projects/.../memory/`). When asked to remember something:
 - **Global preferences**: save to `~/.claude/CLAUDE.md`
