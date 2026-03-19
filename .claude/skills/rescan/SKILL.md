@@ -3,7 +3,7 @@
 
 CRITICAL: Do NOT assume the existing CLAUDE.md is accurate. ALWAYS verify against actual codebase.
 
-Use the Task tool with subagent_type=Explore to thoroughly analyze the codebase structure, key files, and configuration.
+Use the Agent tool with subagent_type=Explore to thoroughly analyze the codebase structure, key files, and configuration.
 
 The exploration MUST:
 1. Verify all documented directories and files actually exist

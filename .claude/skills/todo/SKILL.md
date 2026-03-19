@@ -14,7 +14,7 @@ Structure the document with:
 1. A preliminary implementation plan
 2. Which areas of the source code (if any) are expected to be affected
 
-If there is a `just static-fix` command available, run it after to ensure corrent formatting.
+If there is a `just static-fix` command available, run it after to ensure correct formatting.
 
 Commit the document immediately after creation:
-@~/.claude/commands/commit.md
+@~/.claude/skills/commit/SKILL.md
