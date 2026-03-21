@@ -5,6 +5,7 @@
   },
   "permissions": {
     "allow": [
+      "Bash(busy_ports:*)",
       "Bash(echo:*)",
       "Bash(gcloud logging read:*)",
       "Bash(gh pr view:*)",
