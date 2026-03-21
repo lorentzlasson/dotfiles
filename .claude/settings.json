@@ -16,6 +16,7 @@
       "Bash(ls:*)",
       "Bash(mkdir:*)",
       "Bash(nslookup:*)",
+      "Bash(rg:*)",
       "Bash(ssh:*)",
       "Read(//home/lorentz/.claude/**)",
       "Read(//home/lorentz/dev/**)",
