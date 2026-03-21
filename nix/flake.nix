@@ -16,7 +16,22 @@
             inputs = { inherit nixos-hardware; };
           };
           modules = [
-            { nixpkgs.overlays = [ claude-code-overlay.overlays.default ]; }
+            {
+              nixpkgs.overlays = [
+                # override the default overlay wrapper which sets telemetry-disabling
+                # env vars that also break feature-gated functionality (e.g. remote-control)
+                (_final: prev: {
+                  claude-code = claude-code-overlay.packages.${prev.stdenv.hostPlatform.system}.claude.overrideAttrs (old: {
+                    postFixup = ''
+                      wrapProgram $out/bin/claude \
+                        --prefix PATH : ${prev.gh}/bin \
+                        --set DISABLE_AUTOUPDATER 1 \
+                        --set DISABLE_INSTALLATION_CHECKS 1
+                    '';
+                  });
+                })
+              ];
+            }
             hostConfig
           ];
         };
