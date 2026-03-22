@@ -1,6 +1,7 @@
 {
   "browser": {
     "browserName": "chromium",
+    "userDataDir": "/home/lorentz/.cache/playwright-mcp-data",
     "launchOptions": {
       "executablePath": "/run/current-system/sw/bin/google-chrome-stable",
       "args": ["--start-maximized"]
