@@ -30,7 +30,7 @@ cyan = '#eeeeee'
 green = '#a0d17b'
 magenta = '#f29c5f'
 red = '#e26f60'
-white = '#ece9df'
+white = '#ffffff'
 yellow = '#f29c5f'
 
 [colors.normal]
