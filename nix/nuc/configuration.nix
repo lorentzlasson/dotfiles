@@ -4,7 +4,14 @@
     ./hardware-configuration.nix
     ../configuration.nix
     ./packages.nix
-  ];
+  ] ++ (let
+    servicesDir = /home/lorentz/services;
+  in
+    if builtins.pathExists servicesDir then
+      map (f: servicesDir + "/${f}") (builtins.attrNames (builtins.readDir servicesDir))
+    else
+      [ ]
+  );
 
   networking.hostName = "nuc";
   system.stateVersion = "24.11";
