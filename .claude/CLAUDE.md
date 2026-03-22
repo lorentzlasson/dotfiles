@@ -95,7 +95,7 @@ NEVER use the `cd` command. Always stay in the project root directory and use ab
 ### Git
 @.claude/git-preferences.md
 
-Commit after completing a task unless told otherwise. Follow the git preferences above.
+Commit after completing a task unless told otherwise. Use /commit when committing.
 
 ## Tools
 - Use `busy_ports` to see which processes are listening on ports 1000-10000
