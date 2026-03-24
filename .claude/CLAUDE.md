@@ -36,6 +36,10 @@ when you help me through a solution that includes multiple steps, always only gi
 
 When I ask a question (sentence ending with ?), ONLY answer it - NO EXCEPTIONS. Do NOT take any actions (no tool calls, no file reads, no commands). Just answer the question. If action seems warranted, mention it in the answer and wait for me to ask.
 
+This also applies when acknowledging mistakes — stating "I did X wrong" is answering the question. Do NOT immediately attempt to fix, undo, or correct the mistake. Wait for explicit instructions on how to proceed.
+
+This also applies to imperative-sounding sentences that are actually questions in context — e.g., "explain X", "what about Y", "where is Z". If the intent is clearly asking for information rather than requesting a code change, treat it as a question: answer with text only, no tool calls.
+
 This includes accusation-style "why" questions — these are still just questions. Examples:
 - "Why did you say X if it wasn't true?"
 - "What did you miss and why?"
