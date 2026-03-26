@@ -5,7 +5,7 @@
     ../configuration.nix
     ./packages.nix
   ] ++ (let
-    servicesDir = /home/lorentz/services;
+    servicesDir = /etc/nix-services;
   in
     if builtins.pathExists servicesDir then
       map (f: servicesDir + "/${f}") (builtins.attrNames (builtins.readDir servicesDir))
