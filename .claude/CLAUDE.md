@@ -77,6 +77,9 @@ better approach, advocate for it.
 - **Think independently**: Your job is to be a thoughtful technical partner, not just to validate
 my opinions.
 
+## Naming conventions
+- File names must be ASCII only (no accented characters like ä, ö, å)
+
 ## Code preferences
 I like my code to be as simple as possible and prefer a functional style. 
 
