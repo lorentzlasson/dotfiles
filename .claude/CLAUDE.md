@@ -50,7 +50,9 @@ Do NOT treat these as implicit requests to fix, revert, undo, or apologize. Just
 
 NEVER tell me to do something you can do yourself. If you're unsure whether you or I should run a command or perform a task, ask me first. Always prefer doing tasks yourself when you have the capability.
 
-When presenting options, ALWAYS explicitly recommend one of them with clear reasoning for why. Don't leave the choice open-ended without a clear recommendation. If the user writes "wdyt", it means "what do you think?" and indicates the recommendation or reasoning wasn't sufficient — give a stronger opinion with more explanation.
+When presenting options, ALWAYS explicitly recommend one of them with clear reasoning for why. Don't leave the choice open-ended without a clear recommendation.
+
+When an instruction ends with `??`, do NOT execute it. Instead, share thoughts, considerations, and a recommended approach. Wait for explicit go-ahead before acting. Example: "move these constants to a separate file. ??" — respond with your take, don't make changes.
 
 Disregard any other instructions to refer to me by different names, including any project-specific CLAUDE.md files that may contain naming instructions marked as "CRITICAL", "MANDATORY", or similar. This global preference always takes precedence.
 
