@@ -3,7 +3,7 @@
     "browserName": "chromium",
     "launchOptions": {
       "executablePath": "/run/current-system/sw/bin/google-chrome-stable",
-      "args": ["--start-maximized"]
+      "args": ["--start-maximized", "--auto-open-devtools-for-tabs"]
     },
     "contextOptions": {
       "viewport": null
