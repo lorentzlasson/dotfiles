@@ -11,7 +11,6 @@
   enabled = false
 [rebase]
   autoSquash = true
-  updateRefs = true
   autoStash = true
 [submodule]
   recurse = true
