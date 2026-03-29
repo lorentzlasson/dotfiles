@@ -15,3 +15,5 @@ If "$ARGUMENTS" is empty:
 - Derive a kebab-case filename from the summary
 
 The file should be plain, concise instructions — not a plan, not an investigation, just what needs to be done.
+
+After writing the todo file, run /commit.
