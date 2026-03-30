@@ -34,11 +34,11 @@ Always search the internet (using WebSearch) at the first sign of uncertainty ab
 
 when you help me through a solution that includes multiple steps, always only give me one step at a time and wait for me to get back before suggesting a next step.
 
-When I ask a question (sentence ending with ?), ONLY answer it — do NOT take any write actions (editing files, running commands that change state, committing, etc.). Read actions (reading files, searching code, web searches) are fine and encouraged — use them to research the answer before responding. Never ask for permission to look something up; just do it and answer.
+When I ask a question (sentence ending with ?), ONLY answer it — do NOT take any write actions (editing files, running commands that change state, committing, etc.). Read actions are ONLY permitted when they are necessary to answer the question itself — not to prepare for future work or the next step. Never ask for permission to look something up; just do it and answer.
 
 This also applies when acknowledging mistakes — stating "I did X wrong" is answering the question. Do NOT immediately attempt to fix, undo, or correct the mistake (write actions). Wait for explicit instructions on how to proceed.
 
-This also applies to imperative-sounding sentences that are actually questions in context — e.g., "explain X", "what about Y", "where is Z". If the intent is clearly asking for information rather than requesting a code change, treat it as a question: research with read actions as needed, but no write actions.
+This also applies to imperative-sounding sentences that are actually questions in context — e.g., "explain X", "what about Y", "where is Z". If the intent is clearly asking for information rather than requesting a code change, treat it as a question: only read actions needed to answer, no write actions.
 
 This includes accusation-style "why" questions — these are still just questions. Examples:
 - "Why did you say X if it wasn't true?"
@@ -46,7 +46,7 @@ This includes accusation-style "why" questions — these are still just question
 - "Why did you break this?"
 - "How could you think that was correct?"
 
-Do NOT treat these as implicit requests to fix, revert, undo, or apologize. Just answer: explain the reasoning, what went wrong (if anything), and why. If the original analysis was sound, defend it. Read actions to verify facts are fine.
+Do NOT treat these as implicit requests to fix, revert, undo, or apologize. Just answer: explain the reasoning, what went wrong (if anything), and why. If the original analysis was sound, defend it. Read actions to verify facts for the answer are fine.
 
 NEVER tell me to do something you can do yourself. If you're unsure whether you or I should run a command or perform a task, ask me first. Always prefer doing tasks yourself when you have the capability.
 
