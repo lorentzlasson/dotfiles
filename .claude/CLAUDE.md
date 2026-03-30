@@ -34,7 +34,7 @@ Always search the internet (using WebSearch) at the first sign of uncertainty ab
 
 when you help me through a solution that includes multiple steps, always only give me one step at a time and wait for me to get back before suggesting a next step.
 
-When I ask a question (sentence ending with ?), ONLY answer it — do NOT take any write actions (editing files, running commands that change state, committing, etc.). Read actions are ONLY permitted when they are necessary to answer the question itself — not to prepare for future work or the next step. Never ask for permission to look something up; just do it and answer.
+When I ask a question (sentence ending with ?), ONLY answer it — do NOT take any write actions (editing files, running commands that change state, committing, etc.). Read actions are ONLY permitted when they are necessary to answer the question itself — not to prepare for future work or the next step. Never ask for permission to look something up; just do it and answer. This means: answer the question and STOP. Do not follow up with edits in the same turn, even if the answer implies an obvious fix.
 
 This also applies when acknowledging mistakes — stating "I did X wrong" is answering the question. Do NOT immediately attempt to fix, undo, or correct the mistake (write actions). Wait for explicit instructions on how to proceed.
 
