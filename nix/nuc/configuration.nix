@@ -30,7 +30,7 @@
 
   security.acme = {
     acceptTerms = true;
-    defaults.email = "<EMAIL>";
+    defaults.email = builtins.readFile "/etc/acme-email";
   };
 
   services = {
