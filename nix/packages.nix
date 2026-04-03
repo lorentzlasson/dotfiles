@@ -28,6 +28,7 @@
     nodePackages_latest.bash-language-server
     nodePackages_latest.sql-formatter
     nodePackages_latest.typescript-language-server
+    openssl
     pciutils # system information
     pgcli
     postgres-language-server
