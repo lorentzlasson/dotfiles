@@ -27,8 +27,8 @@ process_using_port() {
 
 kill_port() {
   local pid
-  pid=$(ss --listening --tcp --numeric --processes | awk "/:$1 /" | grep -oP 'pid=\K[0-9]+')
-  [ -n "$pid" ] && kill "$pid"
+  pid=$(ss --listening --tcp --numeric --processes | awk "/:$1 /" | grep -oP 'pid=\K[0-9]+' | sort --unique)
+  [ -n "$pid" ] && echo "$pid" | xargs kill
 }
 
 busy_ports() {
