@@ -28,11 +28,6 @@
     fsType = "ext4";
   };
 
-  security.acme = {
-    acceptTerms = true;
-    defaults.email = builtins.readFile "/etc/acme-email";
-  };
-
   services = {
     openssh.enable = true;
 
@@ -40,47 +35,14 @@
       enable = true;
       virtualHosts = {
         "grafana.lorentz.casa" = {
-          enableACME = true;
-          forceSSL = true;
+          listen = [{ addr = "127.0.0.1"; port = 8083; }];
           locations."/" = {
             proxyPass = "http://localhost:3000";
-            extraConfig = ''
-              proxy_set_header Host $host;
-              proxy_set_header X-Real-IP $remote_addr;
-              proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-              proxy_set_header X-Forwarded-Proto $scheme;
-            '';
           };
         };
-        "ihatenews.lorentz.casa" = {
-          enableACME = true;
-          forceSSL = true;
-          locations."/" = {
-            proxyPass = "http://localhost:7000";
-            extraConfig = ''
-              proxy_set_header Host $host;
-              proxy_set_header X-Real-IP $remote_addr;
-              proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-              proxy_set_header X-Forwarded-Proto $scheme;
-            '';
-          };
-        };
-        "ihate.news" = {
-          enableACME = true;
-          forceSSL = true;
-          locations."/" = {
-            proxyPass = "http://localhost:7000";
-            extraConfig = ''
-              proxy_set_header Host $host;
-              proxy_set_header X-Real-IP $remote_addr;
-              proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-              proxy_set_header X-Forwarded-Proto $scheme;
-            '';
-          };
-        };
+
         "www.lorentz.casa" = {
-          enableACME = true;
-          forceSSL = true;
+          listen = [{ addr = "127.0.0.1"; port = 8084; }];
           root = "/var/www";
           locations."/" = {
             tryFiles = "$uri $uri/ =404";
@@ -183,7 +145,7 @@
       settings = {
         server = {
           http_port = 3000;
-          http_addr = "0.0.0.0";
+          http_addr = "127.0.0.1";
         };
 
         # admin credentials in password manager
@@ -211,6 +173,18 @@
       };
     };
 
+    cloudflared = {
+      enable = true;
+      tunnels.lorentz = {
+        credentialsFile = "/etc/cloudflared/lorentz-credentials.json";
+        default = "http_status:404";
+        ingress = {
+          "grafana.lorentz.casa" = "http://localhost:8083";
+          "www.lorentz.casa" = "http://localhost:8084";
+        };
+      };
+    };
+
     # https://nixos.wiki/wiki/Plex
     # library in /srv/plex
     # TODO: create normal user and run plex as that user instead
@@ -232,12 +206,9 @@
     firewall = {
       allowedTCPPorts = [
         22
-        3000
         4000
         53
         9090
-        80
-        443
       ];
       allowedUDPPorts = [ 53 ];
     };

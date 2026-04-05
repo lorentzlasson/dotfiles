@@ -23,6 +23,7 @@
             shellcheck
             shfmt
             stylua
+            opentofu
           ];
         };
 
