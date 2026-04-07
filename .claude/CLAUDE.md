@@ -104,7 +104,7 @@ Always use the long form of flags passed to CLIs and such (e.g. `--message` not 
 NEVER use the `cd` command. Always stay in the project root directory and use absolute paths for all file operations. Your working directory is already correct — check `pwd` before resorting to `GIT_DIR=`, `--git-dir`, or other workarounds. Just run commands normally.
 
 ### Git
-@.claude/git-preferences.md
+Preferences: @git-preferences.md
 
 Commit after completing a task unless told otherwise. Use /commit when committing.
 
