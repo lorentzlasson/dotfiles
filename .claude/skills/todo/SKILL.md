@@ -14,6 +14,8 @@ If "$ARGUMENTS" is empty:
 - Summarize the current conversation context as actionable todo instructions
 - Derive a kebab-case filename from the summary
 
+Review the content for clarity. If anything is too vague to act on or includes details that will likely go stale, use the AskUserQuestion tool to clarify before filing. Aim for the middle ground — enough "why" and "where" to orient, but no step-by-step plan.
+
 The file should be plain, concise instructions — not a plan, not an investigation, just what needs to be done.
 
 After writing the todo file, run /commit.
