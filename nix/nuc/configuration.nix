@@ -76,6 +76,8 @@
             "1.0.0.1"
           ];
         };
+        # if upstream returns empty result, default cacheTimeNegative (30m) keeps it cached
+        # flush via: curl -X POST http://localhost:4000/api/cache/flush
         blocking = {
           denylists = {
             ads = [ "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts" ];
