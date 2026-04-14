@@ -121,6 +121,7 @@
       syntaxHighlighting.enable = true;
     };
 
+    nix-ld.enable = true;
   };
 
   # GNOME settings via systemd user service
