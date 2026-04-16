@@ -1,4 +1,7 @@
 {
+  "env": {
+    "DISABLE_AUTOUPDATER": "1"
+  },
   "attribution": {
     "commit": "",
     "pr": ""
@@ -43,8 +46,9 @@
     "frontend-design@claude-plugins-official": true
   },
   "voiceEnabled": true,
-  "autoMemoryEnabled": false,
-  "env": {
-    "DISABLE_AUTOUPDATER": "1"
-  }
+  "voice": {
+    "enabled": true,
+    "mode": "hold"
+  },
+  "autoMemoryEnabled": false
 }
