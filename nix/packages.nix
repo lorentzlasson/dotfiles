@@ -25,9 +25,9 @@
     nil
     nix-index
     nixpkgs-fmt
-    nodePackages_latest.bash-language-server
-    nodePackages_latest.sql-formatter
-    nodePackages_latest.typescript-language-server
+    bash-language-server
+    sql-formatter
+    typescript-language-server
     openssl
     pciutils # system information
     pgcli
