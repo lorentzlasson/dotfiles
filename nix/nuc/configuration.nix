@@ -4,9 +4,11 @@
     ./hardware-configuration.nix
     ../configuration.nix
     ./packages.nix
-  ] ++ (let
-    servicesDir = /etc/nix-services;
-  in
+  ]
+  ++ (
+    let
+      servicesDir = /etc/nix-services;
+    in
     if builtins.pathExists servicesDir then
       map (f: servicesDir + "/${f}") (builtins.attrNames (builtins.readDir servicesDir))
     else
@@ -35,14 +37,24 @@
       enable = true;
       virtualHosts = {
         "grafana.lorentz.casa" = {
-          listen = [{ addr = "127.0.0.1"; port = 8083; }];
+          listen = [
+            {
+              addr = "127.0.0.1";
+              port = 8083;
+            }
+          ];
           locations."/" = {
             proxyPass = "http://localhost:3000";
           };
         };
 
         "www.lorentz.casa" = {
-          listen = [{ addr = "127.0.0.1"; port = 8084; }];
+          listen = [
+            {
+              addr = "127.0.0.1";
+              port = 8084;
+            }
+          ];
           root = "/var/www";
           locations."/" = {
             tryFiles = "$uri $uri/ =404";
