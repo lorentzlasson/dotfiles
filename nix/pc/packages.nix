@@ -9,6 +9,7 @@
     # zed-editor # too slow too compile
     dbeaver-bin
     dropbox-cli
+    easyeffects
     fd
     firefox
     gh
@@ -35,6 +36,7 @@
     tcpdump
     unison-ucm
     wev
+    x42-plugins
     xournalpp
 
     # unfree
