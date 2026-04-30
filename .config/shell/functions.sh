@@ -70,6 +70,8 @@ decode_jwt() {
   echo "$1" | cut --delimiter='.' --fields=2 | base64 --decode 2>/dev/null | jq .
 }
 
+_git-deleteremotebranch() { __git_remote_branch_names; }
+
 # https://unix.stackexchange.com/a/112284
 # Edit the /etc/default/grub and replace GRUB_DEFAULT=0 with GRUB_DEFAULT=saved
 # sudo update-grub
