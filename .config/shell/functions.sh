@@ -70,6 +70,13 @@ decode_jwt() {
   echo "$1" | cut --delimiter='.' --fields=2 | base64 --decode 2>/dev/null | jq .
 }
 
+git-deleteremotebranch() {
+  for p in "$@"; do
+    git branch --remotes --list "origin/${p#origin/}" |
+      sed 's|^[ *]*origin/||' |
+      xargs --no-run-if-empty git push origin --delete
+  done
+}
 _git-deleteremotebranch() { __git_remote_branch_names; }
 
 # https://unix.stackexchange.com/a/112284
