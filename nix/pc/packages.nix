@@ -28,7 +28,7 @@
     pinta
     playwright
     playwright-mcp
-    protonvpn-gui
+    proton-vpn
     qbittorrent
     sd
     sox
