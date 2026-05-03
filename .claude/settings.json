@@ -51,5 +51,9 @@
   },
   "autoMemoryEnabled": false,
   "skipAutoPermissionPrompt": true,
-  "voiceEnabled": true
+  "voiceEnabled": true,
+  "theme": "dark-ansi",
+  "editorMode": "vim",
+  "preferredNotifChannel": "terminal_bell",
+  "agentPushNotifEnabled": true
 }
