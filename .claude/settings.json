@@ -29,8 +29,7 @@
     ],
     "deny": [
       "Bash(cd:*)",
-      "Bash(git checkout:*)",
-      "Bash(git -C:*)"
+      "Bash(git checkout:*)"
     ],
     "ask": [],
     "defaultMode": "auto"
