@@ -17,7 +17,6 @@ alias pip=pip3
 # convenience
 alias cl="clear"
 alias open=xdg-open
-alias copy="xclip -sel clip"
 alias copy1l="tr -d '\n' | copy"
 alias :q="exit"
 alias check-context-imports="bash ~/dotfiles/.claude/scripts/check-context-imports.sh"

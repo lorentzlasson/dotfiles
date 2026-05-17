@@ -1,3 +1,11 @@
+copy() {
+  if [ $# -eq 0 ]; then
+    xclip -sel clip
+  else
+    xclip -sel clip < "$1"
+  fi
+}
+
 gitbranchauthors() {
   git remote update origin --prune >/dev/null
   for branch in $(git branch -r | grep -v HEAD); do echo "$(git show --format=%an "$branch" | head -n 1): $branch"; done |
