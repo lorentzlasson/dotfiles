@@ -1,3 +1,7 @@
+## Git workflow expectations
+
+- I will regularly modify git history/state out-of-band (reset, rebase, amend, branch, switch). Do NOT treat unexpected git state as a problem to investigate or undo. Re-read `git status`/`git log` fresh instead of relying on prior snapshots, and assume any change you didn't make was intentional.
+
 ## Git command preferences
 
 - `git checkout` is BANNED. do NOT use it. EVER. not for branches, not for files, not for anything.
