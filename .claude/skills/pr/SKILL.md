@@ -16,3 +16,4 @@ create a PR targeting the primary branch using `gh pr create`.
 - no test plan section
 - description focuses on WHY, not WHAT
 - use bullet lists when appropriate
+- omit the body entirely when the title + diff fully tell the story. add a body only when there's information not visible in either — perf numbers, an invariant the change preserves, a non-obvious why, a link to an issue. otherwise the body is decoration.
