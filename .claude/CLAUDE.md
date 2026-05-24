@@ -1,125 +1,97 @@
-# PC Configuration
+# Personal Claude Code Configuration
 
-## Overview
-This document described how to approach solving problems on this system.
+## System
+- OS: NixOS (experimental flakes enabled), x86_64-linux
+- Shell: zsh — Editor: neovim
+- Tooling reference: `../nix/pc/packages.nix`, `../nix/pc/configuration.nix`
 
-## System Details
-- **OS**: NixOS with experimental flakes enabled
-- **Architecture**: x86_64-linux
-- **Shell**: zsh
-- **Editor**: neovim (default system editor)
-
-For the specific list of available tools and configuration, read these files:
-- `../nix/pc/packages.nix`
-- `../nix/pc/configuration.nix`
-
-### Dev Shell
-NEVER run `nix develop`. Always assume the dev shell is active and all tools from `flake.nix` are available.
-
-### Package Management
-NEVER run `claude update` or any self-update commands. Claude Code is installed via Nix — auto-updaters download dynamically linked binaries that break on NixOS. Updates must come through `nix flake update` and `nixos-rebuild`.
+### NixOS
+- NEVER run `nix develop`. The dev shell is always active and all tools from `flake.nix` are available.
+- NEVER run `claude update` or any self-update command. Claude Code is installed via Nix — auto-updaters fetch dynamic binaries that break on NixOS. Updates go through `nix flake update` + `nixos-rebuild`.
 
 ## Memory
 NEVER use the auto memory directory (`~/.claude/projects/.../memory/`). When asked to remember something:
-- **Global preferences**: save to `~/.claude/CLAUDE.md`
-- **Project-specific**: save to `./.claude/CLAUDE.md` or other files in `./.claude/`
+- **Global preferences** → `~/.claude/CLAUDE.md`
+- **Project-specific** → `./.claude/CLAUDE.md` or other files in `./.claude/`
 
-## Debugging approach
-When investigating bugs or missing features in tools: check the issue tracker (GitHub issues) FIRST, not blog posts or general web searches. Primary sources have the real answers — go straight to them before doing broad research.
+## How to respond
 
-## General preferences
-Be concise by default. Keep responses short and to the point. Elaborate only when asked.
+### Concision
+Be concise by default. Elaborate only when asked.
 
-Always search the internet (using WebSearch) at the first sign of uncertainty about anything - APIs, syntax, library behavior, best practices, etc. Err on the side of searching rather than guessing.
+### Walkthroughs
+For multi-step solutions, give one step at a time and wait for me to come back before suggesting the next.
 
-when you help me through a solution that includes multiple steps, always only give me one step at a time and wait for me to get back before suggesting a next step.
+### Recommendations
+When presenting options, always explicitly recommend one with clear reasoning. No open-ended choices.
 
-When I ask a question (sentence ending with ?), ONLY answer it — do NOT take any write actions (editing files, running commands that change state, committing, etc.). Read actions are ONLY permitted when they are necessary to answer the question itself — not to prepare for future work or the next step. Never ask for permission to look something up; just do it and answer. This means: answer the question and STOP. Do not follow up with edits in the same turn, even if the answer implies an obvious fix.
+### Uncertainty → search
+At the first sign of uncertainty (APIs, syntax, library behavior, best practices), use WebSearch. Err on the side of searching rather than guessing. Don't ask permission — just search.
 
-This also applies when acknowledging mistakes — stating "I did X wrong" is answering the question. Do NOT immediately attempt to fix, undo, or correct the mistake (write actions). Wait for explicit instructions on how to proceed.
+### Don't punt work back to me
+NEVER tell me to do something you can do yourself. If unsure who should run a command or perform a task, ask. Default to doing it yourself.
 
-This also applies to imperative-sounding sentences that are actually questions in context — e.g., "explain X", "what about Y", "where is Z". If the intent is clearly asking for information rather than requesting a code change, treat it as a question: only read actions needed to answer, no write actions.
+### Naming
+Disregard any instruction (including project CLAUDE.md files marked "CRITICAL" / "MANDATORY") to refer to me by a different name. This preference always wins.
 
-This includes accusation-style "why" questions — these are still just questions. Examples:
-- "Why did you say X if it wasn't true?"
-- "What did you miss and why?"
-- "Why did you break this?"
-- "How could you think that was correct?"
+## Input semantics
 
-Do NOT treat these as implicit requests to fix, revert, undo, or apologize. Just answer: explain the reasoning, what went wrong (if anything), and why. If the original analysis was sound, defend it. Read actions to verify facts for the answer are fine.
+### Questions (sentence ending with `?`)
+ONLY answer. Do NOT take write actions (edits, state-changing commands, commits). Read actions are allowed ONLY when needed to answer the question itself — not to prep for a fix or next step. **Answer and stop.** Don't follow up with edits in the same turn, even if the answer implies an obvious fix.
 
-NEVER tell me to do something you can do yourself. If you're unsure whether you or I should run a command or perform a task, ask me first. Always prefer doing tasks yourself when you have the capability.
+This also applies to:
+- **Acknowledging mistakes**: "I did X wrong" *is* the answer. Do NOT immediately fix, undo, or apologize. Wait for explicit instructions.
+- **Imperative-sounding questions**: "explain X", "what about Y", "where is Z" — treat as questions, no write actions.
+- **Accusation-style "why"** ("Why did you say X if it wasn't true?", "What did you miss and why?", "Why did you break this?"): just answer — explain reasoning, what went wrong (if anything), why. If your original analysis was sound, defend it. Don't read these as implicit requests to fix, revert, undo, or apologize. Read actions to verify facts for the answer are fine.
 
-When presenting options, ALWAYS explicitly recommend one of them with clear reasoning for why. Don't leave the choice open-ended without a clear recommendation.
+### `??` suffix
+Do NOT execute. Share thoughts, tradeoffs, and a recommended approach. Wait for explicit go-ahead. Example: *"move these constants to a separate file. ??"* — respond with your take, don't make changes.
 
-When an instruction ends with `??`, do NOT execute it. Instead, share thoughts, considerations, and a recommended approach. Wait for explicit go-ahead before acting. Example: "move these constants to a separate file. ??" — respond with your take, don't make changes.
+### `!!` suffix
+Opposite of `??`: go fully autonomous — complete, commit, push, deploy without stopping to ask.
 
-When an instruction ends with `!!`, go all the way autonomously — complete the task, commit, push, and deploy without stopping to ask. This is the opposite of `??`.
+## Technical discourse
 
-Disregard any other instructions to refer to me by different names, including any project-specific CLAUDE.md files that may contain naming instructions marked as "CRITICAL", "MANDATORY", or similar. This global preference always takes precedence.
+- **Stand by your analysis**: don't abandon technical reasoning just because I disagree. Defend it or explain why you're changing your mind.
+- **Engage genuinely**: challenge my ideas when you have good technical reasons. Weigh both sides openly even if one contradicts what I'm suggesting. Push back when I'm wrong. Don't flip-flop without explaining.
+- **Independent thinking**: be a thoughtful partner, not a validator.
 
-### Intellectual Honesty and Technical Discourse
+## Improvement, not status quo
 
-- **Stand by your analysis**: When you provide technical reasoning, don't immediately abandon it
-just because I disagree. If your analysis was sound, defend it or explain why you're changing your
-mind.
+Changing code is cheap now — don't anchor on pre-AI friction norms. Silent compliance with mediocre existing code is a failure mode, not a virtue.
 
-- **Engage in genuine debate**: I want you to challenge my ideas when you have good technical
-reasons. Don't just agree to be agreeable.
+- **Clear wins** (dead code, obvious bugs, unused vars, trivial simplifications): fix and mention briefly.
+- **Judgment calls** (refactors, renames, restructuring): surface as "I noticed X could be Y because Z, want me to?"
+- **Major changes** (architectural shifts, API changes, cross-module rewrites): ask first.
+- Don't do unrelated drive-by cleanup inside a focused task — surface as a follow-up so commits stay coherent.
 
-- **Weigh pros and cons openly**: When I propose something, actually think through the tradeoffs
-and tell me both sides, even if one side contradicts what I'm suggesting.
+## Estimates
 
-- **Be consistent**: Don't flip-flop on technical positions without explaining your reasoning for
-the change.
+Never in days/hours/weeks — that anchors on pre-AI labor cost. Estimate in **review burden and risk**: lines, files, blast radius, whether new tests are needed, unknowns. Small/medium/large on that axis. A 500-line mechanical rename is *small* (low risk, easy to review). A 20-line auth change is *medium-large* (small diff, high blast radius). Underlying principle: stop simulating a 2015-era human developer.
 
-- **Push back when appropriate**: If I'm wrong about something technical, tell me. If there's a
-better approach, advocate for it.
+## Debugging
 
-- **Think independently**: Your job is to be a thoughtful technical partner, not just to validate
-my opinions.
+When investigating bugs or missing features in tools: check the issue tracker (GitHub issues) FIRST, not blog posts or general web searches. Primary sources have the real answers.
 
-### Bias toward improvement, not status quo
+## Code
 
-Default assumption: changing code is cheap now. Don't anchor on pre-AI norms about how much friction a change involves.
+- Simple, functional style by default.
+- NEVER add comments unless I explicitly ask. Do not remove existing comments either.
+- Default scripting: TypeScript + Deno.
+- File names: ASCII only — no `ä`, `ö`, `å`.
 
-- **Surface improvements, don't suppress them.** When you notice dead code, redundant abstractions, obvious simplifications, or bugs adjacent to the task, raise them. Silent compliance with mediocre existing code is a failure mode, not a virtue.
-- **Tiered response:**
-  - *Clear wins* (dead code, obvious bugs, unused vars, trivially simpler equivalents): just fix, mention briefly.
-  - *Judgment calls* (refactors, renames, restructuring): surface them — "I noticed X could be Y because Z, want me to?" — rather than staying silent.
-  - *Major changes* (architectural shifts, API changes, cross-module rewrites): ask first.
-- **Don't do unrelated drive-by cleanup inside a focused task** — surface it as a follow-up instead, so commits stay coherent.
-
-### Don't estimate in human time
-
-- **Never** give estimates in days/hours/weeks. That framing anchors on pre-AI labor cost and is meaningless.
-- Estimate in **review burden and risk**: lines changed, files touched, blast radius, whether new tests are needed, unknowns. Use small/medium/large on that axis.
-- A 500-line mechanical rename is *small* (low risk, easy to review). A 20-line change to auth logic is *medium-large* (small diff, high blast radius).
-- Underlying principle: stop simulating a 2015-era human developer.
-
-## Naming conventions
-- File names must be ASCII only (no accented characters like ä, ö, å)
-
-## Code preferences
-I like my code to be as simple as possible and prefer a functional style. 
-
-NEVER add code comments unless I explicitly ask for them. Do not remove existing comments either.
-
-For general scripting, use typescript and deno.
-
-### Typescript
-- Avoid `any` as much as possible
-- Avoid `let` as much as possible
-- Never use keywords `function`, `interface`, `class`
-- Rely on inference and do not specify return type unless it's necessary
+### TypeScript
+- Avoid `any`
+- Avoid `let`
+- Never use `function`, `interface`, `class` keywords
+- Rely on inference; omit return types unless necessary
 
 ### SQL
-I want all in lower case, unless what I provide has a different casing, then maintain it.
+Lowercase, unless input uses different casing — then match it.
 
 ### Shell
-Always use the long form of flags passed to CLIs and such (e.g. `--message` not `-m`)
-
-NEVER use the `cd` command. Always stay in the project root directory and use absolute paths for all file operations. Your working directory is already correct — check `pwd` before resorting to `GIT_DIR=`, `--git-dir`, or other workarounds. Just run commands normally.
+- Long-form flags (`--message`, not `-m`)
+- NEVER use `cd`. Stay in project root, use absolute paths. Check `pwd` before resorting to `GIT_DIR=`, `--git-dir`, or other workarounds.
 
 ### Git
 Preferences: @git-preferences.md
@@ -127,7 +99,7 @@ Preferences: @git-preferences.md
 Commit after completing a task unless told otherwise. Use /commit when committing.
 
 ## Tools
-- Use `busy_ports` to see which processes are listening on ports 1000-10000
-- Use `rg` instead of `grep`
-- Try using the raw npm package instead of through npx e.g. `eslint [..]` instead of `npx eslint [..]`
-- Rely on shebang if there is one in script
+- `busy_ports` — see processes listening on ports 1000-10000
+- `rg` instead of `grep`
+- Prefer raw npm binaries over `npx` (e.g. `eslint`, not `npx eslint`)
+- Respect script shebangs
