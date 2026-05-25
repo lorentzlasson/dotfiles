@@ -40,6 +40,7 @@
     sqls
     terraform-ls
     tree
+    tree-sitter
     usbutils # lsbusb
     vscode-langservers-extracted
     wget

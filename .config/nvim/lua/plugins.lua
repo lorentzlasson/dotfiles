@@ -20,7 +20,8 @@ require('lazy').setup({
   },
   {
     'nvim-treesitter/nvim-treesitter',
-    build = ':TSUpdate',
+    branch = 'main',
+    lazy = false,
   },
   { 'stevearc/dressing.nvim' },
   { 'stevearc/oil.nvim' },
