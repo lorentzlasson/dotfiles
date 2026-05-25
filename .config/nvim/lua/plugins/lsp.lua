@@ -1,8 +1,6 @@
-local lspconfig = require('lspconfig')
-
 -- SERVERS WITH DEFAULT CONFIG
--- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
-local servers = {
+-- https://github.com/neovim/nvim-lspconfig/tree/master/lsp
+local default_servers = {
   'astro',
   'bashls',
   'elmls',
@@ -18,41 +16,44 @@ local servers = {
   'yamlls',
 }
 
-for _, server in ipairs(servers) do
-  lspconfig[server].setup({})
-end
+vim.lsp.enable(default_servers)
 
 -- SERVERS WITH SPECIAL CONFIG
 
-lspconfig.denols.setup({
-  root_dir = lspconfig.util.root_pattern('deno.json', 'deno.jsonc'),
+vim.lsp.config('denols', {
+  root_markers = { 'deno.json', 'deno.jsonc' },
 })
+vim.lsp.enable('denols')
 
-lspconfig.elixirls.setup({
+vim.lsp.config('elixirls', {
   cmd = { 'elixir-ls' },
 })
+vim.lsp.enable('elixirls')
 
-lspconfig.solargraph.setup({
+vim.lsp.config('solargraph', {
   cmd = { 'bundle', 'exec', 'solargraph', 'stdio' },
-  root_dir = lspconfig.util.root_pattern('Gemfile', '.git'),
+  root_markers = { 'Gemfile', '.git' },
 })
+vim.lsp.enable('solargraph')
 
-lspconfig.ts_ls.setup({
-  root_dir = function(filename)
-    local denoRootDir = lspconfig.util.root_pattern('deno.json', 'deno.jsonc')(filename)
-    if denoRootDir then
-      return nil
+vim.lsp.config('ts_ls', {
+  root_dir = function(bufnr, on_dir)
+    local fname = vim.api.nvim_buf_get_name(bufnr)
+    if vim.fs.root(fname, { 'deno.json', 'deno.jsonc' }) then
+      return
     end
-
-    return lspconfig.util.root_pattern('package.json', '.git')(filename)
+    local root = vim.fs.root(fname, { 'package.json', '.git' })
+    if root then
+      on_dir(root)
+    end
   end,
-  single_file_support = false,
   on_init = function(client)
     client.offset_encoding = 'utf-8'
   end,
 })
+vim.lsp.enable('ts_ls')
 
-lspconfig.lua_ls.setup({
+vim.lsp.config('lua_ls', {
   settings = {
     Lua = {
       diagnostics = {
@@ -61,8 +62,9 @@ lspconfig.lua_ls.setup({
     },
   },
 })
+vim.lsp.enable('lua_ls')
 
-lspconfig.nil_ls.setup({
+vim.lsp.config('nil_ls', {
   settings = {
     ['nil'] = {
       formatting = {
@@ -71,8 +73,9 @@ lspconfig.nil_ls.setup({
     },
   },
 })
+vim.lsp.enable('nil_ls')
 
-lspconfig.sqls.setup({
+vim.lsp.config('sqls', {
   on_attach = function(client, bufnr)
     require('sqls').on_attach(client, bufnr) -- require sqls.nvim
   end,
@@ -87,6 +90,7 @@ lspconfig.sqls.setup({
     },
   },
 })
+vim.lsp.enable('sqls')
 
 -- GENERAL KEY MAPPINGS
 vim.api.nvim_create_autocmd('LspAttach', {
