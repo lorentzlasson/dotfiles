@@ -18,6 +18,7 @@
 - NEVER use "and" in subject line - think abstractly about the common theme of the diff
 - body: add only when it provides value beyond the subject — either a non-obvious "why", or additional behavior changes the subject can't capture
 - frame body behavior descriptions from the user's perspective — what they will observe, not what the code does (e.g. "the sync recipe now restows after pulling, so symlinks reflect the latest dotfiles")
+- body claims should be falsifiable — name a specific observation that could prove the claim wrong (e.g. "opening any file no longer throws 'attempt to call method range'" not "treesitter now works again")
 - most commits should be subject-only
 - use lowercase for ALL text - INCLUDING BODY
 - DO NOT follow "conventional commits" with type prefix
