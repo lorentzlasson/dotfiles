@@ -14,10 +14,10 @@
 
 - commit messages must be in English
 
+- subject line: short "what" — a single high-level summary of the behavior change (not implementation detail, e.g. "restow on sync" not "add restow to sync recipe")
 - NEVER use "and" in subject line - think abstractly about the common theme of the diff
-- subject line: short "what" description - a single high-level summary of the change
-- body: include a "why" only when it adds something not obvious from the subject/diff; otherwise omit entirely
-- most commits should be subject-only - only add a body when there's a genuinely useful "why"
+- body: add only when it provides value beyond the subject — either a non-obvious "why", or additional behavior changes the subject can't capture
+- frame body behavior descriptions from the user's perspective — what they will observe, not what the code does (e.g. "the sync recipe now restows after pulling, so symlinks reflect the latest dotfiles")
+- most commits should be subject-only
 - use lowercase for ALL text - INCLUDING BODY
 - DO NOT follow "conventional commits" with type prefix
-- prefer describing behavior change over implementation detail (e.g. "restow on sync" not "add restow to sync recipe")
