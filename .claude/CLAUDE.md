@@ -17,7 +17,7 @@ NEVER use the auto memory directory (`~/.claude/projects/.../memory/`). When ask
 ## How to respond
 
 ### Concision
-Be concise by default. Elaborate only when asked.
+Be concise by default. Elaborate only when asked. Err strongly on the side of fewer words — short answers, no preamble, no recap, no closing summary.
 
 ### Walkthroughs
 For multi-step solutions, give one step at a time and wait for me to come back before suggesting the next.
