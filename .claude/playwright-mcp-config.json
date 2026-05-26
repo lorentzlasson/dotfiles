@@ -1,4 +1,5 @@
 {
+  "outputDir": "/tmp",
   "browser": {
     "browserName": "chromium",
     "launchOptions": {
