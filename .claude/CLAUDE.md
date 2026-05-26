@@ -104,3 +104,30 @@ Commit after completing a task unless told otherwise. Use /commit when committin
 - `rg` instead of `grep`
 - Prefer raw npm binaries over `npx` (e.g. `eslint`, not `npx eslint`)
 - Respect script shebangs
+
+## Recording videos in the browser
+
+When I ask to "record a video" of something in the browser, do NOT take screenshots and stitch — that loses animations. Use Playwright's native `recordVideo` via a standalone Node script.
+
+Recipe:
+1. **Capture the logged-in session** from the running MCP Playwright browser. Use `browser_evaluate` to read `document.cookie` + `localStorage`, then save as a `storageState.json` (the MCP browser downloads it automatically to `.playwright-mcp/`).
+2. **Write a Node script** that imports `chromium` from the nix-store `playwright-core` package. Find the current path with `ls /nix/store | grep playwright-core | grep -v '\.drv$'` — pick the latest version. Example:
+   ```js
+   import { chromium } from "/nix/store/<hash>-playwright-core-<ver>/index.mjs";
+   const browser = await chromium.launch({
+     executablePath: "/run/current-system/sw/bin/google-chrome",
+     headless: true,
+   });
+   const context = await browser.newContext({
+     viewport: { width: 1440, height: 810 },
+     storageState: "<path>.json",
+     recordVideo: { dir: "out/", size: { width: 1440, height: 810 } },
+   });
+   ```
+3. **Drive the flow** with normal Playwright locators. Use `sleep(ms)` between actions so the video isn't a blur.
+4. **Close the context** to flush the video. Output is `.webm` at `out/page@<hash>.webm`.
+5. **Convert to MP4** for GitHub: `nix-shell -p ffmpeg --run "ffmpeg -y -i in.webm -c:v libx264 -pix_fmt yuv420p -movflags +faststart -vf 'scale=trunc(iw/2)*2:trunc(ih/2)*2' out.mp4"`.
+
+The ffmpeg symlink Playwright wants at `~/.cache/ms-playwright/ffmpeg-1011/ffmpeg-linux` is set up declaratively by `systemd.user.services.playwright-ffmpeg` in `~/dotfiles/nix/pc/configuration.nix`. If a fresh rebuild hasn't activated it yet: `systemctl --user start playwright-ffmpeg`.
+
+GitHub PR comments don't take video via `gh` cleanly — give me the local MP4 path and drag-drop into the PR yourself.

@@ -124,6 +124,22 @@
     nix-ld.enable = true;
   };
 
+  # Playwright's video recorder demands ffmpeg at a specific cache path.
+  # Symlink the system ffmpeg there so `recordVideo` works out of the box.
+  systemd.user.services.playwright-ffmpeg = {
+    description = "Symlink ffmpeg for Playwright video recording";
+    wantedBy = [ "default.target" ];
+    script = ''
+      target="$HOME/.cache/ms-playwright/ffmpeg-1011/ffmpeg-linux"
+      mkdir -p "$(dirname "$target")"
+      ln -sf ${pkgs.ffmpeg}/bin/ffmpeg "$target"
+    '';
+    serviceConfig = {
+      Type = "oneshot";
+      RemainAfterExit = true;
+    };
+  };
+
   # GNOME settings via systemd user service
   systemd.user.services.gnome-settings = {
     description = "Apply GNOME settings";
