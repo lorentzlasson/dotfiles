@@ -9,6 +9,10 @@
   networking.hostName = "asus";
   system.stateVersion = "23.11";
 
+  environment.systemPackages = [
+    (pkgs.callPackage ./bethaniel.nix { nvidiaPackage = config.hardware.nvidia.package; })
+  ];
+
   programs.steam = {
     enable = true;
     gamescopeSession.enable = true;
