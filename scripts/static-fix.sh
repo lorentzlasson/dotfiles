@@ -7,3 +7,5 @@ statix fix nix/
 deadnix --edit --exclude nix/*/hardware-configuration.nix nix/
 shfmt --indent 2 --write .config/shell/*.sh .zshrc
 stylua .config/nvim/
+
+exec "$(dirname "$0")/static-qa.sh"
