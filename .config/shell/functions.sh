@@ -2,7 +2,7 @@ copy() {
   if [ $# -eq 0 ]; then
     xclip -sel clip
   else
-    xclip -sel clip < "$1"
+    xclip -sel clip <"$1"
   fi
 }
 

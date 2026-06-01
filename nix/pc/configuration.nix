@@ -124,36 +124,54 @@
     nix-ld.enable = true;
   };
 
-  # Playwright's video recorder demands ffmpeg at a specific cache path.
-  # Symlink the system ffmpeg there so `recordVideo` works out of the box.
-  systemd.user.services.playwright-ffmpeg = {
-    description = "Symlink ffmpeg for Playwright video recording";
-    wantedBy = [ "default.target" ];
-    script = ''
-      target="$HOME/.cache/ms-playwright/ffmpeg-1011/ffmpeg-linux"
-      mkdir -p "$(dirname "$target")"
-      ln -sf ${pkgs.ffmpeg}/bin/ffmpeg "$target"
-    '';
-    serviceConfig = {
-      Type = "oneshot";
-      RemainAfterExit = true;
+  systemd.user.services = {
+    # Playwright's video recorder demands ffmpeg at a specific cache path.
+    # Symlink the system ffmpeg there so `recordVideo` works out of the box.
+    playwright-ffmpeg = {
+      description = "Symlink ffmpeg for Playwright video recording";
+      wantedBy = [ "default.target" ];
+      script = ''
+        target="$HOME/.cache/ms-playwright/ffmpeg-1011/ffmpeg-linux"
+        mkdir -p "$(dirname "$target")"
+        ln -sf ${pkgs.ffmpeg}/bin/ffmpeg "$target"
+      '';
+      serviceConfig = {
+        Type = "oneshot";
+        RemainAfterExit = true;
+      };
+    };
+
+    # GNOME settings via systemd user service
+    gnome-settings = {
+      description = "Apply GNOME settings";
+      wantedBy = [ "graphical-session.target" ];
+      after = [ "graphical-session.target" ];
+      path = [ pkgs.glib ];
+      script = "${pkgs.bash}/bin/bash ${./gnome-settings.sh}";
+      serviceConfig = {
+        Type = "oneshot";
+        RemainAfterExit = true;
+      };
+    };
+
+    dropbox = {
+      wantedBy = [ "graphical-session.target" ];
+      environment = {
+        QT_PLUGIN_PATH = "/run/current-system/sw/" + pkgs.qt5.qtbase.qtPluginPrefix;
+        QML2_IMPORT_PATH = "/run/current-system/sw/" + pkgs.qt5.qtbase.qtQmlPrefix;
+      };
+      serviceConfig = {
+        ExecStart = "${lib.getBin pkgs.dropbox}/bin/dropbox";
+        ExecReload = "${lib.getBin pkgs.coreutils}/bin/kill -HUP $MAINPID";
+        KillMode = "control-group"; # upstream recommends process
+        Restart = "on-failure";
+        PrivateTmp = true;
+        ProtectSystem = "full";
+        Nice = 10;
+      };
     };
   };
 
-  # GNOME settings via systemd user service
-  systemd.user.services.gnome-settings = {
-    description = "Apply GNOME settings";
-    wantedBy = [ "graphical-session.target" ];
-    after = [ "graphical-session.target" ];
-    path = [ pkgs.glib ];
-    script = "${pkgs.bash}/bin/bash ${./gnome-settings.sh}";
-    serviceConfig = {
-      Type = "oneshot";
-      RemainAfterExit = true;
-    };
-  };
-
-  # https://nixos.wiki/wiki/Dropbox
   networking = {
     # hostName handled by machine specific config
     networkmanager = {
@@ -170,23 +188,6 @@
         iptables -I nixos-fw 1 -i docker0 -s 172.16.0.0/12 -j ACCEPT
         iptables -I nixos-fw 1 -i br+     -s 172.16.0.0/12 -j ACCEPT
       '';
-    };
-  };
-
-  systemd.user.services.dropbox = {
-    wantedBy = [ "graphical-session.target" ];
-    environment = {
-      QT_PLUGIN_PATH = "/run/current-system/sw/" + pkgs.qt5.qtbase.qtPluginPrefix;
-      QML2_IMPORT_PATH = "/run/current-system/sw/" + pkgs.qt5.qtbase.qtQmlPrefix;
-    };
-    serviceConfig = {
-      ExecStart = "${lib.getBin pkgs.dropbox}/bin/dropbox";
-      ExecReload = "${lib.getBin pkgs.coreutils}/bin/kill -HUP $MAINPID";
-      KillMode = "control-group"; # upstream recommends process
-      Restart = "on-failure";
-      PrivateTmp = true;
-      ProtectSystem = "full";
-      Nice = 10;
     };
   };
 
