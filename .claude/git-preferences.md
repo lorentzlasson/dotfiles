@@ -8,7 +8,6 @@
 - switching branches: `git switch <branch>` or `git switch --create <new-branch>`
 - restoring files: `git restore <file>` or `git restore --staged <file>`
 - if you catch yourself about to type `checkout`, STOP and use `switch` or `restore` instead
-- NEVER use `-C` flag - run git commands from the project root
 
 ## Git commit message rules
 
