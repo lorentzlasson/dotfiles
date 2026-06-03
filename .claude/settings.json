@@ -49,10 +49,11 @@
     "mode": "hold"
   },
   "autoMemoryEnabled": false,
-  "skipAutoPermissionPrompt": true,
-  "voiceEnabled": true,
   "theme": "dark-ansi",
   "editorMode": "vim",
   "preferredNotifChannel": "terminal_bell",
-  "agentPushNotifEnabled": true
+  "agentPushNotifEnabled": true,
+  "skipAutoPermissionPrompt": true,
+  "voiceEnabled": true,
+  "effortLevel": "xhigh"
 }
