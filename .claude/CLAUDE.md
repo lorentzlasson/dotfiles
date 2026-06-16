@@ -5,6 +5,9 @@
 - Shell: zsh — Editor: neovim
 - Tooling reference: `../nix/pc/packages.nix`, `../nix/pc/configuration.nix`
 
+## Identity / email
+The email injected in session context (`# userEmail`) is ONLY the email attached to the Claude account. It is NOT my master/primary email and NOT the email I use for other things (git, npm, deploys, accounts, etc.). NEVER assume it as a default identity. When an email is needed for anything, ask or look it up from the relevant config — do not reach for the Claude-account email.
+
 ### NixOS
 - NEVER run `nix develop`. The dev shell is always active and all tools from `flake.nix` are available.
 - NEVER run `claude update` or any self-update command. Claude Code is installed via Nix — auto-updaters fetch dynamic binaries that break on NixOS. Updates go through `nix flake update` + `nixos-rebuild`.
