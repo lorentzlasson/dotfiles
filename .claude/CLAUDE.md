@@ -47,9 +47,6 @@ This also applies to:
 ### `??` suffix
 Do NOT execute. Share thoughts, tradeoffs, and a recommended approach. Wait for explicit go-ahead. Example: *"move these constants to a separate file. ??"* — respond with your take, don't make changes.
 
-### `!!` suffix
-Opposite of `??`: go fully autonomous — complete, commit, push, deploy without stopping to ask.
-
 ## Technical discourse
 
 - **Stand by your analysis**: don't abandon technical reasoning just because I disagree. Defend it or explain why you're changing your mind.
