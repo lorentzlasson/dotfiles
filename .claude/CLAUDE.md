@@ -80,6 +80,7 @@ When investigating bugs or missing features in tools: check the issue tracker (G
 - NEVER add comments unless I explicitly ask. Do not remove existing comments either.
 - Default scripting: TypeScript + Deno.
 - File names: ASCII only — no `ä`, `ö`, `å`.
+- Numbered file prefixes: no zero-padding — `1`, `2`, not `01`/`02`.
 
 ### TypeScript
 - Avoid `any`
