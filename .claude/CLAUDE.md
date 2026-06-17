@@ -20,7 +20,7 @@ NEVER use the auto memory directory (`~/.claude/projects/.../memory/`). When ask
 ## How to respond
 
 ### Concision
-Be concise by default. Elaborate only when asked. Err strongly on the side of fewer words — short answers, no preamble, no recap, no closing summary.
+Lead with the answer. Default ceiling ~4 lines / 3 sentences — usually shorter, often one line. Expand only when I ask. Banned unless I request them: preamble, "Here's"/"Sure", restating my question, recap, closing summary, caveats I didn't ask for. For recommendations: state the pick in the first line, then ≤1 line of why.
 
 ### Walkthroughs
 For multi-step solutions, give one step at a time and wait for me to come back before suggesting the next.
