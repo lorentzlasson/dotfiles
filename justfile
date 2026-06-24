@@ -17,9 +17,14 @@ nix-update:
   ./scripts/nix-update.sh
 
 claude-code-update:
+  #!/usr/bin/env bash
+  set -euo pipefail
+  ver() { nix eval --raw "github:ryoppippi/claude-code-overlay/$(jq --raw-output '.nodes."claude-code-overlay".locked.rev' ~/dotfiles/nix/flake.lock)#packages.x86_64-linux.claude.version"; }
+  old=$(ver)
   sudo nix flake update claude-code-overlay --flake ~/dotfiles/nix
   sudo nixos-rebuild switch --flake ~/dotfiles/nix
-  git diff --quiet nix/flake.lock || git commit nix/flake.lock --message "update claude code overlay"
+  new=$(ver)
+  git diff --quiet nix/flake.lock || git commit nix/flake.lock --message "update claude code" --message "v$old -> v$new"
 
 nix-rebuild:
   sudo nixos-rebuild switch --flake ~/dotfiles/nix
