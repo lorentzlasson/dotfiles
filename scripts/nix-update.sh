@@ -3,7 +3,7 @@ set -euo pipefail
 
 OLD=$(nix build --no-link --print-out-paths \
   ~/dotfiles/nix#nixosConfigurations.$(hostname).config.system.build.toplevel)
-sudo nix flake update --flake ~/dotfiles/nix
+sudo nix flake update --flake path:$HOME/dotfiles/nix
 NEW=$(nix build --no-link --print-out-paths \
   ~/dotfiles/nix#nixosConfigurations.$(hostname).config.system.build.toplevel)
 HIGHLIGHTS=$(nix run nixpkgs#nvd -- --color=never diff "$OLD" "$NEW" \

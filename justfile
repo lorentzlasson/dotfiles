@@ -21,23 +21,23 @@ claude-code-update:
   set -euo pipefail
   ver() { nix eval --raw "github:ryoppippi/claude-code-overlay/$(jq --raw-output '.nodes."claude-code-overlay".locked.rev' ~/dotfiles/nix/flake.lock)#packages.x86_64-linux.claude.version"; }
   old=$(ver)
-  sudo nix flake update claude-code-overlay --flake ~/dotfiles/nix
-  sudo nixos-rebuild switch --flake ~/dotfiles/nix
+  sudo nix flake update claude-code-overlay --flake path:$HOME/dotfiles/nix
+  sudo nixos-rebuild switch --flake path:$HOME/dotfiles/nix
   new=$(ver)
   git diff --quiet nix/flake.lock || git commit nix/flake.lock --message "update claude code" --message "v$old -> v$new"
 
 nix-rebuild:
-  sudo nixos-rebuild switch --flake ~/dotfiles/nix
+  sudo nixos-rebuild switch --flake path:$HOME/dotfiles/nix
 
 nix-boot:
-  sudo nixos-rebuild boot --flake ~/dotfiles/nix
+  sudo nixos-rebuild boot --flake path:$HOME/dotfiles/nix
 
 nix-generations:
   sudo nix-env --list-generations --profile /nix/var/nix/profiles/system
 
 nix-cleanup:
   sudo nix-env --delete-generations +3 --profile /nix/var/nix/profiles/system
-  sudo nixos-rebuild boot --flake ~/dotfiles/nix
+  sudo nixos-rebuild boot --flake path:$HOME/dotfiles/nix
   sudo nix-collect-garbage
 
 hardware-sync machine=`hostname`:
