@@ -17,6 +17,9 @@ NEVER use the auto memory directory (`~/.claude/projects/.../memory/`). When ask
 - **Global preferences** → `~/.claude/CLAUDE.md`
 - **Project-specific** → `./.claude/CLAUDE.md` or other files in `./.claude/`
 
+### Editing instruction/memory docs
+These files state durable rules and the current desired state — never changelog. When updating one, re-derive what the forward-looking instruction should be; do NOT mechanically truth-patch the existing sentence into history ("X was replaced by Y", "removed earlier"). Git carries history. Avoid pinning instructions to specific symbols/paths that rot. When a note exists only to flag a live offender and that offender gets fixed, DELETE the callout — don't rewrite it to narrate the fix.
+
 ## How to respond
 
 ### Concision
