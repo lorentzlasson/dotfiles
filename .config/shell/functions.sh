@@ -6,11 +6,12 @@ copy() {
   fi
 }
 
-gitbranchauthors() {
+git-branchauthors() {
   git remote update origin --prune >/dev/null
-  for branch in $(git branch -r | grep -v HEAD); do echo "$(git show --format=%an "$branch" | head -n 1): $branch"; done |
+  git for-each-ref --format='%(if)%(symref)%(then)%(else)%(authorname):%(refname:short)%(end)' refs/remotes |
+    grep . |
     sort -r |
-    column -s ":" -t
+    column -s ':' -t
 }
 
 # e.g.

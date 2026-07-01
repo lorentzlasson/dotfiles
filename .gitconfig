@@ -52,6 +52,7 @@
   ap = add --patch
   b = branch
   backup = !git add . && git commit --amend --no-edit && git push --force-with-lease
+  branchauthors = "!. ~/.config/shell/functions.sh && git-branchauthors"
   c = commit
   ca = commit --amend
   cane = commit --amend --no-edit
