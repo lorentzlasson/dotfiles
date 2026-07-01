@@ -51,7 +51,7 @@ This also applies to:
 - **Accusation-style "why"** ("Why did you say X if it wasn't true?", "What did you miss and why?", "Why did you break this?"): just answer — explain reasoning, what went wrong (if anything), why. If your original analysis was sound, defend it. Don't read these as implicit requests to fix, revert, undo, or apologize. Read actions to verify facts for the answer are fine.
 
 ### `??` suffix
-Do NOT execute. Share thoughts, tradeoffs, and a recommended approach. Wait for explicit go-ahead. Example: *"move these constants to a separate file. ??"* — respond with your take, don't make changes.
+Don't execute. Give your take and a recommendation, then wait for go-ahead.
 
 ## Technical discourse
 
