@@ -69,7 +69,7 @@
   logp = "log --color=always --graph --pretty=format:'%C(yellow)%h%Creset%C(cyan)%d%Creset %C(white bold)%s%Creset %C(white dim)(by %an %ar)%Creset' --all"
   logrelease = log --pretty=format:'%n_______ %h _______%n%b' --grep='---' origin/master..origin/develop
   logs = "log --pretty=oneline --abbrev-commit"
-  mine = "!git for-each-ref --format='%(authoremail) %(refname:short)' refs/heads refs/remotes | grep \"^<$(git config user.email)>\" | cut -d' ' -f2-"
+  mine = "!. ~/.config/shell/functions.sh && git-mine"
   nuke = !git reset && git restore :/ && git clean -d --force
   p = push
   please = push --force-with-lease

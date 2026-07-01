@@ -87,6 +87,20 @@ git-deleteremotebranch() {
 }
 _git-deleteremotebranch() { __git_remote_branch_names; }
 
+git-mine() {
+  local me="<$(git config user.email)>"
+  {
+    echo 'branch local remote'
+    git for-each-ref --format='%(authoremail) %(refname)' refs/heads refs/remotes |
+      awk -v me="$me" '$1==me{
+        r=$2
+        if (r ~ /^refs\/heads\//) { sub(/^refs\/heads\//,"",r); L[r]=1; s[r]=1 }
+        else { sub(/^refs\/remotes\/[^/]*\//,"",r); if (r!="HEAD") { R[r]=1; s[r]=1 } }
+      } END { for (n in s) print n, (L[n]?"🟢":"🔴"), (R[n]?"🟢":"🔴") }' |
+      sort
+  } | column -t
+}
+
 # https://unix.stackexchange.com/a/112284
 # Edit the /etc/default/grub and replace GRUB_DEFAULT=0 with GRUB_DEFAULT=saved
 # sudo update-grub
