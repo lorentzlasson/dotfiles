@@ -91,14 +91,14 @@ _git-deleteremotebranch() { __git_remote_branch_names; }
 git-mine() {
   local me="<$(git config user.email)>"
   {
-    echo 'branch local remote'
-    git for-each-ref --format='%(authoremail) %(refname)' refs/heads refs/remotes |
+    echo 'branch local remote edited'
+    git for-each-ref --format='%(authoremail) %(refname) %(committerdate:unix)' refs/heads refs/remotes |
       awk -v me="$me" '$1==me{
-        r=$2
-        if (r ~ /^refs\/heads\//) { sub(/^refs\/heads\//,"",r); L[r]=1; s[r]=1 }
-        else { sub(/^refs\/remotes\/[^/]*\//,"",r); if (r!="HEAD") { R[r]=1; s[r]=1 } }
-      } END { for (n in s) print n, (L[n]?"🟢":"🔴"), (R[n]?"🟢":"🔴") }' |
-      sort
+        r=$2; t=$3
+        if (r ~ /^refs\/heads\//) { sub(/^refs\/heads\//,"",r); L[r]=1; s[r]=1; if (t>D[r]) D[r]=t }
+        else { sub(/^refs\/remotes\/[^/]*\//,"",r); if (r!="HEAD") { R[r]=1; s[r]=1; if (t>D[r]) D[r]=t } }
+      } END { for (n in s) print n, (L[n]?"🟢":"🔴"), (R[n]?"🟢":"🔴"), strftime("%Y-%m-%d", D[n]) }' |
+      sort -k4,4 -r
   } | column -t
 }
 
