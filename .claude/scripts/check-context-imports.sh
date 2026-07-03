@@ -8,14 +8,14 @@ dot_claude="$project_root/.claude/CLAUDE.md"
 extract_refs() {
     local file="$1"
     local dir
-    dir="$(dirname "$(readlink -f "$file")")"
-    grep -oP '(?<![\[`\w])@(?:~?[./][\w./_~-]+|[\w][\w._-]*\.[\w]+)' "$file" 2>/dev/null | while read -r ref; do
+    dir="$(dirname "$(readlink --canonicalize "$file")")"
+    grep --only-matching --perl-regexp '(?<![\[`\w])@(?:~?[./][\w./_~-]+|[\w][\w._-]*\.[\w]+)' "$file" 2>/dev/null | while read -r ref; do
         local path="${ref#@}"
         path="${path/#\~/$HOME}"
         if [[ "$path" != /* ]]; then
             path="$dir/$path"
         fi
-        path="$(readlink -f "$path" 2>/dev/null || echo "$path")"
+        path="$(readlink --canonicalize "$path" 2>/dev/null || echo "$path")"
         local exists="false"
         [[ -f "$path" ]] && exists="true"
         echo "$ref|$path|$exists"

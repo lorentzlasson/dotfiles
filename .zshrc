@@ -71,7 +71,7 @@ bindkey "^N" down-line-or-search
 # Yank to the system clipboard
 function vi-yank-xclip {
   zle vi-yank
-  echo "$CUTBUFFER" | xclip -sel clip
+  echo "$CUTBUFFER" | xclip -selection clip
 }
 
 zle -N vi-yank-xclip

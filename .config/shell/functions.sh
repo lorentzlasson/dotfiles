@@ -1,8 +1,8 @@
 copy() {
   if [ $# -eq 0 ]; then
-    xclip -sel clip
+    xclip -selection clip
   else
-    xclip -sel clip <"$1"
+    xclip -selection clip <"$1"
   fi
 }
 
@@ -10,8 +10,8 @@ git-branchauthors() {
   git remote update origin --prune >/dev/null
   git for-each-ref --format='%(if)%(symref)%(then)%(else)%(authorname):%(refname:short)%(end)' refs/remotes |
     grep . |
-    sort -r |
-    column -s ':' -t
+    sort --reverse |
+    column --separator ':' --table
 }
 
 # e.g.
@@ -36,7 +36,7 @@ process_using_port() {
 
 kill_port() {
   local pid
-  pid=$(ss --listening --tcp --numeric --processes | awk "/:$1 /" | grep -oP 'pid=\K[0-9]+' | sort --unique)
+  pid=$(ss --listening --tcp --numeric --processes | awk "/:$1 /" | grep --only-matching --perl-regexp 'pid=\K[0-9]+' | sort --unique)
   [ -n "$pid" ] && echo "$pid" | xargs kill
 }
 
@@ -98,14 +98,14 @@ git-mine() {
         if (r ~ /^refs\/heads\//) { sub(/^refs\/heads\//,"",r); L[r]=1; s[r]=1; if (t>D[r]) D[r]=t }
         else { sub(/^refs\/remotes\/[^/]*\//,"",r); if (r!="HEAD") { R[r]=1; s[r]=1; if (t>D[r]) D[r]=t } }
       } END { for (n in s) print n, (L[n]?"🟢":"🔴"), (R[n]?"🟢":"🔴"), strftime("%Y-%m-%d", D[n]) }' |
-      sort -k4,4 -r
-  } | column -t
+      sort --key=4,4 --reverse
+  } | column --table
 }
 
 # https://unix.stackexchange.com/a/112284
 # Edit the /etc/default/grub and replace GRUB_DEFAULT=0 with GRUB_DEFAULT=saved
 # sudo update-grub
 rbwin() {
-  windows_title=$(grep -i windows /boot/grub/grub.cfg | cut -d "'" -f 2)
+  windows_title=$(grep --ignore-case windows /boot/grub/grub.cfg | cut --delimiter="'" --fields=2)
   sudo grub-reboot "$windows_title" && sudo reboot
 }
