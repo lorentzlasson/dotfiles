@@ -17,6 +17,7 @@
     enable = true;
     gamescopeSession.enable = true;
     localNetworkGameTransfers.openFirewall = true;
+    extraPackages = [ pkgs.stdenv.cc.cc.lib ];
     package = pkgs.steam.override {
       extraEnv = {
         __NV_PRIME_RENDER_OFFLOAD = "1";
