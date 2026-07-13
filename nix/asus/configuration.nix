@@ -20,6 +20,7 @@
     extraPackages = [ pkgs.stdenv.cc.cc.lib ];
     package = pkgs.steam.override {
       extraEnv = {
+        LD_PRELOAD = "libgcc_s.so.1";
         __NV_PRIME_RENDER_OFFLOAD = "1";
         __NV_PRIME_RENDER_OFFLOAD_PROVIDER = "NVIDIA-G0";
         __GLX_VENDOR_LIBRARY_NAME = "nvidia";
