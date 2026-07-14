@@ -9,6 +9,11 @@
   networking.hostName = "asus";
   system.stateVersion = "23.11";
 
+  nixpkgs.config = {
+    cudaCapabilities = [ "8.9" ];
+    cudaForwardCompat = false;
+  };
+
   environment.systemPackages = [
     (pkgs.callPackage ./bethaniel.nix { nvidiaPackage = config.hardware.nvidia.package; })
   ];
