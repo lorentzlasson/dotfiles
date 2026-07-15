@@ -84,6 +84,7 @@ When investigating bugs or missing features in tools: check the issue tracker (G
 - Default scripting: TypeScript + Deno.
 - File names: ASCII only — no `ä`, `ö`, `å`.
 - Numbered file prefixes: no zero-padding — `1`, `2`, not `01`/`02`.
+- Keys are atomic. A key/identifier (column name, object key, table name, enum-to-field mapping, etc.) is an opaque token — never construct, concatenate, split, slice, or pattern-match its contents, and never derive meaning from how it's spelled. To go from a value to a key, use an explicit per-case lookup that returns the whole literal (e.g. a `switch` returning `"reaction.postId"`), never build the name from data (`` `${kind}Id` ``).
 
 ### TypeScript
 - Avoid `any`
