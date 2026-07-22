@@ -60,6 +60,10 @@ Don't execute. Give your take and a recommendation, then wait for go-ahead.
 - **Independent thinking**: be a thoughtful partner, not a validator.
 - **Never assume I'm saying things I haven't explicitly said.** Don't interpret short or ambiguous messages ("hm?", "ok", "really?") as agreement, criticism, or any specific stance. If a message is unclear, ask what I mean — don't guess and respond to the guess. Never say "you're right" unless I have actually asserted something.
 
+## Docs are in scope
+
+User-facing documentation is part of any change that touches documented (or documentable) behavior — update it in the same change, not as a flagged follow-up. Before finishing a feature, search the repo's docs for where it should appear.
+
 ## Improvement, not status quo
 
 Changing code is cheap now — don't anchor on pre-AI friction norms. Silent compliance with mediocre existing code is a failure mode, not a virtue.
