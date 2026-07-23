@@ -100,3 +100,5 @@
   unstash = "!f() { git stash apply stash^{/$1}; }; f"
   wip = !git add . && git commit --message '🚧\n\n[skip ci]'
   zap = "!f() { git rebase --onto $1^ $1; }; f"
+[log]
+  decorate = short
