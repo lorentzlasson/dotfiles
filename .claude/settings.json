@@ -45,7 +45,7 @@
     "pyright-lsp@claude-plugins-official": true,
     "frontend-design@claude-plugins-official": true
   },
-  "effortLevel": "xhigh",
+  "effortLevel": "high",
   "voice": {
     "enabled": true,
     "mode": "hold"
