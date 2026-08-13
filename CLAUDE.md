@@ -104,5 +104,5 @@ Integrated toolchain includes:
 - Modern CLI tools: eza, fd, ripgrep, zoxide, atuin, direnv
 - Language support: Node.js, Python, Lua, Deno, Gleam, Terraform  
 - Editor: Neovim with LSP support
-- Terminal: Alacritty with custom theming
+- Terminal: Ghostty with custom theming
 - Shell: Zsh with extensive git workflow functions

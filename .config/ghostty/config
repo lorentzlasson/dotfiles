@@ -1,0 +1,48 @@
+font-family = Hack Nerd Font Mono
+font-size = 11.25
+
+term = xterm-256color
+
+maximize = true
+gtk-titlebar = false
+window-padding-x = 0
+window-padding-y = 0
+
+cursor-style-blink = false
+confirm-close-surface = false
+clipboard-paste-protection = false
+app-notifications = false
+
+shell-integration-features = no-cursor
+
+bell-features = audio,no-system,no-attention,no-title,no-border
+bell-audio-path = /run/current-system/sw/share/sounds/freedesktop/stereo/complete.oga
+bell-audio-volume = 1
+
+background = #181818
+foreground = #fdd291
+
+palette = 0=#101010
+palette = 1=#e26f60
+palette = 2=#a0d17b
+palette = 3=#f29c5f
+palette = 4=#eeeeee
+palette = 5=#f29c5f
+palette = 6=#eeeeee
+palette = 7=#ece9df
+palette = 8=#2d2d2d
+palette = 9=#e26f60
+palette = 10=#a0d17b
+palette = 11=#f29c5f
+palette = 12=#eeeeee
+palette = 13=#f29c5f
+palette = 14=#eeeeee
+palette = 15=#ffffff
+
+selection-background = #ababab
+selection-foreground = #101010
+
+search-background = #ababab
+search-foreground = #101010
+search-selected-background = #ece9df
+search-selected-foreground = #101010

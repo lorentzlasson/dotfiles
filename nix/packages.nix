@@ -2,7 +2,6 @@
 
 {
   environment.systemPackages = with pkgs; [
-    alacritty
     astro-language-server
     atuin
     bat
@@ -15,6 +14,7 @@
     eza
     file
     gcc
+    ghostty
     gnumake
     htop
     inxi # system information
