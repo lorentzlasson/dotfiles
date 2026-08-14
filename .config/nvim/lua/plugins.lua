@@ -55,6 +55,6 @@ require('lazy').setup({
   { 'ofirgall/ofirkai.nvim' },
   {
     'nvim-dunkel',
-    url = 'https://codeberg.org/fabrlyn/dunkel.nvim.git',
+    url = 'https://github.com/lorentzlasson/dunkel.nvim.git',
   },
 })
