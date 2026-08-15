@@ -3,6 +3,23 @@ autoload -Uz colors && colors
 
 PS1="$ "
 
+# opt-in prompt segment, see README
+_prompt_segment_sourced=""
+_prompt_segment() {
+  if [[ -r "$PROMPT_SEGMENT_SOURCE" ]]; then
+    if [[ "$PROMPT_SEGMENT_SOURCE" != "$_prompt_segment_sourced" ]]; then
+      unfunction prompt_segment 2>/dev/null
+      source "$PROMPT_SEGMENT_SOURCE" 2>/dev/null
+      _prompt_segment_sourced="$PROMPT_SEGMENT_SOURCE"
+    fi
+  else
+    unfunction prompt_segment 2>/dev/null
+    _prompt_segment_sourced=""
+  fi
+
+  (( $+functions[prompt_segment] )) && prompt_segment 2>/dev/null
+}
+
 precmd() {
   # https://en.wikipedia.org/wiki/ANSI_escape_code#Colors
   local blue="\033[0;34m"
@@ -16,6 +33,8 @@ precmd() {
 
   local ssh_marker=${SSH_CONNECTION:+ 🔏 $(hostname)}
   local branch_marker=${git_branch:+ 🌿 ${git_branch}}
+
+  RPROMPT=$(_prompt_segment)
 
   echo -e "${base}${ssh_marker}${branch_marker}"
 }
