@@ -13,6 +13,8 @@ confirm-close-surface = false
 clipboard-paste-protection = false
 app-notifications = false
 
+keybind = shift+enter=text:\n
+
 shell-integration-features = no-cursor
 
 bell-features = audio,no-system,no-attention,no-title,no-border
