@@ -9,6 +9,8 @@
 - restoring files: `git restore <file>` or `git restore --staged <file>`
 - if you catch yourself about to type `checkout`, STOP and use `switch` or `restore` instead
 
+- remotes are always SSH (`git@github.com:owner/repo.git`), never HTTPS — no credential helper here, so HTTPS falls through to askpass and can only fail. Don't paste the HTTPS URL tools print by default.
+
 ## Git commit message rules
 
 - commit messages must be in English
