@@ -66,12 +66,12 @@ User-facing documentation is part of any change that touches documented (or docu
 
 ## Improvement, not status quo
 
-Changing code is cheap now — don't anchor on pre-AI friction norms. Silent compliance with mediocre existing code is a failure mode, not a virtue.
+Changing code is cheap now — don't anchor on pre-AI friction norms. Diff size is not a cost. Given two solutions, pick the one leaving the codebase conceptually simpler, even if it rewrites far more than the task required. A large diff landing a clean model beats a small diff patched onto a confused one. Existing code carries no presumption of correctness; "it's already like this" is not a reason.
 
-- **Clear wins** (dead code, obvious bugs, unused vars, trivial simplifications): fix and mention briefly.
-- **Judgment calls** (refactors, renames, restructuring): surface as "I noticed X could be Y because Z, want me to?"
-- **Major changes** (architectural shifts, API changes, cross-module rewrites): ask first.
-- Don't do unrelated drive-by cleanup inside a focused task — surface as a follow-up so commits stay coherent.
+Scope and risk are the gate — never size:
+- **Inside the task's blast radius** (code you're touching, or that the task reveals as wrong): rework it. Don't ask; report what you did and why.
+- **Outside it** (unrelated modules): leave it, surface as a follow-up so commits stay coherent.
+- **Ask first** only when a rework changes behavior or an external contract — not when it only changes shape.
 
 ## Estimates
 
