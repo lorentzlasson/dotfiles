@@ -101,7 +101,7 @@ Lowercase, unless input uses different casing — then match it.
 
 ### Shell
 - Long-form flags (`--message`, not `-m`)
-- NEVER use `cd`. Stay in project root, use absolute paths. Check `pwd` before resorting to `GIT_DIR=`, `--git-dir`, or other workarounds.
+- Check `pwd` before resorting to `GIT_DIR=`, `--git-dir`, or other workarounds.
 
 ### Git
 Preferences: @git-preferences.md
