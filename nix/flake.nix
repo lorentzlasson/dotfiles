@@ -37,6 +37,12 @@
                         '';
                       });
                 })
+                # https://github.com/eza-community/eza/pull/1596 (fixes issue #1568)
+                (_final: prev: {
+                  eza = prev.eza.overrideAttrs (old: {
+                    patches = (old.patches or [ ]) ++ [ ./patches/eza-stdin-opt-in.patch ];
+                  });
+                })
               ];
             }
             hostConfig
