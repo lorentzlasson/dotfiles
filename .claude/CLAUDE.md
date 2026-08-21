@@ -108,6 +108,9 @@ Preferences: @git-preferences.md
 
 Commit after completing a task unless told otherwise. Use /commit when committing.
 
+### Pull requests
+Preferences: @pr-preferences.md
+
 ## Tools
 - `busy_ports` — see processes listening on ports 1000-10000
 - `rg` instead of `grep`
