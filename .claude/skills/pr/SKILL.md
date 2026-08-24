@@ -1,6 +1,5 @@
 ---
 allowed-tools: Bash(git switch --create:*), Bash(git push:*), Bash(gh:*)
-disable-model-invocation: true
 ---
 
 determine the primary branch using `gh repo view --json defaultBranchRef`.
