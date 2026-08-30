@@ -60,7 +60,7 @@ let
     '';
   };
 
-  extracted = appimageTools.extractType2 { inherit pname version src; };
+  extracted = appimageTools.extract { inherit pname version src; };
 
   # The bundled llama-server is dynamically broken on NixOS (libllama-common.so.0).
   # Drop it so the app's findLlamaBin() falls back to `llama-server` on PATH, which
