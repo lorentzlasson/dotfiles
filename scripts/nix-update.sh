@@ -9,4 +9,8 @@ NEW=$(nix build --no-link --print-out-paths \
 HIGHLIGHTS=$(nix run nixpkgs#nvd -- --color=never diff "$OLD" "$NEW" \
   | grep --extended-regexp '^(\[U\*\]|\[A\+\]|\[R-\]|Closure size)' || true)
 git add nix/flake.lock
-git commit --message 'update nixos' --message "$HIGHLIGHTS"
+if git diff --cached --quiet -- nix/flake.lock; then
+  echo 'already up to date'
+else
+  git commit --message 'update nixos' --message "$HIGHLIGHTS"
+fi
