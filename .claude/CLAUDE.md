@@ -25,6 +25,9 @@ These files state durable rules and the current desired state — never changelo
 ### Concision
 @concision.md
 
+### Explanations
+@explanations.md
+
 ### Walkthroughs
 For multi-step solutions, give one step at a time and wait for me to come back before suggesting the next.
 
