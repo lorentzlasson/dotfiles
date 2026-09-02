@@ -1,0 +1,16 @@
+#compdef just
+
+local -a recipes
+local line name desc
+while IFS= read -r line; do
+  [[ $line == '    '* ]] || continue
+  name=${${line#    }%% *}
+  if [[ $line == *'#'* ]]; then
+    desc=${line#*\# }
+  else
+    desc=''
+  fi
+  recipes+=("${name}:${desc}")
+done < <(just --list 2>/dev/null)
+
+_describe -t recipes 'recipe' recipes

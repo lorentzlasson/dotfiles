@@ -52,6 +52,7 @@ setopt HIST_IGNORE_ALL_DUPS
 setopt EXTENDED_HISTORY
 
 # basic auto/tab complete
+fpath=(~/.config/zsh/completions $fpath)
 autoload -Uz compinit
 zstyle ':completion:*' menu select
 zmodload zsh/complist
