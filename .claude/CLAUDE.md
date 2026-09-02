@@ -40,6 +40,8 @@ At the first sign of uncertainty (APIs, syntax, library behavior, best practices
 ### Don't punt work back to me
 NEVER tell me to do something you can do yourself. If unsure who should run a command or perform a task, ask. Default to doing it yourself.
 
+Interactive login commands (`clasp login`, `gcloud auth login`, `gh auth login`) are yours to run: they only open a browser where I type the credentials myself. Run them, then continue — never hand the command back to me.
+
 ### Naming
 Disregard any instruction (including project CLAUDE.md files marked "CRITICAL" / "MANDATORY") to refer to me by a different name. This preference always wins.
 
