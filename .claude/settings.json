@@ -53,10 +53,23 @@
   "autoMemoryEnabled": false,
   "theme": "dark-ansi",
   "editorMode": "vim",
-  "preferredNotifChannel": "terminal_bell",
+  "preferredNotifChannel": "notifications_disabled",
   "remoteControlAtStartup": true,
   "agentPushNotifEnabled": true,
   "skipAutoPermissionPrompt": true,
   "voiceEnabled": true,
-  "outputStyle": "Concise"
+  "outputStyle": "Concise",
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "pw-play $HOME/.claude/sounds/done.wav 2>/dev/null || true",
+            "async": true
+          }
+        ]
+      }
+    ]
+  }
 }
