@@ -136,16 +136,17 @@ fi
 if command -v direnv &>/dev/null; then
   eval "$(direnv hook zsh)"
 
-  _last_buildinputs=""
+  _last_shell_inputs=""
   _update_nix_shell_completions() {
-    [[ -n "$buildInputs" && "$buildInputs" != "$_last_buildinputs" ]] || return
+    local inputs="$buildInputs $nativeBuildInputs"
+    [[ -n "${inputs// /}" && "$inputs" != "$_last_shell_inputs" ]] || return
     local -a pkgs
-    IFS=' ' read -rA pkgs <<<"$buildInputs"
+    IFS=' ' read -rA pkgs <<<"$inputs"
     for pkg in "${pkgs[@]}"; do
       [[ -d "$pkg/share/zsh/site-functions" ]] && fpath+=("$pkg/share/zsh/site-functions")
     done
     compinit
-    _last_buildinputs="$buildInputs"
+    _last_shell_inputs="$inputs"
   }
 
   precmd_functions+=(_update_nix_shell_completions)
