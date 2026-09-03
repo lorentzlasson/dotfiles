@@ -6,3 +6,8 @@ output "tunnel_token" {
 output "tunnel_id" {
   value = cloudflare_zero_trust_tunnel_cloudflared.lorentz.id
 }
+
+output "healthchecks_ping_url" {
+  value     = healthchecksio_check.nuc.ping_url
+  sensitive = true
+}
