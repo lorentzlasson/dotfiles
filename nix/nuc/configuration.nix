@@ -163,6 +163,8 @@
           http_addr = "127.0.0.1";
         };
 
+        security.secret_key = "$__file{/var/lib/grafana/secret-key}";
+
         # admin credentials in password manager
 
         "auth.anonymous" = {
