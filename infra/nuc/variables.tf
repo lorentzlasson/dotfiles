@@ -15,3 +15,8 @@ variable "access_email" {
   type      = string
   sensitive = true
 }
+
+variable "healthchecksio_api_key" {
+  type      = string
+  sensitive = true
+}

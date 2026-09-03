@@ -4,6 +4,10 @@ terraform {
       source  = "cloudflare/cloudflare"
       version = "~> 5.0"
     }
+    healthchecksio = {
+      source  = "kristofferahl/healthchecksio"
+      version = "~> 2.1"
+    }
   }
 }
 

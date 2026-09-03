@@ -255,4 +255,25 @@
       Persistent = true;
     };
   };
+
+  systemd.services.healthchecks-ping = {
+    description = "tell healthchecks.io this machine is still alive";
+    path = [
+      pkgs.curl
+      pkgs.coreutils
+    ];
+    serviceConfig.Type = "oneshot";
+    script = ''
+      curl --fail --silent --show-error --max-time 20 --retry 3 "$(cat /var/lib/healthchecks-ping-url)"
+    '';
+  };
+
+  systemd.timers.healthchecks-ping = {
+    wantedBy = [ "timers.target" ];
+    timerConfig = {
+      OnBootSec = "1min";
+      OnUnitActiveSec = "5min";
+      Persistent = true;
+    };
+  };
 }
