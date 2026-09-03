@@ -9,26 +9,7 @@
     "sessionUrl": false
   },
   "permissions": {
-    "allow": [
-      "Bash(busy_ports:*)",
-      "Bash(echo:*)",
-      "Bash(gcloud logging read:*)",
-      "Bash(gh pr view:*)",
-      "Bash(gh run list:*)",
-      "Bash(gh run view:*)",
-      "Bash(gh run watch:*)",
-      "Bash(git log:*)",
-      "Bash(git show:*)",
-      "Bash(ls:*)",
-      "Bash(mkdir:*)",
-      "Bash(nslookup:*)",
-      "Bash(rg:*)",
-      "Bash(ssh:*)",
-      "Read(//home/lorentz/.claude/**)",
-      "Read(//home/lorentz/dev/**)",
-      "WebFetch",
-      "WebSearch"
-    ],
+    "allow": [],
     "deny": [
       "Bash(git checkout:*)"
     ],
