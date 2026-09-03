@@ -39,3 +39,28 @@ resource "cloudflare_dns_record" "www" {
   ttl     = 1
   proxied = true
 }
+
+resource "cloudflare_zero_trust_access_policy" "grafana" {
+  account_id = var.cloudflare_account_id
+  name       = "grafana-owner"
+  decision   = "allow"
+
+  include = [{
+    email = {
+      email = var.access_email
+    }
+  }]
+}
+
+resource "cloudflare_zero_trust_access_application" "grafana" {
+  account_id       = var.cloudflare_account_id
+  name             = "grafana"
+  domain           = "grafana.lorentz.casa"
+  type             = "self_hosted"
+  session_duration = "24h"
+
+  policies = [{
+    id         = cloudflare_zero_trust_access_policy.grafana.id
+    precedence = 1
+  }]
+}

@@ -122,7 +122,6 @@
             "filesystem"
             "loadavg"
             "netdev"
-            "wifi"
           ];
           port = 9100;
         };
@@ -163,15 +162,14 @@
           http_addr = "127.0.0.1";
         };
 
-        security.secret_key = "$__file{/var/lib/grafana/secret-key}";
-
         # admin credentials in password manager
 
-        "auth.anonymous" = {
-          enabled = true;
-          org_name = "Main Org.";
-          org_role = "Viewer";
+        security = {
+          secret_key = "$__file{/var/lib/grafana/secret-key}";
+          admin_password = "$__file{/var/lib/grafana/admin-password}";
         };
+
+        "auth.anonymous".enabled = false;
       };
 
       # dashboard from

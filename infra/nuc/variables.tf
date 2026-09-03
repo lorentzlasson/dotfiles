@@ -10,3 +10,8 @@ variable "cloudflare_account_id" {
 variable "cloudflare_zone_id" {
   type = string
 }
+
+variable "access_email" {
+  type      = string
+  sensitive = true
+}
