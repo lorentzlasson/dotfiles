@@ -82,7 +82,7 @@
       settings = {
         ports = {
           dns = 53; # Port for incoming DNS Queries.
-          http = 4000;
+          http = "127.0.0.1:4000";
         };
         upstreams.groups.default = [
           "https://one.one.one.one/dns-query" # Using Cloudflare's DNS over HTTPS server for resolving queries.
@@ -116,6 +116,7 @@
     prometheus = {
       enable = true;
       port = 9090;
+      listenAddress = "127.0.0.1";
 
       exporters = {
         node = {
@@ -227,9 +228,7 @@
     firewall = {
       allowedTCPPorts = [
         22
-        4000
         53
-        9090
       ];
       allowedUDPPorts = [ 53 ];
     };
