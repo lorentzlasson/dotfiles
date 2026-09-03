@@ -17,9 +17,7 @@ keybind = shift+enter=text:\n
 
 shell-integration-features = no-cursor
 
-bell-features = audio,no-system,no-attention,no-title,no-border
-bell-audio-path = /run/current-system/sw/share/sounds/freedesktop/stereo/complete.oga
-bell-audio-volume = 1
+bell-features = no-audio,no-system,attention,title,no-border
 
 # nvim --headless -c "Dunkel colorscheme dark-kontrast ghostty" -c "qa"
 background = #181818
