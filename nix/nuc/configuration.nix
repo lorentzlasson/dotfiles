@@ -1,4 +1,5 @@
 # Has shitty wifi signal - 2.4GHz performs better than 5GHz
+{ pkgs, ... }:
 {
   imports = [
     ./hardware-configuration.nix
@@ -227,5 +228,31 @@
       allowedUDPPorts = [ 53 ];
     };
     interfaces.wlp1s0.useDHCP = true;
+  };
+
+  systemd.services.wifi-watchdog = {
+    description = "reconnect wifi when the default gateway stops answering";
+    path = [
+      pkgs.iputils
+      pkgs.iproute2
+      pkgs.gawk
+    ];
+    serviceConfig.Type = "oneshot";
+    script = ''
+      gw=$(ip route | awk '/^default/{print $3; exit}')
+      if [ -n "$gw" ] && ping -c 3 -W 2 "$gw" > /dev/null; then
+        exit 0
+      fi
+      systemctl restart NetworkManager
+    '';
+  };
+
+  systemd.timers.wifi-watchdog = {
+    wantedBy = [ "timers.target" ];
+    timerConfig = {
+      OnBootSec = "3min";
+      OnUnitActiveSec = "2min";
+      Persistent = true;
+    };
   };
 }
