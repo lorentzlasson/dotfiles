@@ -45,3 +45,6 @@ static-qa:
 
 static-fix:
   ./scripts/static-fix.sh
+
+delta-install:
+  ./scripts/delta-install.sh
