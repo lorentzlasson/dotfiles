@@ -58,6 +58,7 @@
   ca = commit --amend
   cane = commit --amend --no-edit
   cb = switch --create
+  cc = "!claude --model \"sonnet\" --print \"/commit\""
   cf = commit --fixup
   cl = clean -d --force
   cm = commit --message
