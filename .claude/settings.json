@@ -40,5 +40,18 @@
   "agentPushNotifEnabled": true,
   "skipAutoPermissionPrompt": true,
   "voiceEnabled": true,
-  "model": "claude-fable-5-1[1m]"
+  "model": "claude-fable-5-1[1m]",
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "jq -r \".tool_input.command\" | rg -q \"wl-copy|xclip|xsel\" && gdbus call --session --dest org.freedesktop.Notifications --object-path /org/freedesktop/Notifications --method org.freedesktop.Notifications.Notify claude 0 \"\" \"Claude\" \"clipboard updated\" \"[]\" \"{}\" 5000 >/dev/null 2>&1 || true"
+          }
+        ]
+      }
+    ]
+  }
 }
