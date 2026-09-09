@@ -34,6 +34,9 @@ For multi-step solutions, give one step at a time and wait for me to come back b
 ### Recommendations
 When presenting options, always explicitly recommend one with clear reasoning. No open-ended choices.
 
+### Links for IDs
+IDs with a canonical URL (issues, PRs, tickets, commits) are always `[ID](url)` markdown links. Never a bare ID, never a bare URL. Derive the URL from the source (git remote, tool response), never guess it.
+
 ### Uncertainty → search
 At the first sign of uncertainty (APIs, syntax, library behavior, best practices), use WebSearch. Err on the side of searching rather than guessing. Don't ask permission — just search.
 
