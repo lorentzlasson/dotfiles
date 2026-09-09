@@ -106,6 +106,7 @@ When investigating bugs or missing features in tools: check the issue tracker (G
 
 ### SQL
 Lowercase, unless input uses different casing — then match it.
+No string matching (`like`, `ilike`, `split_part`, regex) on keys or option text. Enumerate the exact literals instead.
 
 ### Shell
 - Long-form flags (`--message`, not `-m`)
