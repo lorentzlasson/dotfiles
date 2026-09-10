@@ -18,9 +18,27 @@
         "type": "github"
       }
     },
-    "nixos-hardware": {
+    "claude-desktop": {
       "inputs": {
         "nixpkgs": "nixpkgs_2"
+      },
+      "locked": {
+        "lastModified": 1788949812,
+        "narHash": "sha256-71G9e5ZnAtT9/RfdsesBj0szpx4mUgsGx6CFHiAgpI4=",
+        "owner": "nmcbride",
+        "repo": "claude-desktop-nix",
+        "rev": "ca1018b6260316e9c226d2c0b6981347237b7404",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nmcbride",
+        "repo": "claude-desktop-nix",
+        "type": "github"
+      }
+    },
+    "nixos-hardware": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_3"
       },
       "locked": {
         "lastModified": 1788044418,
@@ -55,6 +73,22 @@
     },
     "nixpkgs_2": {
       "locked": {
+        "lastModified": 1782723713,
+        "narHash": "sha256-oPXCU/SSUokcGaJREHibG1CBX3+s/W7orDWQOZDsEeQ=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "b5aa0fbd538984f6e3d201be0005b4463d8b09f8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_3": {
+      "locked": {
         "lastModified": 1767892417,
         "narHash": "sha256-8bW3q88CEg2u4hSP66Vf4lpbLonHz7hqDNBMcCY7E9U=",
         "rev": "3497aa5c9457a9d88d71fa93a4a8368816fbeeba",
@@ -66,7 +100,7 @@
         "url": "https://channels.nixos.org/nixos-unstable/nixexprs.tar.xz"
       }
     },
-    "nixpkgs_3": {
+    "nixpkgs_4": {
       "locked": {
         "lastModified": 1788039129,
         "narHash": "sha256-pa4Q0qErvCvzCaaUph7Sm37RhR4xvPrYI8Lgz6k85+A=",
@@ -85,8 +119,9 @@
     "root": {
       "inputs": {
         "claude-code-overlay": "claude-code-overlay",
+        "claude-desktop": "claude-desktop",
         "nixos-hardware": "nixos-hardware",
-        "nixpkgs": "nixpkgs_3"
+        "nixpkgs": "nixpkgs_4"
       }
     }
   },

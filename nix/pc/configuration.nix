@@ -1,9 +1,15 @@
-{ pkgs, lib, ... }:
+{
+  pkgs,
+  lib,
+  inputs,
+  ...
+}:
 
 {
   imports = [
     ../configuration.nix
     ./packages.nix
+    inputs.claude-desktop.nixosModules.default
   ];
 
   nix.settings.experimental-features = [
@@ -98,6 +104,10 @@
 
   programs = {
     _1password.enable = true;
+    claude-desktop = {
+      enable = true;
+      cowork.kvmUsers = [ "lorentz" ];
+    };
     captive-browser = {
       enable = true;
       interface = "wlp58s0";
