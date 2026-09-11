@@ -23,3 +23,4 @@
 - most commits should be subject-only
 - use lowercase for ALL text - INCLUDING BODY
 - DO NOT follow "conventional commits" with type prefix
+- no ticket id prefix (`[PROD-1234]`) in commit subjects, PR titles or branch names — even when surrounding commits or the branch carry one
