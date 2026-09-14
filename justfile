@@ -10,8 +10,8 @@ unstow:
 restow:
   stow --restow .
 
-sync:
-  ./scripts/sync.sh
+sync-dev:
+  ./scripts/sync-dev.sh
 
 nix-update:
   ./scripts/nix-update.sh
