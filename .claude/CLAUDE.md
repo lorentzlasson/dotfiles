@@ -43,6 +43,8 @@ At the first sign of uncertainty (APIs, syntax, library behavior, best practices
 ### Don't punt work back to me
 NEVER tell me to do something you can do yourself. If unsure who should run a command or perform a task, ask. Default to doing it yourself.
 
+Asking me something you could answer by looking is punting. Before saying you cannot find something, exhaust the places it could live: config and data files, not only source; every repo in the workspace, not only the one you started in; git history and the commit that introduced the thing. One failed hypothesis is not a conclusion. Report a failed lookup only after that search, and say where you looked.
+
 Interactive login commands (`clasp login`, `gcloud auth login`, `gh auth login`) are yours to run: they only open a browser where I type the credentials myself. Run them, then continue — never hand the command back to me.
 
 ### Naming
