@@ -78,6 +78,8 @@ User-facing documentation is part of any change that touches documented (or docu
 
 Changing code is cheap now — don't anchor on pre-AI friction norms. Diff size is not a cost. Given two solutions, pick the one leaving the codebase conceptually simpler, even if it rewrites far more than the task required. A large diff landing a clean model beats a small diff patched onto a confused one. Existing code carries no presumption of correctness; "it's already like this" is not a reason.
 
+Before changing or extending a design, including reviewing or fixing a PR, sketch the simplest whole-system model for the goal as if nothing existed. Base it on how sibling features already solve the same problem. Then compare it with what exists: name every piece the current design has that the sketch lacks, and justify or remove it. When challenged, re-run this check before defending or conceding.
+
 Scope and risk are the gate — never size:
 - **Inside the task's blast radius** (code you're touching, or that the task reveals as wrong): rework it. Don't ask; report what you did and why.
 - **Outside it** (unrelated modules): leave it, surface as a follow-up so commits stay coherent.
