@@ -44,5 +44,5 @@ Research and test popular professional-grade mail clients for Linux to find a su
 - May need stow package updates if configs are managed
 
 ### Documentation
-- Update AGENTS.md if mail client becomes part of standard workflow
+- Update CLAUDE.md if mail client becomes part of standard workflow
 - Add setup instructions if configuration is complex

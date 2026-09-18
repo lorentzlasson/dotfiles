@@ -3,6 +3,6 @@
 .direnv
 tmp
 
-^/AGENTS.md
+^/CLAUDE.md
 ^/README.md
 ^/.gitignore.*

@@ -6,7 +6,7 @@ argument-hint: [optional focus]
 
 1. **Re-read instructions:**
    - `~/.claude/CLAUDE.md` and any `@`-imported files (e.g. `git-preferences.md`)
-   - Any project-level `CLAUDE.md` or `AGENTS.md`
+   - Any project-level `CLAUDE.md`
    - Re-scan recent conversation for user-specific guidance, corrections, or pushback
 
 2. **Identify the in-flight action:** what were you about to do, or what did you just initiate?

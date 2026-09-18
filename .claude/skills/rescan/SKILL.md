@@ -1,7 +1,7 @@
 ---
 ---
 
-CRITICAL: Do NOT assume the existing CLAUDE.md or AGENTS.md is accurate. ALWAYS verify against actual codebase.
+CRITICAL: Do NOT assume the existing CLAUDE.md is accurate. ALWAYS verify against actual codebase.
 
 Use the Agent tool with subagent_type=Explore to thoroughly analyze the codebase structure, key files, and configuration.
 
@@ -12,7 +12,7 @@ The exploration MUST:
 4. Validate all file paths are correct
 5. Identify any contradictions between docs and code
 
-After exploration, compare findings to existing CLAUDE.md or AGENTS.md and update it with:
+After exploration, compare findings to existing CLAUDE.md and update it with:
 - repository overview
 - architecture details
 - common commands/workflows
