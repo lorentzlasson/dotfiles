@@ -6,3 +6,4 @@ tmp
 .claude/settings.local.json
 .ssh/id_*
 .netrc
+.claude/skills/synced
