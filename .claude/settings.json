@@ -17,9 +17,6 @@
     "defaultMode": "auto"
   },
   "model": "claude-fable-5-1[1m]",
-  "enabledMcpjsonServers": [
-    "playwright"
-  ],
   "hooks": {
     "PostToolUse": [
       {

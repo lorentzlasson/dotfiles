@@ -27,7 +27,6 @@
     pavucontrol
     pinta
     playwright
-    playwright-mcp
     proton-vpn
     qbittorrent
     sd
