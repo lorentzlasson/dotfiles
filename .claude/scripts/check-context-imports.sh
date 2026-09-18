@@ -3,6 +3,7 @@
 project_root="${1:-.}"
 global_claude="$HOME/.claude/CLAUDE.md"
 project_claude="$project_root/CLAUDE.md"
+[[ -f "$project_claude" ]] || project_claude="$project_root/AGENTS.md"
 dot_claude="$project_root/.claude/CLAUDE.md"
 
 extract_refs() {

@@ -115,7 +115,7 @@ Evaluate the following options:
 - `.claude/git-preferences.md` - Document the new workflow
 
 ### Repository Documentation
-- `CLAUDE.md` - Add section on requesting split commits from Claude
+- `AGENTS.md` - Add section on requesting split commits from Claude
 
 ## Recommendation
 
