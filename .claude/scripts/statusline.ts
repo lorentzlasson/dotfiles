@@ -1,5 +1,9 @@
 #!/usr/bin/env -S deno run --quiet --allow-env=HOME --allow-read --allow-write=/tmp/claude-statusline-usage.json --allow-net=api.anthropic.com
 
+// <MODEL> <session>%|<weekly>%|<fable weekly>% · 🧠 <context used>% · <path>
+// F 4%|6%|7% · 🧠 12% · ~/dotfiles
+// fable weekly is only shown when running fable
+
 type Input = {
   model: { display_name: string }
   workspace: { current_dir: string }
