@@ -139,8 +139,8 @@
         libglvnd
         fontconfig
         freetype
-        xorg.libX11
-        xorg.libxcb
+        libx11
+        libxcb
       ];
     };
   };
