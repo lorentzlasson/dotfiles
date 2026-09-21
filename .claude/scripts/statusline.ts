@@ -33,6 +33,11 @@ const color = (used: number) =>
 
 const percent = (used: number) => color(used)(`${used}%`)
 
+const contextColor = (used: number) =>
+  used >= 60 ? red : used >= 50 ? yellow : green
+
+const contextPercent = (used: number) => contextColor(used)(`${used}%`)
+
 const modelColor = (initial: string) => {
   switch (initial) {
     case "F":
@@ -94,6 +99,6 @@ const used = Math.round(input.context_window.used_percentage ?? 0)
 
 console.log([
   `${modelColor(model)(model)} ${usage}`,
-  `🧠 ${percent(used)}`,
+  `🧠 ${contextPercent(used)}`,
   dim(dir),
 ].join(dim(" · ")))
