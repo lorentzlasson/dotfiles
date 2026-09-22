@@ -120,9 +120,10 @@
     gamemode.enable = true;
     tmux = {
       enable = true;
-      plugins = with pkgs.tmuxPlugins; [
-        sensible
-        resurrect
+      plugins = [
+        pkgs.tmuxPlugins.sensible
+        pkgs.tmuxPlugins.resurrect
+        inputs.tmux-claude-links.packages.${pkgs.stdenv.hostPlatform.system}.plugin
       ];
     };
 

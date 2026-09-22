@@ -4,6 +4,7 @@
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     claude-code-overlay.url = "github:ryoppippi/claude-code-overlay";
     claude-desktop.url = "github:nmcbride/claude-desktop-nix";
+    tmux-claude-links.url = "github:lorentzlasson/tmux-claude-links";
   };
 
   outputs =
@@ -12,6 +13,7 @@
       nixos-hardware,
       claude-code-overlay,
       claude-desktop,
+      tmux-claude-links,
       ...
     }:
     let
@@ -20,7 +22,7 @@
         nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           specialArgs = {
-            inputs = { inherit nixos-hardware claude-desktop; };
+            inputs = { inherit nixos-hardware claude-desktop tmux-claude-links; };
           };
           modules = [
             {
