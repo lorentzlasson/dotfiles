@@ -14,6 +14,10 @@
     cudaForwardCompat = false;
   };
 
+  environment.etc."claude-code/managed-settings.json".text = builtins.toJSON {
+    remoteControlAtStartup = true;
+  };
+
   environment.systemPackages = [
     (pkgs.callPackage ./bethaniel.nix { nvidiaPackage = config.hardware.nvidia.package; })
   ];
