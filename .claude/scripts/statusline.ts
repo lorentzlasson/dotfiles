@@ -1,7 +1,7 @@
 #!/usr/bin/env -S deno run --quiet --allow-env=HOME --allow-read --allow-write=/tmp/claude-statusline-usage.json --allow-net=api.anthropic.com
 
-// <MODEL> <session>%|<weekly>%|<fable weekly>% · 🧠 <context used>% · <path>
-// F 4%|6%|7% · 🧠 12% · ~/dotfiles
+// <MODEL><version> <session>%|<weekly>%|<fable weekly>% · 🧠 <context used>% · <path>
+// F5.1 4%|6%|7% · 🧠 12% · ~/dotfiles
 // fable weekly is only shown when running fable
 
 type Input = {
@@ -83,6 +83,7 @@ const limits = cached && cached.age < TTL_MS
   : await fetchLimits().catch(() => cached?.limits ?? [])
 
 const model = input.model.display_name.charAt(0)
+const version = input.model.display_name.match(/\d+(\.\d+)?/)?.[0] ?? ""
 const usage = [
   limits.find((l) => l.kind === "session"),
   limits.find((l) => l.kind === "weekly_all"),
@@ -98,7 +99,7 @@ const dir = home && (cwd === home || cwd.startsWith(`${home}/`))
 const used = Math.round(input.context_window.used_percentage ?? 0)
 
 console.log([
-  `${modelColor(model)(model)} ${usage}`,
+  `${modelColor(model)(`${model}v${version}`)} ${usage}`,
   `🧠 ${contextPercent(used)}`,
   dim(dir),
 ].join(dim(" · ")))
