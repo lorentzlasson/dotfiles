@@ -25,6 +25,9 @@ nix-rebuild:
 nix-boot:
   sudo nixos-rebuild boot --flake path:$HOME/dotfiles/nix
 
+nix-deploy host:
+  nixos-rebuild switch --flake path:$HOME/dotfiles/nix#{{host}} --target-host root@{{host}}
+
 nix-generations:
   sudo nix-env --list-generations --profile /nix/var/nix/profiles/system
 

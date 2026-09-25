@@ -73,6 +73,7 @@ networking.hostName = "myhost";
 - Use `just` commands for common operations (see `justfile` in repo root)
 - NixOS rebuild: `just nix-rebuild` (not raw `sudo nixos-rebuild` commands)
 - NixOS update: `just nix-update`
+- Deploy to another machine over ssh: `just nix-deploy nuc`
 - Stow dotfiles: `just stow` / `just restow`
 - Hardware config sync: `just hardware-sync`
 - Full update: `just update-all`
