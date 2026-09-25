@@ -89,13 +89,13 @@ bindkey "^P" up-line-or-search
 bindkey "^N" down-line-or-search
 
 # Yank to the system clipboard
-function vi-yank-xclip {
+function vi-yank-clipboard {
   zle vi-yank
-  echo "$CUTBUFFER" | xclip -selection clip
+  echo "$CUTBUFFER" | wl-copy
 }
 
-zle -N vi-yank-xclip
-bindkey -M vicmd 'y' vi-yank-xclip
+zle -N vi-yank-clipboard
+bindkey -M vicmd 'y' vi-yank-clipboard
 
 clear_and_git_status() {
   clear -x

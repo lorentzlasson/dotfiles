@@ -44,7 +44,7 @@
     usbutils # lsbusb
     vscode-langservers-extracted
     wget
-    xclip
+    wl-clipboard
     yaml-language-server
     zoxide
   ];

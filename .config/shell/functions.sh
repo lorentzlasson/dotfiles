@@ -1,8 +1,8 @@
 copy() {
   if [ $# -eq 0 ]; then
-    xclip -selection clip
+    wl-copy
   else
-    xclip -selection clip <"$1"
+    wl-copy <"$1"
   fi
 }
 
