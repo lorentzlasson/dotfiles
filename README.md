@@ -5,8 +5,7 @@ Collection of my personal dotfiles
 1. `cd ~`
 1. `git clone https://github.com/lorentzlasson/dotfiles`
 1. `cd dotfiles`
-1. `rm ~/.config` 
-1. `rm -rf ~/.config && mkdir -p ~/.config && just stow` 
+1. `rm -rf ~/.config && mkdir -p ~/.config && just stow`
 
 ## Prompt segments
 A project can render its own marker on the right hand side of the prompt by exporting `PROMPT_SEGMENT_SOURCE` (e.g. from `.envrc` or a devshell `shellHook`).

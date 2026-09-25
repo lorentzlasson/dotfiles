@@ -1,10 +1,6 @@
 { pkgs, ... }:
 
 {
-  imports = [
-    ../packages.nix
-  ];
-
   environment.systemPackages = with pkgs; [
     # zed-editor # too slow too compile
     dbeaver-bin

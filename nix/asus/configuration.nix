@@ -4,6 +4,8 @@
   imports = [
     ./hardware-configuration.nix
     ../pc/configuration.nix
+    ../pc/nvidia.nix
+    ../pc/steam.nix
   ];
 
   networking.hostName = "asus";
@@ -14,27 +16,27 @@
     cudaForwardCompat = false;
   };
 
-  environment.etc."claude-code/managed-settings.json".text = builtins.toJSON {
-    remoteControlAtStartup = true;
+  environment = {
+    etc."claude-code/managed-settings.json".text = builtins.toJSON {
+      remoteControlAtStartup = true;
+    };
+
+    systemPackages = [
+      (pkgs.callPackage ./bethaniel.nix { nvidiaPackage = config.hardware.nvidia.package; })
+    ];
+
+    sessionVariables = {
+      __NV_PRIME_RENDER_OFFLOAD = "1";
+      __NV_PRIME_RENDER_OFFLOAD_PROVIDER = "NVIDIA-G0";
+      __GLX_VENDOR_LIBRARY_NAME = "nvidia";
+      __VK_LAYER_NV_optimus = "NVIDIA_only";
+    };
   };
 
-  environment.systemPackages = [
-    (pkgs.callPackage ./bethaniel.nix { nvidiaPackage = config.hardware.nvidia.package; })
-  ];
-
   programs.steam = {
-    enable = true;
-    gamescopeSession.enable = true;
-    localNetworkGameTransfers.openFirewall = true;
     extraPackages = [ pkgs.stdenv.cc.cc.lib ];
     package = pkgs.steam.override {
-      extraEnv = {
-        LD_PRELOAD = "libgcc_s.so.1";
-        __NV_PRIME_RENDER_OFFLOAD = "1";
-        __NV_PRIME_RENDER_OFFLOAD_PROVIDER = "NVIDIA-G0";
-        __GLX_VENDOR_LIBRARY_NAME = "nvidia";
-        __VK_LAYER_NV_optimus = "NVIDIA_only";
-      };
+      extraEnv.LD_PRELOAD = "libgcc_s.so.1";
     };
   };
 
@@ -47,35 +49,12 @@
     };
   };
 
-  environment.sessionVariables = {
-    __NV_PRIME_RENDER_OFFLOAD = "1";
-    __NV_PRIME_RENDER_OFFLOAD_PROVIDER = "NVIDIA-G0";
-    __GLX_VENDOR_LIBRARY_NAME = "nvidia";
-    __VK_LAYER_NV_optimus = "NVIDIA_only";
-  };
-
-  # https://nixos.wiki/wiki/Nvidia
-  hardware = {
-    graphics.enable = true;
-    nvidia = {
-      modesetting.enable = true;
-      powerManagement.enable = true;
-      open = false;
-      nvidiaSettings = true;
-      package = config.boot.kernelPackages.nvidiaPackages.beta;
-    };
-  };
-
-  services = {
-    # https://nixos.wiki/wiki/Nvidia
-    xserver.videoDrivers = [ "nvidia" ];
-    # https://nixos.wiki/wiki/Plex
-    # library in /srv/plex
-    plex = {
-      enable = true;
-      openFirewall = true;
-      user = "lorentz";
-    };
+  # https://nixos.wiki/wiki/Plex
+  # library in /srv/plex
+  services.plex = {
+    enable = true;
+    openFirewall = true;
+    user = "lorentz";
   };
 
   systemd.tmpfiles.rules = [

@@ -17,7 +17,7 @@ _prompt_segment() {
     _prompt_segment_sourced=""
   fi
 
-  (( $+functions[prompt_segment] )) && prompt_segment 2>/dev/null
+  [[ -n "${functions[prompt_segment]}" ]] && prompt_segment 2>/dev/null
 }
 
 precmd() {
@@ -52,7 +52,6 @@ setopt HIST_IGNORE_ALL_DUPS
 setopt EXTENDED_HISTORY
 
 # basic auto/tab complete
-fpath=(~/.config/zsh/completions $fpath)
 autoload -Uz compinit
 zstyle ':completion:*' menu select
 zmodload zsh/complist
@@ -82,9 +81,6 @@ autoload -Uz edit-command-line
 zle -N edit-command-line
 bindkey '^e' edit-command-line
 
-# search history with ctrl-r
-bindkey -v
-bindkey '^R' history-incremental-search-backward
 bindkey "^P" up-line-or-search
 bindkey "^N" down-line-or-search
 
@@ -114,14 +110,7 @@ source ~/.config/shell/aliases.sh
 # custom functions
 source ~/.config/shell/functions.sh
 
-# set vim as default editor
-export VISUAL=nvim
-export EDITOR="$VISUAL"
-
 export PATH=~/.local/bin:$PATH
-
-# go
-export PATH="/usr/local/go/bin:$PATH"
 
 if command -v tmux &>/dev/null && [ -z "$TMUX" ] && [ -t 0 ]; then
   tmux attach || tmux
@@ -138,7 +127,7 @@ if command -v direnv &>/dev/null; then
 
   _last_shell_inputs=""
   _update_nix_shell_completions() {
-    local inputs="$buildInputs $nativeBuildInputs"
+    local inputs="${buildInputs-} ${nativeBuildInputs-}"
     [[ -n "${inputs// /}" && "$inputs" != "$_last_shell_inputs" ]] || return
     local -a pkgs
     IFS=' ' read -rA pkgs <<<"$inputs"
@@ -155,11 +144,6 @@ fi
 # https://docs.atuin.sh/
 if command -v atuin &>/dev/null; then
   eval "$(atuin init zsh)"
-fi
-
-# kubectl
-if command -v kubectl &>/dev/null; then
-  source <(kubectl completion zsh)
 fi
 
 # ripgrep

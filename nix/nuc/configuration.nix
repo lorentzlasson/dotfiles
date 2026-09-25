@@ -4,7 +4,6 @@
   imports = [
     ./hardware-configuration.nix
     ../configuration.nix
-    ./packages.nix
   ]
   ++ (
     let
@@ -18,13 +17,6 @@
 
   networking.hostName = "nuc";
   system.stateVersion = "24.11";
-
-  nixpkgs.config.allowUnfree = true;
-
-  systemd.services.blocky = {
-    after = [ "network-online.target" ];
-    wants = [ "network-online.target" ];
-  };
 
   fileSystems."/mnt/data" = {
     device = "/dev/disk/by-uuid/3262d20e-55a6-4cde-b059-ae51a6665ebe";
@@ -65,12 +57,6 @@
           root = "/var/www";
           locations."/" = {
             tryFiles = "$uri $uri/ =404";
-          };
-        };
-        "_" = {
-          default = true;
-          locations."/" = {
-            return = "404";
           };
         };
       };
@@ -216,69 +202,76 @@
     };
   };
 
-  systemd.tmpfiles.rules = [
-    "d /srv/plex 0755 plex plex -"
-  ];
-
   networking = {
     networkmanager = {
       enable = true;
       wifi.powersave = false;
     };
     firewall = {
-      allowedTCPPorts = [
-        22
-        53
-      ];
+      allowedTCPPorts = [ 53 ];
       allowedUDPPorts = [ 53 ];
     };
-    interfaces.wlp1s0.useDHCP = true;
   };
 
-  systemd.services.wifi-watchdog = {
-    description = "reconnect wifi when the default gateway stops answering";
-    path = [
-      pkgs.iputils
-      pkgs.iproute2
-      pkgs.gawk
+  systemd = {
+    tmpfiles.rules = [
+      "d /srv/plex 0755 plex plex -"
     ];
-    serviceConfig.Type = "oneshot";
-    script = ''
-      gw=$(ip route | awk '/^default/{print $3; exit}')
-      if [ -n "$gw" ] && ping -c 3 -W 2 "$gw" > /dev/null; then
-        exit 0
-      fi
-      systemctl restart NetworkManager
-    '';
-  };
 
-  systemd.timers.wifi-watchdog = {
-    wantedBy = [ "timers.target" ];
-    timerConfig = {
-      OnBootSec = "3min";
-      OnUnitActiveSec = "2min";
-      Persistent = true;
+    services = {
+      blocky = {
+        after = [ "network-online.target" ];
+        wants = [ "network-online.target" ];
+      };
+
+      wifi-watchdog = {
+        description = "reconnect wifi when the default gateway stops answering";
+        path = [
+          pkgs.iputils
+          pkgs.iproute2
+          pkgs.gawk
+        ];
+        serviceConfig.Type = "oneshot";
+        script = ''
+          gw=$(ip route | awk '/^default/{print $3; exit}')
+          if [ -n "$gw" ] && ping -c 3 -W 2 "$gw" > /dev/null; then
+            exit 0
+          fi
+          systemctl restart NetworkManager
+        '';
+      };
+
+      healthchecks-ping = {
+        description = "tell healthchecks.io this machine is still alive";
+        path = [
+          pkgs.curl
+          pkgs.coreutils
+        ];
+        serviceConfig.Type = "oneshot";
+        script = ''
+          curl --fail --silent --show-error --max-time 20 --retry 3 "$(cat /var/lib/healthchecks-ping-url)"
+        '';
+      };
     };
-  };
 
-  systemd.services.healthchecks-ping = {
-    description = "tell healthchecks.io this machine is still alive";
-    path = [
-      pkgs.curl
-      pkgs.coreutils
-    ];
-    serviceConfig.Type = "oneshot";
-    script = ''
-      curl --fail --silent --show-error --max-time 20 --retry 3 "$(cat /var/lib/healthchecks-ping-url)"
-    '';
-  };
+    timers = {
+      wifi-watchdog = {
+        wantedBy = [ "timers.target" ];
+        timerConfig = {
+          OnBootSec = "3min";
+          OnUnitActiveSec = "2min";
+          Persistent = true;
+        };
+      };
 
-  systemd.timers.healthchecks-ping = {
-    wantedBy = [ "timers.target" ];
-    timerConfig = {
-      OnBootSec = "1min";
-      OnUnitActiveSec = "5min";
-      Persistent = true;
+      healthchecks-ping = {
+        wantedBy = [ "timers.target" ];
+        timerConfig = {
+          OnBootSec = "1min";
+          OnUnitActiveSec = "5min";
+          Persistent = true;
+        };
+      };
     };
   };
 }

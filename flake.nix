@@ -16,8 +16,7 @@
           buildInputs = with pkgs; [
             just
             stow
-            nixfmt-rfc-style
-            treefmt
+            nixfmt
             statix
             deadnix
             shellcheck

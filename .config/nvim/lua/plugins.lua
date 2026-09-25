@@ -3,7 +3,6 @@ require('lazy').setup({
     'echasnovski/mini.splitjoin',
     version = '*',
   },
-  { 'LnL7/vim-nix' },
   { 'godlygeek/tabular' },
   { 'gregsexton/MatchTag' },
   { 'hrsh7th/cmp-nvim-lsp' },
@@ -46,13 +45,6 @@ require('lazy').setup({
     end,
   },
 
-  -- Colorschemes
-  { 'Luxed/ayu-vim' },
-  { 'glepnir/zephyr-nvim' },
-  { 'marko-cerovac/material.nvim' },
-  { 'mhartington/oceanic-next' },
-  { 'navarasu/onedark.nvim' },
-  { 'ofirgall/ofirkai.nvim' },
   {
     'nvim-dunkel',
     url = 'https://github.com/lorentzlasson/dunkel.nvim.git',

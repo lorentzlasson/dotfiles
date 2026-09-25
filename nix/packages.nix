@@ -24,7 +24,7 @@
     nerd-fonts.hack
     nil
     nix-index
-    nixpkgs-fmt
+    nixfmt
     bash-language-server
     sql-formatter
     typescript-language-server

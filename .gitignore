@@ -2,7 +2,6 @@
 .config/pgcli/log
 tmp
 .direnv/
-.treefmt.cache
 .claude/settings.local.json
 .ssh/id_*
 .netrc

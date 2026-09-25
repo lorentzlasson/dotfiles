@@ -12,16 +12,6 @@
     inputs.claude-desktop.nixosModules.default
   ];
 
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
-
-  boot.loader = {
-    systemd-boot.enable = true;
-    efi.canTouchEfiVariables = true;
-  };
-
   time.timeZone = "Europe/Stockholm";
 
   i18n = {
@@ -46,7 +36,6 @@
       "wheel"
       "docker"
     ];
-    shell = pkgs.zsh;
   };
 
   hardware.keyboard.zsa.enable = true;
@@ -112,11 +101,6 @@
       enable = true;
       interface = "wlp58s0";
     };
-    git.enable = true;
-    neovim = {
-      enable = true;
-      defaultEditor = true;
-    };
     gamemode.enable = true;
     tmux = {
       enable = true;
@@ -125,11 +109,6 @@
         pkgs.tmuxPlugins.resurrect
         inputs.tmux-claude-links.packages.${pkgs.stdenv.hostPlatform.system}.plugin
       ];
-    };
-
-    zsh = {
-      enable = true;
-      syntaxHighlighting.enable = true;
     };
 
     nix-ld = {
@@ -212,8 +191,6 @@
       '';
     };
   };
-
-  nixpkgs.config.allowUnfree = true;
 
   environment = {
     sessionVariables.XKB_CONFIG_ROOT = "${pkgs.xkeyboard_config}/share/X11/xkb";

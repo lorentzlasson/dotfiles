@@ -32,7 +32,7 @@
                 (_final: prev: {
                   claude-code =
                     claude-code-overlay.packages.${prev.stdenv.hostPlatform.system}.claude.overrideAttrs
-                      (old: {
+                      (_: {
                         postFixup = ''
                           wrapProgram $out/bin/claude \
                             --prefix PATH : ${prev.gh}/bin \

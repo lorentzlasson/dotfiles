@@ -6,7 +6,7 @@
   followTags = true
 [core]
   autocrlf = input
-  editor = nvim
+  pager = delta
 [rerere]
   enabled = false
 [rebase]
@@ -33,8 +33,6 @@
   autocorrect = prompt
 [commit]
   verbose = true
-[core]
-  pager = delta
 [interactive]
   diffFilter = delta --color-only
 [delta]
@@ -70,7 +68,6 @@
   fixup = "!f() { git commit --fixup=$1 && git -c sequence.editor=: rebase --interactive --autosquash $1~2; }; f"
   last = "log --pretty=oneline --abbrev-commit -5"
   logp = "log --color=always --graph --pretty=format:'%C(yellow)%h%Creset%C(cyan)%d%Creset %C(white bold)%s%Creset %C(white dim)(by %an %ar)%Creset' --all"
-  logrelease = log --pretty=format:'%n_______ %h _______%n%b' --grep='---' origin/master..origin/develop
   logs = "log --pretty=oneline --abbrev-commit"
   mine = "!. ~/.config/shell/functions.sh && git-mine"
   nuke = !git reset && git restore :/ && git clean -d --force

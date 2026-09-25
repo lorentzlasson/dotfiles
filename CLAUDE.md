@@ -10,55 +10,34 @@ This is a comprehensive dotfiles repository managing both NixOS system configura
 
 ### NixOS Configuration Structure
 - `nix/flake.nix` - Main configuration defining 4 machines: xps15, xps13, asus (desktops) and nuc (server)
-- Base configurations: `pc/` for desktops with GNOME/gaming, `server/` for minimal server setup
-- Docker is available on all machines via base configuration
-- Machine configs inherit from base + add hostname and hardware-configuration.nix
-- Package lists: `pc/packages.nix` (77 packages), `server/packages.nix` (45 packages)
+- `nix/configuration.nix` + `nix/packages.nix` - Base config and packages for all machines (Docker, basic tools)
+- `nix/pc/` - Desktop base config (GNOME, GUI apps); `nvidia.nix` and `steam.nix` are opt-in per machine
+- Machine configs (`nix/{machine}/`) inherit from base + add hostname and hardware-configuration.nix
+- `nix/nuc/configuration.nix` - Server config (Nginx, Grafana, Prometheus, Blocky DNS), imports base directly
 
 ### Key Directories
 - `nix/{machine}/` - Machine-specific configs (hostname, hardware)
-- `nix/pc/` - Desktop base config (GNOME, Steam, GUI apps)  
-- `nix/server/` - Server base config (Nginx, Grafana, Prometheus, Blocky DNS)
-- `nix/configuration.nix` - Base config for all machines (Docker, basic tools)
+- `nix/pc/` - Desktop base config
 - `.config/` - User application configs managed via Stow
 
 ## Common Commands
 
-### NixOS System Management
-```bash
-# Update and rebuild system
-sudo nix flake update --flake ~/dotfiles/nix
-sudo nixos-rebuild switch --flake ~/dotfiles/nix
-
-# Maintenance - delete old generations and collect garbage
-sudo nix-env --list-generations --profile /nix/var/nix/profiles/system
-sudo nix-env --delete-generations +3 --profile /nix/var/nix/profiles/system
-sudo nixos-rebuild boot --flake ~/dotfiles/nix
-sudo nix-collect-garbage
-```
+All operations go through `just` (see `justfile` in repo root, `just --list`). Never run raw `sudo nixos-rebuild`.
 
 ### Dotfiles Setup
 ```bash
 cd ~
 git clone https://github.com/lorentzlasson/dotfiles
-rm ~/.config  # Remove symlink if exists
-mkdir -p ~/.config
+rm -rf ~/.config && mkdir -p ~/.config
 cd dotfiles
-stow .
-```
-
-### Hardware Configuration Updates
-```bash
-# Update hardware config (run on target machine)
-sudo nixos-generate-config
-cp /etc/nixos/hardware-configuration.nix ~/dotfiles/nix/{machine}/hardware-configuration.nix
+just stow
 ```
 
 ## Important Files
 
 - `nix/flake.nix` - System entry point, all machine definitions
 - `nix/pc/configuration.nix` - Desktop configuration template
-- `nix/server/configuration.nix` - Server configuration template  
+- `nix/nuc/configuration.nix` - Server configuration
 - `.zshrc` - Shell configuration with vi-mode and custom prompt
 - `.config/shell/{aliases,functions}.sh` - Shell productivity enhancements
 - `.config/nvim/init.lua` - Neovim configuration entry point
@@ -66,7 +45,7 @@ cp /etc/nixos/hardware-configuration.nix ~/dotfiles/nix/{machine}/hardware-confi
 
 ## Machine Configurations
 
-- **Desktop machines** (xps15, xps13, asus): Full development environment with GNOME, Steam
+- **Desktop machines** (xps15, xps13, asus): Full development environment with GNOME; xps15 and asus add Steam and Nvidia
 - **Server machine** (nuc): Monitoring stack with Prometheus/Grafana, Blocky DNS, Nginx reverse proxy
 - **All machines**: Docker containerization platform available
 
@@ -97,12 +76,13 @@ networking.hostName = "myhost";
 - Stow dotfiles: `just stow` / `just restow`
 - Hardware config sync: `just hardware-sync`
 - Full update: `just update-all`
+- Lint and format: `just static-qa` / `just static-fix`
 
 ## Development Environment
 
 Integrated toolchain includes:
 - Modern CLI tools: eza, fd, ripgrep, zoxide, atuin, direnv
-- Language support: Node.js, Python, Lua, Deno, Gleam, Terraform  
+- Language support: Python, Lua, Deno, Gleam
 - Editor: Neovim with LSP support
 - Terminal: Ghostty with custom theming
 - Shell: Zsh with extensive git workflow functions

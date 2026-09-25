@@ -11,9 +11,6 @@ alias vim="nvim"
 alias vi="nvim"
 alias ls="eza --oneline"
 
-alias python=python3
-alias pip=pip3
-
 # convenience
 alias cl="clear"
 alias open=xdg-open

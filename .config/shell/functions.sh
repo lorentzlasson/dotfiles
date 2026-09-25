@@ -101,11 +101,3 @@ git-mine() {
       sort --key=4,4 --reverse
   } | column --table
 }
-
-# https://unix.stackexchange.com/a/112284
-# Edit the /etc/default/grub and replace GRUB_DEFAULT=0 with GRUB_DEFAULT=saved
-# sudo update-grub
-rbwin() {
-  windows_title=$(grep --ignore-case windows /boot/grub/grub.cfg | cut --delimiter="'" --fields=2)
-  sudo grub-reboot "$windows_title" && sudo reboot
-}
