@@ -22,7 +22,7 @@ argument-hint: [optional focus]
    - silent compliance with mediocre code
    - estimating in human time
    - asking permission to search instead of just searching
-   - presenting options without an explicit recommendation
+   - asking a question or presenting options without a proposed answer
 
 4. **Report:**
    - what was in flight
