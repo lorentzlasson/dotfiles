@@ -38,6 +38,11 @@
     ];
   };
 
+  virtualisation.docker.rootless = {
+    enable = true;
+    setSocketVariable = true;
+  };
+
   hardware.keyboard.zsa.enable = true;
   security.rtkit.enable = true;
 
