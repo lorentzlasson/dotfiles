@@ -14,3 +14,5 @@ Applies to every PR I open, however it is asked for — `/pr`, "put up a PR", "o
 - when a PR has a companion PR in another repo, each links to the other by URL.
 
 These rules also govern edits to an existing PR's title or body.
+
+Every push to a branch with an open PR is followed by re-checking its title and body against the full set of commits, and editing them in the same step when they no longer cover the change.
