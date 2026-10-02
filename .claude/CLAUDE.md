@@ -95,6 +95,7 @@ When investigating bugs or missing features in tools: check the issue tracker (G
 
 ## Code
 
+- **Read a repo's own rules before writing any code in it.** Every `CLAUDE.md` / `AGENTS.md` from the repo root down to the files being touched, plus the docs they link for the layer at hand. Do this in each repo a task reaches, not once per session, and again after context is compacted. Repo rules beat habits like DRY: a passing build or lint does not mean the rules were followed.
 - Simple, functional style by default.
 - NEVER add comments unless I explicitly ask. Do not remove existing comments either.
 - Default scripting: TypeScript + Deno.
