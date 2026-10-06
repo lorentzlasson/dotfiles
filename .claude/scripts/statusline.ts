@@ -1,10 +1,11 @@
-#!/usr/bin/env -S deno run --quiet --allow-env=HOME --allow-read --allow-write=/tmp/claude-statusline-usage.json --allow-net=api.anthropic.com
+#!/usr/bin/env -S deno run --quiet --allow-env=HOME,COLUMNS --allow-read --allow-write=/tmp/claude-statusline-usage.json --allow-net=api.anthropic.com
 
-// <MODEL><version> <session>%|<weekly>%|<fable weekly>% · 🧠 <context used>% · <path>
-// F5.1 4%|6%|7% · 🧠 12% · ~/dotfiles
+// <MODEL><version> <session>%|<weekly>%|<fable weekly>% · 🧠 <context used>% · <path>   <claude code version>
+// F5.1 4%|6%|7% · 🧠 12% · ~/dotfiles                                               2.1.287
 // fable weekly is only shown when running fable
 
 type Input = {
+  version: string
   model: { display_name: string }
   workspace: { current_dir: string }
   context_window: { used_percentage: number | null }
@@ -83,7 +84,7 @@ const limits = cached && cached.age < TTL_MS
   : await fetchLimits().catch(() => cached?.limits ?? [])
 
 const model = input.model.display_name.charAt(0)
-const version = input.model.display_name.match(/\d+(\.\d+)?/)?.[0] ?? ""
+const modelVersion = input.model.display_name.match(/\d+(\.\d+)?/)?.[0] ?? ""
 const usage = [
   limits.find((l) => l.kind === "session"),
   limits.find((l) => l.kind === "weekly_all"),
@@ -98,8 +99,18 @@ const dir = home && (cwd === home || cwd.startsWith(`${home}/`))
   : cwd
 const used = Math.round(input.context_window.used_percentage ?? 0)
 
-console.log([
-  `${modelColor(model)(`${model}v${version}`)} ${usage}`,
+const width = (s: string) =>
+  [...s.replace(/\x1b\[[0-9;]*m/g, "")]
+    .map((c) => (c.codePointAt(0) ?? 0) > 0xffff ? 2 : 1)
+    .reduce((a, b) => a + b, 0)
+
+const left = [
+  `${modelColor(model)(`${model}v${modelVersion}`)} ${usage}`,
   `🧠 ${contextPercent(used)}`,
   dim(dir),
-].join(dim(" · ")))
+].join(dim(" · "))
+const right = dim(input.version)
+const columns = Number(Deno.env.get("COLUMNS") ?? 0)
+const gap = Math.max(1, columns - 4 - width(left) - width(right))
+
+console.log(`${left}${" ".repeat(gap)}${right}`)
