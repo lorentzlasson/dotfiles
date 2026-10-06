@@ -17,3 +17,7 @@ Applies to every PR I open, however it is asked for — `/pr`, "put up a PR", "o
 These rules also govern edits to an existing PR's title or body.
 
 Every push to a branch with an open PR is followed by re-checking its title and body against the full set of commits, and editing them in the same step when they no longer cover the change.
+
+## Stacking
+
+"Stack" means GitHub's native stacked PRs, managed with `gh stack`. Pointing a PR's base at another PR's branch is not stacking. Adding a PR to an existing stack means it shows in that stack on GitHub (`gh stack link <stack> <pr>`).
