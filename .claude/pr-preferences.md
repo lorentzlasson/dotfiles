@@ -4,6 +4,7 @@ Applies to every PR I open, however it is asked for — `/pr`, "put up a PR", "o
 
 - use lowercase for all text
 - high-level descriptive title (max ~72 chars)
+- a bug fix title starts with "fix" and names the bug the user saw (e.g. "fix login page freezing after a wrong password")
 - no headers in description
 - no test plan section
 - description focuses on WHY, not WHAT
