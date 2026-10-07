@@ -87,7 +87,7 @@ bindkey "^N" down-line-or-search
 # Yank to the system clipboard
 function vi-yank-clipboard {
   zle vi-yank
-  echo "$CUTBUFFER" | wl-copy
+  echo "$CUTBUFFER" | wl-copy --type text/plain
 }
 
 zle -N vi-yank-clipboard

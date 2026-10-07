@@ -1,8 +1,8 @@
 copy() {
   if [ $# -eq 0 ]; then
-    wl-copy
+    wl-copy --type text/plain
   else
-    wl-copy <"$1"
+    wl-copy --type text/plain <"$1"
   fi
 }
 
