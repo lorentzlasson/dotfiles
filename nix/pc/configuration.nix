@@ -34,7 +34,6 @@
     extraGroups = [
       "networkmanager"
       "wheel"
-      "docker"
     ];
   };
 
@@ -188,12 +187,6 @@
     firewall = {
       allowedTCPPorts = [ 17500 ];
       allowedUDPPorts = [ 17500 ];
-
-      extraCommands = ''
-        # allow docker to access host network
-        iptables -I nixos-fw 1 -i docker0 -s 172.16.0.0/12 -j ACCEPT
-        iptables -I nixos-fw 1 -i br+     -s 172.16.0.0/12 -j ACCEPT
-      '';
     };
   };
 
